@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import ModuleQuiz from './ModuleQuiz';
 import { saveAttempt } from './actions';
 import { PASS_THRESHOLD } from '@/lib/quiz-scoring';
+import { parseSeed, seededShuffle } from '@/lib/shuffle';
 import { getUser } from '@/lib/auth';
 import { createClient } from '@/lib/supabase/server';
 import type { Module } from '@/lib/types';
@@ -20,10 +21,13 @@ type Row = {
 
 export default async function ModuleQuizPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ seed?: string | string[] }>;
 }) {
   const { id } = await params;
+  const seed = parseSeed((await searchParams).seed);
   const supabase = await createClient();
 
   const [user, { data: mod }, { data: rows }] = await Promise.all([
@@ -42,18 +46,19 @@ export default async function ModuleQuizPage({
   // sont pas jouables par le moteur de QCM et sont écartées ici.
   const playable = (rows ?? []).filter((q) => q.options?.choices?.length);
 
-  // Ordre tiré au sort à chaque tentative : rejouer le quiz ne doit pas se réduire à
-  // mémoriser une séquence.
-  const questions: QuizQuestionView[] = playable
-    .map((q) => ({ q, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ q }) => ({
-      id: q.id,
-      question_text: q.question_text,
-      choices: q.options!.choices!,
-      correct_answer: q.correct_answer,
-      difficulty: q.difficulty,
-    }));
+  // Rejouer un quiz ne doit pas se réduire à mémoriser une séquence : le bouton
+  // « Refaire » ajoute une graine à l'URL, et l'ordre est recalculé à partir d'elle.
+  // Déterministe, donc identique côté serveur et côté client — pas de désynchronisation
+  // à l'hydratation, et aucun appel aléatoire pendant le rendu.
+  const ordered = seed === null ? playable : seededShuffle(playable, seed);
+
+  const questions: QuizQuestionView[] = ordered.map((q) => ({
+    id: q.id,
+    question_text: q.question_text,
+    choices: q.options!.choices!,
+    correct_answer: q.correct_answer,
+    difficulty: q.difficulty,
+  }));
 
   async function onComplete(result: Parameters<typeof saveAttempt>[1]) {
     'use server';

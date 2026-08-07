@@ -34,11 +34,9 @@ export default async function DashboardPage() {
     resumable.find((r) => r.progress?.status === 'in_progress') ??
     resumable.find((r) => r.progress?.status === 'not_started');
 
-  const nextLesson = current
-    ? await findNextLesson(current.id, current.progress?.lessonsRead ?? 0)
-    : null;
+  const nextLesson = current ? await findNextLesson(current.id) : null;
 
-  async function findNextLesson(moduleId: string, _read: number) {
+  async function findNextLesson(moduleId: string) {
     const { data } = await supabase
       .from('lessons')
       .select('id, title, order_index')

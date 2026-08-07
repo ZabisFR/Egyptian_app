@@ -33,3 +33,128 @@ body {
   font-size: 1.25em;
   line-height: 2;
 }
+
+/* ==========================================================================
+   Chemin de dunes — parcours des leçons
+   ========================================================================== */
+
+:root {
+  --sand-sky: #f6e7c8;
+  --sand-sun: #e8a13a;
+  --sand-far: #e0bd82;
+  --sand-near: #cb9a52;
+  --sand-line: #d9c3a0;
+  --stone-light: #d8c9ae;
+  --stone-dark: #a8927160;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sand-sky: #2a2118;
+    --sand-sun: #c78a2e;
+    --sand-far: #5e4a30;
+    --sand-near: #7c6038;
+    --sand-line: #4a3c2a;
+    --stone-light: #6b5a3e;
+    --stone-dark: #3a2f20;
+  }
+}
+
+/* Le décalage horizontal des nœuds est piloté par --offset (posé en style inline sur
+   chaque nœud) multiplié par --wave, réduit sur petit écran pour que le serpentin tienne
+   dans 375 px sans déborder. */
+.dune-path {
+  --wave: 1px;
+}
+@media (max-width: 480px) {
+  .dune-path {
+    --wave: 0.62px;
+  }
+}
+
+.dune-node {
+  transform: translateX(calc(var(--offset) * var(--wave)));
+}
+
+/* États : les couleurs des formes SVG viennent du nœud parent, ce qui évite de
+   dupliquer des <defs> et des identifiants de dégradé sur chaque nœud du chemin. */
+.dune-sky {
+  fill: var(--sand-sky);
+}
+.dune-sun {
+  fill: var(--sand-sun);
+}
+.dune-far {
+  fill: var(--sand-far);
+}
+.dune-near {
+  fill: var(--sand-near);
+}
+
+.node-todo .dune-sun {
+  fill: none;
+}
+.node-todo .dune-far,
+.node-todo .dune-near {
+  fill: none;
+  stroke: var(--sand-line);
+  stroke-width: 2.5;
+}
+.node-todo .dune-sky {
+  fill: transparent;
+  stroke: var(--sand-line);
+  stroke-width: 2.5;
+}
+
+.pyr-sky {
+  fill: var(--sand-sky);
+}
+.pyr-sun {
+  fill: var(--sand-sun);
+}
+.pyr-shadow {
+  fill: var(--stone-dark);
+}
+.pyr-light {
+  fill: var(--stone-light);
+}
+.pyr-ground {
+  fill: var(--sand-near);
+}
+
+.pyramid-locked .pyr-sky {
+  fill: transparent;
+  stroke: var(--sand-line);
+  stroke-width: 2.5;
+}
+.pyramid-locked .pyr-sun,
+.pyramid-locked .pyr-ground {
+  fill: none;
+}
+.pyramid-locked .pyr-shadow,
+.pyramid-locked .pyr-light {
+  fill: none;
+  stroke: var(--sand-line);
+  stroke-width: 2.5;
+}
+
+/* Halo du nœud courant : sert de repère « vous êtes ici » dans un chemin qui peut
+   compter 19 étapes. */
+@keyframes dune-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--sand-sun) 55%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--sand-sun) 0%, transparent);
+  }
+}
+.node-current {
+  animation: dune-pulse 2.2s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .node-current {
+    animation: none;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--sand-sun) 45%, transparent);
+  }
+}

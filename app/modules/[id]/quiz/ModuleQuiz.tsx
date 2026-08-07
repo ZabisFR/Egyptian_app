@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import QuizEngine, { type QuizQuestionView, type QuizResult } from '@/components/QuizEngine';
 
 export default function ModuleQuiz({
@@ -18,6 +19,8 @@ export default function ModuleQuiz({
   passThreshold: number;
   onComplete: (result: QuizResult) => Promise<void>;
 }) {
+  const router = useRouter();
+
   return (
     <QuizEngine
       questions={questions}
@@ -67,12 +70,20 @@ export default function ModuleQuiz({
               >
                 Retour au module
               </Link>
-              <a
-                href={`/modules/${moduleId}/quiz`}
+              {/* La graine est tirée dans le gestionnaire de clic, pas pendant le rendu :
+                  c'est ce qui garde le composant idempotent tout en donnant un ordre
+                  différent à chaque nouvelle tentative. */}
+              <button
+                type="button"
+                onClick={() => {
+                  const seed = Math.floor(Math.random() * 1_000_000);
+                  router.push(`/modules/${moduleId}/quiz?seed=${seed}`);
+                  router.refresh();
+                }}
                 className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm font-medium hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-900"
               >
                 Refaire le quiz
-              </a>
+              </button>
             </div>
           </div>
         );

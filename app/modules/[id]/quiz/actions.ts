@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
-import { PASS_THRESHOLD, type Answer } from '@/lib/quiz-scoring';
+import type { Answer } from '@/lib/quiz-scoring';
 import { refreshModuleStatus } from '../actions';
 
 /**
@@ -31,7 +31,6 @@ export async function saveAttempt(
 
   const oldBest = previous?.best_score ?? 0;
   const newBest = Math.max(oldBest, result.score);
-  const passed = newBest >= PASS_THRESHOLD;
 
   await supabase.from('quiz_attempts').insert({
     user_id: user.id,

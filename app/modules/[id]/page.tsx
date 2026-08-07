@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import LevelBadge from '@/components/LevelBadge';
+import LessonPath from '@/components/LessonPath';
 import ProgressBar from '@/components/ProgressBar';
 import { getUser } from '@/lib/auth';
 import { getAllProgress, getReadLessons } from '@/lib/progress';
@@ -86,48 +87,34 @@ export default async function ModulePage({
           </div>
         )}
 
-        {(quizCount ?? 0) > 0 && (
-          <Link
-            href={`/modules/${mod.id}/quiz`}
-            className="mt-5 block rounded-lg bg-neutral-900 px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-neutral-700 sm:inline-block sm:text-left dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
-          >
-            Passer le quiz ({quizCount} questions)
-          </Link>
-        )}
       </header>
 
-      {sections.map((section, i) => (
-        <section key={i} className="mt-8">
-          {section.name && (
-            <h2 className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
-              {section.name}
-            </h2>
-          )}
-          <ul className="mt-3 divide-y divide-neutral-200 dark:divide-neutral-800">
-            {section.lessons.map((lesson) => (
-              <li key={lesson.id}>
-                <Link
-                  href={`/modules/${mod.id}/${lesson.id}`}
-                  className="flex items-baseline gap-3 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-900"
-                >
-                  <span className="w-16 shrink-0 text-xs text-neutral-400">
-                    {lesson.day === null ? '—' : `Jour ${lesson.day}`}
-                  </span>
-                  <span className="text-sm">{lesson.title}</span>
-                  {readLessons.has(lesson.order_index) && (
-                    <span
-                      className="ml-auto shrink-0 text-emerald-600 dark:text-emerald-400"
-                      title="Leçon lue"
-                    >
-                      ✓
-                    </span>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+      <LessonPath
+        moduleId={mod.id}
+        sections={sections.map((section) => ({
+          name: section.name,
+          lessons: section.lessons.map((lesson) => ({
+            id: lesson.id,
+            day: lesson.day,
+            title: lesson.title,
+            order_index: lesson.order_index,
+            read: readLessons.has(lesson.order_index),
+          })),
+        }))}
+        quiz={
+          (quizCount ?? 0) > 0
+            ? {
+                count: quizCount ?? 0,
+                passed: moduleProgress?.quizPassed ?? false,
+                bestScore: moduleProgress?.bestScore ?? null,
+                unlocked:
+                  !!moduleProgress &&
+                  moduleProgress.lessonsTotal > 0 &&
+                  moduleProgress.lessonsRead >= moduleProgress.lessonsTotal,
+              }
+            : null
+        }
+      />
     </main>
   );
 }

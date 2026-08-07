@@ -19,6 +19,7 @@ export default function QuizEngine({
   onComplete,
   renderResult,
 }: {
+  /** Déjà dans l'ordre voulu : le mélange éventuel se fait côté serveur, par graine. */
   questions: QuizQuestionView[];
   /** Server action appelée une seule fois, à la fin. */
   onComplete?: (result: QuizResult) => Promise<void>;
