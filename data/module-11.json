@@ -1,0 +1,176 @@
+{
+  "module": {
+    "id": "module-11",
+    "number": 11,
+    "title": "Les connecteurs logiques et le récit",
+    "subtitle": "Jour 63 à Jour 68",
+    "level": "B1",
+    "description": "Cause/conséquence, opposition/concession, structurer un récit dans le temps, addition/reformulation, marqueurs de discours, exemple complet.",
+    "order_index": 11
+  },
+  "lessons": [
+    {
+      "day": 63,
+      "order_index": 1,
+      "section": "11.1",
+      "title": "Cause et conséquence",
+      "content_markdown": "## Jour 63 — Cause et conséquence\n\n| Égyptien | Sens | Exemple |\n|---|---|---|\n| عشان / علشان — 3ashan / 3alashan | parce que / pour que | معرفتش أجيله عشان كنت تعبان. |\n| لأن — le2an | parce que (plus soutenu) | اتأخرت لأن الزحمة كانت جامدة. |\n| عشان كده — 3ashan keda | c'est pourquoi, donc | كنت تعبان، عشان كده معرفتش أجي. |\n| فـ — fa (préfixe collé) | donc, alors | الجو كان حر، فقررت أقعد في البيت. |\n\n**Traductions :** *« je n'ai pas pu venir parce que j'étais fatigué » / « j'étais en retard parce qu'il y avait un embouteillage énorme » / « j'étais fatigué, c'est pourquoi je n'ai pas pu venir » / « il faisait chaud, donc j'ai décidé de rester à la maison ».*",
+      "vocab_items": [
+        {
+          "arabic": "عشان",
+          "transliteration": "3ashan",
+          "french": "parce que / pour que"
+        },
+        {
+          "arabic": "لأن",
+          "transliteration": "le2an",
+          "french": "parce que (plus soutenu)"
+        },
+        {
+          "arabic": "عشان كده",
+          "transliteration": "3ashan keda",
+          "french": "c'est pourquoi, donc"
+        },
+        {
+          "arabic": "فـ",
+          "transliteration": "fa",
+          "french": "donc, alors"
+        }
+      ]
+    },
+    {
+      "day": 64,
+      "order_index": 2,
+      "section": "11.2",
+      "title": "Opposition et concession",
+      "content_markdown": "## Jour 64 — Opposition et concession\n\n| Égyptien | Sens | Exemple |\n|---|---|---|\n| بس / لكن — bas / laakin | mais | عايز أروح، بس مش هيبقى عندي وقت. |\n| برضه — brodo | quand même / aussi | مع إنه تعبان، راح الشغل برضه. |\n| مع إن — ma3a inn | bien que, même si | مع إنه غالي، اشتريته. |\n\n*« je veux y aller, mais je n'aurai pas le temps » / « bien qu'il soit fatigué, il est quand même allé au travail » / « bien que ce soit cher, je l'ai acheté ».*",
+      "vocab_items": [
+        {
+          "arabic": "بس",
+          "transliteration": "bas",
+          "french": "mais"
+        },
+        {
+          "arabic": "برضه",
+          "transliteration": "brodo",
+          "french": "quand même / aussi"
+        },
+        {
+          "arabic": "مع إن",
+          "transliteration": "ma3a inn",
+          "french": "bien que, même si"
+        }
+      ]
+    },
+    {
+      "day": 65,
+      "order_index": 3,
+      "section": "11.3",
+      "title": "Structurer un récit dans le temps",
+      "content_markdown": "## Jour 65 — Structurer un récit dans le temps\n\n> 💡 Le squelette d'une histoire : **el-awwil** (d'abord) → **ba3dein** (ensuite) → **fag2a** (soudain) → **fel-akhir** (à la fin).\n\n| Égyptien | Sens |\n|---|---|\n| الأول — el-awwil | d'abord / au début |\n| بعدين — ba3dein | ensuite / après |\n| وبعد كده — wi ba3d keda | et après ça |\n| فجأة — fag2a | soudain / tout à coup |\n| في نفس الوقت — fi nafs el-wa2t | en même temps |\n| في الآخر — fel-akhir | à la fin / finalement |",
+      "vocab_items": [
+        {
+          "arabic": "الأول",
+          "transliteration": "el-awwil",
+          "french": "d'abord / au début"
+        },
+        {
+          "arabic": "بعدين",
+          "transliteration": "ba3dein",
+          "french": "ensuite / après"
+        },
+        {
+          "arabic": "وبعد كده",
+          "transliteration": "wi ba3d keda",
+          "french": "et après ça"
+        },
+        {
+          "arabic": "فجأة",
+          "transliteration": "fag2a",
+          "french": "soudain / tout à coup"
+        },
+        {
+          "arabic": "في نفس الوقت",
+          "transliteration": "fi nafs el-wa2t",
+          "french": "en même temps"
+        },
+        {
+          "arabic": "في الآخر",
+          "transliteration": "fel-akhir",
+          "french": "à la fin / finalement"
+        }
+      ]
+    },
+    {
+      "day": 66,
+      "order_index": 4,
+      "section": "11.4",
+      "title": "Addition et reformulation",
+      "content_markdown": "## Jour 66 — Addition et reformulation\n\n| Égyptien | Sens | Exemple |\n|---|---|---|\n| كمان — kamaan | aussi / en plus | اشتريت عيش، وكمان جبت جبنة. |\n| مش بس ... كمان — mesh bas ... kamaan | non seulement... mais aussi | مش بس بيتكلم عربي، هو كمان بيتكلم فرنساوي. |\n| يعني — ya3ni | c'est-à-dire / ça veut dire | هو كسلان، يعني مش بيحب يشتغل. |\n| مثلا — masalan | par exemple | ينفع نروح حتة تانية، مثلا الإسكندرية. |",
+      "vocab_items": [
+        {
+          "arabic": "كمان",
+          "transliteration": "kamaan",
+          "french": "aussi / en plus"
+        },
+        {
+          "arabic": "يعني",
+          "transliteration": "ya3ni",
+          "french": "c'est-à-dire / ça veut dire"
+        },
+        {
+          "arabic": "مثلا",
+          "transliteration": "masalan",
+          "french": "par exemple"
+        }
+      ]
+    },
+    {
+      "day": 67,
+      "order_index": 5,
+      "section": "11.5",
+      "title": "Les marqueurs de discours essentiels",
+      "content_markdown": "## Jour 67 — Les marqueurs de discours essentiels\n\n> 📌 Les petits mots qui font tout : à l'oral, les Égyptiens ponctuent constamment leurs phrases avec ces marqueurs. Ils **ne se traduisent pas littéralement** mais structurent la conversation.\n\n| Marqueur | Usage |\n|---|---|\n| طب — tab | bon / alors (pour réagir, enchaîner, ou proposer) |\n| خلاص — khalas | ça y est / bon, stop / d'accord, terminé |\n| يلا — yalla | allez / on y va / dépêche-toi |\n| على فكرة — 3ala fikra | au fait / à propos |\n| في الحقيقة — fel-7a2i2a | en fait / en réalité |\n| يعني إزاي؟ — ya3ni ezzay? | comment ça ? (demander une clarification) |",
+      "vocab_items": [
+        {
+          "arabic": "طب",
+          "transliteration": "tab",
+          "french": "bon / alors"
+        },
+        {
+          "arabic": "خلاص",
+          "transliteration": "khalas",
+          "french": "ça y est / bon, stop"
+        },
+        {
+          "arabic": "يلا",
+          "transliteration": "yalla",
+          "french": "allez / on y va"
+        },
+        {
+          "arabic": "على فكرة",
+          "transliteration": "3ala fikra",
+          "french": "au fait / à propos"
+        },
+        {
+          "arabic": "في الحقيقة",
+          "transliteration": "fel-7a2i2a",
+          "french": "en fait / en réalité"
+        },
+        {
+          "arabic": "يعني إزاي؟",
+          "transliteration": "ya3ni ezzay?",
+          "french": "comment ça ?"
+        }
+      ]
+    },
+    {
+      "day": 68,
+      "order_index": 6,
+      "section": "11.6",
+      "title": "À toi de raconter : exemple complet",
+      "content_markdown": "## Jour 68 — À toi de raconter : exemple complet\n\nالأول، كنت في البيت وكنت تعبان شوية. بس قررت أروح أشتري حاجة من السوبر ماركت عشان مكنش عندي عيش. وبعدين، وأنا ماشي، فجأة قابلت صاحبي القديم اللي معرفتش منه من زمان. اتكلمنا شوية، وهو كمان كان رايح نفس الاتجاه. في الحقيقة، اتفاجئت لما عرفت إنه بقى بيشتغل في نفس الشركة اللي أنا فيها! طب، قعدنا نتكلم كتير، ومع إن الوقت كان بيجري، ما حسيناش بيه. في الآخر، اتفقنا نتقابل تاني الأسبوع الجاي، وخلاص رجعت البيت مبسوط أوي.\n\n*Traduction : D'abord, j'étais à la maison et j'étais un peu fatigué. Mais j'ai décidé d'aller acheter quelque chose au supermarché parce que je n'avais pas de pain. Ensuite, en marchant, j'ai soudain croisé un vieil ami que je n'avais pas vu depuis longtemps. On a discuté un peu, et lui aussi allait dans la même direction. En fait, j'ai été surpris quand j'ai su qu'il travaillait maintenant dans la même entreprise que moi ! Bon, on a beaucoup parlé, et même si le temps filait, on ne l'a pas senti passer. À la fin, on s'est mis d'accord pour se revoir la semaine prochaine, et je suis rentré à la maison très content.*\n\n*احكيلي حكاية! — E7kili 7ekaya! (Raconte-moi une histoire !)*",
+      "vocab_items": []
+    }
+  ]
+}

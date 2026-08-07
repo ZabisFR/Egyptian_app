@@ -1,0 +1,139 @@
+{
+  "module": {
+    "id": "module-07",
+    "number": 7,
+    "title": "L'impératif et le conditionnel avec Law",
+    "subtitle": "Jour 43 à Jour 46",
+    "level": "B1",
+    "description": "Formation de l'impératif (régulier, irrégulier, négatif) et le conditionnel avec law (condition réaliste vs hypothétique), plus les expressions figées courantes.",
+    "order_index": 7
+  },
+  "lessons": [
+    {
+      "day": 43,
+      "order_index": 1,
+      "section": "7.1 — L'impératif",
+      "title": "Formation et conjugaison de l'impératif",
+      "content_markdown": "## Jour 43 — L'impératif (الأمر)\n\nL'impératif sert à donner un ordre, un conseil ou une demande directe : « écris ! », « viens ! », « attends ! ». En égyptien, il se forme presque toujours à partir de la forme **« inta » (tu, masculin) du présent**.\n\n> 💡 La règle de formation : On part de la forme présente « bti- / ti- » et on **enlève simplement le préfixe ti-**. Si le mot obtenu commence par deux consonnes qui se suivent, on ajoute un **« i » d'appui** au début pour que ça se prononce facilement.\n\n**Exemple :** كتب (kataba, écrire) → présent « inta » : (bi)tiktib → on enlève ti- → ktib → ktib commence par 2 consonnes → on ajoute i → **iktib** (écris !)\n\n### Conjugaison de l'impératif — verbes réguliers\n\n| Verbe (présent inta) | Masculin (inta) | Féminin (inti) | Pluriel (intu) | Sens |\n|---|---|---|---|---|\n| (bi)tiktib | iktib | iktibi | iktibu | écrire |\n| (bi)tifta7 | ifta7 | ifta7i | ifta7u | ouvrir |\n| (bi)tisma3 | isma3 | isma3i | isma3u | écouter |\n| (bi)tigri | igri | igri | igru | courir |\n| (bi)tirga3 | irga3 | irga3i | irga3u | revenir |\n\n### Verbes irréguliers très courants à l'impératif\n\n| Masculin | Féminin | Pluriel | Sens |\n|---|---|---|---|\n| كل — kul | كلي — kuli | كلوا — kulu | manger |\n| اشرب — ishrab | اشربي — ishrabi | اشربوا — ishrabu | boire |\n| خد — khud | خدي — khudi | خدوا — khudu | prendre |\n| روح — ru7 | روحي — ru7i | روحوا — ru7u | aller |\n| تعالى — ta3ala | تعالي — ta3ali | تعالوا — ta3alu | venir |\n| اقعد — u23od | اقعدي — u23odi | اقعدوا — u23odu | s'asseoir / rester |\n| بص — boss | بصي — bossi | بصوا — bossu | regarder |\n| استنى — istanna | استني — istanni | استنوا — istannu | attendre |",
+      "vocab_items": [
+        {
+          "arabic": "كل",
+          "transliteration": "kul",
+          "french": "mange !"
+        },
+        {
+          "arabic": "اشرب",
+          "transliteration": "ishrab",
+          "french": "bois !"
+        },
+        {
+          "arabic": "خد",
+          "transliteration": "khud",
+          "french": "prends !"
+        },
+        {
+          "arabic": "روح",
+          "transliteration": "ru7",
+          "french": "va !"
+        },
+        {
+          "arabic": "تعالى",
+          "transliteration": "ta3ala",
+          "french": "viens !"
+        },
+        {
+          "arabic": "اقعد",
+          "transliteration": "u23od",
+          "french": "assieds-toi / reste !"
+        },
+        {
+          "arabic": "بص",
+          "transliteration": "boss",
+          "french": "regarde !"
+        },
+        {
+          "arabic": "استنى",
+          "transliteration": "istanna",
+          "french": "attends !"
+        }
+      ]
+    },
+    {
+      "day": 44,
+      "order_index": 2,
+      "section": "7.1 — L'impératif",
+      "title": "L'impératif négatif et mise en pratique",
+      "content_markdown": "## Jour 44 — L'impératif négatif\n\n> 📌 Pour dire « ne fais pas », on n'utilise **pas** l'impératif brut : on reprend la forme du présent « inta/inti/intu » (avec ti-) et on l'entoure du fameux **ma- ... -sh** que tu connais déjà pour la négation au passé.\n\n| Français | Égyptien |\n|---|---|\n| N'écris pas ! | ma-tiktib-sh (ماتكتبش) |\n| Ne va pas ! | ma-tru7-sh (ماتروحش) |\n| Ne mange pas ! | ma-takul-sh (ماتاكلش) |\n| N'aie pas peur ! | ma-tikhafsh (ماتخافش) |\n\n### Petit dialogue — au restaurant\n\n**A:** تعالى هنا! — Ta3ala hena! *(Viens ici !)*\n\n**B:** اقعد، وخد المنيو. — U23od, wi khud el-menu. *(Assieds-toi, et prends le menu.)*\n\n**A:** ماتقلقش، كل براحتك. — Ma-ta2la2sh, kul be-ra7tak. *(Ne t'inquiète pas, mange tranquillement.)*",
+      "vocab_items": [
+        {
+          "arabic": "ماتكتبش",
+          "transliteration": "ma-tiktib-sh",
+          "french": "N'écris pas !"
+        },
+        {
+          "arabic": "ماتروحش",
+          "transliteration": "ma-tru7-sh",
+          "french": "Ne va pas !"
+        },
+        {
+          "arabic": "ماتاكلش",
+          "transliteration": "ma-takul-sh",
+          "french": "Ne mange pas !"
+        },
+        {
+          "arabic": "ماتخافش",
+          "transliteration": "ma-tikhafsh",
+          "french": "N'aie pas peur !"
+        }
+      ]
+    },
+    {
+      "day": 45,
+      "order_index": 3,
+      "section": "7.2 — Le conditionnel avec « law »",
+      "title": "Le conditionnel — condition réaliste vs hypothétique",
+      "content_markdown": "## Jour 45 — Le conditionnel avec « law » (لو)\n\n« Law » veut dire **« si »**. C'est le mot-clé pour construire des phrases conditionnelles. Il y a deux grands cas, et ils réutilisent uniquement des temps que tu connais déjà.\n\n### Cas 1 — Condition réaliste (« si + possible »)\n\n> 💡 Structure : **Law + présent**, + **impératif ou futur (ha-)**. On l'utilise pour une condition qui peut vraiment se réaliser.\n\n| Égyptien | Traduction |\n|---|---|\n| لو عايز، تعالى. — Law 3ayez, ta3ala. | Si tu veux, viens. |\n| لو مش فاهم، اسأل. — Law mesh fahem, is2al. | Si tu ne comprends pas, demande. |\n| لو تقدر، هتساعدني؟ — Law te2dar, hatsa3edni? | Si tu peux, tu m'aideras ? |\n| لو عندك وقت، اتصل بيا. — Law 3andak wa2t, ittasel beyya. | Si tu as le temps, appelle-moi. |\n\n### Cas 2 — Condition irréelle / hypothétique (« si + aurait »)\n\n> ⭐ Structure clé : **Law + kan/kunt + [passé]**, + **kan/kunt + [passé]** — pour une situation imaginaire, impossible, ou un regret (« si j'avais su... », « si j'avais eu... »).\n\n| Égyptien | Traduction |\n|---|---|\n| لو كنت عارف، كنت جيت. — Law kunt 3aref, kunt geet. | Si j'avais su, je serais venu. |\n| لو كان عندي فلوس، كنت اشتريت العربية. — Law kan 3andi felous, kunt ishtareet el-3arabeyya. | Si j'avais eu de l'argent, j'aurais acheté la voiture. |\n| لو كنت مكانك، كنت رحت. — Law kunt makanak, kunt ro7t. | Si j'étais à ta place, j'y serais allé. |\n\n> 📌 À retenir : Ne confonds pas les deux cas : **law + présent** = ça peut arriver ; **law + kan/kunt** = c'est imaginaire ou déjà raté. À l'oral, les Égyptiens utilisent surtout **« law »** ; « iza » (إذا) existe mais sonne plus soutenu/formel.",
+      "vocab_items": [
+        {
+          "arabic": "لو",
+          "transliteration": "law",
+          "french": "si"
+        },
+        {
+          "arabic": null,
+          "transliteration": "law + présent",
+          "french": "condition réaliste (ça peut arriver)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "law + kan/kunt + passé",
+          "french": "condition hypothétique (imaginaire/raté)"
+        }
+      ]
+    },
+    {
+      "day": 46,
+      "order_index": 4,
+      "section": "7.2 — Le conditionnel avec « law »",
+      "title": "Expressions figées avec law et mise en pratique",
+      "content_markdown": "## Jour 46 — Expressions figées très utiles avec « law »\n\n| Expression | Sens littéral | Usage |\n|---|---|---|\n| law samaht / samahti | si tu permets | s'il te plaît / excuse-moi |\n| law mumkin | si possible | si c'est possible, pourrais-tu... |\n| law tayyeb | si ça va | si tu es d'accord |\n\n### Petit dialogue — demander un service\n\n**A:** لو سمحت، ممكن تساعدني؟ — Law samaht, mumken tesa3edni? *(S'il te plaît, tu peux m'aider ?)*\n\n**B:** لو عندي وقت، هساعدك أكيد. — Law 3andi wa2t, hasa3dak akeed. *(Si j'ai le temps, je t'aiderai sûrement.)*\n\n**A:** لو كنت جيت بدري، كنا خلصنا من زمان! — Law kunt geet badri, kunna khallasna min zaman! *(Si tu étais venu plus tôt, on aurait déjà fini depuis longtemps !)*\n\n*بالتوفيق! — Bit-tawfi2! (Bonne chance !)*",
+      "vocab_items": [
+        {
+          "arabic": null,
+          "transliteration": "law samaht / samahti",
+          "french": "s'il te plaît / excuse-moi"
+        },
+        {
+          "arabic": null,
+          "transliteration": "law mumkin",
+          "french": "si c'est possible, pourrais-tu..."
+        },
+        {
+          "arabic": null,
+          "transliteration": "law tayyeb",
+          "french": "si tu es d'accord"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "module": {
+    "id": "module-06",
+    "number": 6,
+    "title": "Les chiffres, l'argent et la possession directe",
+    "subtitle": "Jour 41 et Jour 42",
+    "level": "A2",
+    "description": "Les chiffres de 0 à 100, vocabulaire de l'argent et de la négociation, et la possession directe par suffixes attachés au nom.",
+    "order_index": 6
+  },
+  "lessons": [
+    {
+      "day": 41,
+      "order_index": 1,
+      "section": "SECTION 1 : Les Chiffres et la Monnaie",
+      "title": "Les chiffres et la monnaie",
+      "content_markdown": "## Jour 41 — Les Chiffres et la Monnaie\n\n### Vocabulaire de l'Argent et des Achats\n\n| Français | Arabe Égyptien (Romanisation) |\n|---|---|\n| La Livre Égyptienne | Geneh (جنية) |\n| Combien ça coûte ? / C'est à combien ? | Bi kaam dah ? (بكام ده؟) |\n| Combien ? (Quantité) | Kaam ? (كام؟) |\n| Cher | Ghali (غالي) |\n| Pas cher / Bon marché | Rakees (رخيص) |\n\n### Les Chiffres de 0 à 100\n\n| Chiffre | Romanisation | Chiffre | Romanisation |\n|---|---|---|---|\n| 0 — Sifr | Zéro | 6 — Setta | Six |\n| 1 — Wa7ed | Un | 7 — Sab3a | Sept |\n| 2 — Etnen | Deux | 8 — Tamanya | Huit |\n| 3 — Talata | Trois | 9 — Tes3a | Neuf |\n| 4 — Arba3a | Quatre | 10 — 3ashara | Dix |\n| 5 — Khamsa | Cinq | 100 — Meya | Cent |\n\n### Les Dizaines\n\n| Chiffre | Romanisation | Chiffre | Romanisation |\n|---|---|---|---|\n| 20 — 3eshreen | Vingt | 60 — Setteen | Soixante |\n| 30 — Talateen | Trente | 70 — Sab3een | Soixante-dix |\n| 40 — Arba3een | Quarante | 80 — Tamaneen | Quatre-vingt |\n| 50 — Khamseen | Cinquante | 90 — Tes3een | Quatre-vingt-dix |\n\n### Règle des Nombres Composés (21 à 99)\n\n> 📌 Règle : Formule : Unité + wa (et) + Dizaine. Contrairement au français, l'unité vient AVANT la dizaine.\n\n**Khamsa wa 3eshreen geneh** = 25 livres égyptiennes\n\n**Talata wa arba3een geneh** = 43 livres\n\n**Tamanya wa sab3een geneh** = 78 livres\n\n### Expressions de Négociation\n\n| Expression | Traduction |\n|---|---|\n| Dah ghali awi ! | C'est très cher ! |\n| Momken [chiffre] geneh ? | Est-ce qu'on peut faire [X] livres ? |\n| Dah rakees awi | C'est très bon marché |\n\n> 💡 Momken + chiffre + geneh est la formule magique du marchandage. On l'utilise au souk, en taxi, partout où le prix est négociable.",
+      "vocab_items": [
+        {
+          "arabic": "جنية",
+          "transliteration": "Geneh",
+          "french": "La Livre Égyptienne"
+        },
+        {
+          "arabic": "بكام ده؟",
+          "transliteration": "Bi kaam dah?",
+          "french": "Combien ça coûte ?"
+        },
+        {
+          "arabic": "كام؟",
+          "transliteration": "Kaam?",
+          "french": "Combien ? (quantité)"
+        },
+        {
+          "arabic": "غالي",
+          "transliteration": "Ghali",
+          "french": "Cher"
+        },
+        {
+          "arabic": "رخيص",
+          "transliteration": "Rakees",
+          "french": "Pas cher / Bon marché"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Sifr",
+          "french": "0 — Zéro"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Wa7ed",
+          "french": "1 — Un"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Etnen",
+          "french": "2 — Deux"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Talata",
+          "french": "3 — Trois"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Arba3a",
+          "french": "4 — Quatre"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Khamsa",
+          "french": "5 — Cinq"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Setta",
+          "french": "6 — Six"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Sab3a",
+          "french": "7 — Sept"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Tamanya",
+          "french": "8 — Huit"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Tes3a",
+          "french": "9 — Neuf"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3ashara",
+          "french": "10 — Dix"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Meya",
+          "french": "100 — Cent"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3eshreen",
+          "french": "20 — Vingt"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Talateen",
+          "french": "30 — Trente"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Arba3een",
+          "french": "40 — Quarante"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Khamseen",
+          "french": "50 — Cinquante"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Setteen",
+          "french": "60 — Soixante"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Sab3een",
+          "french": "70 — Soixante-dix"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Tamaneen",
+          "french": "80 — Quatre-vingt"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Tes3een",
+          "french": "90 — Quatre-vingt-dix"
+        }
+      ]
+    },
+    {
+      "day": 42,
+      "order_index": 2,
+      "section": "SECTION 2 : La Possession Directe par Suffixes",
+      "title": "La possession directe par suffixes",
+      "content_markdown": "## Jour 42 — La Possession Directe par Suffixes\n\nEn arabe égyptien, la possession directe (« Mon... », « Ton... », « Notre... ») s'exprime en attachant un **suffixe** directement à la fin du nom. Pas de mot séparé — tout est collé.\n\n### Tableau Complet des Suffixes de Possession\n\n| Possession | Suffixe | Masc. (Kitab) | Fém. (3arabiyya) | Note |\n|---|---|---|---|---|\n| Mon / Ma | -i | Kitabi | 3arabiyyeti | — |\n| Ton / Ta (m) | -ak | Kitabak | 3arabiyyetak | — |\n| Ton / Ta (f) | -ik | Kitabik | 3arabiyyetik | — |\n| Son / Sa (lui) | -o | Kitabo | 3arabiyyeto | — |\n| Son / Sa (elle) | -ha | Kitabha | 3arabiyyetha | — |\n| Notre / Nos | -na | Kitabna | 3arabiyyetna | — |\n\n### Règle pour les Noms Féminins en « -a »\n\n> ⭐ RÈGLE D'OR : Le -a final du mot féminin se transforme obligatoirement en -et- avant d'attacher le suffixe. Shanta (Sac) → Shantet- + suffixe → Shantetik (Ton sac).\n\n### Exemples avec Shanta (Sac) et 3arabiyya (Voiture)\n\n| Base | Suffixe | Résultat | Traduction |\n|---|---|---|---|\n| Shanta (Sac) | -ik (f) | Shantetik | Ton sac (à une femme) |\n| 3arabiyya (Voiture) | -i | 3arabiyyeti | Ma voiture |\n| 3arabiyya (Voiture) | -na | 3arabiyyetna | Notre voiture |\n| 3arabiyya (Voiture) | -o | 3arabiyyeto | Sa voiture (à lui) |\n\n### Récapitulatif Global — Les 3 Types de Possession\n\nL'arabe égyptien distingue trois façons différentes d'exprimer « avoir » selon la nature de la possession :\n\n| Type | Structure | Exemple |\n|---|---|---|\n| 1. Suffixe direct | Nom + suffixe | Kitabi = Mon livre ; 3arabiyyeti = Ma voiture |\n| 2. Ma3a (sur soi) | Ma3a + suffixe pronom | Ana ma3aya flous = J'ai de l'argent sur moi |\n| 3. 3and (possession générale) | 3and + suffixe pronom | Ana 3andi 3arabiyya = J'ai une voiture |\n\n> 💡 Astuce pour ne pas se tromper : Suffixe direct = l'objet t'appartient (mon livre). Ma3a = tu l'as sur toi maintenant (j'ai de l'argent dans la poche). 3and = tu le possèdes en général (j'ai une voiture chez moi).",
+      "vocab_items": [
+        {
+          "arabic": null,
+          "transliteration": "Kitabi",
+          "french": "Mon livre"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Kitabak",
+          "french": "Ton livre (à un homme)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Kitabik",
+          "french": "Ton livre (à une femme)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Kitabo",
+          "french": "Son livre (à lui)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Kitabha",
+          "french": "Son livre (à elle)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Kitabna",
+          "french": "Notre livre"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Shantetik",
+          "french": "Ton sac (à une femme)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3arabiyyeti",
+          "french": "Ma voiture"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3arabiyyetna",
+          "french": "Notre voiture"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3arabiyyeto",
+          "french": "Sa voiture (à lui)"
+        }
+      ]
+    }
+  ]
+}

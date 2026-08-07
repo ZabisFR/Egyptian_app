@@ -1,0 +1,315 @@
+{
+  "module": {
+    "id": "module-10",
+    "number": 10,
+    "title": "Vocabulaire thématique avancé",
+    "subtitle": "Jour 56 à Jour 62",
+    "level": "B1",
+    "description": "6 thèmes du quotidien : famille, santé, travail, voyage, météo, heure.",
+    "order_index": 10
+  },
+  "lessons": [
+    {
+      "day": 56,
+      "order_index": 1,
+      "section": "10.1",
+      "title": "La famille (العيلة)",
+      "content_markdown": "## Jour 56 — La famille (العيلة)\n\n| Égyptien | Sens |\n|---|---|\n| بابا / الأب — baba / el-ab | papa / le père |\n| ماما / الأم — mama / el-om | maman / la mère |\n| الأخ — el-akh | le frère |\n| الأخت — el-okht | la sœur |\n| جدو — giddo | papy / le grand-père |\n| تيتا — teta | mamie / la grand-mère |\n| العم — el-3amm | l'oncle (côté père) |\n| الخال — el-khal | l'oncle (côté mère) |\n| العمة — el-3amma | la tante (côté père) |\n| الخالة — el-khala | la tante (côté mère) |\n| الزوج / الجواز — ez-zoug / el-gawaz | le mari / le mariage |\n| الزوجة — ez-zouga | la femme (épouse) |\n| الابن — el-ibn | le fils |\n| البنت — el-bint | la fille |\n\n**Exemple :** عندي أخ وأختين. — 3andi akh wi okhtein. *(J'ai un frère et deux sœurs.)*",
+      "vocab_items": [
+        {
+          "arabic": "بابا",
+          "transliteration": "baba",
+          "french": "papa"
+        },
+        {
+          "arabic": "ماما",
+          "transliteration": "mama",
+          "french": "maman"
+        },
+        {
+          "arabic": "الأخ",
+          "transliteration": "el-akh",
+          "french": "le frère"
+        },
+        {
+          "arabic": "الأخت",
+          "transliteration": "el-okht",
+          "french": "la sœur"
+        },
+        {
+          "arabic": "جدو",
+          "transliteration": "giddo",
+          "french": "papy / le grand-père"
+        },
+        {
+          "arabic": "تيتا",
+          "transliteration": "teta",
+          "french": "mamie / la grand-mère"
+        },
+        {
+          "arabic": "العم",
+          "transliteration": "el-3amm",
+          "french": "l'oncle (côté père)"
+        },
+        {
+          "arabic": "الخال",
+          "transliteration": "el-khal",
+          "french": "l'oncle (côté mère)"
+        },
+        {
+          "arabic": "العمة",
+          "transliteration": "el-3amma",
+          "french": "la tante (côté père)"
+        },
+        {
+          "arabic": "الخالة",
+          "transliteration": "el-khala",
+          "french": "la tante (côté mère)"
+        },
+        {
+          "arabic": "الزوج",
+          "transliteration": "ez-zoug",
+          "french": "le mari"
+        },
+        {
+          "arabic": "الزوجة",
+          "transliteration": "ez-zouga",
+          "french": "la femme (épouse)"
+        },
+        {
+          "arabic": "الابن",
+          "transliteration": "el-ibn",
+          "french": "le fils"
+        },
+        {
+          "arabic": "البنت",
+          "transliteration": "el-bint",
+          "french": "la fille"
+        }
+      ]
+    },
+    {
+      "day": 57,
+      "order_index": 2,
+      "section": "10.2",
+      "title": "La santé (الصحة)",
+      "content_markdown": "## Jour 57 — La santé (الصحة)\n\n### Parties du corps utiles\n\n| Égyptien | Sens |\n|---|---|\n| الراس — er-raas | la tête |\n| البطن — el-batn | le ventre |\n| الضهر — ed-dahr | le dos |\n| الإيد — el-eed | la main / le bras |\n| الرجل — er-regl | la jambe / le pied |\n| الحلق — el-7al2 | la gorge |\n\n### Exprimer un problème de santé\n\n| Égyptien | Traduction |\n|---|---|\n| عندي صداع. — 3andi sudaa3. | J'ai mal à la tête. |\n| عندي حرارة. — 3andi 7arara. | J'ai de la fièvre. |\n| أنا تعبان. — Ana ta3baan. | Je ne me sens pas bien / je suis malade. |\n| عندي زكام. — 3andi zokaam. | J'ai un rhume. |\n| لازم أروح الدكتور. — Lazem arou7 ed-doktor. | Il faut que j'aille chez le médecin. |\n| فين أقرب صيدلية؟ — Fein a2rab saydaleyya? | Où est la pharmacie la plus proche ? |",
+      "vocab_items": [
+        {
+          "arabic": "الراس",
+          "transliteration": "er-raas",
+          "french": "la tête"
+        },
+        {
+          "arabic": "البطن",
+          "transliteration": "el-batn",
+          "french": "le ventre"
+        },
+        {
+          "arabic": "الضهر",
+          "transliteration": "ed-dahr",
+          "french": "le dos"
+        },
+        {
+          "arabic": "الإيد",
+          "transliteration": "el-eed",
+          "french": "la main / le bras"
+        },
+        {
+          "arabic": "الرجل",
+          "transliteration": "er-regl",
+          "french": "la jambe / le pied"
+        },
+        {
+          "arabic": "الحلق",
+          "transliteration": "el-7al2",
+          "french": "la gorge"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3andi sudaa3",
+          "french": "J'ai mal à la tête"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3andi 7arara",
+          "french": "J'ai de la fièvre"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3andi zokaam",
+          "french": "J'ai un rhume"
+        }
+      ]
+    },
+    {
+      "day": 58,
+      "order_index": 3,
+      "section": "10.3",
+      "title": "Le travail (الشغل)",
+      "content_markdown": "## Jour 58 — Le travail (الشغل)\n\n| Égyptien | Sens |\n|---|---|\n| الشغل / الوظيفة — esh-shoghl / el-wazifa | le travail / le poste |\n| المكتب — el-maktab | le bureau |\n| المدير — el-mudir | le directeur / le patron |\n| الزميل — ez-zamil | le/la collègue |\n| المرتب — el-murattab | le salaire |\n| الاجتماع — el-igtimaa3 | la réunion |\n\n**Exemples :**\n\nأنا باشتغل في شركة برمجة. — Ana bashtaghal fi sharika barmaga. *(Je travaille dans une entreprise de développement.)*\n\nعندي مقابلة شغل بكرة. — 3andi mu2abla shoghl bokra. *(J'ai un entretien d'embauche demain.)*",
+      "vocab_items": [
+        {
+          "arabic": "الشغل",
+          "transliteration": "esh-shoghl",
+          "french": "le travail / le poste"
+        },
+        {
+          "arabic": "المكتب",
+          "transliteration": "el-maktab",
+          "french": "le bureau"
+        },
+        {
+          "arabic": "المدير",
+          "transliteration": "el-mudir",
+          "french": "le directeur / le patron"
+        },
+        {
+          "arabic": "الزميل",
+          "transliteration": "ez-zamil",
+          "french": "le/la collègue"
+        },
+        {
+          "arabic": "المرتب",
+          "transliteration": "el-murattab",
+          "french": "le salaire"
+        },
+        {
+          "arabic": "الاجتماع",
+          "transliteration": "el-igtimaa3",
+          "french": "la réunion"
+        }
+      ]
+    },
+    {
+      "day": 59,
+      "order_index": 4,
+      "section": "10.4",
+      "title": "Le voyage (السفر)",
+      "content_markdown": "## Jour 59 — Le voyage (السفر)\n\n| Égyptien | Sens |\n|---|---|\n| المطار — el-mataar | l'aéroport |\n| تذكرة — tazkara | un billet |\n| الجواز — el-gawaz | le passeport |\n| الشنطة — esh-shanta | la valise |\n| الفندق — el-fondo2 | l'hôtel |\n| الحجز — el-7agz | la réservation |\n\n**Exemple :** عملت حجز في فندق قريب من المطار. — 3amalt 7agz fi fondo2 2orayyeb min el-mataar. *(J'ai réservé un hôtel proche de l'aéroport.)*",
+      "vocab_items": [
+        {
+          "arabic": "المطار",
+          "transliteration": "el-mataar",
+          "french": "l'aéroport"
+        },
+        {
+          "arabic": "تذكرة",
+          "transliteration": "tazkara",
+          "french": "un billet"
+        },
+        {
+          "arabic": "الجواز",
+          "transliteration": "el-gawaz",
+          "french": "le passeport"
+        },
+        {
+          "arabic": "الشنطة",
+          "transliteration": "esh-shanta",
+          "french": "la valise"
+        },
+        {
+          "arabic": "الفندق",
+          "transliteration": "el-fondo2",
+          "french": "l'hôtel"
+        },
+        {
+          "arabic": "الحجز",
+          "transliteration": "el-7agz",
+          "french": "la réservation"
+        }
+      ]
+    },
+    {
+      "day": 60,
+      "order_index": 5,
+      "section": "10.5",
+      "title": "La météo (الجو)",
+      "content_markdown": "## Jour 60 — La météo (الجو)\n\n| Égyptien | Sens |\n|---|---|\n| الجو حر. — El-gaww 7arr. | Il fait chaud. |\n| الجو برد. — El-gaww bard. | Il fait froid. |\n| بتمطر. — Betmattar. | Il pleut. |\n| الجو حلو النهاردة. — El-gaww 7elw en-naharda. | Il fait beau aujourd'hui. |\n| الصيف / الشتا — es-seif / esh-shita | l'été / l'hiver |\n| الربيع / الخريف — er-rabii3 / el-khariif | le printemps / l'automne |",
+      "vocab_items": [
+        {
+          "arabic": null,
+          "transliteration": "El-gaww 7arr",
+          "french": "Il fait chaud"
+        },
+        {
+          "arabic": null,
+          "transliteration": "El-gaww bard",
+          "french": "Il fait froid"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Betmattar",
+          "french": "Il pleut"
+        },
+        {
+          "arabic": null,
+          "transliteration": "es-seif",
+          "french": "l'été"
+        },
+        {
+          "arabic": null,
+          "transliteration": "esh-shita",
+          "french": "l'hiver"
+        },
+        {
+          "arabic": null,
+          "transliteration": "er-rabii3",
+          "french": "le printemps"
+        },
+        {
+          "arabic": null,
+          "transliteration": "el-khariif",
+          "french": "l'automne"
+        }
+      ]
+    },
+    {
+      "day": 61,
+      "order_index": 6,
+      "section": "10.6",
+      "title": "L'heure (الساعة)",
+      "content_markdown": "## Jour 61 — L'heure (الساعة)\n\n> 💡 Demander et donner l'heure : **الساعة كام؟ — Es-saa3a kaam?** (Quelle heure est-il ?) On répond avec **es-saa3a + numéro**, et on ajoute **wi nuss** (et demie), **wi rub3** (et quart), ou **illa rub3** (moins le quart).\n\n| Égyptien | Traduction |\n|---|---|\n| الساعة واحدة. — Es-saa3a wa7da. | Il est une heure. |\n| الساعة اتنين ونص. — Es-saa3a itnein wi nuss. | Il est deux heures et demie. |\n| الساعة أربعة وربع. — Es-saa3a arba3a wi rub3. | Il est quatre heures et quart. |\n| الساعة تلاتة إلا ربع. — Es-saa3a talata illa rub3. | Il est trois heures moins le quart. |\n| الصبح / بالليل — es-sob7 / bel-leil | le matin / la nuit |",
+      "vocab_items": [
+        {
+          "arabic": null,
+          "transliteration": "Es-saa3a kaam?",
+          "french": "Quelle heure est-il ?"
+        },
+        {
+          "arabic": null,
+          "transliteration": "wi nuss",
+          "french": "et demie"
+        },
+        {
+          "arabic": null,
+          "transliteration": "wi rub3",
+          "french": "et quart"
+        },
+        {
+          "arabic": null,
+          "transliteration": "illa rub3",
+          "french": "moins le quart"
+        },
+        {
+          "arabic": null,
+          "transliteration": "es-sob7",
+          "french": "le matin"
+        },
+        {
+          "arabic": null,
+          "transliteration": "bel-leil",
+          "french": "la nuit"
+        }
+      ]
+    },
+    {
+      "day": 62,
+      "order_index": 7,
+      "section": "Pratique",
+      "title": "Mini-dialogue — appel avec un ami",
+      "content_markdown": "## Jour 62 — Mini-dialogue — appel avec un ami\n\n**A:** إزيك؟ عامل إيه؟ — Ezzayak? 3Amel eih? *(Comment ça va ? Quoi de neuf ?)*\n\n**B:** أنا تعبان شوية، عندي زكام. بس الشغل كويس، عندي مقابلة مهمة بكرة. — Ana ta3baan shweyya, 3andi zokaam. Bas esh-shoghl kwayyes, 3andi mu2abla mohemma bokra. *(Je suis un peu fatigué, j'ai un rhume. Mais le travail va bien, j'ai un entretien important demain.)*\n\n**A:** الساعة كام المقابلة؟ — Es-saa3a kaam el-mu2abla? *(C'est à quelle heure l'entretien ?)*\n\n**B:** الساعة عشرة الصبح. وإنت، عامل إيه مع العيلة؟ — Es-saa3a 3ashara es-sob7. Wi enta, 3amel eih ma3 el-3eila? *(À dix heures du matin. Et toi, ça va avec la famille ?)*\n\n**A:** الحمد لله، بس الجو حر أوي عندنا دلوقتي! — El-7amdu lellah, bas el-gaww 7arr awi 3andena delwa2ti! *(Dieu merci, mais il fait vraiment très chaud chez nous en ce moment !)*\n\n*كل يوم كلمة جديدة! — Kol yom kelma gedida! (Chaque jour, un nouveau mot !)*",
+      "vocab_items": []
+    }
+  ]
+}

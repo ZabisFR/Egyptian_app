@@ -1,0 +1,184 @@
+{
+  "module": {
+    "id": "module-01",
+    "number": 1,
+    "title": "L'alphabet, la phonétique et l'écriture",
+    "subtitle": "Jour 1 à Jour 10",
+    "level": "A1",
+    "description": "Alphabet arabe égyptien, système Arabizi, phonétique spécifique au Caire, signes graphiques (voyelles courtes, shadda, ta marbouta).",
+    "order_index": 1
+  },
+  "lessons": [
+    {
+      "day": 0,
+      "order_index": 0,
+      "section": "Introduction",
+      "title": "Les 3 chiffres clés de l'Arabizi",
+      "content_markdown": "## Introduction — Les 3 chiffres clés de l'Arabizi\n\nPour communiquer par écrit de manière informelle (SMS, réseaux sociaux), les Égyptiens utilisent l'**Arabizi** (ou Franco-Arabe) : un système utilisant l'alphabet latin et des chiffres pour remplacer les sons arabes inexistants en français.\n\n| Chiffre | Son | Description |\n|---|---|---|\n| 2 | Hamza — coup de glotte | Une pause nette dans le son (comme le \"-\" dans \"uh-oh\") |\n| 7 | Ha râpeux — du milieu de la gorge | H très expiré, comme pour faire de la buée sur des lunettes |\n| 3 | 'Ayn — contraction du fond de la gorge | Son profond et écrasé venant de la contraction du pharynx |",
+      "vocab_items": []
+    },
+    {
+      "day": 1,
+      "order_index": 1,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les Fondations (A, B, T)",
+      "content_markdown": "## Jour 1 — Les Fondations (A, B, T)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| ا | Alif | Son A (court ou long) | أنا → Anna (Moi / Je) |\n| ب | Ba | Son B | باب → Bab (Porte) |\n| ت | Ta | Son T doux | بنت → Bent (Fille) |",
+      "vocab_items": [
+        {
+          "arabic": "أنا",
+          "transliteration": "Anna",
+          "french": "Moi / Je"
+        },
+        {
+          "arabic": "باب",
+          "transliteration": "Bab",
+          "french": "Porte"
+        },
+        {
+          "arabic": "بنت",
+          "transliteration": "Bent",
+          "french": "Fille"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "order_index": 2,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les « Sœurs » et la Spécificité Égyptienne (Th, G, H, Kh)",
+      "content_markdown": "## Jour 2 — Les « Sœurs » et la Spécificité Égyptienne (Th, G, H, Kh)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| ث | Tha | En Égypte : T ou S | — |\n| ج | Gim | G dur comme « gâteau » ★ spécificité égyptienne | جميل → Gamil (Beau) |\n| ح | Ha (7) | H expiré du milieu de la gorge | حب → Hob (Amour) |\n| خ | Kha (5) | Râlement de gorge (jota espagnole) | خوخ → Khokh (Pêche) |\n\n> 💡 Le ج (Gim) est LA signature phonétique égyptienne. Partout ailleurs dans le monde arabe, ce son est « J » (comme journal). En Égypte, il devient systématiquement G dur.",
+      "vocab_items": [
+        {
+          "arabic": "جميل",
+          "transliteration": "Gamil",
+          "french": "Beau"
+        },
+        {
+          "arabic": "حب",
+          "transliteration": "Hob",
+          "french": "Amour"
+        },
+        {
+          "arabic": "خوخ",
+          "transliteration": "Khokh",
+          "french": "Pêche"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "order_index": 3,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les Lettres « Toboggans » et la Règle de Non-Connexion (D, Dh, R, Z)",
+      "content_markdown": "## Jour 3 — Les Lettres « Toboggans » et la Règle de Non-Connexion (D, Dh, R, Z)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| د | Dal | Son D classique | — |\n| ذ | Dhal | En Égypte : Z ou D | — |\n| ر | Ra | R roulé (bout de langue, comme espagnol/italien) | برج → Borg (Tour/Immeuble) |\n| ز | Zay | Son Z classique | — |\n\n> 📌 Règle : Six lettres (ا, د, ذ, ر, ز, و) sont « non-connecteuses à gauche ». Elles s'attachent à la lettre précédente par la droite, mais refusent de s'attacher à la suivante par la gauche. On laisse un mini-espace après elles.",
+      "vocab_items": [
+        {
+          "arabic": "برج",
+          "transliteration": "Borg",
+          "french": "Tour / Immeuble"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "order_index": 4,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les Vagues et l'Introduction à l'Emphase (S, Sh, S dur)",
+      "content_markdown": "## Jour 4 — Les Vagues et l'Introduction à l'Emphase (S, Sh, S dur)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| س | Sseen | Son S léger (serpent) | بس → Bass (C'est tout / Mais) |\n| ش | Sheen | Son CH (chat) | شمس → Shams (Soleil) |\n| ص | Sad | S emphatique (S lourd) — bouche gonflée, langue reculée | صاحب → Saa7eb (Ami) |\n\n> 💡 Pour prononcer les sons emphatiques, imaginez parler avec la bouche pleine : le son devient plus sombre, plus lourd, plus résonant.",
+      "vocab_items": [
+        {
+          "arabic": "بس",
+          "transliteration": "Bass",
+          "french": "C'est tout / Mais"
+        },
+        {
+          "arabic": "شمس",
+          "transliteration": "Shams",
+          "french": "Soleil"
+        },
+        {
+          "arabic": "صاحب",
+          "transliteration": "Saa7eb",
+          "french": "Ami"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "order_index": 5,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Le Bloc des Emphatiques (D, T, Z lourds)",
+      "content_markdown": "## Jour 5 — Le Bloc des Emphatiques (D, T, Z lourds)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| ض | Dad | D emphatique (D lourd) — son très sombre | — |\n| ط | Tta (6) | T emphatique (T lourd) — boucle + antenne verticale | بطاطس → Batates (Pommes de terre) |\n| ظ | Dza | Z emphatique (Z lourd) — bourdonnement, joues pleines | — |",
+      "vocab_items": [
+        {
+          "arabic": "بطاطس",
+          "transliteration": "Batates",
+          "french": "Pommes de terre"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "order_index": 6,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les Lettres de la Gorge ('Ayn et Ghayn)",
+      "content_markdown": "## Jour 6 — Les Lettres de la Gorge ('Ayn et Ghayn)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| ع | 'Ayn (3) | Consonne pharyngale profonde — contraction du pharynx | عربي → 3arabi (Arabe) |\n| غ | Ghayn (Gh) | Équivaut exactement au R standard français gratté (Paris) | — |",
+      "vocab_items": [
+        {
+          "arabic": "عربي",
+          "transliteration": "3arabi",
+          "french": "Arabe"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "order_index": 7,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les Souffles et la Transformation du Qaf (F, Q, K, L)",
+      "content_markdown": "## Jour 7 — Les Souffles et la Transformation du Qaf (F, Q, K, L)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| ف | Fa | Son F classique | — |\n| ق | Qaf (2) | Remplacé par un coup de glotte en Égypte ★ | قلب → 2alb (Cœur) |\n| ك | Kaf | Son K classique | — |\n| ل | Lam | Son L classique | — |\n\n> 💡 En Égypte, le ق (Qaf) disparaît et devient un simple coup de glotte (noté 2 en Arabizi). C'est une deuxième grande signature phonétique du dialecte cairote.",
+      "vocab_items": [
+        {
+          "arabic": "قلب",
+          "transliteration": "2alb",
+          "french": "Cœur"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "order_index": 8,
+      "section": "SECTION 1 : Les Lettres de l'Alphabet",
+      "title": "Les Dernières Lettres (M, N, H, W/Y)",
+      "content_markdown": "## Jour 8 — Les Dernières Lettres (M, N, H, W/Y)\n\n| Lettre | Nom | Son | Exemple |\n|---|---|---|---|\n| م | Meem | Son M classique | — |\n| ن | Noon | Son N (un bol + un point) | — |\n| هـ | Ha léger | H soufflé (soupir, comme home en anglais) | — |\n| و | Waw | Semi-voyelle : W ou son long OU / O — non-connecteuse | — |\n| ي | Ya | Semi-voyelle : Y ou son long I / É — deux points en dessous | — |\n\n> 📌 Règle : Ne pas confondre هـ (Ha léger, soupir) et ح (Ha râpeux, noté 7). Le premier est un souffle doux comme en anglais, le second est un son guttural profond.",
+      "vocab_items": []
+    },
+    {
+      "day": 9,
+      "order_index": 9,
+      "section": "SECTION 2 : Les Signes Graphiques et la Grammaire de l'Écrit",
+      "title": "Les Voyelles Courtes (Les Accents)",
+      "content_markdown": "## Jour 9 — Les Voyelles Courtes (Les Accents)\n\nL'arabe n'écrit pas ses voyelles courtes sous forme de lettres, mais sous forme de petits symboles (diacritiques) appliqués sur ou sous les consonnes :\n\n| Signe | Nom | Son | Note cairote |\n|---|---|---|---|\n| ◌َ Trait au-dessus | Fatha | Son A | Prononcé A ou É ouvert |\n| ◌ِ Trait en dessous | Kasra | Son I | Prononcé I ou É au Caire |\n| ◌ُ Petite boucle au-dessus | Damma | Son OU | Prononcé OU ou O au Caire |\n| ◌ْ Petit rond au-dessus | Soukoun | Absence de voyelle | La consonne se prononce brute (stop net) |",
+      "vocab_items": []
+    },
+    {
+      "day": 10,
+      "order_index": 10,
+      "section": "SECTION 2 : Les Signes Graphiques et la Grammaire de l'Écrit",
+      "title": "Le Shadda et la Marque du Féminin",
+      "content_markdown": "## Jour 10 — Le Shadda et la Marque du Féminin\n\n**Le Shadda ( ّ◌) :** Petit symbole en forme de « w » au-dessus d'une lettre. Il indique que la consonne est **doublée**. On doit appuyer physiquement dessus à la prononciation.\n\nExemple : **كَلَّم** → Kallam (Parler) — on insiste sur le L.\n\n**Le Ta Marbouta (ة / ـة) :** Lettre exclusive à la fin des mots. C'est la marque du genre féminin. En égyptien, elle ne se prononce jamais « T » seule, mais se prononce **A ou É**.\n\nExemple : **جميلة** → Gamila (Belle)",
+      "vocab_items": [
+        {
+          "arabic": "كَلَّم",
+          "transliteration": "Kallam",
+          "french": "Parler"
+        },
+        {
+          "arabic": "جميلة",
+          "transliteration": "Gamila",
+          "french": "Belle"
+        }
+      ]
+    }
+  ]
+}

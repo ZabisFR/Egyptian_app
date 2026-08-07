@@ -1,0 +1,150 @@
+{
+  "module": {
+    "id": "module-13",
+    "number": 13,
+    "title": "Expressions, proverbes et registres",
+    "subtitle": "Jour 75 à Jour 80",
+    "level": "B2",
+    "description": "Expressions idiomatiques du quotidien, proverbes égyptiens classiques, et registre formel vs familier (diglossie Ammiya/Fus7a).",
+    "order_index": 13
+  },
+  "lessons": [
+    {
+      "day": 75,
+      "order_index": 1,
+      "section": "13.1",
+      "title": "Expressions idiomatiques du quotidien (partie 1)",
+      "content_markdown": "## Jour 75 — Expressions idiomatiques du quotidien (1/2)\n\n| Expression | Sens littéral | Usage réel |\n|---|---|---|\n| على عيني وراسي — 3ala 3eini wi raasi | sur mon œil et ma tête | « avec grand plaisir » (accepter une demande) |\n| ربنا يسهل — rabbena yesahhel | que Dieu facilite | « que ça se passe bien » (avant un exam, entretien...) |\n| الله يخليك — Allah yekhalliik | que Dieu te garde | s'il te plaît / merci beaucoup |\n| نهارك سعيد — naharak sa3iid | que ta journée soit heureuse | bonne journée (formule de politesse) |",
+      "vocab_items": [
+        {
+          "arabic": "على عيني وراسي",
+          "transliteration": "3ala 3eini wi raasi",
+          "french": "avec grand plaisir"
+        },
+        {
+          "arabic": "ربنا يسهل",
+          "transliteration": "rabbena yesahhel",
+          "french": "que ça se passe bien"
+        },
+        {
+          "arabic": "الله يخليك",
+          "transliteration": "Allah yekhalliik",
+          "french": "s'il te plaît / merci beaucoup"
+        },
+        {
+          "arabic": "نهارك سعيد",
+          "transliteration": "naharak sa3iid",
+          "french": "bonne journée"
+        }
+      ]
+    },
+    {
+      "day": 76,
+      "order_index": 2,
+      "section": "13.1",
+      "title": "Expressions idiomatiques du quotidien (partie 2)",
+      "content_markdown": "## Jour 76 — Expressions idiomatiques du quotidien (2/2)\n\n| Expression | Sens littéral | Usage réel |\n|---|---|---|\n| يفتح الله — yefta7 Allah | que Dieu ouvre | réponse polie pour décliner (ex. à un vendeur) |\n| دي حاجة تجنن — di 7aga tgannin | ça rend fou | « c'est incroyable / dingue » |\n| مش ناقصة! — mesh na2sa! | il n'en manquait pas | « il ne manquait plus que ça ! » (ironique) |\n| كله تمام — kulloh tamaam | tout est parfait | tout va bien |",
+      "vocab_items": [
+        {
+          "arabic": "يفتح الله",
+          "transliteration": "yefta7 Allah",
+          "french": "réponse polie pour décliner"
+        },
+        {
+          "arabic": "دي حاجة تجنن",
+          "transliteration": "di 7aga tgannin",
+          "french": "c'est incroyable / dingue"
+        },
+        {
+          "arabic": "مش ناقصة!",
+          "transliteration": "mesh na2sa!",
+          "french": "il ne manquait plus que ça !"
+        },
+        {
+          "arabic": "كله تمام",
+          "transliteration": "kulloh tamaam",
+          "french": "tout va bien"
+        }
+      ]
+    },
+    {
+      "day": 77,
+      "order_index": 3,
+      "section": "13.2",
+      "title": "Proverbes égyptiens classiques (أمثال)",
+      "content_markdown": "## Jour 77 — Proverbes égyptiens classiques (أمثال)\n\nLes proverbes reviennent souvent dans une conversation pour résumer une situation en une phrase imagée.\n\n| Proverbe | Sens littéral | Équivalent / sens |\n|---|---|---|\n| اللي فات مات — elli faat maat | ce qui est passé est mort | le passé, c'est le passé |\n| القرد في عين أمه غزال — el-2erd fi 3ein ommo ghazaal | le singe est une gazelle aux yeux de sa mère | l'amour rend aveugle |\n| يد واحدة ما تصفقش — yad wa7da ma tesaffa2sh | une seule main n'applaudit pas | il faut être deux pour se disputer |\n| اللي يتلسع من الشوربة ينفخ في الزبادي — elli yetlesa3 min esh-shorba yenfokh fel-zabaadi | qui se brûle à la soupe souffle sur le yaourt | chat échaudé craint l'eau froide |\n\n### Comment les utiliser\n\nOn les introduit souvent par **زي ما بيقولوا** (zayy ma bey2ulu — « comme on dit ») :\n\nزي ما بيقولوا، اللي فات مات. — Zayy ma bey2ulu, elli faat maat. *(Comme on dit, le passé est le passé.)*",
+      "vocab_items": [
+        {
+          "arabic": "اللي فات مات",
+          "transliteration": "elli faat maat",
+          "french": "le passé, c'est le passé"
+        },
+        {
+          "arabic": "القرد في عين أمه غزال",
+          "transliteration": "el-2erd fi 3ein ommo ghazaal",
+          "french": "l'amour rend aveugle"
+        },
+        {
+          "arabic": "يد واحدة ما تصفقش",
+          "transliteration": "yad wa7da ma tesaffa2sh",
+          "french": "il faut être deux pour se disputer"
+        },
+        {
+          "arabic": null,
+          "transliteration": "elli yetlesa3 min esh-shorba yenfokh fel-zabaadi",
+          "french": "chat échaudé craint l'eau froide"
+        }
+      ]
+    },
+    {
+      "day": 78,
+      "order_index": 4,
+      "section": "13.3",
+      "title": "Registre formel vs familier (la diglossie)",
+      "content_markdown": "## Jour 78 — Registre formel vs familier (la diglossie)\n\nL'égyptien parlé (Ammiya) et l'arabe standard (Fus7a/MSA) coexistent. À l'oral entre proches, on utilise **l'Ammiya pure**. Dans un contexte **plus formel** (entretien, discours, actualités, écrit officiel), on se rapproche du Fus7a.\n\n| Situation familière (Ammiya) | Situation formelle (proche du Fus7a) | Sens |\n|---|---|---|\n| إزيك؟ — ezzayak? | كيف حالك؟ — keif 7aalak? | comment vas-tu ? |\n| عايز — 3ayez | أريد — ureed | je veux |\n| مش عارف — mesh 3aref | لا أعرف — la a3ref | je ne sais pas |\n| كويس — kwayyes | جيد — gayyed | bien |\n| فين — fein | أين — ayna | où |",
+      "vocab_items": [
+        {
+          "arabic": "كيف حالك؟",
+          "transliteration": "keif 7aalak?",
+          "french": "comment vas-tu ? (formel)"
+        },
+        {
+          "arabic": "أريد",
+          "transliteration": "ureed",
+          "french": "je veux (formel)"
+        },
+        {
+          "arabic": "لا أعرف",
+          "transliteration": "la a3ref",
+          "french": "je ne sais pas (formel)"
+        },
+        {
+          "arabic": "جيد",
+          "transliteration": "gayyed",
+          "french": "bien (formel)"
+        },
+        {
+          "arabic": "أين",
+          "transliteration": "ayna",
+          "french": "où (formel)"
+        }
+      ]
+    },
+    {
+      "day": 79,
+      "order_index": 5,
+      "section": "13.3",
+      "title": "Le bon réflexe entre les deux registres",
+      "content_markdown": "## Jour 79 — Le bon réflexe entre les deux registres\n\n> 📌 Le bon réflexe : avec des amis, la famille, dans la rue : **Ammiya à 100%**. Devant un jury, à la télévision, dans un texte officiel : on peut glisser des mots plus proches du Fus7a sans changer toute la grammaire — les Égyptiens eux-mêmes **mélangent les deux** selon le contexte, ce n'est pas tout ou rien.",
+      "vocab_items": []
+    },
+    {
+      "day": 80,
+      "order_index": 6,
+      "section": "Pratique",
+      "title": "Mini-dialogue — mélange idiomes et proverbes",
+      "content_markdown": "## Jour 80 — Mini-dialogue — mélange idiomes et proverbes\n\n**A:** عندي مقابلة شغل بكرة، خايف شوية. — 3Andi mu2abla shoghl bokra, khayef shweyya. *(J'ai un entretien demain, un peu stressé.)*\n\n**B:** ربنا يسهل! متقلقش، اللي فات مات، ركز بس على اللي جاي. — Rabbena yesahhel! Ma-te2la2sh, elli faat maat, rakkez bas 3ala elli gayy. *(Que ça se passe bien ! T'inquiète pas, le passé c'est le passé, concentre-toi juste sur ce qui vient.)*\n\n**A:** الله يخليك، دي حاجة تجنن إنك دايما بتطمني. — Allah yekhalliik, di 7aga tgannin innak dayman bettamenni. *(Merci beaucoup, c'est incroyable que tu me rassures toujours.)*\n\n*ربنا يوفقك! — Rabbena yewaffa2ak! (Que Dieu te fasse réussir !)*",
+      "vocab_items": []
+    }
+  ]
+}

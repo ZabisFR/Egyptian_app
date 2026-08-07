@@ -1,0 +1,151 @@
+{
+  "module": {
+    "id": "module-14",
+    "number": 14,
+    "title": "Opinion, débat et compréhension",
+    "subtitle": "Jour 81 à Jour 86",
+    "level": "B2",
+    "description": "Exprimer une opinion, être d'accord/pas d'accord, nuancer un débat, mise en situation complète et fin du parcours B2.",
+    "order_index": 14
+  },
+  "lessons": [
+    {
+      "day": 81,
+      "order_index": 1,
+      "section": "14.1",
+      "title": "Exprimer une opinion",
+      "content_markdown": "## Jour 81 — Exprimer une opinion\n\n| Égyptien | Sens |\n|---|---|\n| في رأيي — fi ra2yi | à mon avis |\n| أنا شايف إن — ana shayef inn | je trouve que / je pense que |\n| أنا حاسس إن — ana 7asses inn | j'ai l'impression que |\n| من وجهة نظري — min wighet nazari | de mon point de vue (plus soutenu) |\n| أعتقد إن — a3ta2id inn | je pense que (plus soutenu) |\n\n**Exemple :** في رأيي، الشغل من البيت أحسن. — Fi ra2yi, esh-shoghl min el-beit a7san. *(À mon avis, le travail à distance est mieux.)*",
+      "vocab_items": [
+        {
+          "arabic": "في رأيي",
+          "transliteration": "fi ra2yi",
+          "french": "à mon avis"
+        },
+        {
+          "arabic": "أنا شايف إن",
+          "transliteration": "ana shayef inn",
+          "french": "je trouve que / je pense que"
+        },
+        {
+          "arabic": "أنا حاسس إن",
+          "transliteration": "ana 7asses inn",
+          "french": "j'ai l'impression que"
+        },
+        {
+          "arabic": "من وجهة نظري",
+          "transliteration": "min wighet nazari",
+          "french": "de mon point de vue"
+        },
+        {
+          "arabic": "أعتقد إن",
+          "transliteration": "a3ta2id inn",
+          "french": "je pense que (soutenu)"
+        }
+      ]
+    },
+    {
+      "day": 82,
+      "order_index": 2,
+      "section": "14.2",
+      "title": "Être d'accord / pas d'accord",
+      "content_markdown": "## Jour 82 — Être d'accord / pas d'accord\n\n| Égyptien | Sens |\n|---|---|\n| أنا موافق — ana muwafe2 | je suis d'accord |\n| متفق معاك تماما — mottafe2 ma3ak tamaaman | totalement d'accord avec toi |\n| ممكن تبقى معاك حق، بس... — momken teb2a ma3ak 7a2, bas... | tu as peut-être raison, mais... |\n| أنا مش موافق خالص — ana mesh muwafe2 khaales | je ne suis pas du tout d'accord |\n| في رأيي إنت غلطان — fi ra2yi enta ghaltaan | à mon avis tu as tort |",
+      "vocab_items": [
+        {
+          "arabic": "أنا موافق",
+          "transliteration": "ana muwafe2",
+          "french": "je suis d'accord"
+        },
+        {
+          "arabic": "متفق معاك تماما",
+          "transliteration": "mottafe2 ma3ak tamaaman",
+          "french": "totalement d'accord avec toi"
+        },
+        {
+          "arabic": "أنا مش موافق خالص",
+          "transliteration": "ana mesh muwafe2 khaales",
+          "french": "je ne suis pas du tout d'accord"
+        },
+        {
+          "arabic": "في رأيي إنت غلطان",
+          "transliteration": "fi ra2yi enta ghaltaan",
+          "french": "à mon avis tu as tort"
+        }
+      ]
+    },
+    {
+      "day": 83,
+      "order_index": 3,
+      "section": "14.3",
+      "title": "Nuancer et débattre",
+      "content_markdown": "## Jour 83 — Nuancer et débattre\n\n> 💡 La structure d'un bon argument : **min na7ya... min na7ya tanya** (d'un côté... de l'autre) te permet de présenter deux points de vue avant de conclure avec **fel-akhir** (en fin de compte).\n\n| Égyptien | Sens |\n|---|---|\n| من ناحية... من ناحية تانية — min na7ya... min na7ya tanya | d'un côté... de l'autre côté |\n| المشكلة إن — el-moshkela inn | le problème c'est que |\n| الحل ممكن يكون — el-7all momken yikuun | la solution pourrait être |\n| بصرف النظر عن — bisarf en-nazar 3an | indépendamment de |\n| في الآخر — fel-akhir | en fin de compte |",
+      "vocab_items": [
+        {
+          "arabic": "من ناحية... من ناحية تانية",
+          "transliteration": "min na7ya... min na7ya tanya",
+          "french": "d'un côté... de l'autre côté"
+        },
+        {
+          "arabic": "المشكلة إن",
+          "transliteration": "el-moshkela inn",
+          "french": "le problème c'est que"
+        },
+        {
+          "arabic": "الحل ممكن يكون",
+          "transliteration": "el-7all momken yikuun",
+          "french": "la solution pourrait être"
+        },
+        {
+          "arabic": "بصرف النظر عن",
+          "transliteration": "bisarf en-nazar 3an",
+          "french": "indépendamment de"
+        },
+        {
+          "arabic": "في الآخر",
+          "transliteration": "fel-akhir",
+          "french": "en fin de compte"
+        }
+      ]
+    },
+    {
+      "day": 84,
+      "order_index": 4,
+      "section": "14.4",
+      "title": "Mise en situation : le débat complet",
+      "content_markdown": "## Jour 84 — Mise en situation : débat complet\n\nDeux collègues débattent du télétravail. Ce dialogue mélange volontairement des structures de tout le parcours (conditionnel, comparatif, verbes dérivés, connecteurs, elli...).\n\n**A:** في رأيي، الشغل من البيت أحسن بكتير من المكتب. مش محتاج أضيع وقت في المواصلات، وباشتغل في هدوء.\n\n*(À mon avis, le télétravail est bien mieux que le bureau. Je n'ai pas besoin de perdre du temps dans les transports, et je travaille dans le calme.)*\n\n**B:** ممكن تبقى معاك حق من ناحية الوقت، بس من ناحية تانية، لما بتكون في المكتب بتقابل زمايلك وتتكلم معاهم — ده حاجة اتعلمتها من التجربة.\n\n*(Tu as peut-être raison côté temps, mais d'un autre côté, quand tu es au bureau tu rencontres tes collègues et tu leur parles — c'est quelque chose que j'ai appris par l'expérience.)*\n\n**A:** صحيح، بس لو الشركة عملت اجتماعات أونلاين منتظمة، المشكلة دي بتتحل برضه.\n\n*(C'est vrai, mais si l'entreprise organisait des réunions en ligne régulières, ce problème se résoudrait aussi.)*\n\n**B:** يمكن. بس في الحقيقة، مش كل حد عنده مكان هادي في البيت يشتغل فيه. اللي عنده عيلة كبيرة، الشغل من البيت ممكن يبقى أصعب مش أسهل.\n\n*(Peut-être. Mais en fait, tout le monde n'a pas un endroit calme à la maison pour travailler. Pour quelqu'un qui a une grande famille, le télétravail peut être plus difficile, pas plus facile.)*\n\n**A:** دي نقطة كويسة فعلا ماكنتش فاكرها. في الآخر، يمكن الحل الأحسن إنه يبقى فيه يومين في المكتب وتلاتة في البيت.\n\n*(C'est un bon point, je n'y avais vraiment pas pensé. En fin de compte, la meilleure solution est peut-être d'avoir deux jours au bureau et trois à la maison.)*\n\n**B:** متفق معاك تماما. ده الحل اللي بيجمع بين الاتنين.\n\n*(Totalement d'accord avec toi. C'est la solution qui combine les deux.)*",
+      "vocab_items": []
+    },
+    {
+      "day": 85,
+      "order_index": 5,
+      "section": "14.4",
+      "title": "Questions de compréhension et corrigé",
+      "content_markdown": "## Jour 85 — Questions de compréhension\n\n1. ليه A بيحب الشغل من البيت؟ (Pourquoi A aime le télétravail ?)\n2. إيه المشكلة اللي B بيشاور عليها؟ (Quel problème B soulève-t-il ?)\n3. إيه الحل اللي اتفقوا عليه في الآخر؟ (Quelle solution ont-ils adoptée à la fin ?)\n\n> 📌 Corrigé :\n> 1. عشان مش بيضيع وقت في المواصلات وبيشتغل في هدوء.\n> 2. إنه مش كل حد عنده مكان هادي في البيت.\n> 3. يومين في المكتب وتلاتة في البيت.",
+      "vocab_items": [],
+      "quiz_questions": [
+        {
+          "question": "ليه A بيحب الشغل من البيت؟",
+          "question_fr": "Pourquoi A aime le télétravail ?",
+          "answer": "عشان مش بيضيع وقت في المواصلات وبيشتغل في هدوء."
+        },
+        {
+          "question": "إيه المشكلة اللي B بيشاور عليها؟",
+          "question_fr": "Quel problème B soulève-t-il ?",
+          "answer": "إنه مش كل حد عنده مكان هادي في البيت."
+        },
+        {
+          "question": "إيه الحل اللي اتفقوا عليه في الآخر؟",
+          "question_fr": "Quelle solution ont-ils adoptée à la fin ?",
+          "answer": "يومين في المكتب وتلاتة في البيت."
+        }
+      ]
+    },
+    {
+      "day": 86,
+      "order_index": 6,
+      "section": "Conclusion",
+      "title": "Fin du parcours — بالتوفيق!",
+      "content_markdown": "## Jour 86 — Fin du parcours — بالتوفيق!\n\nTu as maintenant traversé **14 modules** : de l'alphabet aux verbes dérivés, du passé au débat structuré. Tu as les outils grammaticaux et le vocabulaire d'un niveau **B2 solide** en égyptien. La suite, c'est la **pratique réelle** : écouter des séries/podcasts égyptiens, parler avec des locuteurs natifs, et réutiliser activement ce que tu as appris.\n\n> ⭐ Récapitulatif du parcours : M1-2 alphabet, phonétique, bases • M3 présent • M4 états, possession, modaux • M5 futur, passé, négation • M6 nombres, argent • M7 impératif, conditionnel • M8 comparatif, elli • M9 verbes dérivés • M10 vocabulaire thématique • M11 connecteurs, récit • M12 passif, pluriels, duel • M13 expressions, proverbes, registres • M14 opinion, débat, compréhension.\n\n*مبروك! وصلت لمستوى B2! — Mabrouk! Weselt le-mostawa B2! (Félicitations ! Tu as atteint le niveau B2 !)*",
+      "vocab_items": []
+    }
+  ]
+}

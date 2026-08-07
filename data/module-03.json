@@ -1,0 +1,223 @@
+{
+  "module": {
+    "id": "module-03",
+    "number": 3,
+    "title": "Le système verbal et les verbes d'action au présent",
+    "subtitle": "Jour 22 à Jour 30",
+    "level": "A2",
+    "description": "Conjugaison au présent avec le préfixe B-, verbes réguliers (faire, parler, prendre, boire, manger) et participes actifs (aller, comprendre, savoir).",
+    "order_index": 3
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 0,
+      "section": "Introduction",
+      "title": "Le système du présent égyptien",
+      "content_markdown": "## Le système du présent égyptien\n\nEn arabe égyptien, la conjugaison au présent est extrêmement logique. Tous les verbes d'action partagent deux caractéristiques majeures :\n\n- Ils sont construits autour d'une **racine de 3 consonnes**.\n- Ils portent systématiquement le préfixe **B- (ب)** au présent — c'est la marque unique du dialecte égyptien.\n\n> 📌 Règle : Pour nier un verbe d'action au présent, on place simplement Mesh directement devant le bloc verbal.",
+      "vocab_items": []
+    },
+    {
+      "day": 22,
+      "order_index": 1,
+      "section": "SECTION 1 : La conjugaison des verbes réguliers",
+      "title": "Le verbe Pivot « Faire / Travailler » — Racine : 3-M-L",
+      "content_markdown": "## Jour 22 — Le verbe Pivot « Faire / Travailler » — Racine : 3-M-L\n\nVerbe de base : **3amal** (Il a fait).\n\n| Pronom | Arabe | Romanisation | Note |\n|---|---|---|---|\n| Ana (Je) | بَعْمِل | Ba3mel | — |\n| Enta (Tu — m) | بتِعْمِل | Bte3mel | — |\n| Enti (Tu — f) | بتِعْمِلي | Bte3meli | Ajout du -i final |\n| Howa (Il) | بيِعْمِل | Bi3mel | — |\n| Heyya (Elle) | بتِعْمِل | Bte3mel | Identique à Tu (m) |\n| É7na (Nous) | بِنِعْمِل | Bene3mel | — |\n\n**Bte3meli éh ?** = Tu fais quoi ? (à une femme)\n\n**Ba3mel en-naharda** = Je travaille aujourd'hui",
+      "vocab_items": [
+        {
+          "arabic": "بَعْمِل",
+          "transliteration": "Ba3mel",
+          "french": "Je fais / je travaille"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Bte3meli éh?",
+          "french": "Tu fais quoi ? (à une femme)"
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "order_index": 2,
+      "section": "SECTION 1 : La conjugaison des verbes réguliers",
+      "title": "Le verbe « Parler » — Racine : K-L-M",
+      "content_markdown": "## Jour 26 — Le verbe « Parler » — Racine : K-L-M\n\nVerbe de base : **Etkallem** (Il a parlé).\n\n| Pronom | Arabe | Romanisation | Note |\n|---|---|---|---|\n| Ana (Je) | بَتْكَلِّم | Batkallem | — |\n| Enta (Tu — m) | بِتِتْكَلِّم | Btetkallem | — |\n| Enti (Tu — f) | بِتِتْكَلِّمي | Btetkallemi | Ajout du -i final |\n| Howa (Il) | بِيِتْكَلِّم | Biyetkallem | — |\n| Heyya (Elle) | بِتِتْكَلِّم | Btetkallem | Identique à Tu (m) |\n| É7na (Nous) | بِنِتْكَلِّم | Benetkallem | — |\n\n**📚 Vocabulaire :** 3arabi = L'arabe | Fransawi = Le français | Engleezi = L'anglais | Shwreya = Un peu\n\n**Ana batkallem shwreya 3arabi** = Je parle un peu arabe",
+      "vocab_items": [
+        {
+          "arabic": "بَتْكَلِّم",
+          "transliteration": "Batkallem",
+          "french": "Je parle"
+        },
+        {
+          "arabic": null,
+          "transliteration": "3arabi",
+          "french": "L'arabe"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Fransawi",
+          "french": "Le français"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Engleezi",
+          "french": "L'anglais"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Shwreya",
+          "french": "Un peu"
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "order_index": 3,
+      "section": "SECTION 1 : La conjugaison des verbes réguliers",
+      "title": "Le verbe « Prendre / Acheter / Commander » — Racine : X-D",
+      "content_markdown": "## Jour 27 — Le verbe « Prendre / Acheter / Commander » — Racine : X-D\n\nVerbe de base : **Khad** (Il a pris). Sert aussi pour les transports et pour choisir un produit ou un plat.\n\n| Pronom | Arabe | Romanisation | Note |\n|---|---|---|---|\n| Ana (Je) | بَاخُد | Bakhod | — |\n| Enta (Tu — m) | بتَاخُد | Btekhod | — |\n| Enti (Tu — f) | بتَاخُدي | Btekhodi | Ajout du -i final |\n| Howa (Il) | بِيَاخُد | Biyakhod | — |\n| Heyya (Elle) | بتَاخُد | Btekhod | Identique à Tu (m) |\n| É7na (Nous) | بِنَاخُد | Benakhod | — |\n\n**Benakhod taksi en-naharda** = Nous prenons un taxi aujourd'hui",
+      "vocab_items": [
+        {
+          "arabic": "بَاخُد",
+          "transliteration": "Bakhod",
+          "french": "Je prends / j'achète"
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "order_index": 4,
+      "section": "SECTION 1 : La conjugaison des verbes réguliers",
+      "title": "Le verbe « Boire » — Racine : Sh-R-B",
+      "content_markdown": "## Jour 28 — Le verbe « Boire » — Racine : Sh-R-B\n\nVerbe de base : **Shréb** (Il a bu).\n\n| Pronom | Arabe | Romanisation | Note |\n|---|---|---|---|\n| Ana (Je) | بَشْرَب | Bashrab | — |\n| Enta (Tu — m) | بِتِشْرَب | Bteshrab | — |\n| Enti (Tu — f) | بِتِشْرَبي | Bteshrabi | Ajout du -i final |\n| Howa (Il) | بِيِشْرَب | Biyishrab | — |\n| Heyya (Elle) | بِتِشْرَب | Bteshrab | Identique à Tu (m) |\n| É7na (Nous) | بِنِشْرَب | Beneshrab | — |\n\n**📚 Vocabulaire :** Meya = L'eau | Shay = Le thé | Ahwa = Le café (coup de glotte sur le A)\n\n**Ana bashrab ahwa min fadlak** = Je bois un café s'il te plaît",
+      "vocab_items": [
+        {
+          "arabic": "بَشْرَب",
+          "transliteration": "Bashrab",
+          "french": "Je bois"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Meya",
+          "french": "L'eau"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Shay",
+          "french": "Le thé"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Ahwa",
+          "french": "Le café"
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "order_index": 5,
+      "section": "SECTION 1 : La conjugaison des verbes réguliers",
+      "title": "Le verbe « Manger » — Racine : 2-K-L",
+      "content_markdown": "## Jour 29 — Le verbe « Manger » — Racine : 2-K-L\n\nNote : ce verbe subit une légère contraction de ses voyelles au présent pour fluidifier l'élocution.\n\n| Pronom | Arabe | Romanisation | Note |\n|---|---|---|---|\n| Ana (Je) | بَاكُل | Bakol | — |\n| Enta (Tu — m) | بتَاكُل | Btekol | — |\n| Enti (Tu — f) | بتَاكُلي | Btekoli | Ajout du -i final |\n| Howa (Il) | بِيَاكُل | Biyakul | — |\n| Heyya (Elle) | بتَاكُل | Btekol | Identique à Tu (m) |\n| É7na (Nous) | بِنَاكُل | Benakol | — |\n\n**📚 Vocabulaire :** Aish / 3ish = Le pain | Koshari = Plat national égyptien | Ta3meya = Falafels aux fèves",
+      "vocab_items": [
+        {
+          "arabic": "بَاكُل",
+          "transliteration": "Bakol",
+          "french": "Je mange"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Aish / 3ish",
+          "french": "Le pain"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Koshari",
+          "french": "Plat national égyptien"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Ta3meya",
+          "french": "Falafels aux fèves"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 6,
+      "section": "SECTION 2 : L'exception des Participes Actifs (Aller, Comprendre, Savoir)",
+      "title": "Aller — Rayé7 / Ray7a / Ray7een",
+      "content_markdown": "## Aller — Rayé7 / Ray7a / Ray7een\n\n> 📌 Règle : Certains concepts qui sont des verbes en français se traduisent en égyptien par des participes actifs. Ils se comportent comme des adjectifs (comme Ayez pour « Vouloir ») : pas de préfixe B-, mais accord en genre et en nombre. Négation toujours avec Mesh.\n\n| Emploi | Arabe | Romanisation | Exemple |\n|---|---|---|---|\n| Masculin (Je/Tu/Il va) | رايح | Rayé7 (se termine par le 7 expiré) | Ana rayé7 masr = Je (homme) vais au Caire |\n| Féminin (Je/Tu/Elle va) | رايحة | Ray7a | Ana ray7a el-otél = Je (femme) vais à l'hôtel |\n| Pluriel (Nous/Vous/Ils vont) | رايحين | Ray7een | É7na ray7een masr = Nous allons au Caire |\n\n> 💡 Le Caire se dit Masr en égyptien — comme le nom du pays. Le contexte indique toujours s'il s'agit de la ville ou de l'Égypte.\n\n**Ana ray7a el-otél en-naharda** = Je (femme) vais à l'hôtel aujourd'hui",
+      "vocab_items": [
+        {
+          "arabic": "رايح",
+          "transliteration": "Rayé7",
+          "french": "Je/Tu/Il va (masculin)"
+        },
+        {
+          "arabic": "رايحة",
+          "transliteration": "Ray7a",
+          "french": "Je/Tu/Elle va (féminin)"
+        },
+        {
+          "arabic": "رايحين",
+          "transliteration": "Ray7een",
+          "french": "Nous/Vous/Ils vont (pluriel)"
+        },
+        {
+          "arabic": null,
+          "transliteration": "Masr",
+          "french": "Le Caire / l'Égypte"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 7,
+      "section": "SECTION 2 : L'exception des Participes Actifs (Aller, Comprendre, Savoir)",
+      "title": "Comprendre — Fahem / Fahma / Fahmeen",
+      "content_markdown": "## Comprendre — Fahem / Fahma / Fahmeen\n\n| Emploi | Arabe | Romanisation | Exemple |\n|---|---|---|---|\n| Masculin (Je/Tu/Il comprend) | فاهم | Fahem | — |\n| Féminin (Je/Tu/Elle comprend) | فاهمة | Fahma | — |\n| Pluriel (Nous/Vous/Ils comprennent) | فاهمين | Fahmeen | — |\n\n**Law sama7t ana mesh fahem** = S'il vous plaît, je ne comprends pas",
+      "vocab_items": [
+        {
+          "arabic": "فاهم",
+          "transliteration": "Fahem",
+          "french": "Je/Tu/Il comprend (masculin)"
+        },
+        {
+          "arabic": "فاهمة",
+          "transliteration": "Fahma",
+          "french": "Je/Tu/Elle comprend (féminin)"
+        },
+        {
+          "arabic": "فاهمين",
+          "transliteration": "Fahmeen",
+          "french": "Nous/Vous/Ils comprennent (pluriel)"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 8,
+      "section": "SECTION 2 : L'exception des Participes Actifs (Aller, Comprendre, Savoir)",
+      "title": "Savoir / Connaître — 3aref / 3arfa / 3arfeen",
+      "content_markdown": "## Savoir / Connaître — 3aref / 3arfa / 3arfeen\n\n| Emploi | Arabe | Romanisation | Exemple |\n|---|---|---|---|\n| Masculin (Je/Tu/Il sait) | عارف | 3aref (son 'Ayn initial) | — |\n| Féminin (Je/Tu/Elle sait) | عارفة | 3arfa | — |\n| Pluriel (Nous/Vous/Ils savent) | عارفين | 3arfeen | — |\n\n**Mashi, ana mesh 3aref** = D'accord, mais je ne sais pas",
+      "vocab_items": [
+        {
+          "arabic": "عارف",
+          "transliteration": "3aref",
+          "french": "Je/Tu/Il sait (masculin)"
+        },
+        {
+          "arabic": "عارفة",
+          "transliteration": "3arfa",
+          "french": "Je/Tu/Elle sait (féminin)"
+        },
+        {
+          "arabic": "عارفين",
+          "transliteration": "3arfeen",
+          "french": "Nous/Vous/Ils savent (pluriel)"
+        }
+      ]
+    }
+  ]
+}

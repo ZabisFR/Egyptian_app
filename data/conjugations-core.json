@@ -1,0 +1,1037 @@
+{
+  "resource_type": "verb_conjugation_reference",
+  "id": "conjugations-core",
+  "title": "Conjugaisons Intégrales du Quotidien",
+  "description": "Fiche de synthèse transversale : règles temporelles universelles + conjugaisons complètes des verbes clés du quotidien. Ne fait pas partie de la séquence de modules par jour — sert de référence grammaticale autonome (ex. page \"Référence verbes\" du site). Complété par 10 verbes bonus très utilisés à l'oral (dire, aimer, comprendre, savoir, écrire, ouvrir, entrer, sortir, rentrer, jouer).",
+  "rules_matrix": [
+    {
+      "tense": "PRÉSENT",
+      "structure": "Pronom + B- + Verbe",
+      "example": "Ana bakol = Je mange",
+      "negation": "Mesh + verbe"
+    },
+    {
+      "tense": "FUTUR",
+      "structure": "Pronom + 7a- + Verbe (sans B-)",
+      "example": "Ana 7akol = Je mangerai",
+      "negation": "Mesh + verbe"
+    },
+    {
+      "tense": "PASSÉ",
+      "structure": "Racine + suffixes finaux (-t, -ti, -na...)",
+      "example": "Akalt = J'ai mangé",
+      "negation": "Ma-[verbe]-sh"
+    },
+    {
+      "tense": "MODALITÉ",
+      "structure": "Ayez/Lazem/Momken + Verbe sans B-",
+      "example": "Lazem akol = Je dois manger",
+      "negation": "Mesh + modalité"
+    }
+  ],
+  "rules_note": "La logique est simple : B- pour le présent (action en cours), 7a- pour le futur (action à venir), suffixes pour le passé (action terminée). Les modalités (Lazem, Momken, Ayez) projettent l'action dans le virtuel et effacent donc le B-.",
+  "verbs_compact": [
+    {
+      "verb_fr": "Aller",
+      "root": "R-W-7",
+      "present_ana": "Baroo7",
+      "future_ana": "7aroo7",
+      "past_ana": "Ro7t",
+      "imperative_m": "Roo7 !"
+    },
+    {
+      "verb_fr": "Acheter",
+      "root": "SH-T-R-Y",
+      "present_ana": "Bashtari",
+      "future_ana": "7ashtari",
+      "past_ana": "Eshtaret",
+      "imperative_m": "Eshtari !"
+    },
+    {
+      "verb_fr": "Faire",
+      "root": "3-M-L",
+      "present_ana": "Ba3mel",
+      "future_ana": "7a3mel",
+      "past_ana": "3amalt",
+      "imperative_m": "E3mel !"
+    },
+    {
+      "verb_fr": "Venir",
+      "root": "G-Y",
+      "present_ana": "Bagee",
+      "future_ana": "7agee",
+      "past_ana": "Get",
+      "imperative_m": "Ta3ala !"
+    },
+    {
+      "verb_fr": "Voir",
+      "root": "SH-W-F",
+      "present_ana": "Bashoof",
+      "future_ana": "7ashoof",
+      "past_ana": "Shoft",
+      "imperative_m": "Shoof !"
+    },
+    {
+      "verb_fr": "Manger",
+      "root": "K-L",
+      "present_ana": "Bakol",
+      "future_ana": "7akol",
+      "past_ana": "Akalt",
+      "imperative_m": "Kol !"
+    },
+    {
+      "verb_fr": "Boire",
+      "root": "SH-R-B",
+      "present_ana": "Bashrab",
+      "future_ana": "7ashrab",
+      "past_ana": "Sharabt",
+      "imperative_m": "Eshrab !"
+    },
+    {
+      "verb_fr": "Prendre",
+      "root": "KH-TH",
+      "present_ana": "Bakhod",
+      "future_ana": "7akhod",
+      "past_ana": "Khadt",
+      "imperative_m": "Khod !"
+    },
+    {
+      "verb_fr": "Dormir",
+      "root": "N-W-M",
+      "present_ana": "Banam",
+      "future_ana": "7anam",
+      "past_ana": "Namt",
+      "imperative_m": "Nam !"
+    },
+    {
+      "verb_fr": "Dire",
+      "root": "2-W-L",
+      "present_ana": "Ba2uul",
+      "future_ana": "7a2uul",
+      "past_ana": "2olt",
+      "imperative_m": "2uul !"
+    },
+    {
+      "verb_fr": "Aimer",
+      "root": "7-B-B",
+      "present_ana": "Ba7ebb",
+      "future_ana": "7a7ebb",
+      "past_ana": "7abbeit",
+      "imperative_m": "E7ebb !"
+    },
+    {
+      "verb_fr": "Comprendre",
+      "root": "F-H-M",
+      "present_ana": "Bafham",
+      "future_ana": "7afham",
+      "past_ana": "Fihimt",
+      "imperative_m": "Efham !"
+    },
+    {
+      "verb_fr": "Savoir",
+      "root": "3-R-F",
+      "present_ana": "Ba3raf",
+      "future_ana": "7a3raf",
+      "past_ana": "3ireft",
+      "imperative_m": "E3raf !"
+    },
+    {
+      "verb_fr": "Écrire",
+      "root": "K-T-B",
+      "present_ana": "Baktib",
+      "future_ana": "7aktib",
+      "past_ana": "Katabt",
+      "imperative_m": "Ektib !"
+    },
+    {
+      "verb_fr": "Ouvrir",
+      "root": "F-T-7",
+      "present_ana": "Bafta7",
+      "future_ana": "7afta7",
+      "past_ana": "Fata7t",
+      "imperative_m": "Efta7 !"
+    },
+    {
+      "verb_fr": "Entrer",
+      "root": "D-KH-L",
+      "present_ana": "Badkhol",
+      "future_ana": "7adkhol",
+      "past_ana": "Dakhalt",
+      "imperative_m": "Edkhol !"
+    },
+    {
+      "verb_fr": "Sortir",
+      "root": "KH-R-G",
+      "present_ana": "Bakhrog",
+      "future_ana": "7akhrog",
+      "past_ana": "Kharagt",
+      "imperative_m": "Ekhrog !"
+    },
+    {
+      "verb_fr": "Rentrer",
+      "root": "R-G-3",
+      "present_ana": "Barga3",
+      "future_ana": "7arga3",
+      "past_ana": "Raga3t",
+      "imperative_m": "Erga3 !"
+    },
+    {
+      "verb_fr": "Jouer",
+      "root": "L-3-B",
+      "present_ana": "Bal3ab",
+      "future_ana": "7al3ab",
+      "past_ana": "Li3ibt",
+      "imperative_m": "El3ab !"
+    }
+  ],
+  "compact_note": "L'impératif est toujours la racine nue (sans préfixe). Pour Venir, l'impératif est Ta3ala — un mot à part entière, différent de la racine G-Y.",
+  "verbs_full": [
+    {
+      "verb_fr": "Aller",
+      "root": "R-W-7",
+      "imperative_m": "Roo7 !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Baroo7",
+          "future": "7aroo7",
+          "past": "Ro7t",
+          "past_negative": "Ma-ro7t-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bteroo7",
+          "future": "7ateroo7",
+          "past": "Ro7t",
+          "past_negative": "Ma-ro7t-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bteroo7i",
+          "future": "7ateroo7i",
+          "past": "Ro7ti",
+          "past_negative": "Ma-ro7ti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyeroo7",
+          "future": "7ayeroo7",
+          "past": "Raa7",
+          "past_negative": "Ma-raa7-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bteroo7",
+          "future": "7ateroo7",
+          "past": "Ra7et",
+          "past_negative": "Ma-ra7et-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Beneroo7",
+          "future": "7aneroo7",
+          "past": "Ro7na",
+          "past_negative": "Ma-ro7na-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Faire / Travailler",
+      "root": "3-M-L",
+      "imperative_m": "E3mel !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Ba3mel",
+          "future": "7a3mel",
+          "past": "3amalt",
+          "past_negative": "Ma-3amalt-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bte3mel",
+          "future": "7ate3mel",
+          "past": "3amalt",
+          "past_negative": "Ma-3amalt-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bte3meli",
+          "future": "7ate3meli",
+          "past": "3amalti",
+          "past_negative": "Ma-3amalti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Bi3mel",
+          "future": "7ay3mel",
+          "past": "3amal",
+          "past_negative": "Ma-3amal-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bte3mel",
+          "future": "7ate3mel",
+          "past": "3amalet",
+          "past_negative": "Ma-3amalet-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Bene3mel",
+          "future": "7ane3mel",
+          "past": "3amalna",
+          "past_negative": "Ma-3amalna-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Manger",
+      "root": "K-L",
+      "imperative_m": "Kol !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bakol",
+          "future": "7akol",
+          "past": "Akalt",
+          "past_negative": "Ma-akalt-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btekol",
+          "future": "7atekol",
+          "past": "Akalt",
+          "past_negative": "Ma-akalt-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btekoli",
+          "future": "7atekoli",
+          "past": "Akalti",
+          "past_negative": "Ma-akalti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyakol",
+          "future": "7ayakol",
+          "past": "Akal",
+          "past_negative": "Ma-akal-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btekol",
+          "future": "7atekol",
+          "past": "Akalet",
+          "past_negative": "Ma-akalet-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benakol",
+          "future": "7anakol",
+          "past": "Akalna",
+          "past_negative": "Ma-akalna-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Boire",
+      "root": "SH-R-B",
+      "imperative_m": "Eshrab !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bashrab",
+          "future": "7ashrab",
+          "past": "Sharabt",
+          "past_negative": "Ma-sharabt-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bteshrab",
+          "future": "7ateshrab",
+          "past": "Sharabt",
+          "past_negative": "Ma-sharabt-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bteshrabi",
+          "future": "7ateshrabi",
+          "past": "Sharabti",
+          "past_negative": "Ma-sharabti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyeshrab",
+          "future": "7ayeshrab",
+          "past": "Shéreb",
+          "past_negative": "Ma-shéreb-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bteshrab",
+          "future": "7ateshrab",
+          "past": "Shérebet",
+          "past_negative": "Ma-shérebet-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Beneshrab",
+          "future": "7aneshrab",
+          "past": "Sharabna",
+          "past_negative": "Ma-sharabna-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Prendre",
+      "root": "KH-TH",
+      "imperative_m": "Khod !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bakhod",
+          "future": "7akhod",
+          "past": "Khadt",
+          "past_negative": "Ma-khadt-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btekhod",
+          "future": "7atekhod",
+          "past": "Khadt",
+          "past_negative": "Ma-khadt-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btekhodi",
+          "future": "7atekhodi",
+          "past": "Khadti",
+          "past_negative": "Ma-khadti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyakhod",
+          "future": "7ayakhod",
+          "past": "Khad",
+          "past_negative": "Ma-khad-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btekhod",
+          "future": "7atekhod",
+          "past": "Khadet",
+          "past_negative": "Ma-khadet-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benakhod",
+          "future": "7anakhod",
+          "past": "Khadna",
+          "past_negative": "Ma-khadna-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Voir",
+      "root": "SH-W-F",
+      "imperative_m": "Shoof !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bashoof",
+          "future": "7ashoof",
+          "past": "Shoft",
+          "past_negative": "Ma-shoft-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bteshoof",
+          "future": "7ateshoof",
+          "past": "Shoft",
+          "past_negative": "Ma-shoft-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bteshofi",
+          "future": "7ateshofi",
+          "past": "Shofti",
+          "past_negative": "Ma-shofti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyeshoof",
+          "future": "7ayeshoof",
+          "past": "Shaf",
+          "past_negative": "Ma-shaf-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bteshoof",
+          "future": "7ateshoof",
+          "past": "Shafet",
+          "past_negative": "Ma-shafet-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Beneshoof",
+          "future": "7aneshoof",
+          "past": "Shofna",
+          "past_negative": "Ma-shofna-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Dormir",
+      "root": "N-W-M",
+      "imperative_m": "Nam !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Banam",
+          "future": "7anam",
+          "past": "Namt",
+          "past_negative": "Ma-namt-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btenam",
+          "future": "7atenam",
+          "past": "Namt",
+          "past_negative": "Ma-namt-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btenami",
+          "future": "7atenami",
+          "past": "Namti",
+          "past_negative": "Ma-namti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyenam",
+          "future": "7ayenam",
+          "past": "Neem",
+          "past_negative": "Ma-neem-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btenam",
+          "future": "7atenam",
+          "past": "Nemet",
+          "past_negative": "Ma-nemet-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benenam",
+          "future": "7anenam",
+          "past": "Namna",
+          "past_negative": "Ma-namna-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Dire",
+      "root": "2-W-L",
+      "imperative_m": "2uul !",
+      "example": "2olt-lo l-ha2i2a. — Je lui ai dit la vérité.",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Ba2uul",
+          "future": "7a2uul",
+          "past": "2olt",
+          "past_negative": "Ma-2olt-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bte2uul",
+          "future": "7ate2uul",
+          "past": "2olt",
+          "past_negative": "Ma-2olt-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bte2uuli",
+          "future": "7ate2uuli",
+          "past": "2olti",
+          "past_negative": "Ma-2oltish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biy2uul",
+          "future": "7ay2uul",
+          "past": "2al",
+          "past_negative": "Ma-2alsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bte2uul",
+          "future": "7ate2uul",
+          "past": "2alet",
+          "past_negative": "Ma-2aletsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Bene2uul",
+          "future": "7ane2uul",
+          "past": "2olna",
+          "past_negative": "Ma-2olnash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Aimer / Bien aimer",
+      "root": "7-B-B",
+      "imperative_m": "E7ebb !",
+      "example": "Ana ba7ebb el-koshari awi. — J'aime beaucoup le koshari.",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Ba7ebb",
+          "future": "7a7ebb",
+          "past": "7abbeit",
+          "past_negative": "Ma-7abbeitsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bte7ebb",
+          "future": "7ate7ebb",
+          "past": "7abbeit",
+          "past_negative": "Ma-7abbeitsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bte7ebbi",
+          "future": "7ate7ebbi",
+          "past": "7abbeiti",
+          "past_negative": "Ma-7abbeitish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biye7ebb",
+          "future": "7aye7ebb",
+          "past": "7abb",
+          "past_negative": "Ma-7abbsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bte7ebb",
+          "future": "7ate7ebb",
+          "past": "7abbit",
+          "past_negative": "Ma-7abbitsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Bene7ebb",
+          "future": "7ane7ebb",
+          "past": "7abbeina",
+          "past_negative": "Ma-7abbeinash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Comprendre",
+      "root": "F-H-M",
+      "imperative_m": "Efham !",
+      "example": "Mafhimtsh, momken tekrar tani? — Je n'ai pas compris, tu peux répéter ?",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bafham",
+          "future": "7afham",
+          "past": "Fihimt",
+          "past_negative": "Ma-fihimtsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btefham",
+          "future": "7atefham",
+          "past": "Fihimt",
+          "past_negative": "Ma-fihimtsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btefhami",
+          "future": "7atefhami",
+          "past": "Fihimti",
+          "past_negative": "Ma-fihimtish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyefham",
+          "future": "7ayefham",
+          "past": "Fihim",
+          "past_negative": "Ma-fihimsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btefham",
+          "future": "7atefham",
+          "past": "Fihmet",
+          "past_negative": "Ma-fihmetsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benefham",
+          "future": "7anefham",
+          "past": "Fihimna",
+          "past_negative": "Ma-fihimnash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Savoir / Connaître",
+      "root": "3-R-F",
+      "imperative_m": "E3raf !",
+      "example": "Mesh 3aref el-3onwaan, momken te3rafo? — Je ne connais pas l'adresse, tu la connais ?",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Ba3raf",
+          "future": "7a3raf",
+          "past": "3ireft",
+          "past_negative": "Ma-3ireftsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bte3raf",
+          "future": "7ate3raf",
+          "past": "3ireft",
+          "past_negative": "Ma-3ireftsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bte3rafi",
+          "future": "7ate3rafi",
+          "past": "3irefti",
+          "past_negative": "Ma-3ireftish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biye3raf",
+          "future": "7aye3raf",
+          "past": "3iref",
+          "past_negative": "Ma-3irefsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bte3raf",
+          "future": "7ate3raf",
+          "past": "3irfet",
+          "past_negative": "Ma-3irfetsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Bene3raf",
+          "future": "7ane3raf",
+          "past": "3irefna",
+          "past_negative": "Ma-3irefnash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Écrire",
+      "root": "K-T-B",
+      "imperative_m": "Ektib !",
+      "example": "Katabt gawab le-saheb. — J'ai écrit une lettre à un ami.",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Baktib",
+          "future": "7aktib",
+          "past": "Katabt",
+          "past_negative": "Ma-katabtsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btektib",
+          "future": "7atektib",
+          "past": "Katabt",
+          "past_negative": "Ma-katabtsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btektibi",
+          "future": "7atektibi",
+          "past": "Katabti",
+          "past_negative": "Ma-katabtish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyiktib",
+          "future": "7ayiktib",
+          "past": "Katab",
+          "past_negative": "Ma-katabsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btektib",
+          "future": "7atektib",
+          "past": "Katabet",
+          "past_negative": "Ma-katabetsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benektib",
+          "future": "7anektib",
+          "past": "Katabna",
+          "past_negative": "Ma-katabnash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Ouvrir",
+      "root": "F-T-7",
+      "imperative_m": "Efta7 !",
+      "example": "Momken tefta7 el-shebbak shweyya? — Tu peux ouvrir un peu la fenêtre ?",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bafta7",
+          "future": "7afta7",
+          "past": "Fata7t",
+          "past_negative": "Ma-fata7tsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btefta7",
+          "future": "7atefta7",
+          "past": "Fata7t",
+          "past_negative": "Ma-fata7tsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btefta7i",
+          "future": "7atefta7i",
+          "past": "Fata7ti",
+          "past_negative": "Ma-fata7tish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyifta7",
+          "future": "7ayifta7",
+          "past": "Fata7",
+          "past_negative": "Ma-fata7sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btefta7",
+          "future": "7atefta7",
+          "past": "Fata7et",
+          "past_negative": "Ma-fata7etsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benefta7",
+          "future": "7anefta7",
+          "past": "Fata7na",
+          "past_negative": "Ma-fata7nash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Entrer",
+      "root": "D-KH-L",
+      "imperative_m": "Edkhol !",
+      "example": "Dakhalt el-mabna men el-baab el-kebir. — Je suis entré dans le bâtiment par la grande porte.",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Badkhol",
+          "future": "7adkhol",
+          "past": "Dakhalt",
+          "past_negative": "Ma-dakhaltsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btedkhol",
+          "future": "7atedkhol",
+          "past": "Dakhalt",
+          "past_negative": "Ma-dakhaltsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btedkholi",
+          "future": "7atedkholi",
+          "past": "Dakhalti",
+          "past_negative": "Ma-dakhaltish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyidkhol",
+          "future": "7ayidkhol",
+          "past": "Dakhal",
+          "past_negative": "Ma-dakhalsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btedkhol",
+          "future": "7atedkhol",
+          "past": "Dakhalet",
+          "past_negative": "Ma-dakhaletsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benedkhol",
+          "future": "7anedkhol",
+          "past": "Dakhalna",
+          "past_negative": "Ma-dakhalnash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Sortir",
+      "root": "KH-R-G",
+      "imperative_m": "Ekhrog !",
+      "example": "Hankhrog en-naharda el-leila? — On sort ce soir ?",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bakhrog",
+          "future": "7akhrog",
+          "past": "Kharagt",
+          "past_negative": "Ma-kharagtsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btekhrog",
+          "future": "7atekhrog",
+          "past": "Kharagt",
+          "past_negative": "Ma-kharagtsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btekhrogi",
+          "future": "7atekhrogi",
+          "past": "Kharagti",
+          "past_negative": "Ma-kharagtish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyikhrog",
+          "future": "7ayikhrog",
+          "past": "Kharag",
+          "past_negative": "Ma-kharagsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btekhrog",
+          "future": "7atekhrog",
+          "past": "Kharaget",
+          "past_negative": "Ma-kharagetsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benekhrog",
+          "future": "7anekhrog",
+          "past": "Kharagna",
+          "past_negative": "Ma-kharagnash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Rentrer / Revenir",
+      "root": "R-G-3",
+      "imperative_m": "Erga3 !",
+      "example": "Harga3 el-beit bad2an es-sa3a sab3a. — Je rentre à la maison vers sept heures.",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Barga3",
+          "future": "7arga3",
+          "past": "Raga3t",
+          "past_negative": "Ma-raga3tsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bterga3",
+          "future": "7aterga3",
+          "past": "Raga3t",
+          "past_negative": "Ma-raga3tsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bterga3i",
+          "future": "7aterga3i",
+          "past": "Raga3ti",
+          "past_negative": "Ma-raga3tish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyirga3",
+          "future": "7ayirga3",
+          "past": "Raga3",
+          "past_negative": "Ma-raga3sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bterga3",
+          "future": "7aterga3",
+          "past": "Rag3et",
+          "past_negative": "Ma-rag3etsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benerga3",
+          "future": "7anerga3",
+          "past": "Raga3na",
+          "past_negative": "Ma-raga3nash"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Jouer",
+      "root": "L-3-B",
+      "imperative_m": "El3ab !",
+      "example": "Konna bnel3ab kora fel-nadi. — On jouait au foot au club.",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bal3ab",
+          "future": "7al3ab",
+          "past": "Li3ibt",
+          "past_negative": "Ma-li3ibtsh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Btel3ab",
+          "future": "7atel3ab",
+          "past": "Li3ibt",
+          "past_negative": "Ma-li3ibtsh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Btel3abi",
+          "future": "7atel3abi",
+          "past": "Li3ibti",
+          "past_negative": "Ma-li3ibtish"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyil3ab",
+          "future": "7ayil3ab",
+          "past": "Li3ib",
+          "past_negative": "Ma-li3ibsh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Btel3ab",
+          "future": "7atel3ab",
+          "past": "Li3bet",
+          "past_negative": "Ma-li3betsh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Benel3ab",
+          "future": "7anel3ab",
+          "past": "Li3ibna",
+          "past_negative": "Ma-li3ibnash"
+        }
+      ]
+    }
+  ],
+  "missing_full_paradigms": [
+    "Acheter",
+    "Venir"
+  ]
+}
