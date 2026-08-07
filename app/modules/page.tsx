@@ -24,8 +24,8 @@ export default async function ModulesPage() {
   if (error) {
     return (
       <main className="mx-auto max-w-3xl p-6 sm:p-8">
-        <h1 className="text-2xl font-bold">Erreur de connexion Supabase</h1>
-        <pre className="mt-4 overflow-x-auto rounded bg-red-50 p-4 text-sm text-red-900 dark:bg-red-950 dark:text-red-200">
+        <h1 className="display text-2xl">Erreur de connexion Supabase</h1>
+        <pre className="mt-4 overflow-x-auto rounded bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] p-4 text-sm text-[var(--carmine)]">
           {error.message}
         </pre>
       </main>
@@ -36,10 +36,13 @@ export default async function ModulesPage() {
 
   return (
     <main className="mx-auto max-w-3xl p-6 sm:p-8">
-      <h1 className="text-3xl font-bold">Modules</h1>
-      <p className="mt-2 text-sm text-neutral-500">
+      <h1 className="display text-4xl">Modules</h1>
+      <p className="mt-2 text-sm text-[var(--muted)]">
         {modules.length} modules · {total} leçons
       </p>
+      <div className="egypt-rule mt-6">
+        <span className="text-xs">◆</span>
+      </div>
 
       <ul className="mt-8 space-y-3">
         {modules.map((m) => (

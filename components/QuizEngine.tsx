@@ -68,7 +68,7 @@ export default function QuizEngine({
     return (
       <div>
         {renderResult({ answers, score: scorePercent(answers) })}
-        {saving && <p className="mt-4 text-sm text-neutral-400">Enregistrement…</p>}
+        {saving && <p className="mt-4 text-sm text-[var(--muted)]">Enregistrement…</p>}
       </div>
     );
   }
@@ -81,7 +81,7 @@ export default function QuizEngine({
         label={`Question ${index + 1} sur ${questions.length}`}
       />
 
-      <h2 className="mt-8 text-xl font-semibold">{question.question_text}</h2>
+      <h2 className="display mt-8 text-2xl">{question.question_text}</h2>
 
       <ul className="mt-6 space-y-2">
         {question.choices.map((choice) => {
@@ -89,14 +89,15 @@ export default function QuizEngine({
           const isPicked = choice === picked;
 
           let tone =
-            'border-neutral-200 hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600';
+            'border-[var(--border)] hover:border-[var(--gold)] hover:bg-[color-mix(in_srgb,var(--gold)_7%,transparent)]';
           if (picked !== null) {
             if (isCorrect)
               tone =
-                'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 dark:border-emerald-600';
+                'border-[var(--malachite)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)]';
             else if (isPicked)
-              tone = 'border-red-500 bg-red-50 dark:bg-red-950/40 dark:border-red-600';
-            else tone = 'border-neutral-200 opacity-50 dark:border-neutral-800';
+              tone =
+                'border-[var(--carmine)] bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)]';
+            else tone = 'border-[var(--border)] opacity-45';
           }
 
           return (
@@ -121,7 +122,7 @@ export default function QuizEngine({
         <button
           type="button"
           onClick={next}
-          className="mt-8 w-full rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+          className="btn-sand mt-8 w-full"
         >
           {isLast ? 'Voir mon résultat' : 'Question suivante'}
         </button>

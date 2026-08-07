@@ -6,15 +6,18 @@ export default async function Navbar() {
   const profile = await getProfile();
 
   return (
-    <nav className="border-b border-neutral-200 dark:border-neutral-800">
+    <nav className="border-b border-[var(--border)] bg-[var(--surface)] backdrop-blur">
+      {/* Frise dorée : la bande qui court en haut des stèles. Deux pixels suffisent à
+          poser le registre égyptien sans charger chaque page d'ornements. */}
+      <div className="h-0.5 bg-gradient-to-r from-[var(--carmine)] via-[var(--gold)] to-[var(--lapis)]" />
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-3 sm:px-8">
-        <Link href="/" className="font-semibold">
+        <Link href="/" className="display text-lg">
           Arabe égyptien
         </Link>
         <div className="flex items-center gap-4 text-sm">
           <Link
             href="/modules"
-            className="text-neutral-600 hover:underline dark:text-neutral-400"
+            className="text-[var(--muted)] hover:text-[var(--ink)] hover:underline"
           >
             Modules
           </Link>
@@ -22,13 +25,13 @@ export default async function Navbar() {
             <>
               <Link
                 href="/dashboard"
-                className="text-neutral-600 hover:underline dark:text-neutral-400"
+                className="text-[var(--muted)] hover:text-[var(--ink)] hover:underline"
               >
                 Tableau de bord
               </Link>
               <Link href="/profile" className="flex items-center gap-2 hover:underline">
                 <LevelBadge level={profile.current_level} />
-                <span className="hidden text-neutral-600 sm:inline dark:text-neutral-400">
+                <span className="hidden text-[var(--muted)] sm:inline">
                   {profile.display_name ?? 'Mon profil'}
                 </span>
               </Link>
@@ -36,7 +39,7 @@ export default async function Navbar() {
           ) : (
             <Link
               href="/auth/login"
-              className="text-neutral-600 hover:underline dark:text-neutral-400"
+              className="text-[var(--muted)] hover:text-[var(--ink)] hover:underline"
             >
               Se connecter
             </Link>

@@ -31,17 +31,17 @@ export default function ModuleQuiz({
 
         return (
           <div>
-            <p className="text-sm text-neutral-500">{moduleTitle}</p>
-            <p className="mt-1 text-5xl font-bold">{result.score}%</p>
-            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm text-[var(--muted)]">{moduleTitle}</p>
+            <p className="display mt-1 text-6xl">{result.score}%</p>
+            <p className="mt-3 text-sm text-[var(--muted)]">
               {correct} bonnes réponses sur {result.answers.length}.
             </p>
 
             <p
               className={`mt-6 rounded-lg px-4 py-3 text-sm ${
                 passed
-                  ? 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200'
-                  : 'bg-amber-50 text-amber-900 dark:bg-amber-950 dark:text-amber-200'
+                  ? 'bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite)]'
+                  : 'bg-[color-mix(in_srgb,var(--gold)_14%,transparent)] text-[color-mix(in_srgb,var(--gold)_85%,var(--ink))]'
               }`}
             >
               {passed
@@ -50,12 +50,12 @@ export default function ModuleQuiz({
             </p>
 
             {isLoggedIn ? (
-              <p className="mt-4 text-sm text-neutral-500">
+              <p className="mt-4 text-sm text-[var(--muted)]">
                 Résultat enregistré. L&apos;XP suit votre meilleur score : refaire un quiz
                 déjà réussi ne rapporte rien de plus.
               </p>
             ) : (
-              <p className="mt-4 text-sm text-neutral-500">
+              <p className="mt-4 text-sm text-[var(--muted)]">
                 <Link href="/auth/signup" className="underline">
                   Créez un compte
                 </Link>{' '}
@@ -66,7 +66,7 @@ export default function ModuleQuiz({
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={`/modules/${moduleId}`}
-                className="rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                className="btn-sand"
               >
                 Retour au module
               </Link>
@@ -80,7 +80,7 @@ export default function ModuleQuiz({
                   router.push(`/modules/${moduleId}/quiz?seed=${seed}`);
                   router.refresh();
                 }}
-                className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm font-medium hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-900"
+                className="rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)]"
               >
                 Refaire le quiz
               </button>

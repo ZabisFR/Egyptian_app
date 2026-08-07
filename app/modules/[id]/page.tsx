@@ -54,20 +54,18 @@ export default async function ModulePage({
 
   return (
     <main className="mx-auto max-w-3xl p-6 sm:p-8">
-      <Link href="/modules" className="text-sm text-neutral-500 hover:underline">
+      <Link href="/modules" className="text-sm text-[var(--muted)] hover:underline">
         ← Tous les modules
       </Link>
 
       <header className="mt-4">
-        <div className="flex items-baseline gap-3">
-          <h1 className="text-2xl font-bold">{mod.title}</h1>
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h1 className="display text-3xl">{mod.title}</h1>
           <LevelBadge level={mod.level} />
         </div>
-        {mod.subtitle && <p className="mt-1 text-sm text-neutral-500">{mod.subtitle}</p>}
+        {mod.subtitle && <p className="mt-1 text-sm text-[var(--muted)]">{mod.subtitle}</p>}
         {mod.description && (
-          <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
-            {mod.description}
-          </p>
+          <p className="mt-3 text-sm text-[var(--muted)]">{mod.description}</p>
         )}
 
         {user && moduleProgress && moduleProgress.lessonsTotal > 0 && (

@@ -58,7 +58,7 @@ export default async function DashboardPage() {
   return (
     <main className="mx-auto max-w-3xl p-6 sm:p-8">
       <div className="flex flex-wrap items-baseline gap-3">
-        <h1 className="text-3xl font-bold">Bonjour {profile.display_name}</h1>
+        <h1 className="display text-3xl">Bonjour {profile.display_name}</h1>
         <LevelBadge level={profile.current_level} />
       </div>
 
@@ -71,9 +71,9 @@ export default async function DashboardPage() {
         ].map(([label, value]) => (
           <div
             key={label}
-            className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-800"
+            className="rounded-lg border border-[var(--border)] p-4"
           >
-            <dt className="text-xs uppercase tracking-wide text-neutral-400">{label}</dt>
+            <dt className="text-xs uppercase tracking-wide text-[var(--muted)]">{label}</dt>
             <dd className="mt-1 text-xl font-semibold sm:text-2xl">{value}</dd>
           </div>
         ))}
@@ -88,37 +88,37 @@ export default async function DashboardPage() {
       </div>
 
       {current && nextLesson && (
-        <section className="mt-10 rounded-lg border border-neutral-200 p-5 dark:border-neutral-800">
-          <p className="text-xs uppercase tracking-wide text-neutral-400">
+        <section className="mt-10 rounded-lg border border-[var(--border)] p-5">
+          <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
             Reprendre où vous en étiez
           </p>
-          <h2 className="mt-2 font-semibold">{current.title}</h2>
-          <p className="mt-1 text-sm text-neutral-500">{nextLesson.title}</p>
+          <h2 className="display mt-2 text-lg">{current.title}</h2>
+          <p className="mt-1 text-sm text-[var(--muted)]">{nextLesson.title}</p>
           <Link
             href={`/modules/${current.id}/${nextLesson.id}`}
-            className="mt-4 block rounded-lg bg-neutral-900 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-neutral-700 sm:inline-block sm:text-left dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+            className="btn-sand mt-4 w-full sm:w-auto"
           >
             Continuer
           </Link>
         </section>
       )}
 
-      <h2 className="mt-12 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+      <h2 className="mt-12 text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
         Tous les modules
       </h2>
-      <ul className="mt-3 divide-y divide-neutral-200 dark:divide-neutral-800">
+      <ul className="mt-3 divide-y divide-[var(--border)]">
         {rows.map((r) => (
           <li key={r.id}>
             <Link
               href={`/modules/${r.id}`}
-              className="flex items-center gap-3 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-900"
+              className="flex items-center gap-3 py-3 hover:bg-[color-mix(in_srgb,var(--gold)_8%,transparent)]"
             >
               <span className="min-w-0 flex-1 truncate text-sm">{r.title}</span>
-              <span className="shrink-0 text-xs text-neutral-400">
+              <span className="shrink-0 text-xs text-[var(--muted)]">
                 {r.progress?.lessonsRead ?? 0}/{r.progress?.lessonsTotal ?? 0}
               </span>
               {r.progress?.status === 'completed' && (
-                <span className="shrink-0 text-emerald-600 dark:text-emerald-400">✓</span>
+                <span className="shrink-0 text-[var(--malachite)]">✓</span>
               )}
             </Link>
           </li>

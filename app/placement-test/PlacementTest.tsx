@@ -23,18 +23,18 @@ export default function PlacementTest({
 
         return (
           <div>
-            <p className="text-sm text-neutral-500">Votre niveau estimé</p>
-            <p className="mt-1 text-5xl font-bold">{level}</p>
-            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm text-[var(--muted)]">Votre niveau estimé</p>
+            <p className="display mt-1 text-6xl">{level}</p>
+            <p className="mt-3 text-sm text-[var(--muted)]">
               {result.score}% de bonnes réponses sur {result.answers.length} questions.
             </p>
 
             <table className="mt-8 w-full text-sm">
-              <tbody className="divide-y divide-neutral-200 dark:divide-neutral-800">
+              <tbody className="divide-y divide-[var(--border)]">
                 {rows.map((row) => (
                   <tr key={row.level}>
                     <td className="py-2 font-medium">{row.level}</td>
-                    <td className="py-2 text-right text-neutral-500">
+                    <td className="py-2 text-right text-[var(--muted)]">
                       {row.correct} / {row.total}
                     </td>
                   </tr>
@@ -42,17 +42,17 @@ export default function PlacementTest({
               </tbody>
             </table>
 
-            <p className="mt-6 text-sm text-neutral-500">
+            <p className="mt-6 text-sm text-[var(--muted)]">
               Un palier est validé à partir de 60 % de bonnes réponses, et la progression
               s&apos;arrête au premier palier manqué.
             </p>
 
             {isLoggedIn ? (
-              <p className="mt-6 text-sm text-emerald-700 dark:text-emerald-400">
+              <p className="mt-6 text-sm text-[var(--malachite)]">
                 Niveau enregistré sur votre profil.
               </p>
             ) : (
-              <p className="mt-6 text-sm text-neutral-500">
+              <p className="mt-6 text-sm text-[var(--muted)]">
                 <Link href="/auth/signup" className="underline">
                   Créez un compte
                 </Link>{' '}
@@ -63,14 +63,14 @@ export default function PlacementTest({
             <div className="mt-8 flex gap-3">
               <Link
                 href="/modules"
-                className="rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                className="btn-sand"
               >
                 Voir les modules
               </Link>
               {isLoggedIn && (
                 <Link
                   href="/profile"
-                  className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm font-medium hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-900"
+                  className="rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)]"
                 >
                   Mon profil
                 </Link>

@@ -45,8 +45,8 @@ export default async function PlacementTestPage() {
 
   return (
     <main className="mx-auto max-w-2xl p-6 sm:p-8">
-      <h1 className="text-3xl font-bold">Test de positionnement</h1>
-      <p className="mt-2 text-sm text-neutral-500">
+      <h1 className="display text-3xl">Test de positionnement</h1>
+      <p className="mt-2 text-sm text-[var(--muted)]">
         {questions.length} questions, de l&apos;alphabet aux formes verbales. Aucune
         préparation nécessaire — répondez au mieux, le but est de situer votre niveau.
       </p>
@@ -59,7 +59,7 @@ export default async function PlacementTestPage() {
             onComplete={savePlacement}
           />
         ) : (
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-[var(--muted)]">
             Aucune question de positionnement en base. Lancez <code>npm run generate:quiz</code>.
           </p>
         )}

@@ -42,7 +42,7 @@ export default async function LessonPage({
 
   return (
     <main className="mx-auto max-w-3xl p-6 sm:p-8">
-      <Link href={`/modules/${id}`} className="text-sm text-neutral-500 hover:underline">
+      <Link href={`/modules/${id}`} className="text-sm text-[var(--muted)] hover:underline">
         ← Retour au module
       </Link>
 
@@ -50,7 +50,7 @@ export default async function LessonPage({
         <LessonViewer lesson={lesson} vocab={lesson.vocab_items} />
       </div>
 
-      <div className="mt-10 border-t border-neutral-200 pt-6 dark:border-neutral-800">
+      <div className="mt-10 border-t border-[var(--border)] pt-6">
         <LessonReadToggle
           moduleId={id}
           orderIndex={lesson.order_index}
@@ -60,7 +60,7 @@ export default async function LessonPage({
         />
       </div>
 
-      <nav className="mt-8 flex flex-col justify-between gap-3 border-t border-neutral-200 pt-4 text-sm sm:flex-row sm:gap-4 dark:border-neutral-800">
+      <nav className="mt-8 flex flex-col justify-between gap-3 border-t border-[var(--border)] pt-4 text-sm sm:flex-row sm:gap-4">
         {prev ? (
           <Link href={`/modules/${id}/${prev.id}`} className="text-left hover:underline">
             ← {prev.title}

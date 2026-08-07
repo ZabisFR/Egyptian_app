@@ -6,7 +6,7 @@ import { useFormStatus } from 'react-dom';
 import type { AuthState } from '@/app/auth/actions';
 
 const INPUT =
-  'mt-1 w-full rounded-lg border border-neutral-300 bg-transparent px-3 py-2 text-sm outline-none focus:border-neutral-500 dark:border-neutral-700 dark:focus:border-neutral-400';
+  'mt-1 w-full rounded-lg border border-[var(--border)] bg-transparent px-3 py-2 text-sm outline-none focus:border-[var(--gold)] ';
 
 function SubmitButton({ label }: { label: string }) {
   const { pending } = useFormStatus();
@@ -14,7 +14,7 @@ function SubmitButton({ label }: { label: string }) {
     <button
       type="submit"
       disabled={pending}
-      className="mt-6 w-full rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-700 disabled:opacity-50 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+      className="btn-sand mt-6 w-full disabled:opacity-50"
     >
       {pending ? '…' : label}
     </button>
@@ -33,7 +33,7 @@ export default function AuthForm({
 
   return (
     <div className="mx-auto max-w-sm px-6 py-16">
-      <h1 className="text-2xl font-bold">
+      <h1 className="display text-2xl">
         {isSignup ? 'Créer un compte' : 'Se connecter'}
       </h1>
 
@@ -77,7 +77,7 @@ export default function AuthForm({
         {state.error && (
           <p
             role="alert"
-            className="mt-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800 dark:bg-red-950 dark:text-red-200"
+            className="mt-4 rounded-lg bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] px-3 py-2 text-sm text-[var(--carmine)]"
           >
             {state.error}
           </p>
@@ -85,7 +85,7 @@ export default function AuthForm({
         {state.notice && (
           <p
             role="status"
-            className="mt-4 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
+            className="mt-4 rounded-lg bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-3 py-2 text-sm text-[var(--malachite)]"
           >
             {state.notice}
           </p>
@@ -94,7 +94,7 @@ export default function AuthForm({
         <SubmitButton label={isSignup ? 'Créer mon compte' : 'Se connecter'} />
       </form>
 
-      <p className="mt-6 text-sm text-neutral-500">
+      <p className="mt-6 text-sm text-[var(--muted)]">
         {isSignup ? (
           <>
             Déjà un compte ?{' '}

@@ -28,15 +28,34 @@ export type PathQuiz = {
 const WAVE = [0, 38, 62, 38, 0, -38, -62, -38];
 const offsetAt = (index: number) => WAVE[index % WAVE.length];
 
-/** Traces de pas entre deux nœuds, interpolées entre leurs décalages respectifs. */
+/**
+ * Traces de pas entre deux nœuds.
+ *
+ * Chaque empreinte est décalée latéralement par rapport à l'axe du sentier, alternativement
+ * à gauche et à droite : c'est ce dédoublement qui fait lire « quelqu'un est passé par là »
+ * plutôt qu'une simple ligne pointillée. Elles pâlissent vers l'arrière du pas.
+ */
+const STEPS = [
+  { t: 0.18, side: -1, opacity: 0.9 },
+  { t: 0.38, side: 1, opacity: 0.75 },
+  { t: 0.58, side: -1, opacity: 0.6 },
+  { t: 0.78, side: 1, opacity: 0.45 },
+];
+
 function Trail({ from, to }: { from: number; to: number }) {
   return (
-    <li aria-hidden="true" className="flex flex-col items-center gap-2 py-1">
-      {[0.3, 0.55, 0.8].map((t) => (
+    <li aria-hidden="true" className="flex flex-col items-center gap-2.5 py-2">
+      {STEPS.map(({ t, side, opacity }) => (
         <span
           key={t}
-          className="dune-node block h-1.5 w-1.5 rounded-full bg-[var(--sand-line)]"
-          style={{ '--offset': from + (to - from) * t } as React.CSSProperties}
+          className="dune-node block h-2.5 w-[7px] rounded-full bg-[var(--sand-near)]"
+          style={
+            {
+              '--offset': from + (to - from) * t + side * 7,
+              opacity,
+              transform: `translateX(calc(var(--offset) * var(--wave))) rotate(${side * 18}deg)`,
+            } as React.CSSProperties
+          }
         />
       ))}
     </li>
@@ -67,12 +86,10 @@ export default function LessonPath({
       {sections.map((section, si) => (
         <li key={si} className="w-full">
           {section.name && (
-            <div className="my-6 flex items-center gap-3">
-              <span className="h-px flex-1 bg-[var(--sand-line)]" />
-              <h2 className="text-center text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+            <div className="egypt-rule my-7">
+              <h2 className="text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                 {section.name}
               </h2>
-              <span className="h-px flex-1 bg-[var(--sand-line)]" />
             </div>
           )}
 
@@ -97,7 +114,7 @@ export default function LessonPath({
                     >
                       <DuneIcon />
                       {lesson.read && (
-                        <span className="absolute -bottom-0.5 -right-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white shadow dark:bg-emerald-500">
+                        <span className="absolute -bottom-0.5 -right-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--malachite)] text-xs font-bold text-white shadow">
                           ✓
                         </span>
                       )}
@@ -107,10 +124,10 @@ export default function LessonPath({
                       className="dune-node mt-2 max-w-40 text-center"
                       style={{ '--offset': offset } as React.CSSProperties}
                     >
-                      <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--gold)]">
                         {lesson.day === null ? 'Étape' : `Jour ${lesson.day}`}
                       </p>
-                      <p className="mt-0.5 text-xs leading-snug text-neutral-600 dark:text-neutral-400">
+                      <p className="display mt-0.5 text-[13px] leading-snug text-[var(--muted)]">
                         {lesson.title}
                       </p>
                     </div>
@@ -137,14 +154,14 @@ export default function LessonPath({
             >
               <PyramidIcon />
               {quiz.passed && (
-                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white shadow dark:bg-emerald-500">
+                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-[var(--malachite)] text-sm font-bold text-white shadow">
                   ✓
                 </span>
               )}
             </Link>
 
-            <p className="mt-3 text-sm font-semibold">Quiz du module</p>
-            <p className="mt-0.5 text-xs text-neutral-500">
+            <p className="display mt-3 text-lg">Quiz du module</p>
+            <p className="mt-0.5 text-xs text-[var(--muted)]">
               {quiz.passed
                 ? `Réussi à ${quiz.bestScore} %`
                 : quiz.bestScore !== null
@@ -152,7 +169,7 @@ export default function LessonPath({
                   : `${quiz.count} questions`}
             </p>
             {!quiz.unlocked && !quiz.passed && (
-              <p className="mt-1 max-w-56 text-center text-xs text-neutral-400">
+              <p className="mt-1 max-w-56 text-center text-xs text-[var(--muted)] opacity-80">
                 Accessible dès maintenant, mais il vaut mieux avoir lu les leçons.
               </p>
             )}

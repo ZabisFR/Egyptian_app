@@ -21,7 +21,7 @@ export default function LessonReadToggle({
 
   if (!isLoggedIn) {
     return (
-      <p className="text-sm text-neutral-500">
+      <p className="text-sm text-[var(--muted)]">
         <Link href="/auth/login" className="underline">
           Connectez-vous
         </Link>{' '}
@@ -42,8 +42,8 @@ export default function LessonReadToggle({
       aria-pressed={read}
       className={`w-full rounded-lg border px-4 py-3 text-sm font-medium transition-colors sm:w-auto ${
         read
-          ? 'border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200'
-          : 'border-neutral-300 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-900'
+          ? 'border-[var(--malachite)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite)]'
+          : 'border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)] '
       }`}
     >
       {read ? '✓ Leçon lue' : 'Marquer comme lue'}

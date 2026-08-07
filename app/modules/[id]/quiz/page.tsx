@@ -67,11 +67,11 @@ export default async function ModuleQuizPage({
 
   return (
     <main className="mx-auto max-w-2xl p-6 sm:p-8">
-      <Link href={`/modules/${id}`} className="text-sm text-neutral-500 hover:underline">
+      <Link href={`/modules/${id}`} className="text-sm text-[var(--muted)] hover:underline">
         ← Retour au module
       </Link>
 
-      <h1 className="mt-4 text-3xl font-bold">Quiz — {mod.title}</h1>
+      <h1 className="display mt-4 text-3xl">Quiz — {mod.title}</h1>
 
       <div className="mt-10">
         {questions.length > 0 ? (
@@ -84,7 +84,7 @@ export default async function ModuleQuizPage({
             onComplete={onComplete}
           />
         ) : (
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-[var(--muted)]">
             Aucune question pour ce module. Lancez <code>npm run generate:quiz</code>.
           </p>
         )}

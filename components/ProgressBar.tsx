@@ -17,14 +17,14 @@ export default function ProgressBar({
         aria-valuemin={0}
         aria-valuemax={max}
         aria-label={label ?? 'Progression'}
-        className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800"
+        className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--border)]"
       >
         <div
-          className="h-full rounded-full bg-neutral-900 transition-all duration-300 dark:bg-white"
+          className="h-full rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--carmine)] transition-all duration-300"
           style={{ width: `${pct}%` }}
         />
       </div>
-      {label && <p className="mt-2 text-xs text-neutral-400">{label}</p>}
+      {label && <p className="mt-2 text-xs text-[var(--muted)]">{label}</p>}
     </div>
   );
 }
