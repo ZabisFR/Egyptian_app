@@ -3,6 +3,7 @@ import LevelBadge from '@/components/LevelBadge';
 import ProgressBar from '@/components/ProgressBar';
 import { requireProfile } from '@/lib/auth';
 import { getAllProgress } from '@/lib/progress';
+import { getDailyLesson } from '@/lib/daily';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, Module } from '@/lib/types';
 
@@ -12,8 +13,9 @@ export default async function DashboardPage() {
   const profile = await requireProfile();
   const supabase = await createClient();
 
-  const [progress, { data: modules }] = await Promise.all([
+  const [progress, daily, { data: modules }] = await Promise.all([
     getAllProgress(profile.id),
+    getDailyLesson(profile.id),
     supabase
       .from('modules')
       .select('id, title, level, order_index')
@@ -87,8 +89,29 @@ export default async function DashboardPage() {
         />
       </div>
 
+      <section className="card-sand mt-10 p-5">
+        <p className="text-xs uppercase tracking-wide text-[var(--muted)]">Leçon du jour</p>
+        <h2 className="display mt-2 text-lg">
+          {daily.alreadyDone
+            ? `Faite aujourd'hui — ${daily.lastScore} %`
+            : daily.questions.length > 0
+              ? `${daily.questions.length} mots à réviser`
+              : 'Rien à réviser pour l’instant'}
+        </h2>
+        <p className="mt-1 text-sm text-[var(--muted)]">
+          {daily.questions.length > 0 || daily.alreadyDone
+            ? `Tirés de vos ${daily.lessonsRead} leçons lues.`
+            : 'Marquez des leçons comme lues pour alimenter la révision.'}
+        </p>
+        {!daily.alreadyDone && daily.questions.length > 0 && (
+          <Link href="/daily" className="btn-sand mt-4 w-full sm:w-auto">
+            Commencer
+          </Link>
+        )}
+      </section>
+
       {current && nextLesson && (
-        <section className="mt-10 rounded-lg border border-[var(--border)] p-5">
+        <section className="card-sand mt-6 p-5">
           <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
             Reprendre où vous en étiez
           </p>

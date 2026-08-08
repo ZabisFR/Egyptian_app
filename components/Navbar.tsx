@@ -24,8 +24,14 @@ export default async function Navbar() {
           {profile ? (
             <>
               <Link
-                href="/dashboard"
+                href="/daily"
                 className="text-[var(--muted)] hover:text-[var(--ink)] hover:underline"
+              >
+                Du jour
+              </Link>
+              <Link
+                href="/dashboard"
+                className="hidden text-[var(--muted)] hover:text-[var(--ink)] hover:underline sm:inline"
               >
                 Tableau de bord
               </Link>
