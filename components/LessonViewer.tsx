@@ -17,9 +17,16 @@ export default function LessonViewer({
         </p>
       )}
 
-      <article
-        className="prose prose-neutral mt-2 max-w-none dark:prose-invert prose-table:block prose-table:overflow-x-auto prose-table:whitespace-nowrap prose-th:text-left prose-blockquote:not-italic"
-      >
+      {/*
+        Pas de `whitespace-nowrap` sur les tables : la plupart en ont 2-3 colonnes de
+        prose (description, exemple) qui se lisent bien en enveloppant le texte. Forcer
+        une seule ligne rendait presque toutes les tables de leçon plus larges que
+        l'écran sur mobile — visuellement « ça dépasse », même si un défilement interne
+        la contenait techniquement. `overflow-x-auto` reste en filet de sécurité pour les
+        rares mots ou séquences arabes trop longs pour être coupés.
+      */}
+      <article className="prose prose-neutral mt-2 max-w-none dark:prose-invert prose-table:block prose-table:overflow-x-auto prose-th:text-left prose-blockquote:not-italic">
+
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {lesson.content_markdown}
         </ReactMarkdown>

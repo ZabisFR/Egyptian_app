@@ -6,7 +6,7 @@ export default async function Navbar() {
   const profile = await getProfile();
 
   return (
-    <nav className="border-b border-[var(--border)] bg-[var(--surface)] backdrop-blur">
+    <nav className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--surface)] backdrop-blur">
       {/* Frise dorée : la bande qui court en haut des stèles. Deux pixels suffisent à
           poser le registre égyptien sans charger chaque page d'ornements. */}
       <div className="h-0.5 bg-gradient-to-r from-[var(--carmine)] via-[var(--gold)] to-[var(--lapis)]" />
