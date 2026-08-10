@@ -1,0 +1,23 @@
+{
+  "name": "Le Manuel de l'Arabe Égyptien",
+  "short_name": "3arabi",
+  "description": "Apprendre l'arabe égyptien (Ammiya) du niveau A1 au B2",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1B2A4A",
+  "theme_color": "#1B2A4A",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
