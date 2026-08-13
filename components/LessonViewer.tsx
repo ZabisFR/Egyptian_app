@@ -1,6 +1,18 @@
+import type { ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import LetterAudioButton from './LetterAudioButton';
+import { ALPHABET_AUDIO } from '@/lib/alphabet-audio';
 import type { Lesson, VocabItem } from '@/lib/types';
+
+function extractText(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join('');
+  if (node && typeof node === 'object' && 'props' in node) {
+    return extractText((node as { props: { children?: ReactNode } }).props.children);
+  }
+  return '';
+}
 
 export default function LessonViewer({
   lesson,
@@ -9,6 +21,13 @@ export default function LessonViewer({
   lesson: Lesson;
   vocab: VocabItem[];
 }) {
+  // Les 28 lettres de l'alphabet (Jours 1-8 de module-01) ont un fichier audio ; le reste
+  // du contenu n'en a pas. On restreint le lookup à ce module précis plutôt que de se fier
+  // à l'unicité globale des noms de lettres à travers tout le contenu — plus sûr si un
+  // futur module réutilise un jour un mot comme "Ra" ou "Lam" dans un autre contexte.
+  const isAlphabetLesson =
+    lesson.module_id === 'module-01' && lesson.day !== null && lesson.day <= 8;
+
   return (
     <>
       {lesson.day !== null && (
@@ -27,7 +46,25 @@ export default function LessonViewer({
       */}
       <article className="prose prose-neutral mt-2 max-w-none dark:prose-invert prose-table:block prose-table:overflow-x-auto prose-th:text-left prose-blockquote:not-italic">
 
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={
+            isAlphabetLesson
+              ? {
+                  td: ({ node: _node, children, ...props }) => {
+                    const text = extractText(children).trim();
+                    const audioSrc = ALPHABET_AUDIO[text];
+                    return (
+                      <td {...props}>
+                        {children}
+                        {audioSrc && <LetterAudioButton src={audioSrc} label={text} />}
+                      </td>
+                    );
+                  },
+                }
+              : undefined
+          }
+        >
           {lesson.content_markdown}
         </ReactMarkdown>
       </article>
