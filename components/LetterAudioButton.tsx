@@ -56,9 +56,20 @@ export default function LetterAudioButton({
         setPlaying(true);
         audio.play().catch(() => setPlaying(false));
       }}
-      className="ml-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[var(--gold)] align-middle text-[10px] leading-none text-[var(--gold)] transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_15%,transparent)]"
+      className="group ml-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center align-middle"
     >
-      {playing ? '❚❚' : '▶'}
+      {/*
+        Le bouton lui-même fait 40x40 — la zone de clic recommandée pour le tactile —
+        mais seul ce cercle intérieur, plus petit, est visible : sinon la table de
+        l'alphabet paraîtrait truffée de gros ronds dorés au lieu d'un simple repère audio.
+      */}
+      <span
+        className={`flex h-6 w-6 items-center justify-center rounded-full border border-[var(--gold)] text-[11px] leading-none text-[var(--gold)] transition-colors group-hover:bg-[color-mix(in_srgb,var(--gold)_15%,transparent)] group-active:bg-[color-mix(in_srgb,var(--gold)_25%,transparent)] ${
+          playing ? 'bg-[color-mix(in_srgb,var(--gold)_20%,transparent)]' : ''
+        }`}
+      >
+        {playing ? '❚❚' : '▶'}
+      </span>
     </button>
   );
 }
