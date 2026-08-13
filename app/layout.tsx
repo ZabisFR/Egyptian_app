@@ -71,8 +71,15 @@ export const metadata: Metadata = {
 
 // Next.js exige un export `viewport` séparé pour themeColor depuis la v14 — le mettre
 // dans `metadata` produit un avertissement de dépréciation.
+//
+// Deux valeurs plutôt qu'une : la barre du navigateur mobile prend la couleur du fond de
+// page au lieu du bleu de l'icône. Une seule valeur laissait une bande marine au-dessus
+// du papyrus, visible sur iOS comme un bandeau qui n'appartient pas au site.
 export const viewport: Viewport = {
-  themeColor: '#1B2A4A',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fbf6ec' },
+    { media: '(prefers-color-scheme: dark)', color: '#14100b' },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
@@ -82,6 +89,21 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${geistSans.variable} ${display.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        {/*
+          Applique le thème choisi AVANT que la page ne s'affiche. Exécuté pendant l'analyse
+          du HTML, donc avant toute peinture : sans lui, une page ouverte en thème sombre
+          apparaîtrait blanche le temps que React monte, puis basculerait — le « flash »
+          caractéristique. Ce script est délibérément inline et minuscule pour ne pas
+          ajouter de requête bloquante.
+
+          Sans préférence enregistrée, aucun attribut n'est posé : c'est alors la préférence
+          système qui s'applique, via `color-scheme: light dark` (voir globals.css).
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
         {/*
           Lien d'évitement : au clavier, il évite de retraverser toute la navigation à
           chaque page. Invisible tant qu'il n'a pas le focus, il apparaît au premier Tab.

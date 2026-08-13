@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import QuizEngine, { type QuizQuestionView, type QuizResult } from '@/components/QuizEngine';
+import ScoreDial from '@/components/ScoreDial';
 
 export default function ModuleQuiz({
   moduleId,
@@ -31,17 +32,21 @@ export default function ModuleQuiz({
 
         return (
           <div>
-            <p className="text-sm text-[var(--muted)]">{moduleTitle}</p>
-            <p className="display mt-1 text-6xl">{result.score}%</p>
-            <p className="mt-3 text-sm text-[var(--muted)]">
-              {correct} bonnes réponses sur {result.answers.length}.
-            </p>
+            <p className="eyebrow">{moduleTitle}</p>
+
+            <div className="mt-5">
+              <ScoreDial
+                value={result.score}
+                tone={passed ? 'pass' : 'fail'}
+                caption={`${correct} bonnes réponses sur ${result.answers.length}`}
+              />
+            </div>
 
             <p
-              className={`mt-6 rounded-lg px-4 py-3 text-sm ${
+              className={`mt-7 rounded-[var(--r-sm)] px-4 py-3 text-sm ${
                 passed
-                  ? 'bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite)]'
-                  : 'bg-[color-mix(in_srgb,var(--gold)_14%,transparent)] text-[color-mix(in_srgb,var(--gold)_85%,var(--ink))]'
+                  ? 'bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite-text)]'
+                  : 'bg-[color-mix(in_srgb,var(--gold)_14%,transparent)] text-[var(--gold-text)]'
               }`}
             >
               {passed
@@ -80,7 +85,7 @@ export default function ModuleQuiz({
                   router.push(`/modules/${moduleId}/quiz?seed=${seed}`);
                   router.refresh();
                 }}
-                className="rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)]"
+                className="btn-outline"
               >
                 Refaire le quiz
               </button>

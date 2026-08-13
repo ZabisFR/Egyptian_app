@@ -53,19 +53,27 @@ export default async function ModulePage({
   }
 
   return (
-    <main className="mx-auto max-w-3xl p-6 sm:p-8">
-      <Link href="/modules" className="text-sm text-[var(--muted)] hover:underline">
+    <main className="mx-auto max-w-3xl px-6 pb-20 pt-8 sm:px-8">
+      <Link
+        href="/modules"
+        // `inline-block` + `py-1` : le lien nu ne faisait que 18 px de haut, sous les
+        // 24 px exigés pour une cible cliquable.
+        className="inline-block py-1 text-sm text-[var(--muted)] transition-colors hover:text-[var(--ink)]"
+      >
         ← Tous les modules
       </Link>
 
-      <header className="mt-4">
-        <div className="flex flex-wrap items-baseline gap-3">
-          <h1 className="display text-3xl">{mod.title}</h1>
+      <header className="mt-5">
+        {mod.order_index < 99 && <p className="eyebrow">Module {mod.number}</p>}
+        <div className="mt-1.5 flex flex-wrap items-baseline gap-3">
+          <h1 className="display text-3xl sm:text-4xl">{mod.title}</h1>
           <LevelBadge level={mod.level} />
         </div>
-        {mod.subtitle && <p className="mt-1 text-sm text-[var(--muted)]">{mod.subtitle}</p>}
+        {mod.subtitle && <p className="mt-1 text-[var(--muted)]">{mod.subtitle}</p>}
         {mod.description && (
-          <p className="mt-3 text-sm text-[var(--muted)]">{mod.description}</p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+            {mod.description}
+          </p>
         )}
 
         {user && moduleProgress && moduleProgress.lessonsTotal > 0 && (

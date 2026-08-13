@@ -34,37 +34,31 @@ export default async function ProfilePage() {
         {profile.email} · inscrit le {since}
       </p>
 
-      <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+      <dl className="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
         {[
           ['Niveau', profile.current_level],
           ['XP', profile.xp_points],
           ['Modules terminés', completed ?? 0],
         ].map(([label, value]) => (
-          <div
-            key={label}
-            className="rounded-lg border border-[var(--border)] p-4"
-          >
-            <dt className="text-xs uppercase tracking-wide text-[var(--muted)]">{label}</dt>
-            <dd className="mt-1 text-2xl font-semibold">{value}</dd>
+          <div key={label} className="card-sand p-4">
+            <dd className="display text-2xl leading-none tabular">{value}</dd>
+            <dt className="eyebrow mt-2">{label}</dt>
           </div>
         ))}
       </dl>
 
-      <Link
-        href="/placement-test"
-        className="mt-6 inline-block text-sm text-[var(--muted)] underline"
-      >
-        {profile.xp_points === 0 ? 'Passer le test de positionnement' : 'Refaire le test de positionnement'}
-      </Link>
-
-      <form action={logout} className="mt-10">
-        <button
-          type="submit"
-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)]"
-        >
-          Se déconnecter
-        </button>
-      </form>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <Link href="/placement-test" className="btn-outline">
+          {profile.xp_points === 0
+            ? 'Passer le test de positionnement'
+            : 'Refaire le test de positionnement'}
+        </Link>
+        <form action={logout}>
+          <button type="submit" className="btn-ghost">
+            Se déconnecter
+          </button>
+        </form>
+      </div>
 
       <PrivacyControls onExport={exportMyData} onDelete={deleteMyAccount} />
     </main>

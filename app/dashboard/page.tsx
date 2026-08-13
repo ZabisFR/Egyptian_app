@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import LevelBadge from '@/components/LevelBadge';
-import ProgressBar from '@/components/ProgressBar';
+import ScoreDial from '@/components/ScoreDial';
 import { requireProfile } from '@/lib/auth';
 import { getAllProgress } from '@/lib/progress';
 import { getDailyLesson } from '@/lib/daily';
@@ -57,95 +57,111 @@ export default async function DashboardPage() {
     return (data ?? []).find((l) => !read.has(l.order_index)) ?? null;
   }
 
+  const globalPct = lessonsTotal === 0 ? 0 : Math.round((lessonsRead / lessonsTotal) * 100);
+
   return (
-    <main className="mx-auto max-w-3xl p-6 sm:p-8">
+    <main className="mx-auto max-w-3xl px-6 pb-20 pt-10 sm:px-8">
       <div className="flex flex-wrap items-baseline gap-3">
         <h1 className="display text-3xl">Bonjour {profile.display_name}</h1>
         <LevelBadge level={profile.current_level} />
       </div>
 
-      <dl className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-        {[
-          ['Niveau', profile.current_level],
-          ['XP', profile.xp_points],
-          ['Modules terminés', `${completed}/${rows.length}`],
-          ['Leçons lues', `${lessonsRead}/${lessonsTotal}`],
-        ].map(([label, value]) => (
-          <div
-            key={label}
-            className="rounded-lg border border-[var(--border)] p-4"
-          >
-            <dt className="text-xs uppercase tracking-wide text-[var(--muted)]">{label}</dt>
-            <dd className="mt-1 text-xl font-semibold sm:text-2xl">{value}</dd>
-          </div>
-        ))}
-      </dl>
+      {/* Le cadran d'abord : c'est la réponse à « où j'en suis ? », la seule question que
+          l'on se pose en ouvrant un tableau de bord d'apprentissage. */}
+      <section className="card-sand rise mt-7 p-5 sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          <ScoreDial value={globalPct} caption={`${lessonsRead} leçons lues sur ${lessonsTotal}`} />
 
-      <div className="mt-8">
-        <ProgressBar
-          value={lessonsRead}
-          max={lessonsTotal}
-          label={`Progression globale — ${lessonsRead} leçons sur ${lessonsTotal}`}
-        />
-      </div>
-
-      <section className="card-sand mt-10 p-5">
-        <p className="text-xs uppercase tracking-wide text-[var(--muted)]">Leçon du jour</p>
-        <h2 className="display mt-2 text-lg">
-          {daily.alreadyDone
-            ? `Faite aujourd'hui — ${daily.lastScore} %`
-            : daily.questions.length > 0
-              ? `${daily.questions.length} mots à réviser`
-              : 'Rien à réviser pour l’instant'}
-        </h2>
-        <p className="mt-1 text-sm text-[var(--muted)]">
-          {daily.questions.length > 0 || daily.alreadyDone
-            ? `Tirés de vos ${daily.lessonsRead} leçons lues.`
-            : 'Marquez des leçons comme lues pour alimenter la révision.'}
-        </p>
-        {!daily.alreadyDone && daily.questions.length > 0 && (
-          <Link href="/daily" className="btn-sand mt-4 w-full sm:w-auto">
-            Commencer
-          </Link>
-        )}
+          <dl className="grid flex-1 grid-cols-3 gap-4 text-center sm:max-w-xs">
+            {[
+              ['XP', profile.xp_points],
+              ['Modules', `${completed}/${rows.length}`],
+              ['Niveau', profile.current_level],
+            ].map(([label, value]) => (
+              <div key={label}>
+                <dd className="display text-2xl leading-none tabular">{value}</dd>
+                <dt className="eyebrow mt-1.5">{label}</dt>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
-      {current && nextLesson && (
-        <section className="card-sand mt-6 p-5">
-          <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
-            Reprendre où vous en étiez
+      <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <section
+          className="card-sand rise flex flex-col p-5"
+          style={{ '--i': 1 } as React.CSSProperties}
+        >
+          <p className="eyebrow">Leçon du jour</p>
+          <h2 className="display mt-2 text-lg">
+            {daily.alreadyDone
+              ? `Faite aujourd'hui — ${daily.lastScore} %`
+              : daily.questions.length > 0
+                ? `${daily.questions.length} mots à réviser`
+                : 'Rien à réviser pour l’instant'}
+          </h2>
+          <p className="mt-1 flex-1 text-sm text-[var(--muted)]">
+            {daily.questions.length > 0 || daily.alreadyDone
+              ? `Tirés de vos ${daily.lessonsRead} leçons lues.`
+              : 'Marquez des leçons comme lues pour alimenter la révision.'}
           </p>
-          <h2 className="display mt-2 text-lg">{current.title}</h2>
-          <p className="mt-1 text-sm text-[var(--muted)]">{nextLesson.title}</p>
-          <Link
-            href={`/modules/${current.id}/${nextLesson.id}`}
-            className="btn-sand mt-4 w-full sm:w-auto"
-          >
-            Continuer
-          </Link>
-        </section>
-      )}
-
-      <h2 className="mt-12 text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
-        Tous les modules
-      </h2>
-      <ul className="mt-3 divide-y divide-[var(--border)]">
-        {rows.map((r) => (
-          <li key={r.id}>
-            <Link
-              href={`/modules/${r.id}`}
-              className="flex items-center gap-3 py-3 hover:bg-[color-mix(in_srgb,var(--gold)_8%,transparent)]"
-            >
-              <span className="min-w-0 flex-1 truncate text-sm">{r.title}</span>
-              <span className="shrink-0 text-xs text-[var(--muted)]">
-                {r.progress?.lessonsRead ?? 0}/{r.progress?.lessonsTotal ?? 0}
-              </span>
-              {r.progress?.status === 'completed' && (
-                <span className="shrink-0 text-[var(--malachite)]">✓</span>
-              )}
+          {!daily.alreadyDone && daily.questions.length > 0 && (
+            <Link href="/daily" className="btn-sand mt-4 w-full">
+              Commencer
             </Link>
-          </li>
-        ))}
+          )}
+        </section>
+
+        {current && nextLesson && (
+          <section
+            className="card-sand rise flex flex-col p-5"
+            style={{ '--i': 2 } as React.CSSProperties}
+          >
+            <p className="eyebrow">Reprendre où vous en étiez</p>
+            <h2 className="display mt-2 text-lg">{current.title}</h2>
+            <p className="mt-1 flex-1 text-sm text-[var(--muted)]">{nextLesson.title}</p>
+            <Link
+              href={`/modules/${current.id}/${nextLesson.id}`}
+              className="btn-sand mt-4 w-full"
+            >
+              Continuer
+            </Link>
+          </section>
+        )}
+      </div>
+
+      <h2 className="eyebrow mt-12">Tous les modules</h2>
+      <ul className="mt-3 divide-y divide-[var(--border)]">
+        {rows.map((r) => {
+          const read = r.progress?.lessonsRead ?? 0;
+          const total = r.progress?.lessonsTotal ?? 0;
+          const pct = total === 0 ? 0 : Math.round((read / total) * 100);
+          return (
+            <li key={r.id}>
+              <Link
+                href={`/modules/${r.id}`}
+                className="flex items-center gap-3 rounded-[var(--r-sm)] px-2 py-3 transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_9%,transparent)]"
+              >
+                <span className="min-w-0 flex-1 truncate text-sm">{r.title}</span>
+                <span
+                  aria-hidden="true"
+                  className="hidden h-1.5 w-24 shrink-0 overflow-hidden rounded-full bg-[var(--surface-sunken)] sm:block"
+                >
+                  <span
+                    className="block h-full rounded-full bg-[var(--gold)]"
+                    style={{ width: `${pct}%` }}
+                  />
+                </span>
+                <span className="shrink-0 text-xs text-[var(--muted)] tabular">
+                  {read}/{total}
+                </span>
+                <span className="w-4 shrink-0 text-[var(--malachite-text)]">
+                  {r.progress?.status === 'completed' ? '✓' : ''}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </main>
   );

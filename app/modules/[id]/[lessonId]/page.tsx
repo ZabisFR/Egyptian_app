@@ -41,8 +41,11 @@ export default async function LessonPage({
   const next = at < siblings!.length - 1 ? siblings![at + 1] : null;
 
   return (
-    <main className="mx-auto max-w-3xl p-6 sm:p-8">
-      <Link href={`/modules/${id}`} className="text-sm text-[var(--muted)] hover:underline">
+    <main className="mx-auto max-w-3xl px-6 pb-20 pt-8 sm:px-8">
+      <Link
+        href={`/modules/${id}`}
+        className="inline-block py-1 text-sm text-[var(--muted)] transition-colors hover:text-[var(--ink)]"
+      >
         ← Retour au module
       </Link>
 
@@ -60,17 +63,28 @@ export default async function LessonPage({
         />
       </div>
 
-      <nav className="mt-8 flex flex-col justify-between gap-3 border-t border-[var(--border)] pt-4 text-sm sm:flex-row sm:gap-4">
+      {/* Précédent / suivant en cartes plutôt qu'en liens nus : c'est le geste le plus
+          fréquent d'une leçon à l'autre, et une cible de 1,5 ligne de texte se rate au
+          doigt. Le titre de la leçon visée y est lisible avant le clic. */}
+      <nav className="mt-8 grid gap-3 sm:grid-cols-2">
         {prev ? (
-          <Link href={`/modules/${id}/${prev.id}`} className="text-left hover:underline">
-            ← {prev.title}
+          <Link
+            href={`/modules/${id}/${prev.id}`}
+            className="card-sand card-link p-4 text-left"
+          >
+            <span className="eyebrow">← Précédent</span>
+            <span className="display mt-1 block text-sm leading-snug">{prev.title}</span>
           </Link>
         ) : (
           <span />
         )}
         {next && (
-          <Link href={`/modules/${id}/${next.id}`} className="text-right hover:underline">
-            {next.title} →
+          <Link
+            href={`/modules/${id}/${next.id}`}
+            className="card-sand card-link p-4 text-right sm:col-start-2"
+          >
+            <span className="eyebrow">Suivant →</span>
+            <span className="display mt-1 block text-sm leading-snug">{next.title}</span>
           </Link>
         )}
       </nav>

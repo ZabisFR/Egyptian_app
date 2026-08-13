@@ -5,8 +5,11 @@ import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import type { AuthState } from '@/app/auth/actions';
 
+// py-3 plutôt que py-2 : avec la hauteur de ligne, le champ atteint 44 px, la hauteur
+// minimale confortable au doigt. Le fond `surface` le détache du grain de papyrus, sur
+// lequel un champ transparent se repérait mal.
 const INPUT =
-  'mt-1 w-full rounded-lg border border-[var(--border)] bg-transparent px-3 py-2 text-sm outline-none focus:border-[var(--gold)] ';
+  'mt-1.5 w-full rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3 text-sm outline-none transition-colors focus:border-[var(--gold)]';
 
 function SubmitButton({ label }: { label: string }) {
   const { pending } = useFormStatus();
@@ -32,12 +35,24 @@ export default function AuthForm({
   const isSignup = mode === 'signup';
 
   return (
-    <div className="mx-auto max-w-sm px-6 py-16">
-      <h1 className="display text-2xl">
-        {isSignup ? 'Créer un compte' : 'Se connecter'}
-      </h1>
+    <div className="mx-auto w-full max-w-sm px-6 py-14">
+      <span
+        aria-hidden="true"
+        className="flex h-11 w-11 items-center justify-center rounded-[0.8rem] bg-[var(--lapis)] text-2xl leading-none text-[var(--gold)] shadow-[var(--shadow-1)]"
+      >
+        ع
+      </span>
 
-      <form action={formAction} className="mt-8">
+      <h1 className="display mt-5 text-3xl">
+        {isSignup ? 'Créer un compte' : 'Bon retour'}
+      </h1>
+      <p className="mt-2 text-sm text-[var(--muted)]">
+        {isSignup
+          ? 'Pour garder votre progression d’un appareil à l’autre. Rien d’autre ne vous sera demandé.'
+          : 'Reprenez là où vous vous étiez arrêté.'}
+      </p>
+
+      <form action={formAction} className="card-sand mt-7 p-5">
         {isSignup && (
           <label className="block">
             <span className="text-sm font-medium">Pseudo</span>
@@ -77,7 +92,7 @@ export default function AuthForm({
         {state.error && (
           <p
             role="alert"
-            className="mt-4 rounded-lg bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] px-3 py-2 text-sm text-[var(--carmine)]"
+            className="mt-4 rounded-[var(--r-sm)] bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] px-3 py-2.5 text-sm text-[var(--carmine-text)]"
           >
             {state.error}
           </p>
@@ -85,7 +100,7 @@ export default function AuthForm({
         {state.notice && (
           <p
             role="status"
-            className="mt-4 rounded-lg bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-3 py-2 text-sm text-[var(--malachite)]"
+            className="mt-4 rounded-[var(--r-sm)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-3 py-2.5 text-sm text-[var(--malachite-text)]"
           >
             {state.notice}
           </p>

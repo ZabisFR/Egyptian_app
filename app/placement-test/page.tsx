@@ -44,7 +44,7 @@ export default async function PlacementTestPage() {
     }));
 
   return (
-    <main className="mx-auto max-w-2xl p-6 sm:p-8">
+    <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
       <h1 className="display text-3xl">Test de positionnement</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">
         {questions.length} questions, de l&apos;alphabet aux formes verbales. Aucune

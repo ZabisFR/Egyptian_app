@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import QuizEngine, { type QuizQuestionView, type QuizResult } from '@/components/QuizEngine';
+import ScoreDial from '@/components/ScoreDial';
 
 export default function DailyReview({
   questions,
@@ -20,18 +21,19 @@ export default function DailyReview({
 
         return (
           <div>
-            <p className="text-sm text-[var(--muted)]">Révision du jour terminée</p>
-            <p className="display mt-1 text-6xl">{result.score}%</p>
-            <p className="mt-3 text-sm text-[var(--muted)]">
-              {correct} sur {result.answers.length}. Revenez demain pour une nouvelle
-              sélection.
-            </p>
+            <p className="eyebrow">Révision du jour terminée</p>
+
+            <div className="mt-5">
+              <ScoreDial
+                value={result.score}
+                tone={missed.length === 0 ? 'pass' : 'neutral'}
+                caption={`${correct} sur ${result.answers.length} — revenez demain pour une nouvelle sélection.`}
+              />
+            </div>
 
             {missed.length > 0 && (
               <section className="mt-8">
-                <h2 className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
-                  À revoir ({missed.length})
-                </h2>
+                <h2 className="eyebrow">À revoir ({missed.length})</h2>
                 <ul className="mt-3 divide-y divide-[var(--border)]">
                   {missed.map((a) => {
                     const q = questions.find((x) => x.id === a.question_id);
@@ -40,9 +42,11 @@ export default function DailyReview({
                       <li key={a.question_id} className="py-2 text-sm">
                         <p className="text-[var(--muted)]">{q.question_text}</p>
                         <p className="mt-1">
-                          <span className="text-[var(--carmine)] line-through">{a.given}</span>
+                          <span className="text-[var(--carmine-text)] line-through">
+                            {a.given}
+                          </span>
                           {' → '}
-                          <span className="font-medium text-[var(--malachite)]">
+                          <span className="font-medium text-[var(--malachite-text)]">
                             {q.correct_answer}
                           </span>
                         </p>

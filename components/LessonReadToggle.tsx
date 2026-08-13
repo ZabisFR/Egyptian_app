@@ -40,10 +40,10 @@ export default function LessonReadToggle({
         })
       }
       aria-pressed={read}
-      className={`w-full rounded-lg border px-4 py-3 text-sm font-medium transition-colors sm:w-auto ${
+      className={`w-full sm:w-auto ${
         read
-          ? 'border-[var(--malachite)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite)]'
-          : 'border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)] '
+          ? 'btn-outline border-[var(--malachite)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite-text)] hover:bg-[color-mix(in_srgb,var(--malachite)_18%,transparent)]'
+          : 'btn-sand'
       }`}
     >
       {read ? '✓ Leçon lue' : 'Marquer comme lue'}

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function ConfidentialitePage() {
   return (
-    <main className="mx-auto max-w-2xl p-6 sm:p-8">
+    <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
       <h1 className="display text-3xl">Politique de confidentialité</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">
         Dernière mise à jour : {SITE.lastUpdated}
       </p>
 
-      <div className="prose prose-neutral mt-8 max-w-none dark:prose-invert prose-headings:display prose-a:text-[var(--lapis)]">
+      <div className="prose mt-8 max-w-none">
         <h2>En résumé</h2>
         <p>
           Ce site ne pratique aucun traçage publicitaire, n&apos;utilise aucun outil
@@ -31,6 +31,7 @@ export default function ConfidentialitePage() {
 
         <h2>Données collectées</h2>
         <p>Le site ne fonctionne qu&apos;avec les données strictement nécessaires :</p>
+        <div className="table-scroll" tabIndex={0}>
         <table>
           <thead>
             <tr>
@@ -69,6 +70,7 @@ export default function ConfidentialitePage() {
             </tr>
           </tbody>
         </table>
+        </div>
         <p>
           Aucune donnée de localisation, aucun profil publicitaire, aucune donnée sensible au
           sens de l&apos;article 9 du RGPD n&apos;est collectée.
@@ -82,7 +84,7 @@ export default function ConfidentialitePage() {
           enregistrée.
         </p>
 
-        <h2>Cookies</h2>
+        <h2>Cookies et stockage local</h2>
         <p>
           Seuls des cookies de session sont déposés, par notre prestataire
           d&apos;authentification, pour vous maintenir connecté d&apos;une page à
@@ -90,6 +92,15 @@ export default function ConfidentialitePage() {
           du service : à ce titre, la réglementation ePrivacy et les recommandations de la
           CNIL n&apos;imposent pas de recueillir votre consentement, et aucun bandeau
           cookies n&apos;est affiché.
+        </p>
+        <p>
+          Si vous utilisez le bouton de bascule clair / sombre, votre choix est enregistré
+          dans le stockage local de votre navigateur (clé <code>theme</code>). Cette
+          information ne quitte jamais votre appareil : elle n&apos;est ni transmise au
+          serveur, ni associée à votre compte, ni utilisée pour vous identifier. Il
+          s&apos;agit d&apos;une préférence d&apos;affichage que vous demandez explicitement,
+          donc également exemptée de consentement. Vider les données de site de votre
+          navigateur l&apos;efface.
         </p>
         <p>
           Aucun cookie de mesure d&apos;audience, de publicité ou de réseau social
@@ -116,9 +127,9 @@ export default function ConfidentialitePage() {
         <h2>Durée de conservation</h2>
         <p>
           Vos données sont conservées tant que votre compte existe. La suppression du compte
-          efface immédiatement et définitivement l&apos;ensemble de vos données : profil,
-          progression, historique des quiz. Cette suppression est irréversible et ne
-          conserve aucune copie.
+          efface définitivement l&apos;ensemble de vos données : profil, progression,
+          historique des quiz. Cette suppression est irréversible et ne conserve aucune
+          copie.
         </p>
 
         <h2>Vos droits</h2>
@@ -133,8 +144,11 @@ export default function ConfidentialitePage() {
             données au format JSON depuis <Link href="/profile">votre profil</Link>.
           </li>
           <li>
-            <strong>Effacement</strong> — supprimez votre compte et toutes vos données depuis{' '}
-            <Link href="/profile">votre profil</Link>.
+            <strong>Effacement</strong> — demandez la suppression de votre compte et de toutes
+            vos données depuis <Link href="/profile">votre profil</Link>. Si la suppression
+            automatique n&apos;est pas disponible, le site vous invite à nous écrire : la
+            demande est alors traitée manuellement, dans le délai d&apos;un mois prévu à
+            l&apos;article 12.3 du RGPD.
           </li>
         </ul>
         <p>

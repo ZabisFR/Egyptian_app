@@ -9,8 +9,8 @@ Référence fichier par fichier, pour déboguer sans avoir à tout relire. Organ
 | Fichier | Rôle |
 |---|---|
 | `middleware.ts` | S'exécute avant **chaque** requête (sauf assets statiques, voir `matcher`). Rafraîchit le token de session Supabase dans les cookies. Sans lui, une session expirée déconnecterait silencieusement l'utilisateur — les Server Components ne peuvent pas écrire de cookies eux-mêmes. |
-| `app/globals.css` | Palette (variables `--gold`, `--lapis`, `--carmine`, `--malachite`, `--sand-*`), thème clair/sombre via `@media (prefers-color-scheme)`, classes partagées (`.display`, `.cartouche`, `.btn-sand`, `.card-sand`, `.egypt-rule`), et tout le CSS du chemin de dunes (`.dune-node`, `.dune-path`, `.node-current`, `.pyramid-locked`). |
-| `app/layout.tsx` | Layout racine : charge les polices (Geist + Cormorant Garamond pour `.display`), monte `<Navbar>`, définit les métadonnées globales (`<title>`). |
+| `app/globals.css` | **Le fichier à lire avant toute modification visuelle.** Organisé en sections numérotées : (1) les deux palettes complètes — papyrus puis nuit du désert — (2) base et focus, (3) typographie et prose markdown, (4) ornements, (5) surfaces, (6) boutons, (7) mouvement, (8) planche gravée, (9) chemin de dunes. Les jetons couvrent la couleur (`--lapis`, `--gold`…), l'élévation (`--shadow-1..3`), les rayons (`--r-sm/md/lg`) et le mouvement (`--ease`, `--t-fast/mid/slow`). |
+| `app/layout.tsx` | Layout racine : charge les polices (Geist + Cormorant Garamond pour `.display`), monte `<Navbar>`, définit les métadonnées globales (`<title>`), et exécute le **script inline anti-flash** qui applique `data-theme` avant le premier rendu. |
 | `.env.local` | Jamais commité (`.gitignore`). Contient `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` (utilisées par l'app) et `SUPABASE_SECRET_KEY` (scripts locaux uniquement, jamais sur Vercel). |
 | `.env.example` | Modèle sans valeurs réelles, documente à quoi sert chaque variable. |
 
@@ -37,14 +37,19 @@ C'est le cœur à lire en premier pour comprendre une règle métier : tout ce q
 
 | Fichier | Rôle |
 |---|---|
-| `Navbar.tsx` | Server Component (lit la session via `getProfile()`). Sticky en haut (`sticky top-0 z-40`). Affiche les liens différemment selon connecté/non connecté. |
+| `Navbar.tsx` | Server Component (lit la session via `getProfile()`). Sticky en haut (`sticky top-0 z-40`). Affiche les liens différemment selon connecté/non connecté. Le nom du site disparaît sous 640 px, seule la marque ع reste. |
+| `NavLink.tsx` | Client Component minimal : le seul rôle de `usePathname()` est de poser `aria-current="page"`. C'est cet attribut — et non une classe — qui déclenche le soulignement doré de l'onglet courant, pour que style et sémantique ne puissent pas diverger. |
+| `ThemeToggle.tsx` | Bascule papyrus / nuit. Lit le thème via `useSyncExternalStore` (le thème vit dans le DOM, pas dans React) et l'écrit dans `localStorage`. Voir aussi le script inline de `layout.tsx` et la section RGPD de `/confidentialite`. |
+| `HorizonPlate.tsx` | La planche gravée de l'accueil : dunes, pyramides, soleil, caravane. 100 % SVG, thémée par variables CSS, zéro requête réseau. |
+| `SoundSampler.tsx` | Les quatre sons de l'Arabizi (3، 7، 5، 2) jouables au clic sur l'accueil. Réutilise les mp3 de `public/audio/alphabet/` déjà présents pour le module 01 : rien n'est téléchargé tant qu'on n'a pas cliqué. |
+| `ScoreDial.tsx` | Cadran de score circulaire des écrans de résultat (quiz, positionnement, révision du jour). L'anneau se remplit en CSS pur (`@keyframes dial-fill` lit `--dash-start`/`--dash-end`), donc le composant reste rendu côté serveur. |
 | `LevelBadge.tsx` | Le badge « A1 »/« B2 »/etc. en cartouche, une couleur par palier. |
 | `ModuleCard.tsx` | Carte d'un module dans `/modules`. Le filet doré à gauche encode le statut (plein = terminé, atténué = en cours). |
 | `LessonPath.tsx` | Le chemin de dunes. `offsetAt()` calcule la position sur le serpentin (8 positions qui se répètent), `Trail` dessine les traces de pas entre deux dunes. La variable CSS `--wave` réduit l'amplitude du serpentin sous 480px pour ne pas déborder sur mobile. |
 | `DuneIcon.tsx` | Les SVG bruts (dune, pyramide). Les couleurs viennent de classes CSS posées par le parent (`.dune-near`, `.pyr-sky`...), pas de `<defs>` dupliqués. |
 | `LessonViewer.tsx` | Rendu markdown d'une leçon (`react-markdown` + `remark-gfm`) + table de vocabulaire. |
 | `LessonReadToggle.tsx` | Bouton « Marquer comme lue ». Utilise `useOptimistic` : la coche apparaît immédiatement, avant même la confirmation du serveur. |
-| `QuizEngine.tsx` | Moteur générique de QCM, réutilisé par le quiz de module, le test de positionnement et la leçon du jour. Une question à la fois, feedback immédiat, `renderResult` est fourni par l'appelant pour personnaliser l'écran final. |
+| `QuizEngine.tsx` | Moteur générique de QCM, réutilisé par le quiz de module, le test de positionnement et la leçon du jour. Une question à la fois, feedback immédiat, `renderResult` est fourni par l'appelant pour personnaliser l'écran final. Raccourcis clavier : les chiffres **1 à 9** choisissent une réponse, **Entrée** enchaîne (les numéros sont affichés sur chaque bouton — un raccourci invisible n'existe pas). Le résultat est annoncé dans une zone `aria-live`, sans quoi un lecteur d'écran ne signalerait qu'un changement de couleur. |
 | `ProgressBar.tsx` | Barre de progression générique (dégradé or → carmin). |
 | `AuthForm.tsx` | Formulaire login/signup partagé, piloté par `useActionState` (React 19). |
 
@@ -135,3 +140,6 @@ Chaque fichier est numéroté et doit être exécuté une seule fois, dans l'ord
 - **Le quiz redonne le même ordre après « Refaire »** → vérifier que le bouton génère bien une nouvelle graine (`Math.random()` dans le gestionnaire de clic de `ModuleQuiz.tsx`, jamais pendant le rendu) et que l'URL contient `?seed=`.
 - **Erreur 500 vague sur une page avec Server Action inline** → chercher une `const` exportée dans un fichier `'use server'` : seules les fonctions `async` peuvent y être exportées, une constante fait planter la compilation.
 - **Lecture anonyme qui renvoie un tableau vide sans erreur** → RLS activé sans policy sur une table de contenu (voir `003_public_read_policies.sql`). Comparer une lecture avec la clé publique vs `SUPABASE_SECRET_KEY` pour confirmer.
+- **Une couleur reste claire en thème sombre** → la variable a été ajoutée au bloc `:root` mais pas aux DEUX blocs sombres de `globals.css` (`@media (prefers-color-scheme: dark)` **et** `:root[data-theme="dark"]`). Les trois blocs doivent lister les mêmes variables.
+- **La page défile horizontalement sur mobile** → un élément incompressible (presque toujours un tableau large) élargit le `<main>`. Envelopper le tableau dans `<div className="table-scroll" tabIndex={0}>` ; la règle `#contenu > * { min-width: 0 }` fait le reste. Ne pas passer le tableau en `display: block` : Chrome lui retire alors son rôle « table » dans l'arbre d'accessibilité.
+- **Vérifier un contraste** → le mesurer, pas l'estimer : lire `getComputedStyle().color` et composer les fonds successifs jusqu'au premier opaque. Attention, Chrome sérialise les `color-mix()` en `color(srgb 0.94 …)`, avec des composantes de 0 à 1 — les passer par un canvas 1×1 (`fillStyle` puis `getImageData`) normalise tous les formats en 0–255.

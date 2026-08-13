@@ -17,9 +17,11 @@ export default async function DailyPage() {
   });
 
   return (
-    <main className="mx-auto max-w-2xl p-6 sm:p-8">
+    <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
       <p className="cartouche">Leçon du jour</p>
-      <h1 className="display mt-4 text-3xl first-letter:uppercase">{formattedDate}</h1>
+      <h1 className="display mt-4 text-3xl first-letter:uppercase sm:text-4xl">
+        {formattedDate}
+      </h1>
 
       {daily.questions.length === 0 ? (
         <div className="card-sand mt-8 p-6">

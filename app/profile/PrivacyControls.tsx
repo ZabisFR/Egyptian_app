@@ -48,7 +48,7 @@ export default function PrivacyControls({
           <button
             type="button"
             onClick={() => setConfirming(true)}
-            className="w-full rounded-lg border border-[color-mix(in_srgb,var(--carmine)_50%,transparent)] px-5 py-2.5 text-sm font-semibold text-[var(--carmine)] transition-colors hover:bg-[color-mix(in_srgb,var(--carmine)_10%,transparent)] sm:w-auto"
+            className="w-full rounded-lg border border-[color-mix(in_srgb,var(--carmine)_50%,transparent)] px-5 py-2.5 text-sm font-semibold text-[var(--carmine-text)] transition-colors hover:bg-[color-mix(in_srgb,var(--carmine)_10%,transparent)] sm:w-auto"
           >
             Supprimer mon compte
           </button>
@@ -57,7 +57,7 @@ export default function PrivacyControls({
 
       {confirming && (
         <div className="mt-4 rounded-lg border border-[color-mix(in_srgb,var(--carmine)_50%,transparent)] bg-[color-mix(in_srgb,var(--carmine)_8%,transparent)] p-4">
-          <p className="text-sm font-semibold text-[var(--carmine)]">
+          <p className="text-sm font-semibold text-[var(--carmine-text)]">
             Cette action est irréversible.
           </p>
           <p className="mt-2 text-sm text-[var(--muted)]">
@@ -80,7 +80,7 @@ export default function PrivacyControls({
           </label>
 
           {error && (
-            <p role="alert" className="mt-3 text-sm text-[var(--carmine)]">
+            <p role="alert" className="mt-3 text-sm text-[var(--carmine-text)]">
               {error}
             </p>
           )}
@@ -96,7 +96,7 @@ export default function PrivacyControls({
                   if (result?.error) setError(result.error);
                 })
               }
-              className="w-full rounded-lg bg-[var(--carmine)] px-5 py-2.5 text-sm font-semibold text-[#fbf6ec] transition-opacity disabled:opacity-40 sm:w-auto"
+              className="w-full rounded-lg bg-[var(--carmine)] px-5 py-2.5 text-sm font-semibold text-[var(--on-carmine)] transition-opacity disabled:opacity-40 sm:w-auto"
             >
               {pending ? 'Suppression…' : 'Supprimer définitivement'}
             </button>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import QuizEngine, { type QuizQuestionView, type QuizResult } from '@/components/QuizEngine';
+import ScoreDial from '@/components/ScoreDial';
 import { assignLevel, breakdown } from '@/lib/quiz-scoring';
 
 export default function PlacementTest({
@@ -23,22 +24,42 @@ export default function PlacementTest({
 
         return (
           <div>
-            <p className="text-sm text-[var(--muted)]">Votre niveau estimé</p>
-            <p className="display mt-1 text-6xl">{level}</p>
-            <p className="mt-3 text-sm text-[var(--muted)]">
-              {result.score}% de bonnes réponses sur {result.answers.length} questions.
-            </p>
+            <p className="eyebrow">Votre niveau estimé</p>
 
+            <div className="mt-4 flex flex-wrap items-center gap-6">
+              <p className="display text-7xl leading-none">{level}</p>
+              <ScoreDial
+                value={result.score}
+                caption={`sur ${result.answers.length} questions`}
+              />
+            </div>
+
+            {/* Le détail par palier : c'est lui qui rend le résultat crédible. Un niveau
+                annoncé sans montrer où ça a cassé se discute ; celui-ci s'explique. */}
             <table className="mt-8 w-full text-sm">
               <tbody className="divide-y divide-[var(--border)]">
-                {rows.map((row) => (
-                  <tr key={row.level}>
-                    <td className="py-2 font-medium">{row.level}</td>
-                    <td className="py-2 text-right text-[var(--muted)]">
-                      {row.correct} / {row.total}
-                    </td>
-                  </tr>
-                ))}
+                {rows.map((row) => {
+                  const pct = row.total === 0 ? 0 : Math.round((row.correct / row.total) * 100);
+                  return (
+                    <tr key={row.level}>
+                      <td className="py-2.5 font-medium">{row.level}</td>
+                      <td className="w-1/2 py-2.5">
+                        <span className="block h-1.5 overflow-hidden rounded-full bg-[var(--surface-sunken)]">
+                          <span
+                            className="block h-full rounded-full"
+                            style={{
+                              width: `${pct}%`,
+                              background: pct >= 60 ? 'var(--malachite)' : 'var(--carmine)',
+                            }}
+                          />
+                        </span>
+                      </td>
+                      <td className="py-2.5 text-right text-[var(--muted)] tabular">
+                        {row.correct} / {row.total}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
 
@@ -48,7 +69,7 @@ export default function PlacementTest({
             </p>
 
             {isLoggedIn ? (
-              <p className="mt-6 text-sm text-[var(--malachite)]">
+              <p className="mt-6 text-sm text-[var(--malachite-text)]">
                 Niveau enregistré sur votre profil.
               </p>
             ) : (
@@ -70,7 +91,7 @@ export default function PlacementTest({
               {isLoggedIn && (
                 <Link
                   href="/profile"
-                  className="rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm font-medium hover:bg-[color-mix(in_srgb,var(--gold)_10%,transparent)]"
+                  className="btn-outline"
                 >
                   Mon profil
                 </Link>

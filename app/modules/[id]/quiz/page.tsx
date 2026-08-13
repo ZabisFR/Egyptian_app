@@ -66,7 +66,7 @@ export default async function ModuleQuizPage({
   }
 
   return (
-    <main className="mx-auto max-w-2xl p-6 sm:p-8">
+    <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
       <Link href={`/modules/${id}`} className="text-sm text-[var(--muted)] hover:underline">
         ← Retour au module
       </Link>

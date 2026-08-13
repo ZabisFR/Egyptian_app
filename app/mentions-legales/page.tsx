@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <main className="mx-auto max-w-2xl p-6 sm:p-8">
+    <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
       <h1 className="display text-3xl">Mentions légales</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">
         Dernière mise à jour : {SITE.lastUpdated}
       </p>
 
-      <div className="prose prose-neutral mt-8 max-w-none dark:prose-invert prose-headings:display prose-a:text-[var(--lapis)]">
+      <div className="prose mt-8 max-w-none">
         <h2>Éditeur du site</h2>
         <p>
           {SITE.publisher}

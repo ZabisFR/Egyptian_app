@@ -103,18 +103,36 @@ export default function LessonPath({
 
               return (
                 <Fragment key={lesson.id}>
-                  <li className="flex flex-col items-center">
+                  <li
+                    className="rise flex flex-col items-center"
+                    // Décalage plafonné : sur un module de 19 leçons, un décalage non
+                    // borné ferait apparaître la dernière dune plus d'une seconde après
+                    // la première.
+                    style={{ '--i': Math.min(rank, 8) } as React.CSSProperties}
+                  >
+                    {/* L'étiquette « vous êtes ici » double le halo pulsé : celui-ci
+                        disparaît en mouvement réduit, et une couleur seule ne suffit
+                        jamais à porter une information. */}
+                    {isCurrent && (
+                      <span
+                        className="dune-node cartouche mb-2"
+                        style={{ '--offset': offset } as React.CSSProperties}
+                      >
+                        Vous êtes ici
+                      </span>
+                    )}
+
                     <Link
                       href={`/modules/${moduleId}/${lesson.id}`}
                       aria-label={`${lesson.day === null ? '' : `Jour ${lesson.day} — `}${lesson.title}${lesson.read ? ' (lue)' : ''}`}
-                      className={`dune-node group relative flex h-16 w-16 items-center justify-center rounded-full transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--sand-sun)] sm:h-20 sm:w-20 ${
+                      className={`dune-node group relative flex h-16 w-16 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 ${
                         lesson.read ? 'node-done' : 'node-todo'
                       } ${isCurrent ? 'node-current' : ''}`}
                       style={{ '--offset': offset } as React.CSSProperties}
                     >
                       <DuneIcon />
                       {lesson.read && (
-                        <span className="absolute -bottom-0.5 -right-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--malachite)] text-xs font-bold text-white shadow">
+                        <span className="absolute -bottom-0.5 -right-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--malachite)] text-xs font-bold text-[var(--on-lapis)] shadow">
                           ✓
                         </span>
                       )}
@@ -127,7 +145,11 @@ export default function LessonPath({
                       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--gold-text)]">
                         {lesson.day === null ? 'Étape' : `Jour ${lesson.day}`}
                       </p>
-                      <p className="display mt-0.5 text-[13px] leading-snug text-[var(--muted)]">
+                      <p
+                        className={`display mt-0.5 text-[13px] leading-snug ${
+                          isCurrent ? 'text-[var(--ink)]' : 'text-[var(--muted)]'
+                        }`}
+                      >
                         {lesson.title}
                       </p>
                     </div>
@@ -148,13 +170,13 @@ export default function LessonPath({
             <Link
               href={`/modules/${moduleId}/quiz`}
               aria-label={`Quiz du module, ${quiz.count} questions${quiz.passed ? ', réussi' : ''}`}
-              className={`relative flex h-24 w-24 items-center justify-center rounded-full transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--sand-sun)] sm:h-28 sm:w-28 ${
+              className={`relative flex h-24 w-24 items-center justify-center rounded-full transition-transform duration-200 hover:scale-105 sm:h-28 sm:w-28 ${
                 quiz.unlocked || quiz.passed ? '' : 'pyramid-locked'
               }`}
             >
               <PyramidIcon />
               {quiz.passed && (
-                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-[var(--malachite)] text-sm font-bold text-white shadow">
+                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-[var(--malachite)] text-sm font-bold text-[var(--on-lapis)] shadow">
                   ✓
                 </span>
               )}
