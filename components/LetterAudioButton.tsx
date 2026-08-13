@@ -64,7 +64,7 @@ export default function LetterAudioButton({
         l'alphabet paraîtrait truffée de gros ronds dorés au lieu d'un simple repère audio.
       */}
       <span
-        className={`flex h-6 w-6 items-center justify-center rounded-full border border-[var(--gold)] text-[11px] leading-none text-[var(--gold)] transition-colors group-hover:bg-[color-mix(in_srgb,var(--gold)_15%,transparent)] group-active:bg-[color-mix(in_srgb,var(--gold)_25%,transparent)] ${
+        className={`flex h-6 w-6 items-center justify-center rounded-full border border-[var(--gold)] text-[11px] leading-none text-[var(--gold-text)] transition-colors group-hover:bg-[color-mix(in_srgb,var(--gold)_15%,transparent)] group-active:bg-[color-mix(in_srgb,var(--gold)_25%,transparent)] ${
           playing ? 'bg-[color-mix(in_srgb,var(--gold)_20%,transparent)]' : ''
         }`}
       >

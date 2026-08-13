@@ -30,13 +30,13 @@ export default function ModuleCard({
       <div className="flex items-baseline justify-between gap-4">
         <h2 className="display text-lg leading-snug">
           {module.order_index < 99 && (
-            <span className="mr-2 text-[var(--gold)]">{module.number}.</span>
+            <span className="mr-2 text-[var(--gold-text)]">{module.number}.</span>
           )}
           {module.title}
         </h2>
         <div className="flex shrink-0 items-center gap-2">
           {status === 'completed' && (
-            <span className="text-[var(--gold)]" title="Module terminé">
+            <span className="text-[var(--gold-text)]" title="Module terminé">
               ✓
             </span>
           )}

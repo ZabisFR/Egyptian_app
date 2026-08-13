@@ -124,7 +124,7 @@ export default function LessonPath({
                       className="dune-node mt-2 max-w-40 text-center"
                       style={{ '--offset': offset } as React.CSSProperties}
                     >
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--gold)]">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--gold-text)]">
                         {lesson.day === null ? 'Étape' : `Jour ${lesson.day}`}
                       </p>
                       <p className="display mt-0.5 text-[13px] leading-snug text-[var(--muted)]">

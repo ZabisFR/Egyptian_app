@@ -8,7 +8,7 @@
   --foreground: #2a2119;
   --surface: #ffffffcc;
   --border: #e0d2b8;
-  --muted: #8a7a63;
+  --muted: #7e6f5a;
   --ink: #2a2119;
   /* Pigments égyptiens : lapis-lazuli, ocre rouge, or, malachite. Ils remplacent la
      grille neutre de Tailwind partout où une couleur porte du sens. */
@@ -16,13 +16,28 @@
   --carmine: #9c3b2e;
   --gold: #b8862b;
   --malachite: #2f7d5c;
+
+  /* `--gold` sert de pigment décoratif (bordures, filets, aplats) : sur le papyrus il ne
+     tient que 3,0:1, très en dessous des 4,5:1 exigés pour du texte. `--gold-text` est sa
+     déclinaison lisible, assez sombre pour passer aussi sur le fond teinté du cartouche
+     (4,5:1) et pas seulement sur le papyrus nu (5,1:1). */
+  --gold-text: #886320;
+
+  /* Couleur du texte posé sur un aplat de lapis (boutons principaux). */
+  --on-lapis: #fbf6ec;
+
+  /* Texte des badges de niveau, mesuré contre le fond teinté de chaque badge (voir
+     components/LevelBadge.tsx). */
+  --badge-a1: #214566;
+  --badge-a2: #2d6f66;
+  --badge-b1: #86621f;
+  --badge-b2: #8b372b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-display: var(--font-display);
 }
 
@@ -38,6 +53,17 @@
     --carmine: #d4796a;
     --gold: #d9a942;
     --malachite: #4faa80;
+
+    /* Sur fond nuit, l'or est déjà à 8,8:1 : pas besoin de le décliner. En revanche le
+       lapis devient clair pour rester lisible en lien, donc le texte posé dessus doit
+       passer au sombre — l'ancien blanc cassé ne tenait que 2,6:1. */
+    --gold-text: #d9a942;
+    --on-lapis: #14100b;
+
+    --badge-a1: #88add1;
+    --badge-a2: #359187;
+    --badge-b1: #ddb55f;
+    --badge-b2: #d8897a;
   }
 }
 
@@ -85,7 +111,7 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: color-mix(in srgb, var(--gold) 75%, var(--ink));
+  color: var(--gold-text);
 }
 
 .card-sand {
@@ -104,7 +130,7 @@ body {
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #fbf6ec;
+  color: var(--on-lapis);
   transition: background-color 0.15s;
 }
 .btn-sand:hover {
@@ -126,6 +152,28 @@ body {
 }
 .btn-outline:hover {
   background: color-mix(in srgb, var(--gold) 10%, transparent);
+}
+
+/* Lien d'évitement : masqué visuellement mais lisible par les lecteurs d'écran, il
+   réapparaît au premier Tab pour sauter la navigation.
+   Écrit en CSS explicite plutôt qu'avec `sr-only focus:not-sr-only` : dans Tailwind v4,
+   les deux utilitaires vivent dans la même couche et `sr-only` l'emportait, laissant le
+   lien à 1x1 px même une fois focalisé. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 50;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  border-radius: 0.5rem;
+  background: var(--lapis);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-lapis);
 }
 
 /* Filet orné : deux traits fins encadrant un losange, motif de séparation courant sur

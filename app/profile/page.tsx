@@ -3,6 +3,8 @@ import LevelBadge from '@/components/LevelBadge';
 import { requireProfile } from '@/lib/auth';
 import { createClient } from '@/lib/supabase/server';
 import { logout } from '../auth/actions';
+import PrivacyControls from './PrivacyControls';
+import { deleteMyAccount, exportMyData } from './actions';
 
 export const dynamic = 'force-dynamic';
 
@@ -55,10 +57,6 @@ export default async function ProfilePage() {
         {profile.xp_points === 0 ? 'Passer le test de positionnement' : 'Refaire le test de positionnement'}
       </Link>
 
-      <p className="mt-6 text-sm text-[var(--muted)]">
-        La progression par module arrivera avec les quiz de modules.
-      </p>
-
       <form action={logout} className="mt-10">
         <button
           type="submit"
@@ -67,6 +65,8 @@ export default async function ProfilePage() {
           Se déconnecter
         </button>
       </form>
+
+      <PrivacyControls onExport={exportMyData} onDelete={deleteMyAccount} />
     </main>
   );
 }
