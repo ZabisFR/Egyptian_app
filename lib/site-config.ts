@@ -16,10 +16,10 @@ export const SITE = {
   url: 'https://egyptian-arabic-app-phi.vercel.app',
 
   /** Nom ou pseudonyme de l'éditeur, affiché dans les mentions légales. À REMPLIR. */
-  publisher: '[À REMPLIR : votre nom ou pseudonyme]',
+  publisher: 'Evan POUTEAU',
 
   /** Adresse e-mail de contact pour l'exercice des droits RGPD. À REMPLIR. */
-  contactEmail: '[À REMPLIR : votre adresse e-mail de contact]',
+  contactEmail: 'pouteaue78@gmail.com',
 
   /** Statut de l'éditeur : particulier ou professionnel. */
   publisherStatus: 'Particulier — site personnel sans activité commerciale',
