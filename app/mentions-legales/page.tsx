@@ -51,6 +51,16 @@ export default function MentionsLegalesPage() {
           La langue arabe égyptienne, son alphabet et sa grammaire relèvent du domaine
           public : seule la mise en forme pédagogique proposée ici est protégée.
         </p>
+        <p>
+          Les enregistrements audio de prononciation diffusés sur le site reproduisent la
+          voix de l&apos;éditeur. Cette voix est protégée au titre du droit à l&apos;image
+          et à la voix, distinct du droit d&apos;auteur sur les enregistrements eux-mêmes.
+          Toute extraction, téléchargement, réutilisation, montage, entraînement de
+          modèle de synthèse ou d&apos;imitation vocale (voice cloning), ou diffusion de
+          ces enregistrements en dehors du site, sous quelque forme que ce soit, est
+          <strong> strictement interdite</strong> sans autorisation écrite préalable de
+          l&apos;éditeur.
+        </p>
 
         <h2>Données personnelles</h2>
         <p>
