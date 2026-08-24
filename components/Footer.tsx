@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { feedbackMailto } from '@/lib/site-config';
+import FeedbackActions from './FeedbackActions';
 
 // Les mentions légales et la politique de confidentialité doivent être accessibles depuis
 // toutes les pages : c'est une obligation d'accessibilité de l'information (LCEN art. 6),
@@ -52,14 +52,6 @@ export default function Footer() {
             <p className="eyebrow">Le site</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <a
-                  href={feedbackMailto('Retour sur Arabe égyptien')}
-                  className="footer-link"
-                >
-                  Nous écrire
-                </a>
-              </li>
-              <li>
                 <Link
                   href="/mentions-legales"
                   className="footer-link"
@@ -79,11 +71,8 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Encart de retours : une langue vivante se corrige par ses locuteurs. Un simple
-            `mailto:` plutôt qu'un formulaire — un formulaire supposerait un point de
-            collecte, donc une ligne de plus dans la politique de confidentialité, pour un
-            service que la messagerie du visiteur rend déjà. */}
-        <div className="card-sand mt-10 flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+        {/* Encart de retours : une langue vivante se corrige par ses locuteurs. */}
+        <div className="card-sand mt-10 flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="display text-base">Une coquille, une tournure qui sonne faux ?</p>
             <p className="mt-1 text-sm text-[var(--muted)]">
@@ -91,15 +80,10 @@ export default function Footer() {
               modules bienvenues aussi.
             </p>
           </div>
-          <a
-            href={feedbackMailto(
-              'Retour sur Arabe égyptien',
-              'Bonjour,\n\nVoici mon retour :\n\n'
-            )}
-            className="btn-outline shrink-0"
-          >
-            Envoyer un retour
-          </a>
+          <FeedbackActions
+            subject="Retour sur Arabe égyptien"
+            body={'Bonjour,\n\nVoici mon retour :\n\n'}
+          />
         </div>
 
         <p className="mt-8 text-xs text-[var(--muted)]">

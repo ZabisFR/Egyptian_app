@@ -42,13 +42,28 @@ export const SITE = {
 } as const;
 
 /**
- * Construit un lien `mailto:` vers l'adresse de retours, avec objet (et corps) pré-remplis.
+ * Lien de rédaction Gmail, ouvert dans un onglet du navigateur.
+ *
+ * Pourquoi pas `mailto:` — c'était la première version, et elle était mauvaise : un lien
+ * `mailto:` délègue au client de messagerie ENREGISTRÉ DANS LE SYSTÈME. Sous Windows,
+ * c'est presque toujours Outlook, y compris chez quelqu'un qui ne lit ses mails que dans
+ * Gmail : la personne voit s'ouvrir un logiciel qu'elle n'utilise pas, souvent sur un
+ * compte qu'elle n'a jamais configuré, et abandonne.
+ *
+ * Ce lien-ci ouvre directement la fenêtre de rédaction Gmail, objet et corps déjà remplis.
+ * Il ne convient évidemment qu'aux utilisateurs de Gmail — d'où le bouton « copier »
+ * proposé à côté partout où ce lien apparaît (voir components/FeedbackActions.tsx).
  *
  * `encodeURIComponent` plutôt que `URLSearchParams` : ce dernier encode les espaces en `+`,
- * que plusieurs clients de messagerie affichent littéralement dans la ligne d'objet.
+ * que Gmail affiche littéralement dans la ligne d'objet.
  */
-export function feedbackMailto(subject: string, body?: string) {
-  const params = [`subject=${encodeURIComponent(subject)}`];
+export function gmailCompose(subject: string, body?: string) {
+  const params = [
+    'view=cm',
+    'fs=1',
+    `to=${encodeURIComponent(SITE.feedbackEmail)}`,
+    `su=${encodeURIComponent(subject)}`,
+  ];
   if (body) params.push(`body=${encodeURIComponent(body)}`);
-  return `mailto:${SITE.feedbackEmail}?${params.join('&')}`;
+  return `https://mail.google.com/mail/?${params.join('&')}`;
 }
