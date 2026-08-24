@@ -1,0 +1,81 @@
+{
+  "module": {
+    "id": "jobs-core",
+    "number": 110,
+    "title": "Les métiers",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les métiers et professions — le Module 10 donnait le vocabulaire du bureau, pas les métiers eux-mêmes.",
+    "order_index": 110
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Métiers courants (1/2)",
+      "content_markdown": "## Métiers courants\n\n| Égyptien | Sens |\n|---|---|\n| دكتور — doktor | médecin |\n| مدرس — modarres | professeur / enseignant |\n| مهندس — mohandes | ingénieur |\n| محامي — mo7ami | avocat |\n| ممرضة — mumarrida | infirmière |",
+      "vocab_items": [
+        {
+          "arabic": "دكتور",
+          "transliteration": "doktor",
+          "french": "médecin"
+        },
+        {
+          "arabic": "مدرس",
+          "transliteration": "modarres",
+          "french": "professeur / enseignant"
+        },
+        {
+          "arabic": "مهندس",
+          "transliteration": "mohandes",
+          "french": "ingénieur"
+        },
+        {
+          "arabic": "محامي",
+          "transliteration": "mo7ami",
+          "french": "avocat"
+        },
+        {
+          "arabic": "ممرضة",
+          "transliteration": "mumarrida",
+          "french": "infirmière"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Métiers courants (2/2)",
+      "content_markdown": "## Métiers courants\n\n| Égyptien | Sens |\n|---|---|\n| ضابط — dabet | policier / officier |\n| طيار — tayyar | pilote |\n| طباخ — tabbakh | cuisinier |\n| سائق — sa2e2 | chauffeur |\n| تاجر — taagir | commerçant |",
+      "vocab_items": [
+        {
+          "arabic": "ضابط",
+          "transliteration": "dabet",
+          "french": "policier / officier"
+        },
+        {
+          "arabic": "طيار",
+          "transliteration": "tayyar",
+          "french": "pilote"
+        },
+        {
+          "arabic": "طباخ",
+          "transliteration": "tabbakh",
+          "french": "cuisinier"
+        },
+        {
+          "arabic": "سائق",
+          "transliteration": "sa2e2",
+          "french": "chauffeur"
+        },
+        {
+          "arabic": "تاجر",
+          "transliteration": "taagir",
+          "french": "commerçant"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "module": {
+    "id": "transport-core",
+    "number": 109,
+    "title": "Les transports",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les moyens de transport au-delà du taxi déjà vu au Module 2 : métro, bus, tuk-tuk, moto.",
+    "order_index": 109
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les grands transports",
+      "content_markdown": "## Les grands transports\n\n| Égyptien | Sens |\n|---|---|\n| المترو — el-metro | le métro |\n| الأوتوبيس — el-otobees | le bus |\n| القطر — el-2atr | le train |\n| الطيارة — et-tayyaara | l'avion |\n| العربية — el-3arabeyya | la voiture |",
+      "vocab_items": [
+        {
+          "arabic": "المترو",
+          "transliteration": "el-metro",
+          "french": "le métro"
+        },
+        {
+          "arabic": "الأوتوبيس",
+          "transliteration": "el-otobees",
+          "french": "le bus"
+        },
+        {
+          "arabic": "القطر",
+          "transliteration": "el-2atr",
+          "french": "le train"
+        },
+        {
+          "arabic": "الطيارة",
+          "transliteration": "et-tayyaara",
+          "french": "l'avion"
+        },
+        {
+          "arabic": "العربية",
+          "transliteration": "el-3arabeyya",
+          "french": "la voiture"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Se déplacer en ville",
+      "content_markdown": "## Se déplacer en ville\n\n| Égyptien | Sens |\n|---|---|\n| التاكسي — et-taksi | le taxi |\n| العجلة — el-3agala | le vélo |\n| التوكتوك — et-toktok | le tuk-tuk |\n| الموتوسيكل — el-motosikl | la moto |\n| المحطة — el-ma7atta | la gare / la station |",
+      "vocab_items": [
+        {
+          "arabic": "التاكسي",
+          "transliteration": "et-taksi",
+          "french": "le taxi"
+        },
+        {
+          "arabic": "العجلة",
+          "transliteration": "el-3agala",
+          "french": "le vélo"
+        },
+        {
+          "arabic": "التوكتوك",
+          "transliteration": "et-toktok",
+          "french": "le tuk-tuk"
+        },
+        {
+          "arabic": "الموتوسيكل",
+          "transliteration": "el-motosikl",
+          "french": "la moto"
+        },
+        {
+          "arabic": "المحطة",
+          "transliteration": "el-ma7atta",
+          "french": "la gare / la station"
+        }
+      ]
+    }
+  ]
+}

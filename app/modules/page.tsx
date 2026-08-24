@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ModuleCard from '@/components/ModuleCard';
 import { getUser } from '@/lib/auth';
 import { getAllProgress } from '@/lib/progress';
@@ -72,6 +73,36 @@ export default async function ModulesPage() {
       <div className="egypt-rule mt-6">
         <span className="text-xs">◆</span>
       </div>
+
+      {/* Le glossaire n'est pas un module : il ne s'apprend pas, il se consulte. Il a donc
+          sa carte à part, avant la liste, plutôt qu'une ligne perdue au milieu du
+          programme. */}
+      <Link href="/glossaire" className="card-sand card-link mt-8 flex items-center gap-4 p-4">
+        <span
+          aria-hidden="true"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] bg-[color-mix(in_srgb,var(--lapis)_14%,transparent)] text-[var(--lapis-text)]"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H19v16H5.5A1.5 1.5 0 0 1 4 18.5Z" />
+            <path d="M8 8h7M8 12h7" />
+          </svg>
+        </span>
+        <span>
+          <span className="display block text-lg">Glossaire</span>
+          <span className="mt-0.5 block text-sm text-[var(--muted)]">
+            Tout le vocabulaire du site en une page, cherchable en français, en arabe ou en
+            Arabizi.
+          </span>
+        </span>
+      </Link>
 
       {groups.map((group) => (
         <section key={group.level} className="mt-10">

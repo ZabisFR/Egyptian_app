@@ -1,0 +1,76 @@
+{
+  "module": {
+    "id": "school-core",
+    "number": 113,
+    "title": "École et études",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Vocabulaire de l'école et des études, jamais couvert dans les modules (qui ne traitent que du travail).",
+    "order_index": 113
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les lieux et les gens",
+      "content_markdown": "## Les lieux et les gens\n\n| Égyptien | Sens |\n|---|---|\n| المدرسة — el-madrasa | l'école |\n| الجامعة — el-gam3a | l'université |\n| الفصل — el-fasl | la classe |\n| الطالب — et-taleb | l'étudiant |",
+      "vocab_items": [
+        {
+          "arabic": "المدرسة",
+          "transliteration": "el-madrasa",
+          "french": "l'école"
+        },
+        {
+          "arabic": "الجامعة",
+          "transliteration": "el-gam3a",
+          "french": "l'université"
+        },
+        {
+          "arabic": "الفصل",
+          "transliteration": "el-fasl",
+          "french": "la classe"
+        },
+        {
+          "arabic": "الطالب",
+          "transliteration": "et-taleb",
+          "french": "l'étudiant"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Les affaires scolaires",
+      "content_markdown": "## Les affaires scolaires\n\n| Égyptien | Sens |\n|---|---|\n| الامتحان — el-emte7an | l'examen |\n| الدرس — ed-dars | le cours / la leçon |\n| الواجب — el-wageb | les devoirs |\n| الكراسة — el-korrasa | le cahier |\n| القلم — el-2alam | le stylo |",
+      "vocab_items": [
+        {
+          "arabic": "الامتحان",
+          "transliteration": "el-emte7an",
+          "french": "l'examen"
+        },
+        {
+          "arabic": "الدرس",
+          "transliteration": "ed-dars",
+          "french": "le cours / la leçon"
+        },
+        {
+          "arabic": "الواجب",
+          "transliteration": "el-wageb",
+          "french": "les devoirs"
+        },
+        {
+          "arabic": "الكراسة",
+          "transliteration": "el-korrasa",
+          "french": "le cahier"
+        },
+        {
+          "arabic": "القلم",
+          "transliteration": "el-2alam",
+          "french": "le stylo"
+        }
+      ]
+    }
+  ]
+}

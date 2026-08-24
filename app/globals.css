@@ -808,6 +808,78 @@ body {
   border-left-color: var(--gold);
 }
 
+/* --------------------------------------------------------------------------
+   Glossaire
+   -------------------------------------------------------------------------- */
+
+/* Une entrée s'empile sur mobile et s'aligne en colonnes dès 640 px. Un vrai tableau à
+   quatre colonnes aurait imposé un défilement horizontal sur le contenu principal de la
+   page à 375 px — acceptable pour un tableau de conjugaison au milieu d'une leçon, pas
+   pour la page entière. */
+.glossaire-entree {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.125rem 0.75rem;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0.25rem;
+  font-size: 0.9375rem;
+}
+.glossaire-entree:hover {
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+}
+
+.glossaire-arabe {
+  grid-row: span 2;
+  min-width: 5rem;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.glossaire-sources {
+  grid-column: 2;
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 640px) {
+  .glossaire-entree {
+    grid-template-columns: 6.5rem 9rem 1fr auto;
+    gap: 1rem;
+    align-items: center;
+  }
+  .glossaire-arabe {
+    grid-row: auto;
+    min-width: 0;
+  }
+  .glossaire-sources {
+    grid-column: auto;
+    text-align: right;
+  }
+}
+
+/* Sélecteur de module. `min-height` plutôt qu'une hauteur fixe : le libellé de certains
+   modules est long et le menu natif doit pouvoir respirer. */
+.glossaire-select {
+  /* `min-width: 0` n'est pas décoratif : la largeur intrinsèque d'un `<select>` est celle
+     de son option la plus longue — ici « Les chiffres, l'argent et la possession directe
+     (35) ». Sans cette ligne, elle remontait jusqu'au `<main>` et poussait toute la page à
+     414 px de large sur un écran de 375 (mesuré). `max-width` seul n'y suffit pas : il
+     borne la taille finale, pas la contribution au minimum de contenu. */
+  width: 100%;
+  min-width: 0;
+  min-height: 2.25rem;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.375rem 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--ink);
+  transition: border-color var(--t-fast) var(--ease);
+}
+.glossaire-select:hover {
+  border-color: color-mix(in srgb, var(--gold) 50%, var(--border));
+}
+
 /* Le mot ciblé par l'ancre `#mot-<id>` : sans repère, on arrive en bas d'une leçon sans
    savoir lequel des vingt mots on cherchait. Le halo s'estompe de lui-même.
    La classe est posée par components/HashHighlight.tsx et non par `:target`, qui ne

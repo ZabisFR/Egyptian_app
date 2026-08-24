@@ -205,9 +205,22 @@ export default function VocabSearch() {
 
               {etat === 'repos' && requete.trim() === '' && (
                 <p className="px-4 py-6 text-sm text-[var(--muted)]">
-                  {index
-                    ? `${index.length} mots indexés. Tapez « bokra », « demain » ou « بكرة ».`
-                    : 'Tapez pour chercher.'}
+                  {index ? (
+                    <>
+                      {index.length} mots indexés. Tapez « bokra », « demain » ou « بكرة » —
+                      ou parcourez le{' '}
+                      <Link
+                        href="/glossaire"
+                        onClick={() => setOuvert(false)}
+                        className="text-[var(--lapis-text)] underline"
+                      >
+                        glossaire complet
+                      </Link>
+                      .
+                    </>
+                  ) : (
+                    'Tapez pour chercher.'
+                  )}
                 </p>
               )}
 

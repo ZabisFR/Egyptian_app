@@ -1,0 +1,76 @@
+{
+  "module": {
+    "id": "religion-core",
+    "number": 112,
+    "title": "Religion et fêtes",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Vocabulaire de base autour du Ramadan, des fêtes et de la pratique religieuse quotidienne — thème central dans les conversations réelles en Égypte.",
+    "order_index": 112
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Ramadan et pratique religieuse",
+      "content_markdown": "## Ramadan et pratique religieuse\n\n| Égyptien | Sens |\n|---|---|\n| رمضان — ramadan | le Ramadan |\n| العيد — el-3eid | la fête (l'Aïd) |\n| الصلاة — es-salah | la prière |\n| الصيام — es-siyam | le jeûne |\n| الإفطار — el-eftar | le repas de rupture du jeûne |",
+      "vocab_items": [
+        {
+          "arabic": "رمضان",
+          "transliteration": "ramadan",
+          "french": "le Ramadan"
+        },
+        {
+          "arabic": "العيد",
+          "transliteration": "el-3eid",
+          "french": "la fête (l'Aïd)"
+        },
+        {
+          "arabic": "الصلاة",
+          "transliteration": "es-salah",
+          "french": "la prière"
+        },
+        {
+          "arabic": "الصيام",
+          "transliteration": "es-siyam",
+          "french": "le jeûne"
+        },
+        {
+          "arabic": "الإفطار",
+          "transliteration": "el-eftar",
+          "french": "le repas de rupture du jeûne"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Formules de vœux et expressions religieuses",
+      "content_markdown": "## Formules de vœux et expressions religieuses\n\n| Égyptien | Sens |\n|---|---|\n| رمضان كريم — Ramadan kareem | « Ramadan généreux » — formule de vœux pendant le Ramadan |\n| كل سنة وانت طيب — kol sana wenta tayyeb | formule de vœux (anniversaire, Aïd, nouvel an) |\n| إن شاء الله — insha'Allah | si Dieu le veut |\n| الحمد لله — el-7amdulillah | Dieu merci (déjà vu Module 2) |",
+      "vocab_items": [
+        {
+          "arabic": "رمضان كريم",
+          "transliteration": "Ramadan kareem",
+          "french": "« Ramadan généreux » — formule de vœux pendant le Ramadan"
+        },
+        {
+          "arabic": "كل سنة وانت طيب",
+          "transliteration": "kol sana wenta tayyeb",
+          "french": "formule de vœux (anniversaire, Aïd, nouvel an)"
+        },
+        {
+          "arabic": "إن شاء الله",
+          "transliteration": "insha'Allah",
+          "french": "si Dieu le veut"
+        },
+        {
+          "arabic": "الحمد لله",
+          "transliteration": "el-7amdulillah",
+          "french": "Dieu merci"
+        }
+      ]
+    }
+  ]
+}

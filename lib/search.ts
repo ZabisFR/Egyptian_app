@@ -18,6 +18,8 @@ export type VocabHit = {
   f: string;
   /** id du module */
   m: string;
+  /** titre du module — sert d'étiquette de thème dans le glossaire */
+  mt: string;
   /** id de la leçon */
   l: string;
   /** titre de la leçon */

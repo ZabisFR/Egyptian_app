@@ -1,0 +1,76 @@
+{
+  "module": {
+    "id": "places-core",
+    "number": 111,
+    "title": "Lieux publics",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les lieux et bâtiments publics pour se repérer en ville, au-delà de la pharmacie déjà vue au Module 10.",
+    "order_index": 111
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Services et commerces",
+      "content_markdown": "## Services et commerces\n\n| Égyptien | Sens |\n|---|---|\n| البنك — el-bank | la banque |\n| البوستة — el-bosta | la poste |\n| المستشفى — el-mostashfa | l'hôpital |\n| الصيدلية — es-saydaleyya | la pharmacie |\n| السوبر ماركت — es-supermarket | le supermarché |",
+      "vocab_items": [
+        {
+          "arabic": "البنك",
+          "transliteration": "el-bank",
+          "french": "la banque"
+        },
+        {
+          "arabic": "البوستة",
+          "transliteration": "el-bosta",
+          "french": "la poste"
+        },
+        {
+          "arabic": "المستشفى",
+          "transliteration": "el-mostashfa",
+          "french": "l'hôpital"
+        },
+        {
+          "arabic": "الصيدلية",
+          "transliteration": "es-saydaleyya",
+          "french": "la pharmacie"
+        },
+        {
+          "arabic": "السوبر ماركت",
+          "transliteration": "es-supermarket",
+          "french": "le supermarché"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Lieux de culte et espaces publics",
+      "content_markdown": "## Lieux de culte et espaces publics\n\n| Égyptien | Sens |\n|---|---|\n| الجامع — el-gam3 | la mosquée |\n| الكنيسة — el-kaneesa | l'église |\n| المدرسة — el-madrasa | l'école |\n| الحديقة — el-7adee2a | le parc / jardin |",
+      "vocab_items": [
+        {
+          "arabic": "الجامع",
+          "transliteration": "el-gam3",
+          "french": "la mosquée"
+        },
+        {
+          "arabic": "الكنيسة",
+          "transliteration": "el-kaneesa",
+          "french": "l'église"
+        },
+        {
+          "arabic": "المدرسة",
+          "transliteration": "el-madrasa",
+          "french": "l'école"
+        },
+        {
+          "arabic": "الحديقة",
+          "transliteration": "el-7adee2a",
+          "french": "le parc / jardin"
+        }
+      ]
+    }
+  ]
+}

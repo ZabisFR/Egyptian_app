@@ -30,6 +30,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/glossaire" className="footer-link">
+                  Glossaire complet
+                </Link>
+              </li>
+              <li>
                 <Link
                   href="/placement-test"
                   className="footer-link"
