@@ -1,0 +1,46 @@
+{
+  "module": {
+    "id": "ordinals-core",
+    "number": 102,
+    "title": "Les nombres ordinaux",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Premier, deuxième, troisième… du 1er au 10e au masculin et au féminin, la place particulière de awwil, et ce qu'on fait au-delà de dix.",
+    "order_index": 102
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 0,
+      "section": "Les ordinaux",
+      "title": "Du premier au dixième",
+      "content_markdown": "## Du premier au dixième\n\n> 📌 Règle : sauf **awwil**, tous les ordinaux se forment sur le moule **fa3el**, et leur féminin s'obtient en ajoutant **-a** tout en supprimant la voyelle avant la dernière consonne : tale**t** → tal**ta**, sabe**3** → sab**3a**.\n\n| Rang | Masculin | Féminin |\n|---|---|---|\n| 1er | أول (awwil) | أولى (oula) |\n| 2e | تاني (tani) | تانية (tanya) |\n| 3e | تالت (talet) | تالتة (talta) |\n| 4e | رابع (rabe3) | رابعة (rab3a) |\n| 5e | خامس (khames) | خامسة (khamsa) |\n| 6e | سادس (sades) | سادسة (sadsa) |\n| 7e | سابع (sabe3) | سابعة (sab3a) |\n| 8e | تامن (tamen) | تامنة (tamna) |\n| 9e | تاسع (tase3) | تاسعة (tas3a) |\n| 10e | عاشر (3asher) | عاشرة (3ashra) |\n\n> 💡 Le féminin de **awwil** est irrégulier : c'est **oula** (أولى), et non *awwila*. C'est la seule exception de la liste.\n\n> 💡 **Talet** et **tamen** commencent par un T et non par un TH : l'égyptien du Caire a fait disparaître le son *th* de l'arabe littéraire (*thalith*, *thamin*).",
+      "vocab_items": [
+        { "arabic": "أول", "transliteration": "awwil", "french": "Premier" },
+        { "arabic": "تاني", "transliteration": "tani", "french": "Deuxième" },
+        { "arabic": "تالت", "transliteration": "talet", "french": "Troisième" },
+        { "arabic": "رابع", "transliteration": "rabe3", "french": "Quatrième" },
+        { "arabic": "خامس", "transliteration": "khames", "french": "Cinquième" },
+        { "arabic": "سادس", "transliteration": "sades", "french": "Sixième" },
+        { "arabic": "سابع", "transliteration": "sabe3", "french": "Septième" },
+        { "arabic": "تامن", "transliteration": "tamen", "french": "Huitième" },
+        { "arabic": "تاسع", "transliteration": "tase3", "french": "Neuvième" },
+        { "arabic": "عاشر", "transliteration": "3asher", "french": "Dixième" }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Les ordinaux",
+      "title": "Où placer l'ordinal",
+      "content_markdown": "## Où placer l'ordinal\n\n> 📌 Règle : **awwil** se place AVANT le nom, sans article. Tous les autres ordinaux se placent APRÈS le nom, et prennent l'article si le nom le prend. C'est la seule difficulté réelle du chapitre.\n\n| Structure | Exemple | Traduction |\n|---|---|---|\n| awwil + nom nu | أول مرة (awwil marra) | La première fois |\n| awwil + nom nu | أول يوم (awwil yom) | Le premier jour |\n| nom + ordinal, tous deux avec l'article | المرة التانية (el-marra el-tanya) | La deuxième fois |\n| nom + ordinal, tous deux avec l'article | الدور التالت (el-dor el-talet) | Le troisième étage |\n| nom + ordinal, sans article | مرة تانية (marra tanya) | Une deuxième fois |\n\n> 💡 **Marra tanya** sans article ne veut pas dire « la deuxième fois » mais « encore une fois » — c'est l'expression qu'on entend le plus souvent au quotidien.\n\n### Au-delà de dix\n\n> 📌 Règle : à partir de onze, l'égyptien parlé abandonne les ordinaux et emploie le nombre cardinal, placé après le nom.\n\n| Exemple | Traduction |\n|---|---|\n| الدور حداشر (El-dor 7edashar) | Le onzième étage (litt. l'étage onze) |\n| الصفحة عشرين (El-safha 3eshreen) | La page vingt |\n\n### Les employer\n\n| Phrase | Traduction |\n|---|---|\n| دي أول مرة أزور مصر (Di awwil marra azoor Masr) | C'est la première fois que je visite l'Égypte |\n| ساكن في الدور الخامس (Saken fel-dor el-khames) | J'habite au cinquième étage |\n| خد أول شارع على اليمين (Khod awwil share3 3ala el-yemeen) | Prends la première rue à droite |",
+      "vocab_items": [
+        { "arabic": "أول مرة", "transliteration": "awwil marra", "french": "La première fois" },
+        { "arabic": "مرة تانية", "transliteration": "marra tanya", "french": "Encore une fois" },
+        { "arabic": "الدور", "transliteration": "el-dor", "french": "L'étage" },
+        { "arabic": "الصفحة", "transliteration": "el-safha", "french": "La page" },
+        { "arabic": "خد أول شارع على اليمين", "transliteration": "Khod awwil share3 3ala el-yemeen", "french": "Prends la première rue à droite" }
+      ]
+    }
+  ]
+}

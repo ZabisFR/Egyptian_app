@@ -44,13 +44,17 @@ export default async function ModulesPage() {
   const total = modules.reduce((n, m) => n + (m.lessons[0]?.count ?? 0), 0);
   const done = modules.filter((m) => progress.get(m.id)?.status === 'completed').length;
 
-  // Les modules arrivent triés par `order_index`, donc les niveaux sont déjà contigus :
-  // on regroupe en conservant l'ordre d'apparition plutôt qu'en triant par nom de niveau,
-  // ce qui placerait « REF » entre B1 et B2.
+  // Un groupe par niveau, dans l'ordre où chaque niveau apparaît pour la première fois.
+  //
+  // Découper sur les ruptures de niveau ne marche pas : le programme alterne — module-09
+  // est un B2 encadré de B1, module-10 et 11 repassent en B1 — ce qui affichait deux fois
+  // « Niveau B1 » et deux fois « Niveau B2 ». On cherche donc le groupe existant.
+  // L'ordre d'apparition (et non l'ordre alphabétique du niveau) est ce qui garde « REF »
+  // en fin de liste plutôt qu'entre B1 et B2.
   const groups: { level: Level; modules: ModuleRow[] }[] = [];
   for (const m of modules) {
-    const last = groups.at(-1);
-    if (last && last.level === m.level) last.modules.push(m);
+    const group = groups.find((g) => g.level === m.level);
+    if (group) group.modules.push(m);
     else groups.push({ level: m.level, modules: [m] });
   }
 

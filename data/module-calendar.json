@@ -1,0 +1,73 @@
+{
+  "module": {
+    "id": "calendar-core",
+    "number": 101,
+    "title": "Les jours et les mois",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les sept jours de la semaine égyptienne, les douze mois de l'année, et les repères qui situent un moment : aujourd'hui, demain, hier, la semaine prochaine.",
+    "order_index": 101
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 0,
+      "section": "Le calendrier",
+      "title": "Les jours de la semaine",
+      "content_markdown": "## Les jours de la semaine\n\n> 📌 Règle : la semaine égyptienne commence le **samedi**. Les noms des jours sont pour la plupart des numéros — el-7add vient de « un », el-etneen de « deux », el-talat de « trois », el-arba3 de « quatre », el-khamees de « cinq ».\n\n| Français | Arabe | Romanisation | Sens littéral |\n|---|---|---|---|\n| Samedi | السبت | el-sabt | Le sabbat |\n| Dimanche | الحد | el-7add | Le premier |\n| Lundi | الاتنين | el-etneen | Le deuxième |\n| Mardi | التلات | el-talat | Le troisième |\n| Mercredi | الأربع | el-arba3 | Le quatrième |\n| Jeudi | الخميس | el-khamees | Le cinquième |\n| Vendredi | الجمعة | el-gom3a | Le rassemblement |\n\n> 💡 Le week-end égyptien tombe le **vendredi et le samedi**. La semaine de travail va donc du dimanche au jeudi : quand un Égyptien dit « on se voit dimanche », il parle d'un jour ouvré.\n\n### Les employer\n\n| Phrase | Traduction |\n|---|---|\n| يوم الاتنين (Yom el-etneen) | Lundi (litt. le jour du lundi) |\n| النهاردة الخميس (En-naharda el-khamees) | Aujourd'hui on est jeudi |\n| كل يوم جمعة (Koll yom gom3a) | Tous les vendredis |",
+      "vocab_items": [
+        { "arabic": "السبت", "transliteration": "el-sabt", "french": "Samedi" },
+        { "arabic": "الحد", "transliteration": "el-7add", "french": "Dimanche" },
+        { "arabic": "الاتنين", "transliteration": "el-etneen", "french": "Lundi" },
+        { "arabic": "التلات", "transliteration": "el-talat", "french": "Mardi" },
+        { "arabic": "الأربع", "transliteration": "el-arba3", "french": "Mercredi" },
+        { "arabic": "الخميس", "transliteration": "el-khamees", "french": "Jeudi" },
+        { "arabic": "الجمعة", "transliteration": "el-gom3a", "french": "Vendredi" },
+        { "arabic": "يوم", "transliteration": "yom", "french": "Jour" },
+        { "arabic": "أسبوع", "transliteration": "osboo3", "french": "Semaine" }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Le calendrier",
+      "title": "Les mois de l'année",
+      "content_markdown": "## Les mois de l'année\n\n> 📌 Règle : l'Égypte utilise le calendrier grégorien avec les noms européens adaptés à la phonétique arabe. C'est une différence nette avec la Syrie ou l'Irak, qui emploient des noms d'origine sémitique (Kanoun, Tishreen…) totalement incompréhensibles au Caire.\n\n| Français | Arabe | Romanisation |\n|---|---|---|\n| Janvier | يناير | yanayer |\n| Février | فبراير | febrayer |\n| Mars | مارس | mares |\n| Avril | أبريل | abreel |\n| Mai | مايو | mayo |\n| Juin | يونيو | yonyo |\n| Juillet | يوليو | yolyo |\n| Août | أغسطس | aghostos |\n| Septembre | سبتمبر | septamber |\n| Octobre | أكتوبر | oktober |\n| Novembre | نوفمبر | novamber |\n| Décembre | ديسمبر | desamber |\n\n> 💡 Un mois se dit **shahr** (شهر) et l'année **sana** (سنة). Pour dire « en janvier », on emploie **fi** : في يناير (fi yanayer).\n\n### Les employer\n\n| Phrase | Traduction |\n|---|---|\n| في شهر مارس (Fi shahr mares) | Au mois de mars |\n| من يونيو لسبتمبر (Min yonyo le-septamber) | De juin à septembre |\n| الشهر الجاي (El-shahr el-gay) | Le mois prochain |",
+      "vocab_items": [
+        { "arabic": "يناير", "transliteration": "yanayer", "french": "Janvier" },
+        { "arabic": "فبراير", "transliteration": "febrayer", "french": "Février" },
+        { "arabic": "مارس", "transliteration": "mares", "french": "Mars" },
+        { "arabic": "أبريل", "transliteration": "abreel", "french": "Avril" },
+        { "arabic": "مايو", "transliteration": "mayo", "french": "Mai" },
+        { "arabic": "يونيو", "transliteration": "yonyo", "french": "Juin" },
+        { "arabic": "يوليو", "transliteration": "yolyo", "french": "Juillet" },
+        { "arabic": "أغسطس", "transliteration": "aghostos", "french": "Août" },
+        { "arabic": "سبتمبر", "transliteration": "septamber", "french": "Septembre" },
+        { "arabic": "أكتوبر", "transliteration": "oktober", "french": "Octobre" },
+        { "arabic": "نوفمبر", "transliteration": "novamber", "french": "Novembre" },
+        { "arabic": "ديسمبر", "transliteration": "desamber", "french": "Décembre" },
+        { "arabic": "شهر", "transliteration": "shahr", "french": "Mois" },
+        { "arabic": "سنة", "transliteration": "sana", "french": "Année" }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Situer un moment",
+      "title": "Aujourd'hui, demain, hier",
+      "content_markdown": "## Aujourd'hui, demain, hier\n\n> 📌 Règle : ces repères sont les réponses naturelles à la question **إمتى؟ (Emta ?)** — « Quand ? ». Aucun ne se construit, ils s'apprennent tels quels.\n\n| Français | Arabe | Romanisation |\n|---|---|---|\n| Aujourd'hui | النهاردة | en-naharda |\n| Demain | بكرة | bokra |\n| Hier | إمبارح | embare7 |\n| Après-demain | بعد بكرة | ba3d bokra |\n| Avant-hier | أول إمبارح | awwil embare7 |\n| Le matin | الصبح | el-sob7 |\n| Le soir | بالليل | bel-leel |\n| Maintenant | دلوقتي | delwa2ti |\n\n### Cette semaine, le mois prochain\n\n> 💡 **Dah** (ده) et **di** (دي) veulent dire « ce / cette » et se placent APRÈS le nom. **El-gay** (الجاي) signifie « qui vient », **elli fat** (اللي فات) « qui est passé ».\n\n| Français | Romanisation |\n|---|---|\n| Cette semaine | el-osboo3 dah |\n| La semaine prochaine | el-osboo3 el-gay |\n| La semaine dernière | el-osboo3 elli fat |\n| Ce mois-ci | el-shahr dah |\n| Cette année | el-sana di |\n\n**Emta 7ateegi ?** = Quand est-ce que tu viens ?\n\n**Bokra el-sob7** = Demain matin",
+      "vocab_items": [
+        { "arabic": "النهاردة", "transliteration": "en-naharda", "french": "Aujourd'hui" },
+        { "arabic": "بكرة", "transliteration": "bokra", "french": "Demain" },
+        { "arabic": "إمبارح", "transliteration": "embare7", "french": "Hier" },
+        { "arabic": "بعد بكرة", "transliteration": "ba3d bokra", "french": "Après-demain" },
+        { "arabic": "أول إمبارح", "transliteration": "awwil embare7", "french": "Avant-hier" },
+        { "arabic": "الصبح", "transliteration": "el-sob7", "french": "Le matin" },
+        { "arabic": "بالليل", "transliteration": "bel-leel", "french": "Le soir" },
+        { "arabic": "دلوقتي", "transliteration": "delwa2ti", "french": "Maintenant" },
+        { "arabic": "الجاي", "transliteration": "el-gay", "french": "Prochain (qui vient)" },
+        { "arabic": "اللي فات", "transliteration": "elli fat", "french": "Dernier (qui est passé)" }
+      ]
+    }
+  ]
+}

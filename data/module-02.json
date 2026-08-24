@@ -132,7 +132,7 @@
       "order_index": 3,
       "section": "SECTION 1 : Identité, Salutations et Questions",
       "title": "Les Mots Interrogatifs (Poser des questions)",
-      "content_markdown": "## Jour 13 — Les Mots Interrogatifs (Poser des questions)\n\n> 📌 Règle : En égyptien, contrairement au français, le mot interrogatif se place À LA FIN de la phrase. Exemple : Enti feen ? = Tu es où ? (littéralement : Toi où ?)\n\n| Interrogatif | Utilisation / Exemple |\n|---|---|\n| Éh ? (Quoi) | Esmak éh ? = Tu t'appelles quoi ? |\n| Feen ? (Où) | Enti feen ? = Tu es où ? |\n| Meen ? (Qui) | Meen dah ? = C'est qui ? |\n| Ezay ? (Comment) | Howa ezzayo ? = Comment va-t-il ? |\n| Léh ? (Pourquoi) | Enta roh léh ? = Tu pars pourquoi ? |",
+      "content_markdown": "## Jour 13 — Les Mots Interrogatifs (Poser des questions)\n\n> 📌 Règle : En égyptien, contrairement au français, le mot interrogatif se place À LA FIN de la phrase. Exemple : Enti feen ? = Tu es où ? (littéralement : Toi où ?)\n\n| Interrogatif | Utilisation / Exemple |\n|---|---|\n| Éh ? (Quoi) | Esmak éh ? = Tu t'appelles quoi ? |\n| Feen ? (Où) | Enti feen ? = Tu es où ? |\n| Meen ? (Qui) | Meen dah ? = C'est qui ? |\n| Ezay ? (Comment) | Howa ezzayo ? = Comment va-t-il ? |\n| Emta ? (Quand) | Hatsafer emta ? = Tu pars quand ? |\n| Léh ? (Pourquoi) | Enta roh léh ? = Tu pars pourquoi ? |",
       "vocab_items": [
         {
           "arabic": null,
@@ -153,6 +153,11 @@
           "arabic": null,
           "transliteration": "Ezay?",
           "french": "Comment ?"
+        },
+        {
+          "arabic": "إمتى؟",
+          "transliteration": "Emta?",
+          "french": "Quand ?"
         },
         {
           "arabic": null,

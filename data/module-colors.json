@@ -1,0 +1,59 @@
+{
+  "module": {
+    "id": "colors-core",
+    "number": 100,
+    "title": "Les couleurs",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les six couleurs de base et leur schéma af3al (masculin, féminin, pluriel), les couleurs dérivées en -i, et la règle de placement et d'accord avec le nom.",
+    "order_index": 100
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 0,
+      "section": "Les couleurs",
+      "title": "Les six couleurs de base",
+      "content_markdown": "## Les six couleurs de base\n\n> 📌 Règle : les six couleurs primaires suivent toutes le même moule. Masculin **af3al**, féminin **fa3la**, pluriel **fo3l**. Une fois le moule reconnu, les six se déduisent l'une de l'autre.\n\n| Français | Masculin | Féminin | Pluriel |\n|---|---|---|---|\n| Rouge | أحمر (a7mar) | حمرا (7amra) | حمر (7omr) |\n| Bleu | أزرق (azra2) | زرقا (zar2a) | زرق (zor2) |\n| Vert | أخضر (akhdar) | خضرا (khadra) | خضر (khodr) |\n| Jaune | أصفر (asfar) | صفرا (safra) | صفر (sofr) |\n| Blanc | أبيض (abyad) | بيضا (beeda) | بيض (beed) |\n| Noir | إسود (eswed) | سودا (soda) | سود (sood) |\n\n> 💡 Le noir est le seul à ne pas commencer par **a-** : les Égyptiens disent **eswed**, pas *aswad* — cette dernière forme est celle de l'arabe littéraire.\n\n**Ana labes 2amees abyad** = Je porte une chemise blanche\n\n**El-3arabeya di 7amra** = Cette voiture est rouge",
+      "vocab_items": [
+        { "arabic": "أحمر", "transliteration": "a7mar", "french": "Rouge" },
+        { "arabic": "أزرق", "transliteration": "azra2", "french": "Bleu" },
+        { "arabic": "أخضر", "transliteration": "akhdar", "french": "Vert" },
+        { "arabic": "أصفر", "transliteration": "asfar", "french": "Jaune" },
+        { "arabic": "أبيض", "transliteration": "abyad", "french": "Blanc" },
+        { "arabic": "إسود", "transliteration": "eswed", "french": "Noir" }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Les couleurs",
+      "title": "Les couleurs dérivées",
+      "content_markdown": "## Les couleurs dérivées\n\n> 📌 Règle : ces couleurs ne suivent pas le moule af3al. Ce sont des adjectifs de relation, formés sur un nom et terminés par **-i**. Leur féminin est régulier : on ajoute simplement **-ya**.\n\n| Français | Masculin | Féminin | Formé sur |\n|---|---|---|---|\n| Marron | بني (bonni) | بنية (bonneya) | bonn, le café |\n| Gris | رمادي (romadi) | رمادية (romadeya) | ramad, la cendre |\n| Orange | برتقالي (borto2ali) | برتقالية (borto2aleya) | borto2an, l'orange |\n| Violet | بنفسجي (banafsegi) | بنفسجية (banafsegeya) | banafseg, la violette |\n| Doré | دهبي (dahabi) | دهبية (dahabeya) | dahab, l'or |\n| Argenté | فضي (faddi) | فضية (faddeya) | fadda, l'argent |\n| Bleu ciel | لبني (labani) | لبنية (labaneya) | laban, le lait |\n| Rose | بمبي (bamba) | بمبي (bamba) | — invariable |\n\n> 💡 **Labani** vient de *laban*, le lait : là où le français dit « bleu ciel », l'égyptien dit littéralement « laiteux ». Et **bamba**, le rose, ne s'accorde jamais.",
+      "vocab_items": [
+        { "arabic": "بني", "transliteration": "bonni", "french": "Marron" },
+        { "arabic": "رمادي", "transliteration": "romadi", "french": "Gris" },
+        { "arabic": "برتقالي", "transliteration": "borto2ali", "french": "Orange" },
+        { "arabic": "بنفسجي", "transliteration": "banafsegi", "french": "Violet" },
+        { "arabic": "دهبي", "transliteration": "dahabi", "french": "Doré" },
+        { "arabic": "فضي", "transliteration": "faddi", "french": "Argenté" },
+        { "arabic": "لبني", "transliteration": "labani", "french": "Bleu ciel" },
+        { "arabic": "بمبي", "transliteration": "bamba", "french": "Rose" }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Employer une couleur",
+      "title": "Placer et accorder la couleur",
+      "content_markdown": "## Placer et accorder la couleur\n\n> 📌 Règle : en égyptien, la couleur se place **après** le nom, jamais avant. C'est l'inverse de l'ordre qu'on aurait en anglais, et la même logique qu'en français pour « une voiture rouge ».\n\n| Structure | Exemple | Traduction |\n|---|---|---|\n| Nom masculin + couleur masculine | كتاب أحمر (kitab a7mar) | Un livre rouge |\n| Nom féminin + couleur féminine | عربية حمرا (3arabeya 7amra) | Une voiture rouge |\n| Avec l'article, les deux le prennent | الكتاب الأحمر (el-kitab el-a7mar) | Le livre rouge |\n\n### Les objets au pluriel\n\n> 💡 Pour un pluriel de choses (et non de personnes), l'égyptien accorde la couleur au **féminin singulier** : كتب حمرا (kotob 7amra) = des livres rouges. La forme plurielle 7omr est réservée aux personnes.\n\n### Demander une couleur\n\n| Question | Traduction |\n|---|---|\n| لونه إيه؟ (Lono éh ?) | Quelle est sa couleur ? (objet masculin) |\n| لونها إيه؟ (Lonha éh ?) | Quelle est sa couleur ? (objet féminin) |\n| عايز لون تاني (3ayez lon tani) | Je veux une autre couleur |",
+      "vocab_items": [
+        { "arabic": "لون", "transliteration": "lon", "french": "Couleur" },
+        { "arabic": "لونه إيه؟", "transliteration": "Lono éh?", "french": "Quelle est sa couleur ?" },
+        { "arabic": "عايز لون تاني", "transliteration": "3ayez lon tani", "french": "Je veux une autre couleur" },
+        { "arabic": "فاتح", "transliteration": "fate7", "french": "Clair (teinte)" },
+        { "arabic": "غامق", "transliteration": "ghame2", "french": "Foncé (teinte)" }
+      ]
+    }
+  ]
+}
