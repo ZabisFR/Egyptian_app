@@ -126,17 +126,17 @@
           "french": "la gorge"
         },
         {
-          "arabic": null,
+          "arabic": "عندي صداع",
           "transliteration": "3andi sudaa3",
           "french": "J'ai mal à la tête"
         },
         {
-          "arabic": null,
+          "arabic": "عندي حرارة",
           "transliteration": "3andi 7arara",
           "french": "J'ai de la fièvre"
         },
         {
-          "arabic": null,
+          "arabic": "عندي زكام",
           "transliteration": "3andi zokaam",
           "french": "J'ai un rhume"
         }
@@ -228,37 +228,37 @@
       "content_markdown": "## Jour 60 — La météo (الجو)\n\n| Égyptien | Sens |\n|---|---|\n| الجو حر. — El-gaww 7arr. | Il fait chaud. |\n| الجو برد. — El-gaww bard. | Il fait froid. |\n| بتمطر. — Betmattar. | Il pleut. |\n| الجو حلو النهاردة. — El-gaww 7elw en-naharda. | Il fait beau aujourd'hui. |\n| الصيف / الشتا — es-seif / esh-shita | l'été / l'hiver |\n| الربيع / الخريف — er-rabii3 / el-khariif | le printemps / l'automne |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "الجو حر",
           "transliteration": "El-gaww 7arr",
           "french": "Il fait chaud"
         },
         {
-          "arabic": null,
+          "arabic": "الجو برد",
           "transliteration": "El-gaww bard",
           "french": "Il fait froid"
         },
         {
-          "arabic": null,
+          "arabic": "بتمطر",
           "transliteration": "Betmattar",
           "french": "Il pleut"
         },
         {
-          "arabic": null,
+          "arabic": "الصيف",
           "transliteration": "es-seif",
           "french": "l'été"
         },
         {
-          "arabic": null,
+          "arabic": "الشتا",
           "transliteration": "esh-shita",
           "french": "l'hiver"
         },
         {
-          "arabic": null,
+          "arabic": "الربيع",
           "transliteration": "er-rabii3",
           "french": "le printemps"
         },
         {
-          "arabic": null,
+          "arabic": "الخريف",
           "transliteration": "el-khariif",
           "french": "l'automne"
         }
@@ -272,32 +272,32 @@
       "content_markdown": "## Jour 61 — L'heure (الساعة)\n\n> 💡 Demander et donner l'heure : **الساعة كام؟ — Es-saa3a kaam?** (Quelle heure est-il ?) On répond avec **es-saa3a + numéro**, et on ajoute **wi nuss** (et demie), **wi rub3** (et quart), ou **illa rub3** (moins le quart).\n\n| Égyptien | Traduction |\n|---|---|\n| الساعة واحدة. — Es-saa3a wa7da. | Il est une heure. |\n| الساعة اتنين ونص. — Es-saa3a itnein wi nuss. | Il est deux heures et demie. |\n| الساعة أربعة وربع. — Es-saa3a arba3a wi rub3. | Il est quatre heures et quart. |\n| الساعة تلاتة إلا ربع. — Es-saa3a talata illa rub3. | Il est trois heures moins le quart. |\n| الصبح / بالليل — es-sob7 / bel-leil | le matin / la nuit |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "الساعة كام؟",
           "transliteration": "Es-saa3a kaam?",
           "french": "Quelle heure est-il ?"
         },
         {
-          "arabic": null,
+          "arabic": "و نص",
           "transliteration": "wi nuss",
           "french": "et demie"
         },
         {
-          "arabic": null,
+          "arabic": "و ربع",
           "transliteration": "wi rub3",
           "french": "et quart"
         },
         {
-          "arabic": null,
+          "arabic": "إلا ربع",
           "transliteration": "illa rub3",
           "french": "moins le quart"
         },
         {
-          "arabic": null,
+          "arabic": "الصبح",
           "transliteration": "es-sob7",
           "french": "le matin"
         },
         {
-          "arabic": null,
+          "arabic": "بالليل",
           "transliteration": "bel-leil",
           "french": "la nuit"
         }

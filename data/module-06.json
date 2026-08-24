@@ -42,102 +42,102 @@
           "french": "Pas cher / Bon marché"
         },
         {
-          "arabic": null,
+          "arabic": "صفر",
           "transliteration": "Sifr",
           "french": "0 — Zéro"
         },
         {
-          "arabic": null,
+          "arabic": "واحد",
           "transliteration": "Wa7ed",
           "french": "1 — Un"
         },
         {
-          "arabic": null,
+          "arabic": "اتنين",
           "transliteration": "Etnen",
           "french": "2 — Deux"
         },
         {
-          "arabic": null,
+          "arabic": "تلاتة",
           "transliteration": "Talata",
           "french": "3 — Trois"
         },
         {
-          "arabic": null,
+          "arabic": "أربعة",
           "transliteration": "Arba3a",
           "french": "4 — Quatre"
         },
         {
-          "arabic": null,
+          "arabic": "خمسة",
           "transliteration": "Khamsa",
           "french": "5 — Cinq"
         },
         {
-          "arabic": null,
+          "arabic": "ستة",
           "transliteration": "Setta",
           "french": "6 — Six"
         },
         {
-          "arabic": null,
+          "arabic": "سبعة",
           "transliteration": "Sab3a",
           "french": "7 — Sept"
         },
         {
-          "arabic": null,
+          "arabic": "تمانية",
           "transliteration": "Tamanya",
           "french": "8 — Huit"
         },
         {
-          "arabic": null,
+          "arabic": "تسعة",
           "transliteration": "Tes3a",
           "french": "9 — Neuf"
         },
         {
-          "arabic": null,
+          "arabic": "عشرة",
           "transliteration": "3ashara",
           "french": "10 — Dix"
         },
         {
-          "arabic": null,
+          "arabic": "مِيّة",
           "transliteration": "Meya",
           "french": "100 — Cent"
         },
         {
-          "arabic": null,
+          "arabic": "عشرين",
           "transliteration": "3eshreen",
           "french": "20 — Vingt"
         },
         {
-          "arabic": null,
+          "arabic": "تلاتين",
           "transliteration": "Talateen",
           "french": "30 — Trente"
         },
         {
-          "arabic": null,
+          "arabic": "أربعين",
           "transliteration": "Arba3een",
           "french": "40 — Quarante"
         },
         {
-          "arabic": null,
+          "arabic": "خمسين",
           "transliteration": "Khamseen",
           "french": "50 — Cinquante"
         },
         {
-          "arabic": null,
+          "arabic": "ستين",
           "transliteration": "Setteen",
           "french": "60 — Soixante"
         },
         {
-          "arabic": null,
+          "arabic": "سبعين",
           "transliteration": "Sab3een",
           "french": "70 — Soixante-dix"
         },
         {
-          "arabic": null,
+          "arabic": "تمانين",
           "transliteration": "Tamaneen",
           "french": "80 — Quatre-vingt"
         },
         {
-          "arabic": null,
+          "arabic": "تسعين",
           "transliteration": "Tes3een",
           "french": "90 — Quatre-vingt-dix"
         }
@@ -151,52 +151,52 @@
       "content_markdown": "## Jour 42 — La Possession Directe par Suffixes\n\nEn arabe égyptien, la possession directe (« Mon... », « Ton... », « Notre... ») s'exprime en attachant un **suffixe** directement à la fin du nom. Pas de mot séparé — tout est collé.\n\n### Tableau Complet des Suffixes de Possession\n\n| Possession | Suffixe | Masc. (Kitab) | Fém. (3arabiyya) | Note |\n|---|---|---|---|---|\n| Mon / Ma | -i | Kitabi | 3arabiyyeti | — |\n| Ton / Ta (m) | -ak | Kitabak | 3arabiyyetak | — |\n| Ton / Ta (f) | -ik | Kitabik | 3arabiyyetik | — |\n| Son / Sa (lui) | -o | Kitabo | 3arabiyyeto | — |\n| Son / Sa (elle) | -ha | Kitabha | 3arabiyyetha | — |\n| Notre / Nos | -na | Kitabna | 3arabiyyetna | — |\n\n### Règle pour les Noms Féminins en « -a »\n\n> ⭐ RÈGLE D'OR : Le -a final du mot féminin se transforme obligatoirement en -et- avant d'attacher le suffixe. Shanta (Sac) → Shantet- + suffixe → Shantetik (Ton sac).\n\n### Exemples avec Shanta (Sac) et 3arabiyya (Voiture)\n\n| Base | Suffixe | Résultat | Traduction |\n|---|---|---|---|\n| Shanta (Sac) | -ik (f) | Shantetik | Ton sac (à une femme) |\n| 3arabiyya (Voiture) | -i | 3arabiyyeti | Ma voiture |\n| 3arabiyya (Voiture) | -na | 3arabiyyetna | Notre voiture |\n| 3arabiyya (Voiture) | -o | 3arabiyyeto | Sa voiture (à lui) |\n\n### Récapitulatif Global — Les 3 Types de Possession\n\nL'arabe égyptien distingue trois façons différentes d'exprimer « avoir » selon la nature de la possession :\n\n| Type | Structure | Exemple |\n|---|---|---|\n| 1. Suffixe direct | Nom + suffixe | Kitabi = Mon livre ; 3arabiyyeti = Ma voiture |\n| 2. Ma3a (sur soi) | Ma3a + suffixe pronom | Ana ma3aya flous = J'ai de l'argent sur moi |\n| 3. 3and (possession générale) | 3and + suffixe pronom | Ana 3andi 3arabiyya = J'ai une voiture |\n\n> 💡 Astuce pour ne pas se tromper : Suffixe direct = l'objet t'appartient (mon livre). Ma3a = tu l'as sur toi maintenant (j'ai de l'argent dans la poche). 3and = tu le possèdes en général (j'ai une voiture chez moi).",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "كتابي",
           "transliteration": "Kitabi",
           "french": "Mon livre"
         },
         {
-          "arabic": null,
+          "arabic": "كتابَك",
           "transliteration": "Kitabak",
           "french": "Ton livre (à un homme)"
         },
         {
-          "arabic": null,
+          "arabic": "كتابِك",
           "transliteration": "Kitabik",
           "french": "Ton livre (à une femme)"
         },
         {
-          "arabic": null,
+          "arabic": "كتابه",
           "transliteration": "Kitabo",
           "french": "Son livre (à lui)"
         },
         {
-          "arabic": null,
+          "arabic": "كتابها",
           "transliteration": "Kitabha",
           "french": "Son livre (à elle)"
         },
         {
-          "arabic": null,
+          "arabic": "كتابنا",
           "transliteration": "Kitabna",
           "french": "Notre livre"
         },
         {
-          "arabic": null,
+          "arabic": "شنطتِك",
           "transliteration": "Shantetik",
           "french": "Ton sac (à une femme)"
         },
         {
-          "arabic": null,
+          "arabic": "عربيتي",
           "transliteration": "3arabiyyeti",
           "french": "Ma voiture"
         },
         {
-          "arabic": null,
+          "arabic": "عربيتنا",
           "transliteration": "3arabiyyetna",
           "french": "Notre voiture"
         },
         {
-          "arabic": null,
+          "arabic": "عربيته",
           "transliteration": "3arabiyyeto",
           "french": "Sa voiture (à lui)"
         }

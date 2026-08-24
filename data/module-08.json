@@ -66,12 +66,12 @@
       "content_markdown": "## Jour 48 — Le superlatif et l'égalité\n\n> 📌 Le superlatif : pas de mot séparé pour « le plus » : on utilise **le même elative**, mais placé **avant un nom indéfini** (comme une annexion). Ex : *akbar madina fi masr* (la plus grande ville d'Égypte). Pour dire « le/la plus » tout seul, on ajoute **el-** : *howa el-a7san* (c'est lui le meilleur).\n\n| Égyptien | Traduction |\n|---|---|\n| ده أكبر مبنى في المدينة. — Da akbar mabna fel-madina. | C'est le plus grand bâtiment de la ville. |\n| هي أذكى واحدة في الفصل. — Heyya azka wahda fel-fasl. | Elle est la plus intelligente de la classe. |\n| ده الأحسن. — Da el-a7san. | C'est le meilleur (celui-là). |\n\n### L'égalité : « zay »\n\nPour dire « comme / pareil que », on utilise **zay** :\n\nده زي ده بالظبط. — Da zayy da biz-zabt. *(C'est exactement pareil que ça.)*",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "زي",
           "transliteration": "zay",
           "french": "comme / pareil que"
         },
         {
-          "arabic": null,
+          "arabic": "الأحسن",
           "transliteration": "el-a7san",
           "french": "le meilleur"
         }
@@ -99,7 +99,7 @@
       "content_markdown": "## Jour 50 — elli : le pronom de rappel\n\n> ⭐ Règle n°2 — le pronom de rappel : quand « elli » représente l'objet du verbe ou de la préposition dans la deuxième partie de la phrase, il faut **répéter un pronom** (« résomptif ») plus loin dans la phrase — chose qu'on ne fait **jamais en français**.\n\n**Exemple :** الكتاب اللي انا بقراه — el-kitab elli ana ba2rah-o. *(litt. « le livre que je le lis » → le pronom **-o** = « le » est obligatoire.)*\n\n### Exemples avec pronom de rappel\n\n| Égyptien | Traduction |\n|---|---|\n| البنت اللي بتدرس معايا شاطرة. — El-bint elli betedris ma3aya shatra. | La fille qui étudie avec moi est intelligente. |\n| البيت اللي أنا عايش فيه قديم. — El-beit elli ana 3aysh fih 2adim. | La maison dans laquelle j'habite est vieille. |\n| الراجل اللي كلمته امبارح مش رد. — Er-ragel elli kallemto embare7 mesh radd. | L'homme que j'ai appelé hier n'a pas répondu. |\n| دي الحاجة اللي كنت محتاجها. — Di el-7aga elli kunt me7tagaha. | C'est la chose dont j'avais besoin. |\n\n### Mini-dialogue — au marché\n\n**A:** الفستان اللي شوفتيه إمبارح، لسه عندك؟ — El-fostan elli shuftih embare7, lessa 3andek? *(La robe que tu as vue hier, tu l'as toujours ?)*\n\n**B:** أيوه، وده أرخص من اللي جنبه. — Aywa, wi da arkhas min elli ganbo. *(Oui, et celle-ci est moins chère que celle d'à côté.)*\n\n**A:** ده أحلى واحد شوفته النهاردة! — Da a7la wa7ed shufto en-naharda! *(C'est la plus belle que j'ai vue aujourd'hui !)*",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "اللي ... ـه / ـها",
           "transliteration": "elli ... -o / -ha / -ha",
           "french": "pronom de rappel obligatoire avec elli"
         }

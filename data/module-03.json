@@ -30,7 +30,7 @@
           "french": "Je fais / je travaille"
         },
         {
-          "arabic": null,
+          "arabic": "بتعملي إيه؟",
           "transliteration": "Bte3meli éh?",
           "french": "Tu fais quoi ? (à une femme)"
         }
@@ -49,22 +49,22 @@
           "french": "Je parle"
         },
         {
-          "arabic": null,
+          "arabic": "عربي",
           "transliteration": "3arabi",
           "french": "L'arabe"
         },
         {
-          "arabic": null,
+          "arabic": "فرنساوي",
           "transliteration": "Fransawi",
           "french": "Le français"
         },
         {
-          "arabic": null,
+          "arabic": "إنجليزي",
           "transliteration": "Engleezi",
           "french": "L'anglais"
         },
         {
-          "arabic": null,
+          "arabic": "شوية",
           "transliteration": "Shwreya",
           "french": "Un peu"
         }
@@ -97,17 +97,17 @@
           "french": "Je bois"
         },
         {
-          "arabic": null,
+          "arabic": "مَيّة",
           "transliteration": "Meya",
           "french": "L'eau"
         },
         {
-          "arabic": null,
+          "arabic": "شاي",
           "transliteration": "Shay",
           "french": "Le thé"
         },
         {
-          "arabic": null,
+          "arabic": "قهوة",
           "transliteration": "Ahwa",
           "french": "Le café"
         }
@@ -126,17 +126,17 @@
           "french": "Je mange"
         },
         {
-          "arabic": null,
+          "arabic": "عيش",
           "transliteration": "Aish / 3ish",
           "french": "Le pain"
         },
         {
-          "arabic": null,
+          "arabic": "كشري",
           "transliteration": "Koshari",
           "french": "Plat national égyptien"
         },
         {
-          "arabic": null,
+          "arabic": "طعمية",
           "transliteration": "Ta3meya",
           "french": "Falafels aux fèves"
         }
@@ -165,7 +165,7 @@
           "french": "Nous/Vous/Ils vont (pluriel)"
         },
         {
-          "arabic": null,
+          "arabic": "مصر",
           "transliteration": "Masr",
           "french": "Le Caire / l'Égypte"
         }

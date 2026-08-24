@@ -17,17 +17,17 @@
       "content_markdown": "## Jour 31 — États d'esprit et sentiments\n\nEn arabe égyptien, le verbe « Être » n'existe pas au présent et le verbe « Avoir » ne s'utilise pas pour les sensations physiques. On utilise à la place des **adjectifs** qui s'accordent selon une règle simplifiée :\n\n> 📌 Règle : Masculin = forme de base | Féminin = + -a | Pluriel (mixte ou 100% féminin) = + -een. Négation : Mesh devant l'adjectif.\n\n| Français | Masculin | Féminin | Pluriel | Négation |\n|---|---|---|---|---|\n| Fatigué | Ta3ban | Ta3bana | Ta3baneen | Mesh ta3ban |\n| Content | Mabsoot | Mabsoota | Mabsoteen | Mesh mabsoot |\n| En colère / Énervé | Za3lan | Za3lana | Za3laneen | Mesh za3lan |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "تعبان / تعبانة",
           "transliteration": "Ta3ban / Ta3bana",
           "french": "Fatigué"
         },
         {
-          "arabic": null,
+          "arabic": "مبسوط / مبسوطة",
           "transliteration": "Mabsoot / Mabsoota",
           "french": "Content"
         },
         {
-          "arabic": null,
+          "arabic": "زعلان / زعلانة",
           "transliteration": "Za3lan / Za3lana",
           "french": "En colère / Énervé"
         }
@@ -41,22 +41,22 @@
       "content_markdown": "## Jour 32 — Sensations physiques\n\n| Français | Masculin | Féminin | Pluriel | Négation |\n|---|---|---|---|---|\n| Avoir faim (Affamé) | G3an | G3ana | G3aneen | Mesh g3an |\n| Avoir soif (Assoiffé) | 3atshan | 3atshana | 3atshaneen | Mesh 3atshan |\n| Avoir chaud | 7arran | 7arrana | 7arraneen | Mesh 7arran |\n| Avoir froid | Bardaan | Bardaana | Bardaneen | Mesh bardaan |\n\n> 💡 Pas de verbe « avoir » pour les sensations : on dit littéralement « je fatigué », « je assoiffé ». Le pronom + l'adjectif suffit.",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "جعان / جعانة",
           "transliteration": "G3an / G3ana",
           "french": "Avoir faim (affamé)"
         },
         {
-          "arabic": null,
+          "arabic": "عطشان / عطشانة",
           "transliteration": "3atshan / 3atshana",
           "french": "Avoir soif (assoiffé)"
         },
         {
-          "arabic": null,
+          "arabic": "حران / حرانة",
           "transliteration": "7arran / 7arrana",
           "french": "Avoir chaud"
         },
         {
-          "arabic": null,
+          "arabic": "بردان / بردانة",
           "transliteration": "Bardaan / Bardaana",
           "french": "Avoir froid"
         }
@@ -70,22 +70,22 @@
       "content_markdown": "## Jour 33 — La Localisation de la Possession (« Avoir »)\n\nL'égyptien distingue deux types de possession, traduits par deux prépositions différentes déclinées avec des pronoms suffixes :\n\n| Pronom | Ma3a (sur soi) | 3and (en possession) | Note |\n|---|---|---|---|\n| Ana (Je) | Ma3aya (J'ai sur moi) | 3andi (J'ai) | — |\n| Enta (Tu — m) | Ma3ak | 3andak | — |\n| Enti (Tu — f) | Ma3aki | 3andik | — |\n| É7na (Nous) | Ma3ana | 3andina | — |\n\n### Ma3a (معا) — Avoir sur soi\n\nPossession immédiate, physique, dans la poche. Quelque chose que l'on a sur soi au moment présent.\n\n**Ana mesh ma3aya flous en-naharda** = Je n'ai pas d'argent sur moi aujourd'hui\n\n### 3and (عند) — Avoir en possession\n\nPossession générale, durable. Quelque chose que l'on possède chez soi ou dans sa vie.\n\n**É7na 3andina wa2t** = Nous avons du temps",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "معايا",
           "transliteration": "Ma3aya",
           "french": "J'ai sur moi"
         },
         {
-          "arabic": null,
+          "arabic": "عندي",
           "transliteration": "3andi",
           "french": "J'ai (en possession)"
         },
         {
-          "arabic": null,
+          "arabic": "فلوس",
           "transliteration": "Flous",
           "french": "Argent"
         },
         {
-          "arabic": null,
+          "arabic": "وقت",
           "transliteration": "Wa2t",
           "french": "Temps"
         }
@@ -99,12 +99,12 @@
       "content_markdown": "## Jour 34 — Les Structures Complexes — La Chute du « B- »\n\n> ⭐ RÈGLE D'OR : Lorsque deux verbes se suivent, ou qu'un verbe est précédé par une expression de modalité (obligation, possibilité, volonté), l'action est projetée dans le virtuel ou le futur. Le deuxième verbe perd systématiquement sa signature temporelle en « B- ».\n\n| Mot-clé | Accord | Négation | Exemple |\n|---|---|---|---|\n| Lazem | Invariable | Mesh lazem | Ana lazem a3mel bokra = Je dois travailler demain |\n| Momken | Invariable | Mesh momken | Momken nakhod dah ? = Est-ce qu'on peut prendre ça ? |\n| Ayez / Ayza / Ayzeen | Accord genre + nombre | Mesh ayez / ayza | Enti ayza tishrabi shay ? = Tu (f) veux boire du thé ? |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "لازم",
           "transliteration": "Lazem",
           "french": "Devoir / il faut (invariable)"
         },
         {
-          "arabic": null,
+          "arabic": "ممكن",
           "transliteration": "Momken",
           "french": "Pouvoir / possible (invariable)"
         }
@@ -118,12 +118,12 @@
       "content_markdown": "## Jour 35 — L'Obligation — Lazem (لازم)\n\n**Structure :** Pronom + **Lazem** + Verbe sans B-\n\nLazem est invariable : il ne s'accorde ni en genre ni en nombre.\n\n**Ana lazem a3mel bokra** = Je dois travailler demain\n\n**Mesh lazem** = Pas nécessaire / Il ne faut pas",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "أنا لازم أعمل بكرة",
           "transliteration": "Ana lazem a3mel bokra",
           "french": "Je dois travailler demain"
         },
         {
-          "arabic": null,
+          "arabic": "مش لازم",
           "transliteration": "Mesh lazem",
           "french": "Pas nécessaire / Il ne faut pas"
         }
@@ -137,12 +137,12 @@
       "content_markdown": "## Jour 36 — La Possibilité / Permission — Momken (ممكن)\n\n**Structure :** Pronom + **Momken** + Verbe sans B-\n\nMomken est invariable. Placé en début de phrase, il formule une requête polie.\n\n**Momken nakhod dah ?** = Est-ce qu'on peut prendre ça ?\n\n**Mesh momken** = Impossible\n\n> 💡 Momken en tête de phrase est l'équivalent d'un « Pourrait-on... ? » ou « Est-il possible de... ? » — très utile au restaurant ou en déplacement.",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "ممكن ناخد ده؟",
           "transliteration": "Momken nakhod dah?",
           "french": "Est-ce qu'on peut prendre ça ?"
         },
         {
-          "arabic": null,
+          "arabic": "مش ممكن",
           "transliteration": "Mesh momken",
           "french": "Impossible"
         }
@@ -156,17 +156,17 @@
       "content_markdown": "## Jour 37 — La Volonté — Ayez / Ayza / Ayzeen (عايز)\n\n**Structure :** Pronom + **Ayez / Ayza / Ayzeen** + Verbe sans B-\n\nContrairement à Lazem et Momken, **Ayez s'accorde** obligatoirement avec le sujet en genre et en nombre.\n\n| Sujet | Forme | Exemple |\n|---|---|---|\n| Masculin (Ana / Enta / Howa) | Ayez | Ana ayez ashrab meya = Je (h) veux boire de l'eau |\n| Féminin (Ana / Enti / Heyya) | Ayza | Enti ayza tishrabi shay ? = Tu (f) veux boire du thé ? |\n| Pluriel (É7na / Ento / Homma) | Ayzeen | É7na ayzeen nakhod taksi = Nous voulons prendre un taxi |\n\n**La shokran, ana mesh ayez dah** = Non merci, je (homme) ne veux pas ça",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "عايز",
           "transliteration": "Ayez",
           "french": "Je/Tu/Il veut (masculin) + verbe"
         },
         {
-          "arabic": null,
+          "arabic": "عايزة",
           "transliteration": "Ayza",
           "french": "Je/Tu/Elle veut (féminin) + verbe"
         },
         {
-          "arabic": null,
+          "arabic": "عايزين",
           "transliteration": "Ayzeen",
           "french": "Nous/Vous/Ils veulent (pluriel) + verbe"
         }

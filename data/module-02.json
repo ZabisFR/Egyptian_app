@@ -17,52 +17,52 @@
       "content_markdown": "## Jour 11 — Les Pronoms Singuliers et les Salutations\n\n> 💡 En égyptien, le verbe « être » n'existe pas au présent. On accole directement le pronom et l'adjectif. Ex : Ana kwayes = Je (suis) bien.\n\n### Les Pronoms Singuliers\n\n| Français | Arabe Égyptien |\n|---|---|\n| Je / Moi | Ana |\n| Tu (masculin) | Enta |\n| Tu (féminin) | Enti |\n| Il | Howa (H soufflé) |\n| Elle | Heyya (H soufflé) |\n\n### Les Salutations de base\n\n| Français | Arabe Égyptien (Romanisation) |\n|---|---|\n| Salut / Bienvenue | Ahlan wa sahlan (ou simplement Ahlan) |\n| Comment ça va ? (à un homme) | Ezayyak ? |\n| Comment ça va ? (à une femme) | Ezayyik ? |\n| Ça va / Dieu soit loué | El-7amdo lellah (réponse standard) |\n| Tout va bien / OK | Tamam |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "أنا",
           "transliteration": "Ana",
           "french": "Je / Moi"
         },
         {
-          "arabic": null,
+          "arabic": "إنتَ",
           "transliteration": "Enta",
           "french": "Tu (masculin)"
         },
         {
-          "arabic": null,
+          "arabic": "إنتِ",
           "transliteration": "Enti",
           "french": "Tu (féminin)"
         },
         {
-          "arabic": null,
+          "arabic": "هو",
           "transliteration": "Howa",
           "french": "Il"
         },
         {
-          "arabic": null,
+          "arabic": "هي",
           "transliteration": "Heyya",
           "french": "Elle"
         },
         {
-          "arabic": null,
+          "arabic": "أهلاً وسهلاً",
           "transliteration": "Ahlan wa sahlan",
           "french": "Salut / Bienvenue"
         },
         {
-          "arabic": null,
+          "arabic": "إزيَّك؟",
           "transliteration": "Ezayyak?",
           "french": "Comment ça va ? (à un homme)"
         },
         {
-          "arabic": null,
+          "arabic": "إزيِّك؟",
           "transliteration": "Ezayyik?",
           "french": "Comment ça va ? (à une femme)"
         },
         {
-          "arabic": null,
+          "arabic": "الحمد لله",
           "transliteration": "El-7amdo lellah",
           "french": "Ça va / Dieu soit loué"
         },
         {
-          "arabic": null,
+          "arabic": "تمام",
           "transliteration": "Tamam",
           "french": "Tout va bien / OK"
         }
@@ -76,52 +76,52 @@
       "content_markdown": "## Jour 12 — Se Présenter et Politesse\n\n| Français | Arabe Égyptien (Romanisation) |\n|---|---|\n| Mon nom est / Je m'appelle | Esmi... |\n| Comment tu t'appelles ? (h) | Esmak éh ? |\n| Comment tu t'appelles ? (f) | Esmik éh ? |\n| Je viens de France | Ana min Faransa |\n| Français (masculin) | Faransi |\n| Française (féminin) | Faransiyya |\n| Enchanté / Nous sommes honorés | Tasharrafna |\n| S'il te plaît (à un homme) | Min fadlak (D emphatique !) |\n| S'il te plaît (à une femme) | Min fadlik |\n| Merci | Shokran |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "اسمي...",
           "transliteration": "Esmi...",
           "french": "Mon nom est / Je m'appelle"
         },
         {
-          "arabic": null,
+          "arabic": "اسمَك إيه؟",
           "transliteration": "Esmak éh?",
           "french": "Comment tu t'appelles ? (à un homme)"
         },
         {
-          "arabic": null,
+          "arabic": "اسمِك إيه؟",
           "transliteration": "Esmik éh?",
           "french": "Comment tu t'appelles ? (à une femme)"
         },
         {
-          "arabic": null,
+          "arabic": "أنا من فرنسا",
           "transliteration": "Ana min Faransa",
           "french": "Je viens de France"
         },
         {
-          "arabic": null,
+          "arabic": "فرنسي",
           "transliteration": "Faransi",
           "french": "Français (masculin)"
         },
         {
-          "arabic": null,
+          "arabic": "فرنسية",
           "transliteration": "Faransiyya",
           "french": "Française (féminin)"
         },
         {
-          "arabic": null,
+          "arabic": "تشرفنا",
           "transliteration": "Tasharrafna",
           "french": "Enchanté / Nous sommes honorés"
         },
         {
-          "arabic": null,
+          "arabic": "من فضلَك",
           "transliteration": "Min fadlak",
           "french": "S'il te plaît (à un homme)"
         },
         {
-          "arabic": null,
+          "arabic": "من فضلِك",
           "transliteration": "Min fadlik",
           "french": "S'il te plaît (à une femme)"
         },
         {
-          "arabic": null,
+          "arabic": "شكراً",
           "transliteration": "Shokran",
           "french": "Merci"
         }
@@ -135,22 +135,22 @@
       "content_markdown": "## Jour 13 — Les Mots Interrogatifs (Poser des questions)\n\n> 📌 Règle : En égyptien, contrairement au français, le mot interrogatif se place À LA FIN de la phrase. Exemple : Enti feen ? = Tu es où ? (littéralement : Toi où ?)\n\n| Interrogatif | Utilisation / Exemple |\n|---|---|\n| Éh ? (Quoi) | Esmak éh ? = Tu t'appelles quoi ? |\n| Feen ? (Où) | Enti feen ? = Tu es où ? |\n| Meen ? (Qui) | Meen dah ? = C'est qui ? |\n| Ezay ? (Comment) | Howa ezzayo ? = Comment va-t-il ? |\n| Emta ? (Quand) | Hatsafer emta ? = Tu pars quand ? |\n| Léh ? (Pourquoi) | Enta roh léh ? = Tu pars pourquoi ? |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "إيه؟",
           "transliteration": "Éh?",
           "french": "Quoi ?"
         },
         {
-          "arabic": null,
+          "arabic": "فين؟",
           "transliteration": "Feen?",
           "french": "Où ?"
         },
         {
-          "arabic": null,
+          "arabic": "مين؟",
           "transliteration": "Meen?",
           "french": "Qui ?"
         },
         {
-          "arabic": null,
+          "arabic": "إزاي؟",
           "transliteration": "Ezay?",
           "french": "Comment ?"
         },
@@ -160,7 +160,7 @@
           "french": "Quand ?"
         },
         {
-          "arabic": null,
+          "arabic": "ليه؟",
           "transliteration": "Léh?",
           "french": "Pourquoi ?"
         }
@@ -174,22 +174,22 @@
       "content_markdown": "## Jour 14 — La Négation avec « Mesh » et les Adjectifs\n\n> 📌 Règle : Pour nier un nom ou un adjectif, on place simplement le mot مش (Mesh) devant lui. Mesh = ne... pas.\n\n### Les Adjectifs Cardinaux au Singulier\n\n| Français | Masculin | Féminin | Exemple |\n|---|---|---|---|\n| Bien / Bon | Kwayes | Kwaysa | Ana mesh ta3ban = Je ne suis pas fatigué |\n| Fatigué | Ta3ban | Ta3bana | Heyya mesh mabsouta = Elle n'est pas contente |\n| Prêt / Disponible | Gahez | Gahza | Ana mesh gahez = Je ne suis pas prêt |\n| Content | Mabsout | Mabsouta | Enta mabsout ? = Tu es content ? |",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "كويس / كويسة",
           "transliteration": "Kwayes / Kwaysa",
           "french": "Bien / Bon"
         },
         {
-          "arabic": null,
+          "arabic": "تعبان / تعبانة",
           "transliteration": "Ta3ban / Ta3bana",
           "french": "Fatigué"
         },
         {
-          "arabic": null,
+          "arabic": "جاهز / جاهزة",
           "transliteration": "Gahez / Gahza",
           "french": "Prêt / Disponible"
         },
         {
-          "arabic": null,
+          "arabic": "مبسوط / مبسوطة",
           "transliteration": "Mabsout / Mabsouta",
           "french": "Content"
         }
@@ -203,42 +203,42 @@
       "content_markdown": "## Jour 15 — Les Pronoms Pluriels et la Possession (« Avoir »)\n\n> 💡 Au pluriel, l'égyptien ne fait aucune différence de genre (contrairement au singulier).\n\n### Les Pronoms Pluriels\n\n| Français | Arabe Égyptien |\n|---|---|\n| Nous | É7na (7 expiré) |\n| Vous | Ento |\n| Ils / Elles | Homma |\n\n### Avoir — La Possession avec 3and\n\nLa possession se construit autour de la racine **3and** (Chez / Avec) à laquelle on ajoute un suffixe de pronom.\n\n| Français | Affirmatif | Négatif |\n|---|---|---|\n| J'ai | 3andi | Ma-3andish |\n| Tu as (masculin) | 3andak | Ma-3andaksh |\n| Tu as (féminin) | 3andik | — |\n| Il a | 3ando | — |\n| Elle a | 3andaha | — |\n\nExemple de question : **3andaha éh ?** = Qu'est-ce qu'elle a ?",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "إحنا",
           "transliteration": "É7na",
           "french": "Nous"
         },
         {
-          "arabic": null,
+          "arabic": "إنتو",
           "transliteration": "Ento",
           "french": "Vous"
         },
         {
-          "arabic": null,
+          "arabic": "هما",
           "transliteration": "Homma",
           "french": "Ils / Elles"
         },
         {
-          "arabic": null,
+          "arabic": "عندي",
           "transliteration": "3andi",
           "french": "J'ai"
         },
         {
-          "arabic": null,
+          "arabic": "عندَك",
           "transliteration": "3andak",
           "french": "Tu as (masculin)"
         },
         {
-          "arabic": null,
+          "arabic": "عندِك",
           "transliteration": "3andik",
           "french": "Tu as (féminin)"
         },
         {
-          "arabic": null,
+          "arabic": "عنده",
           "transliteration": "3ando",
           "french": "Il a"
         },
         {
-          "arabic": null,
+          "arabic": "عندها",
           "transliteration": "3andaha",
           "french": "Elle a"
         }
@@ -260,32 +260,32 @@
       "content_markdown": "## Jour 17 — Se situer dans le temps et la particule du Futur\n\nPour situer une action dans le temps, trois marqueurs temporels absolus se placent en début ou en fin de phrase. En arabe dialectal, le contexte temporel seul suffit à poser le temps.\n\n### Les Marqueurs Temporels\n\n| Français | Arabe Égyptien (Romanisation) |\n|---|---|\n| Aujourd'hui | En-naharda (on insiste sur le N initial) |\n| Demain | Bokra (R bien roulé) |\n| Hier | Embarea7 (se termine par le 7 expiré) |\n\n### La Particule du Futur — ح (7-)\n\nPour exprimer le futur ou une action imminente (« Je vais... »), l'égyptien utilise le préfixe **7-** (lettre ح) collé directement au début du mot.\n\n| Base | Avec particule du futur 7- |\n|---|---|\n| Gahez (Prêt) | Hagahez → Je vais être prêt / Je me prépare |\n| Gahzeen (Prêts) | 7agahzeen → Nous allons être prêts |\n\n### Exprimer le mouvement / la venue — Gay\n\n| Masculin | Féminin | Pluriel |\n|---|---|---|\n| Gay (Il vient / J'arrive) | Gaya (Elle vient / J'arrive) | Gayeen (Ils viennent / Nous arrivons) |\n\n**Exemple : Ana gay en-naharda** = J'arrive aujourd'hui",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "النهاردة",
           "transliteration": "En-naharda",
           "french": "Aujourd'hui"
         },
         {
-          "arabic": null,
+          "arabic": "بكرة",
           "transliteration": "Bokra",
           "french": "Demain"
         },
         {
-          "arabic": null,
+          "arabic": "إمبارح",
           "transliteration": "Embarea7",
           "french": "Hier"
         },
         {
-          "arabic": null,
+          "arabic": "جاي",
           "transliteration": "Gay",
           "french": "Il vient / J'arrive (masc.)"
         },
         {
-          "arabic": null,
+          "arabic": "جاية",
           "transliteration": "Gaya",
           "french": "Elle vient / J'arrive (fém.)"
         },
         {
-          "arabic": null,
+          "arabic": "جايين",
           "transliteration": "Gayeen",
           "french": "Ils viennent / Nous arrivons (pl.)"
         }
@@ -352,17 +352,17 @@
       "content_markdown": "## Jour 20 — Se repérer dans l'espace (« Ici, Là-bas ») et le Taxi\n\n### Les Adverbes de Lieu\n\n| Français | Arabe Égyptien |\n|---|---|\n| Ici | Hena (H soufflé léger) |\n| Là-bas | Honak (H soufflé également) |\n\n### Le Kit du Déplacement et du Taxi\n\nVocabulaire essentiel pour stopper un véhicule, donner des instructions de trajectoire ou désigner un arrêt précis.\n\n| Français | Arabe Égyptien (Romanisation) |\n|---|---|\n| Arrête-toi ! | E2af (ou E'af — commence par le coup de glotte brut) |\n\n**E2af hena min fadlak** = Arrête-toi ici s'il te plaît\n\n**E2af honak** = Arrête-toi là-bas\n\n**El-bent di honak** = Cette fille est là-bas",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "هنا",
           "transliteration": "Hena",
           "french": "Ici"
         },
         {
-          "arabic": null,
+          "arabic": "هناك",
           "transliteration": "Honak",
           "french": "Là-bas"
         },
         {
-          "arabic": null,
+          "arabic": "اقف",
           "transliteration": "E2af",
           "french": "Arrête-toi !"
         }
@@ -391,7 +391,7 @@
           "french": "D'accord / OK"
         },
         {
-          "arabic": null,
+          "arabic": "وإنتَ؟ / وإنتي؟",
           "transliteration": "Wa enta? / Wa senti?",
           "french": "Et toi ?"
         },

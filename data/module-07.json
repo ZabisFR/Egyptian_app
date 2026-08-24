@@ -100,12 +100,12 @@
           "french": "si"
         },
         {
-          "arabic": null,
+          "arabic": "لو + المضارع",
           "transliteration": "law + présent",
           "french": "condition réaliste (ça peut arriver)"
         },
         {
-          "arabic": null,
+          "arabic": "لو + كان/كنت + الماضي",
           "transliteration": "law + kan/kunt + passé",
           "french": "condition hypothétique (imaginaire/raté)"
         }
@@ -119,17 +119,17 @@
       "content_markdown": "## Jour 46 — Expressions figées très utiles avec « law »\n\n| Expression | Sens littéral | Usage |\n|---|---|---|\n| law samaht / samahti | si tu permets | s'il te plaît / excuse-moi |\n| law mumkin | si possible | si c'est possible, pourrais-tu... |\n| law tayyeb | si ça va | si tu es d'accord |\n\n### Petit dialogue — demander un service\n\n**A:** لو سمحت، ممكن تساعدني؟ — Law samaht, mumken tesa3edni? *(S'il te plaît, tu peux m'aider ?)*\n\n**B:** لو عندي وقت، هساعدك أكيد. — Law 3andi wa2t, hasa3dak akeed. *(Si j'ai le temps, je t'aiderai sûrement.)*\n\n**A:** لو كنت جيت بدري، كنا خلصنا من زمان! — Law kunt geet badri, kunna khallasna min zaman! *(Si tu étais venu plus tôt, on aurait déjà fini depuis longtemps !)*\n\n*بالتوفيق! — Bit-tawfi2! (Bonne chance !)*",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "لو سمحت / لو سمحتي",
           "transliteration": "law samaht / samahti",
           "french": "s'il te plaît / excuse-moi"
         },
         {
-          "arabic": null,
+          "arabic": "لو ممكن",
           "transliteration": "law mumkin",
           "french": "si c'est possible, pourrais-tu..."
         },
         {
-          "arabic": null,
+          "arabic": "لو طيب",
           "transliteration": "law tayyeb",
           "french": "si tu es d'accord"
         }

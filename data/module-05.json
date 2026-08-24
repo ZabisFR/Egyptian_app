@@ -18,12 +18,12 @@
       "content_markdown": "## Jour 38 — Le futur avec 7a-\n\nTu as déjà croisé le préfixe du futur avec des cas particuliers (Hagahez, Gay). La règle est en fait **générale** : n'importe quel verbe au présent (avec B-) peut passer au futur en remplaçant B- par **7a-**.\n\n> 📌 Règle : Pronom + **7a-** + Verbe (sans B-). C'est exactement le même verbe qu'au présent, seul le préfixe change.\n\n| Présent | Futur | Sens |\n|---|---|---|\n| Ba3mel (je fais) | 7a3mel | je ferai |\n| Bashrab (je bois) | 7ashrab | je boirai |\n| Bakol (je mange) | 7akol | je mangerai |\n| Baroo7 (je vais) | 7aroo7 | j'irai |\n\n**Exemple :** 7aroo7 el-shoghl bokra. — J'irai au travail demain.\n\n**Négation du futur :** comme au présent, on utilise **Mesh** devant le verbe : *Mesh 7aroo7 en-naharda* = Je n'irai pas aujourd'hui.",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "حـ",
           "transliteration": "7a-",
           "french": "préfixe du futur (+ verbe sans B-)"
         },
         {
-          "arabic": null,
+          "arabic": "حاروح الشغل بكرة",
           "transliteration": "7aroo7 el-shoghl bokra",
           "french": "J'irai au travail demain"
         }
@@ -37,12 +37,12 @@
       "content_markdown": "## Jour 39 — Le passé et sa négation\n\nContrairement au présent et au futur (qui utilisent un préfixe), le passé se construit avec des **suffixes** collés à la racine du verbe.\n\n> 📌 Règle : Racine + suffixe (-t, -ti, -na, -et...). Exemple avec 3amal (faire) : 3amalt (j'ai fait), 3amalti (tu as fait, f), 3amal (il a fait), 3amalna (nous avons fait).\n\n### La négation du passé : Ma-...-sh\n\nLe passé se nie en encadrant le verbe conjugué avec **Ma-** devant et **-sh** derrière — jamais avec Mesh (qui sert pour les noms/adjectifs/présent).\n\n| Égyptien | Traduction |\n|---|---|\n| 3amalt — Ma-3amaltsh | j'ai fait — je n'ai pas fait |\n| Roo7t — Ma-ro7tsh | je suis allé — je ne suis pas allé |\n| Akalt — Ma-akaltsh | j'ai mangé — je n'ai pas mangé |\n\n**Exemple :** Ma-shoftosh embare7. — Je ne l'ai pas vu hier.",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "ما...ش",
           "transliteration": "Ma-...-sh",
           "french": "structure de négation du passé"
         },
         {
-          "arabic": null,
+          "arabic": "ماشوفتوش إمبارح",
           "transliteration": "Ma-shoftosh embare7",
           "french": "Je ne l'ai pas vu hier"
         }
@@ -56,37 +56,37 @@
       "content_markdown": "## Jour 40 — Le vocabulaire spatial\n\nAu-delà de Hena (ici) et Honak (là-bas) déjà vus, voici les prépositions de lieu essentielles pour situer un objet ou se repérer :\n\n| Français | Arabe Égyptien |\n|---|---|\n| Dans | Fi |\n| Au-dessus / Sur | Foo2 |\n| En-dessous / Sous | Ta7t |\n| À côté de | Ganb |\n| Devant | 2odam |\n| Derrière | Wara |\n| Entre | Bein |\n\n**Exemple :** El-kitab foo2 el-tarabeza. — Le livre est sur la table.\n\n**Exemple :** El-3arabiyya wa2fa ganb el-beit. — La voiture est garée à côté de la maison.",
       "vocab_items": [
         {
-          "arabic": null,
+          "arabic": "في",
           "transliteration": "Fi",
           "french": "Dans"
         },
         {
-          "arabic": null,
+          "arabic": "فوق",
           "transliteration": "Foo2",
           "french": "Au-dessus / Sur"
         },
         {
-          "arabic": null,
+          "arabic": "تحت",
           "transliteration": "Ta7t",
           "french": "En-dessous / Sous"
         },
         {
-          "arabic": null,
+          "arabic": "جنب",
           "transliteration": "Ganb",
           "french": "À côté de"
         },
         {
-          "arabic": null,
+          "arabic": "قدام",
           "transliteration": "2odam",
           "french": "Devant"
         },
         {
-          "arabic": null,
+          "arabic": "ورا",
           "transliteration": "Wara",
           "french": "Derrière"
         },
         {
-          "arabic": null,
+          "arabic": "بين",
           "transliteration": "Bein",
           "french": "Entre"
         }
