@@ -1,0 +1,81 @@
+{
+  "module": {
+    "id": "clothing-core",
+    "number": 106,
+    "title": "Les vêtements",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Vêtements et accessoires du quotidien, y compris la galabeya traditionnelle.",
+    "order_index": 106
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les vêtements",
+      "content_markdown": "## Les vêtements\n\n| Égyptien | Sens |\n|---|---|\n| قميص — 2amees | chemise |\n| بنطلون — bantalon | pantalon |\n| فستان — fostan | robe |\n| جاكيت — jakeet | veste |\n| جلابية — gallabeya | galabeya (vêtement traditionnel égyptien) |",
+      "vocab_items": [
+        {
+          "arabic": "قميص",
+          "transliteration": "2amees",
+          "french": "chemise"
+        },
+        {
+          "arabic": "بنطلون",
+          "transliteration": "bantalon",
+          "french": "pantalon"
+        },
+        {
+          "arabic": "فستان",
+          "transliteration": "fostan",
+          "french": "robe"
+        },
+        {
+          "arabic": "جاكيت",
+          "transliteration": "jakeet",
+          "french": "veste"
+        },
+        {
+          "arabic": "جلابية",
+          "transliteration": "gallabeya",
+          "french": "galabeya (vêtement traditionnel égyptien)"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Les accessoires",
+      "content_markdown": "## Les accessoires\n\n| Égyptien | Sens |\n|---|---|\n| جزمة — gazma | chaussures |\n| شنطة — shanta | sac |\n| نظارة — nazzara | lunettes |\n| ساعة — sa3a | montre |\n| طاقية — ta2eya | bonnet / casquette |",
+      "vocab_items": [
+        {
+          "arabic": "جزمة",
+          "transliteration": "gazma",
+          "french": "chaussures"
+        },
+        {
+          "arabic": "شنطة",
+          "transliteration": "shanta",
+          "french": "sac"
+        },
+        {
+          "arabic": "نظارة",
+          "transliteration": "nazzara",
+          "french": "lunettes"
+        },
+        {
+          "arabic": "ساعة",
+          "transliteration": "sa3a",
+          "french": "montre"
+        },
+        {
+          "arabic": "طاقية",
+          "transliteration": "ta2eya",
+          "french": "bonnet / casquette"
+        }
+      ]
+    }
+  ]
+}

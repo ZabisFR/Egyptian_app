@@ -1,0 +1,81 @@
+{
+  "module": {
+    "id": "home-core",
+    "number": 107,
+    "title": "La maison et les meubles",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les pièces de la maison et les meubles courants, pour décrire un lieu de vie.",
+    "order_index": 107
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les pièces de la maison",
+      "content_markdown": "## Les pièces de la maison\n\n| Égyptien | Sens |\n|---|---|\n| غرفة النوم — ghorfet en-noom | la chambre |\n| المطبخ — el-matbakh | la cuisine |\n| الصالة — es-sala | le salon |\n| الحمام — el-7ammam | la salle de bain |",
+      "vocab_items": [
+        {
+          "arabic": "غرفة النوم",
+          "transliteration": "ghorfet en-noom",
+          "french": "la chambre"
+        },
+        {
+          "arabic": "المطبخ",
+          "transliteration": "el-matbakh",
+          "french": "la cuisine"
+        },
+        {
+          "arabic": "الصالة",
+          "transliteration": "es-sala",
+          "french": "le salon"
+        },
+        {
+          "arabic": "الحمام",
+          "transliteration": "el-7ammam",
+          "french": "la salle de bain"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Les meubles et objets",
+      "content_markdown": "## Les meubles et objets\n\n| Égyptien | Sens |\n|---|---|\n| سرير — sereer | un lit |\n| ترابيزة — trabeza | une table |\n| كرسي — korsi | une chaise |\n| دولاب — dolab | une armoire |\n| تلاجة — tallaga | un réfrigérateur |\n| كنبة — kanaba | un canapé |",
+      "vocab_items": [
+        {
+          "arabic": "سرير",
+          "transliteration": "sereer",
+          "french": "un lit"
+        },
+        {
+          "arabic": "ترابيزة",
+          "transliteration": "trabeza",
+          "french": "une table"
+        },
+        {
+          "arabic": "كرسي",
+          "transliteration": "korsi",
+          "french": "une chaise"
+        },
+        {
+          "arabic": "دولاب",
+          "transliteration": "dolab",
+          "french": "une armoire"
+        },
+        {
+          "arabic": "تلاجة",
+          "transliteration": "tallaga",
+          "french": "un réfrigérateur"
+        },
+        {
+          "arabic": "كنبة",
+          "transliteration": "kanaba",
+          "french": "un canapé"
+        }
+      ]
+    }
+  ]
+}

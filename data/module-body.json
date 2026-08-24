@@ -1,0 +1,86 @@
+{
+  "module": {
+    "id": "body-core",
+    "number": 108,
+    "title": "Le corps humain (complet)",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Complète les parties du corps déjà vues au Module 10 (tête, ventre, dos, main, jambe, gorge).",
+    "order_index": 108
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Le visage et la tête",
+      "content_markdown": "## Le visage et la tête\n\n| Égyptien | Sens |\n|---|---|\n| وش — wesh | le visage |\n| عين — 3ein | l'œil |\n| ودن — widn | l'oreille |\n| شعر — sha3r | les cheveux |\n| سنان — senan | les dents |",
+      "vocab_items": [
+        {
+          "arabic": "وش",
+          "transliteration": "wesh",
+          "french": "le visage"
+        },
+        {
+          "arabic": "عين",
+          "transliteration": "3ein",
+          "french": "l'œil"
+        },
+        {
+          "arabic": "ودن",
+          "transliteration": "widn",
+          "french": "l'oreille"
+        },
+        {
+          "arabic": "شعر",
+          "transliteration": "sha3r",
+          "french": "les cheveux"
+        },
+        {
+          "arabic": "سنان",
+          "transliteration": "senan",
+          "french": "les dents"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Le corps et les membres",
+      "content_markdown": "## Le corps et les membres\n\n| Égyptien | Sens |\n|---|---|\n| صباع — soba3 | le doigt |\n| كتف — ketf | l'épaule |\n| ركبة — rokba | le genou |\n| قلب — 2alb | le cœur |\n| راس — raas | la tête (déjà vu Module 10) |\n| إيد — eed | la main / le bras (déjà vu Module 10) |",
+      "vocab_items": [
+        {
+          "arabic": "صباع",
+          "transliteration": "soba3",
+          "french": "le doigt"
+        },
+        {
+          "arabic": "كتف",
+          "transliteration": "ketf",
+          "french": "l'épaule"
+        },
+        {
+          "arabic": "ركبة",
+          "transliteration": "rokba",
+          "french": "le genou"
+        },
+        {
+          "arabic": "قلب",
+          "transliteration": "2alb",
+          "french": "le cœur"
+        },
+        {
+          "arabic": "راس",
+          "transliteration": "raas",
+          "french": "la tête (déjà vu Module 10)"
+        },
+        {
+          "arabic": "إيد",
+          "transliteration": "eed",
+          "french": "la main / le bras (déjà vu Module 10)"
+        }
+      ]
+    }
+  ]
+}

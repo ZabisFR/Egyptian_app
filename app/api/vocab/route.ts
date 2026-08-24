@@ -53,10 +53,15 @@ export async function GET() {
   return NextResponse.json(index, {
     headers: {
       // Le contenu ne bouge qu'à un réimport manuel : cinq minutes de cache au CDN
-      // évitent de rejouer la requête pour chaque visiteur qui ouvre la recherche.
-      // Contrepartie assumée : après `npm run import`, l'index peut rester périmé
-      // jusqu'à cinq minutes.
-      'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600',
+      // (`s-maxage`) évitent de rejouer la requête pour chaque visiteur qui ouvre la
+      // recherche.
+      //
+      // `max-age=0` n'est pas redondant : sans lui, la réponse n'a aucune directive de
+      // fraîcheur pour le NAVIGATEUR, qui applique alors sa propre heuristique. Mesuré
+      // après un réimport : le navigateur resservait un index de 422 mots quand le
+      // serveur en renvoyait déjà 496. Le voilà obligé de revalider (304 le plus
+      // souvent), pendant que le CDN, lui, continue d'absorber la charge.
+      'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=3600',
     },
   });
 }

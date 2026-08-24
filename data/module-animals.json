@@ -1,0 +1,91 @@
+{
+  "module": {
+    "id": "animals-core",
+    "number": 104,
+    "title": "Les animaux",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Les animaux domestiques et les animaux de ferme typiques d'Égypte.",
+    "order_index": 104
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les animaux domestiques",
+      "content_markdown": "## Les animaux domestiques\n\n| Égyptien | Sens |\n|---|---|\n| كلب — kalb | chien |\n| قطة — 2otta | chat |\n| عصفور — 3asfoor | oiseau |\n| سمكة — samaka | poisson |\n| أرنب — arnab | lapin |",
+      "vocab_items": [
+        {
+          "arabic": "كلب",
+          "transliteration": "kalb",
+          "french": "chien"
+        },
+        {
+          "arabic": "قطة",
+          "transliteration": "2otta",
+          "french": "chat"
+        },
+        {
+          "arabic": "عصفور",
+          "transliteration": "3asfoor",
+          "french": "oiseau"
+        },
+        {
+          "arabic": "سمكة",
+          "transliteration": "samaka",
+          "french": "poisson"
+        },
+        {
+          "arabic": "أرنب",
+          "transliteration": "arnab",
+          "french": "lapin"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Les animaux de ferme (et d'Égypte)",
+      "content_markdown": "## Les animaux de ferme\n\n| Égyptien | Sens |\n|---|---|\n| جمل — gamal | chameau |\n| حمار — 7omar | âne |\n| حصان — 7osan | cheval |\n| بقرة — ba2ara | vache |\n| خروف — kharoof | mouton |\n| جاموسة — gamoosa | buffle (très courant en Égypte) |\n| فرخة — farkha | poule |",
+      "vocab_items": [
+        {
+          "arabic": "جمل",
+          "transliteration": "gamal",
+          "french": "chameau"
+        },
+        {
+          "arabic": "حمار",
+          "transliteration": "7omar",
+          "french": "âne"
+        },
+        {
+          "arabic": "حصان",
+          "transliteration": "7osan",
+          "french": "cheval"
+        },
+        {
+          "arabic": "بقرة",
+          "transliteration": "ba2ara",
+          "french": "vache"
+        },
+        {
+          "arabic": "خروف",
+          "transliteration": "kharoof",
+          "french": "mouton"
+        },
+        {
+          "arabic": "جاموسة",
+          "transliteration": "gamoosa",
+          "french": "buffle (très courant en Égypte)"
+        },
+        {
+          "arabic": "فرخة",
+          "transliteration": "farkha",
+          "french": "poule"
+        }
+      ]
+    }
+  ]
+}

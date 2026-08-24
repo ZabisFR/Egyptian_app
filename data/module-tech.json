@@ -1,0 +1,101 @@
+{
+  "module": {
+    "id": "tech-core",
+    "number": 103,
+    "title": "Technologie et informatique",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Vocabulaire du numérique et de l'informatique : appareils, internet, applications.",
+    "order_index": 103
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les appareils",
+      "content_markdown": "## Les appareils\n\n| Égyptien | Sens |\n|---|---|\n| كومبيوتر — combyuter | ordinateur |\n| موبايل — mobile | téléphone / portable |\n| تابلت — tablet | tablette |\n| شاشة — shasha | écran |\n| كاميرا — kamera | appareil photo |\n| شاحن — sha7en | chargeur |\n| سماعة — samma3a | écouteur / casque |",
+      "vocab_items": [
+        {
+          "arabic": "كومبيوتر",
+          "transliteration": "combyuter",
+          "french": "ordinateur"
+        },
+        {
+          "arabic": "موبايل",
+          "transliteration": "mobile",
+          "french": "téléphone / portable"
+        },
+        {
+          "arabic": "تابلت",
+          "transliteration": "tablet",
+          "french": "tablette"
+        },
+        {
+          "arabic": "شاشة",
+          "transliteration": "shasha",
+          "french": "écran"
+        },
+        {
+          "arabic": "كاميرا",
+          "transliteration": "kamera",
+          "french": "appareil photo"
+        },
+        {
+          "arabic": "شاحن",
+          "transliteration": "sha7en",
+          "french": "chargeur"
+        },
+        {
+          "arabic": "سماعة",
+          "transliteration": "samma3a",
+          "french": "écouteur / casque"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Internet et les applications",
+      "content_markdown": "## Internet et les applications\n\n| Égyptien | Sens |\n|---|---|\n| إنترنت — internet | internet |\n| واي فاي — wifi | wifi |\n| تطبيق — tatbee2 | application |\n| باسورد — password | mot de passe |\n| تنزيل — tanzeel | téléchargement |\n| رسالة — resala | message |\n| برنامج — barnamig | logiciel / programme |",
+      "vocab_items": [
+        {
+          "arabic": "إنترنت",
+          "transliteration": "internet",
+          "french": "internet"
+        },
+        {
+          "arabic": "واي فاي",
+          "transliteration": "wifi",
+          "french": "wifi"
+        },
+        {
+          "arabic": "تطبيق",
+          "transliteration": "tatbee2",
+          "french": "application"
+        },
+        {
+          "arabic": "باسورد",
+          "transliteration": "password",
+          "french": "mot de passe"
+        },
+        {
+          "arabic": "تنزيل",
+          "transliteration": "tanzeel",
+          "french": "téléchargement"
+        },
+        {
+          "arabic": "رسالة",
+          "transliteration": "resala",
+          "french": "message"
+        },
+        {
+          "arabic": "برنامج",
+          "transliteration": "barnamig",
+          "french": "logiciel / programme"
+        }
+      ]
+    }
+  ]
+}

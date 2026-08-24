@@ -1,0 +1,125 @@
+{
+  "module": {
+    "id": "food-core",
+    "number": 105,
+    "title": "Nourriture égyptienne",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Fruits, légumes et plats égyptiens typiques : de la molokheya au fool, en passant par les fruits du marché.",
+    "order_index": 105
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les fruits",
+      "content_markdown": "## Les fruits\n\n| Égyptien | Sens |\n|---|---|\n| تفاح — tofa7 | pomme |\n| موز — moz | banane |\n| برتقال — borto2al | orange |\n| مانجا — manga | mangue |\n| عنب — 3enab | raisin |\n| بطيخ — battikh | pastèque |",
+      "vocab_items": [
+        {
+          "arabic": "تفاح",
+          "transliteration": "tofa7",
+          "french": "pomme"
+        },
+        {
+          "arabic": "موز",
+          "transliteration": "moz",
+          "french": "banane"
+        },
+        {
+          "arabic": "برتقال",
+          "transliteration": "borto2al",
+          "french": "orange"
+        },
+        {
+          "arabic": "مانجا",
+          "transliteration": "manga",
+          "french": "mangue"
+        },
+        {
+          "arabic": "عنب",
+          "transliteration": "3enab",
+          "french": "raisin"
+        },
+        {
+          "arabic": "بطيخ",
+          "transliteration": "battikh",
+          "french": "pastèque"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 2,
+      "section": "Référence",
+      "title": "Les légumes",
+      "content_markdown": "## Les légumes\n\n| Égyptien | Sens |\n|---|---|\n| طماطم — tamatem | tomate |\n| بطاطس — batates | pomme de terre |\n| خيار — khiyar | concombre |\n| بصل — basal | oignon |\n| جزر — gazar | carotte |",
+      "vocab_items": [
+        {
+          "arabic": "طماطم",
+          "transliteration": "tamatem",
+          "french": "tomate"
+        },
+        {
+          "arabic": "بطاطس",
+          "transliteration": "batates",
+          "french": "pomme de terre"
+        },
+        {
+          "arabic": "خيار",
+          "transliteration": "khiyar",
+          "french": "concombre"
+        },
+        {
+          "arabic": "بصل",
+          "transliteration": "basal",
+          "french": "oignon"
+        },
+        {
+          "arabic": "جزر",
+          "transliteration": "gazar",
+          "french": "carotte"
+        }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 3,
+      "section": "Référence",
+      "title": "Les plats égyptiens typiques",
+      "content_markdown": "## Les plats égyptiens typiques\n\n| Égyptien | Sens |\n|---|---|\n| كشري — koshari | koshari (plat national égyptien) |\n| طعمية — ta3meya | falafels aux fèves |\n| ملوخية — molokheya | molokheya (plat de feuilles vertes) |\n| فول — fool | fèves |\n| محشي — ma7shi | légumes farcis |\n| كفتة — kofta | kefta (boulettes de viande grillées) |",
+      "vocab_items": [
+        {
+          "arabic": "كشري",
+          "transliteration": "koshari",
+          "french": "koshari (plat national égyptien)"
+        },
+        {
+          "arabic": "طعمية",
+          "transliteration": "ta3meya",
+          "french": "falafels aux fèves"
+        },
+        {
+          "arabic": "ملوخية",
+          "transliteration": "molokheya",
+          "french": "molokheya (plat de feuilles vertes)"
+        },
+        {
+          "arabic": "فول",
+          "transliteration": "fool",
+          "french": "fèves"
+        },
+        {
+          "arabic": "محشي",
+          "transliteration": "ma7shi",
+          "french": "légumes farcis"
+        },
+        {
+          "arabic": "كفتة",
+          "transliteration": "kofta",
+          "french": "kefta (boulettes de viande grillées)"
+        }
+      ]
+    }
+  ]
+}
