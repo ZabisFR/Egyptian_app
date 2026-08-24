@@ -688,6 +688,155 @@ body {
   transform: scaleX(1);
 }
 
+/* --------------------------------------------------------------------------
+   Recherche de vocabulaire
+   -------------------------------------------------------------------------- */
+
+/* Déclencheur : une icône de 40 px sur mobile, un faux champ à partir de 640 px. Le
+   `width` fixe évite que la barre de navigation se réorganise quand le libellé apparaît. */
+.search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  /* Sans cette ligne, la barre de navigation le comprimait à 34 px sur mobile (mesuré) —
+     sous la cible tactile de 40 px que sa taille est justement censée garantir. */
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--muted);
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.search-trigger:hover {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  color: var(--ink);
+}
+/* Le champ n'apparaît qu'à 768 px. En dessous, mesuré, la barre déborde : le libellé et
+   ses 12 rem entrent en concurrence avec les liens de navigation. */
+@media (min-width: 768px) {
+  .search-trigger {
+    width: 12rem;
+    justify-content: flex-start;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding-inline: 0.75rem;
+    font-size: 0.8125rem;
+  }
+  .search-trigger:hover {
+    border-color: color-mix(in srgb, var(--gold) 50%, var(--border));
+  }
+}
+
+/* La palette s'ancre en haut plutôt qu'au centre : le regard y est déjà (le déclencheur
+   est dans la barre) et, clavier virtuel ouvert sur mobile, un panneau centré se
+   retrouverait à moitié masqué. */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  padding-top: 4.5rem;
+  background: color-mix(in srgb, var(--background) 55%, rgb(0 0 0 / 0.45));
+  backdrop-filter: blur(3px);
+  animation: fade 160ms var(--ease) both;
+}
+
+.search-panel {
+  display: flex;
+  max-height: calc(100dvh - 6rem);
+  width: 100%;
+  max-width: 34rem;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-3);
+  animation: rise 200ms var(--ease) both;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-bottom: 1px solid var(--border);
+  padding: 0.875rem 1rem;
+  color: var(--muted);
+}
+
+.search-input {
+  min-width: 0;
+  flex: 1;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+#search-results {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  /* 3.5rem : au-dessus des 44 px d'une cible tactile, y compris quand le mot arabe est
+     absent et que la ligne se réduit à deux lignes de texte latin. */
+  min-height: 3.5rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  border-left: 3px solid transparent;
+}
+/* L'état actif suit le clavier ET la souris. Il porte une bordure en plus du fond : sur
+   un écran mal calibré, un simple aplat très pâle ne se distingue pas du reste. */
+.search-result-active {
+  /* 7 % et non 12 % : à 12 %, le texte secondaire (`--muted`) tombait à 4,30:1 sur
+     l'aplat teinté, sous le seuil AA — mesuré. L'état reste parfaitement lisible car
+     c'est la bordure dorée, et non le fond, qui le porte. */
+  background: color-mix(in srgb, var(--gold) 7%, transparent);
+  border-left-color: var(--gold);
+}
+
+/* Le mot ciblé par l'ancre `#mot-<id>` : sans repère, on arrive en bas d'une leçon sans
+   savoir lequel des vingt mots on cherchait. Le halo s'estompe de lui-même.
+   La classe est posée par components/HashHighlight.tsx et non par `:target`, qui ne
+   correspond à rien après une navigation côté client. */
+.vocab-card {
+  /* Compense la barre de navigation collante quand le navigateur saute à l'ancre. */
+  scroll-margin-top: 6rem;
+}
+
+@keyframes mot-cible {
+  from {
+    box-shadow: 0 0 0 3px var(--gold);
+  }
+  to {
+    box-shadow: 0 0 0 3px transparent;
+  }
+}
+.mot-cible {
+  border-color: var(--gold);
+  animation: mot-cible 2.4s var(--ease) 0.2s both;
+}
+/* La garde globale neutralise l'animation ; le halo devient alors fixe, et reste visible
+   le temps que le minuteur retire la classe. */
+@media (prefers-reduced-motion: reduce) {
+  .mot-cible {
+    box-shadow: 0 0 0 3px var(--gold);
+  }
+}
+
 /* Lien de pied de page. Le remplissage vertical n'est pas décoratif : mesuré, le lien nu
    ne fait que 18 px de haut, sous les 24 px minimum exigés pour une cible cliquable
    (WCAG 2.2, critère « taille de cible »). 18 + 2 × 4 = 26 px. */

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import LevelBadge from './LevelBadge';
 import NavLink from './NavLink';
 import ThemeToggle from './ThemeToggle';
+import VocabSearch from './VocabSearch';
 import { getProfile } from '@/lib/auth';
 
 export default async function Navbar() {
@@ -31,13 +32,17 @@ export default async function Navbar() {
           <span className="display hidden text-lg sm:inline">Arabe égyptien</span>
         </Link>
 
-        <div className="flex items-center gap-4 text-sm sm:gap-5">
+        <div className="flex items-center gap-3.5 text-sm sm:gap-4">
+          <VocabSearch />
           <NavLink href="/modules">Modules</NavLink>
 
           {profile ? (
             <>
               <NavLink href="/daily">Du jour</NavLink>
-              <NavLink href="/dashboard" className="hidden sm:inline">
+              {/* Repoussé à 1024 px : à 768 px, la barre de recherche prend la place que
+                  ce lien occupait, et la barre passait à deux lignes (mesuré). Le tableau
+                  de bord reste atteignable par le lien de profil. */}
+              <NavLink href="/dashboard" className="hidden lg:inline">
                 Tableau de bord
               </NavLink>
               <ThemeToggle />
@@ -54,8 +59,15 @@ export default async function Navbar() {
           ) : (
             <>
               <ThemeToggle />
-              <Link href="/auth/login" className="btn-outline px-4 py-2">
-                Se connecter
+              {/* Libellé court sous 640 px : avec « Se connecter », la barre dépassait de
+                  19 px à 375 px une fois la recherche ajoutée, et le bouton passait à deux
+                  lignes — la barre entière gagnait 16 px de hauteur (mesuré). */}
+              <Link
+                href="/auth/login"
+                className="btn-outline shrink-0 whitespace-nowrap px-4 py-2"
+              >
+                <span className="sm:hidden">Connexion</span>
+                <span className="hidden sm:inline">Se connecter</span>
               </Link>
             </>
           )}

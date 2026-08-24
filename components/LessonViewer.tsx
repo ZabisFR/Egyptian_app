@@ -88,7 +88,9 @@ export default function LessonViewer({
           */}
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {vocab.map((v) => (
-              <li key={v.id} className="card-sand p-4">
+              // `id` : cible des liens de la recherche globale (`#mot-<id>`), qui met la
+              // fiche en évidence à l'arrivée via `:target` (voir globals.css).
+              <li key={v.id} id={`mot-${v.id}`} className="vocab-card card-sand p-4">
                 <p className="arabic text-right leading-tight text-[var(--ink)]" dir="rtl">
                   {v.arabic}
                 </p>

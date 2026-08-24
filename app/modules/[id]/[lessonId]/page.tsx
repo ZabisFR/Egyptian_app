@@ -6,6 +6,7 @@ import { toggleLessonRead } from '../actions';
 import { getUser } from '@/lib/auth';
 import { getReadLessons } from '@/lib/progress';
 import FeedbackActions from '@/components/FeedbackActions';
+import HashHighlight from '@/components/HashHighlight';
 import { SITE } from '@/lib/site-config';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, VocabItem } from '@/lib/types';
@@ -50,6 +51,9 @@ export default async function LessonPage({
       >
         ← Retour au module
       </Link>
+
+      {/* Met en évidence la fiche du mot quand on arrive depuis la recherche globale. */}
+      <HashHighlight />
 
       <div className="mt-4">
         <LessonViewer lesson={lesson} vocab={lesson.vocab_items} />
