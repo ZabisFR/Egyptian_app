@@ -21,6 +21,16 @@ export const SITE = {
   /** Adresse e-mail de contact pour l'exercice des droits RGPD. À REMPLIR. */
   contactEmail: 'pouteaue78@gmail.com',
 
+  /**
+   * Adresse dédiée aux retours et suggestions sur le contenu.
+   *
+   * Volontairement distincte de `contactEmail` : cette dernière est l'adresse
+   * personnelle de l'éditeur, publiée parce que la LCEN et le RGPD l'exigent. Un lecteur
+   * qui signale une coquille de translittération n'a aucune raison d'écrire au
+   * responsable de traitement — et l'éditeur n'a aucune raison de mélanger les deux flux.
+   */
+  feedbackEmail: 'arabicappfeedback0000@gmail.com',
+
   /** Statut de l'éditeur : particulier ou professionnel. */
   publisherStatus: 'Particulier — site personnel sans activité commerciale',
 
@@ -30,3 +40,15 @@ export const SITE = {
   /** Date de dernière révision des mentions, à actualiser en cas de modification. */
   lastUpdated: '13 août 2026',
 } as const;
+
+/**
+ * Construit un lien `mailto:` vers l'adresse de retours, avec objet (et corps) pré-remplis.
+ *
+ * `encodeURIComponent` plutôt que `URLSearchParams` : ce dernier encode les espaces en `+`,
+ * que plusieurs clients de messagerie affichent littéralement dans la ligne d'objet.
+ */
+export function feedbackMailto(subject: string, body?: string) {
+  const params = [`subject=${encodeURIComponent(subject)}`];
+  if (body) params.push(`body=${encodeURIComponent(body)}`);
+  return `mailto:${SITE.feedbackEmail}?${params.join('&')}`;
+}

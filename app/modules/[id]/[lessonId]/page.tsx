@@ -5,6 +5,7 @@ import LessonReadToggle from '@/components/LessonReadToggle';
 import { toggleLessonRead } from '../actions';
 import { getUser } from '@/lib/auth';
 import { getReadLessons } from '@/lib/progress';
+import { SITE, feedbackMailto } from '@/lib/site-config';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, VocabItem } from '@/lib/types';
 
@@ -53,7 +54,7 @@ export default async function LessonPage({
         <LessonViewer lesson={lesson} vocab={lesson.vocab_items} />
       </div>
 
-      <div className="mt-10 border-t border-[var(--border)] pt-6">
+      <div className="mt-10 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
         <LessonReadToggle
           moduleId={id}
           orderIndex={lesson.order_index}
@@ -61,6 +62,25 @@ export default async function LessonPage({
           isLoggedIn={!!user}
           onToggle={toggleLessonRead}
         />
+
+        {/*
+          Signalement contextuel : l'objet et le corps du message portent déjà la leçon,
+          le module et l'URL. Sans ce pré-remplissage, un retour arrive sous la forme
+          « il y a une faute dans la leçon sur les couleurs » et il faut retrouver
+          laquelle — c'est ce qui décourage d'y donner suite.
+        */}
+        <a
+          href={feedbackMailto(
+            `Coquille — ${lesson.title}`,
+            `Leçon : ${lesson.title}${lesson.day !== null ? ` (jour ${lesson.day})` : ''}\n` +
+              `Module : ${id}\n` +
+              `Page : ${SITE.url}/modules/${id}/${lessonId}\n\n` +
+              `Ce qui me semble incorrect :\n\n`
+          )}
+          className="inline-block shrink-0 py-1 text-sm text-[var(--muted)] transition-colors hover:text-[var(--ink)]"
+        >
+          Signaler une coquille
+        </a>
       </div>
 
       {/* Précédent / suivant en cartes plutôt qu'en liens nus : c'est le geste le plus

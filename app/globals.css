@@ -688,6 +688,19 @@ body {
   transform: scaleX(1);
 }
 
+/* Lien de pied de page. Le remplissage vertical n'est pas décoratif : mesuré, le lien nu
+   ne fait que 18 px de haut, sous les 24 px minimum exigés pour une cible cliquable
+   (WCAG 2.2, critère « taille de cible »). 18 + 2 × 4 = 26 px. */
+.footer-link {
+  display: inline-block;
+  padding-block: 0.25rem;
+  color: var(--muted);
+  transition: color var(--t-fast) var(--ease);
+}
+.footer-link:hover {
+  color: var(--ink);
+}
+
 /* Lien d'évitement : masqué visuellement mais lisible par les lecteurs d'écran, il
    réapparaît au premier Tab pour sauter la navigation.
    Écrit en CSS explicite plutôt qu'avec `sr-only focus:not-sr-only` : dans Tailwind v4,
