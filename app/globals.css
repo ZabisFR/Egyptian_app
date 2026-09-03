@@ -809,6 +809,55 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Atelier d'écriture
+   -------------------------------------------------------------------------- */
+
+.tracer-ardoise {
+  /* Les deux variables sont lues en JavaScript pour peindre dans le canvas : un canvas
+     ignore la cascade, il faut lui passer des couleurs résolues. Les déclarer ici garde
+     malgré tout le thème comme source unique. */
+  --trace-guide: color-mix(in srgb, var(--ink) 16%, transparent);
+  --trace-encre: var(--lapis);
+
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: inset 0 1px 3px rgb(var(--shadow-color) / 0.1);
+  /* Sans cela, le doigt fait défiler la page au lieu de tracer. */
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* Pastille de sélection d'une lettre. 2.5rem : cible tactile confortable pour 28 boutons
+   serrés, où un raté fait perdre le tracé en cours. */
+.tracer-puce {
+  display: grid;
+  place-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ink);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
+}
+.tracer-puce:hover {
+  border-color: color-mix(in srgb, var(--gold) 55%, var(--border));
+}
+.tracer-puce-active {
+  border-color: var(--lapis);
+  background: color-mix(in srgb, var(--lapis) 12%, transparent);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
    Glossaire
    -------------------------------------------------------------------------- */
 

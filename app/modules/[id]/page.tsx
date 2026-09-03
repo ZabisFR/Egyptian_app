@@ -95,6 +95,29 @@ export default async function ModulePage({
 
       </header>
 
+      {/* Le module de l'alphabet est le seul où l'on apprend à FORMER les lettres :
+          c'est là que l'atelier de tracé a sa place, pas dans une barre globale. */}
+      {mod.id === 'module-01' && (
+        <Link
+          href="/ecriture"
+          className="card-sand card-link mt-6 flex items-center gap-4 p-4"
+        >
+          <span
+            aria-hidden="true"
+            className="arabic flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] bg-[color-mix(in_srgb,var(--lapis)_14%,transparent)] text-xl leading-none text-[var(--lapis-text)]"
+          >
+            ع
+          </span>
+          <span>
+            <span className="display block text-base">S&apos;entraîner à les tracer</span>
+            <span className="mt-0.5 block text-sm text-[var(--muted)]">
+              Écrivez chaque lettre au doigt ou au stylet et obtenez un pourcentage de
+              ressemblance avec le modèle.
+            </span>
+          </span>
+        </Link>
+      )}
+
       <LessonPath
         moduleId={mod.id}
         sections={sections.map((section) => ({
