@@ -1,0 +1,42 @@
+{
+  "module": {
+    "id": "connectors-core",
+    "number": 114,
+    "title": "Les mots de liaison simples",
+    "subtitle": "Référence",
+    "level": "REF",
+    "description": "Et, ou, mais, de, pour, avec, sans : les conjonctions et prépositions les plus courantes du quotidien, distinctes des connecteurs de discours plus soutenus déjà vus au Module 11 (3ashan, ya3ni, masalan...).",
+    "order_index": 114
+  },
+  "lessons": [
+    {
+      "day": null,
+      "order_index": 0,
+      "section": "Référence",
+      "title": "Les conjonctions de base",
+      "content_markdown": "## Les conjonctions de base\n\n> 📌 Règle : **wi** (et) se prononce comme un souffle, collé au mot suivant à l'oral comme à l'écrit : Ana wenta (moi et toi) se dit d'un bloc, jamais Ana wi enta détaché.\n\n| Français | Arabe | Romanisation | Exemple |\n|---|---|---|---|\n| Et | و | wi | Ana wenta = Moi et toi |\n| Ou | أو | aw | Shay aw ahwa? = Thé ou café ? |\n| Ou bien / même pas | ولا | walla | Da kwayes walla mesh kwayes? = C'est bien ou pas bien ? |\n| Mais | بس | bas | 3ayez ahwa, bas mesh delwa2ti = Je veux un café, mais pas maintenant |\n| Mais (plus soutenu) | لاكن | laken | Ana faham, laken mesh muwafe2 = Je comprends, mais je ne suis pas d'accord |\n\n> 💡 **Walla** change de sens selon la place : en fin de question, il propose une alternative (« ou bien ? ») ; collé à une négation, il la renforce — mafish walla 7aga = il n'y a absolument rien.",
+      "vocab_items": [
+        { "arabic": "و", "transliteration": "wi", "french": "Et" },
+        { "arabic": "أو", "transliteration": "aw", "french": "Ou" },
+        { "arabic": "ولا", "transliteration": "walla", "french": "Ou bien (question) / même pas (négation)" },
+        { "arabic": "بس", "transliteration": "bas", "french": "Mais" },
+        { "arabic": "لاكن", "transliteration": "laken", "french": "Mais (plus soutenu)" }
+      ]
+    },
+    {
+      "day": null,
+      "order_index": 1,
+      "section": "Référence",
+      "title": "Les prépositions courantes",
+      "content_markdown": "## Les prépositions courantes\n\n> 📌 Règle : **le-** (à, pour) ne s'emploie jamais seul — comme l'article el-, il se colle toujours au mot qui suit : le-Ahmed = pour Ahmed, le-beit = vers la maison.\n\n| Français | Arabe | Romanisation | Exemple |\n|---|---|---|---|\n| De / depuis | من | min | Ana min Faransa = Je viens de France |\n| À / pour | لـ | le- | El-hadeya di le-mama = Ce cadeau est pour maman |\n| Avec | مع | ma3a | Ana raye7 el-souq ma3ak = Je vais au marché avec toi |\n| Sans | من غير | min gheir | Ahwa min gheir sokkar = Un café sans sucre |\n| Sur / à | على | 3ala | El-mfta7 3ala el-trabeza = La clé est sur la table |\n| Jusqu'à / même | حتى | 7atta | Ba2a fel-shoghl 7atta el-maghrib = Il reste au travail jusqu'au coucher du soleil |\n\n> 💡 **7atta** a deux emplois : préposition de temps (jusqu'à) ou adverbe qui renforce (même) — 7atta ana mesh 3aref = même moi je ne sais pas.",
+      "vocab_items": [
+        { "arabic": "من", "transliteration": "min", "french": "De / depuis" },
+        { "arabic": "لـ", "transliteration": "le-", "french": "À / pour" },
+        { "arabic": "مع", "transliteration": "ma3a", "french": "Avec" },
+        { "arabic": "من غير", "transliteration": "min gheir", "french": "Sans" },
+        { "arabic": "على", "transliteration": "3ala", "french": "Sur / à" },
+        { "arabic": "حتى", "transliteration": "7atta", "french": "Jusqu'à / même" }
+      ]
+    }
+  ]
+}
