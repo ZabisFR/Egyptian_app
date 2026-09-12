@@ -1,20 +1,35 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import QuizEngine, { type QuizQuestionView, type QuizResult } from '@/components/QuizEngine';
 import ScoreDial from '@/components/ScoreDial';
+import StreakBadge from '@/components/StreakBadge';
+import type { Streak } from '@/lib/streak';
 
 export default function DailyReview({
   questions,
+  initialStreak,
   onComplete,
 }: {
   questions: QuizQuestionView[];
-  onComplete: (result: QuizResult) => Promise<void>;
+  /** Série au moment où la page a été chargée, avant que ce jour ne compte. */
+  initialStreak: Streak;
+  onComplete: (result: QuizResult) => Promise<Streak | undefined>;
 }) {
+  // La série affichée par QuizEngine.renderResult doit être celle D'APRÈS
+  // l'enregistrement — sinon l'écran de résultat annoncerait encore hier. `onComplete`
+  // de QuizEngine ne fait que déclencher l'appel ; c'est cet état qui porte le résultat
+  // jusqu'au rendu, une fois la réponse du serveur arrivée.
+  const [streak, setStreak] = useState(initialStreak);
+
   return (
     <QuizEngine
       questions={questions}
-      onComplete={onComplete}
+      onComplete={async (result) => {
+        const suivante = await onComplete(result);
+        if (suivante) setStreak(suivante);
+      }}
       renderResult={(result: QuizResult) => {
         const correct = result.answers.filter((a) => a.correct).length;
         const missed = result.answers.filter((a) => !a.correct);
@@ -29,6 +44,10 @@ export default function DailyReview({
                 tone={missed.length === 0 ? 'pass' : 'neutral'}
                 caption={`${correct} sur ${result.answers.length} — revenez demain pour une nouvelle sélection.`}
               />
+            </div>
+
+            <div className="mt-4">
+              <StreakBadge streak={streak} />
             </div>
 
             {missed.length > 0 && (

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import LevelBadge from '@/components/LevelBadge';
 import ScoreDial from '@/components/ScoreDial';
+import StreakBadge from '@/components/StreakBadge';
 import { requireProfile } from '@/lib/auth';
 import { getAllProgress } from '@/lib/progress';
 import { getDailyLesson } from '@/lib/daily';
+import { getStreak } from '@/lib/streak';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, Module } from '@/lib/types';
 
@@ -13,9 +15,10 @@ export default async function DashboardPage() {
   const profile = await requireProfile();
   const supabase = await createClient();
 
-  const [progress, daily, { data: modules }] = await Promise.all([
+  const [progress, daily, streak, { data: modules }] = await Promise.all([
     getAllProgress(profile.id),
     getDailyLesson(profile.id),
+    getStreak(profile.id),
     supabase
       .from('modules')
       .select('id, title, level, order_index')
@@ -72,8 +75,13 @@ export default async function DashboardPage() {
         <div className="flex flex-wrap items-center justify-between gap-6">
           <ScoreDial value={globalPct} caption={`${lessonsRead} leçons lues sur ${lessonsTotal}`} />
 
-          <dl className="grid flex-1 grid-cols-3 gap-4 text-center sm:max-w-xs">
+          {/* `min-w-40` : sans plancher, ce bloc se comprimait à 70 px à côté du cadran
+              plutôt que de passer à la ligne — `flex-wrap` ne déclenche le retour à la
+              ligne que si un élément ne peut PLUS rétrécir, et par défaut il rétrécit
+              toujours un peu plus, quitte à rendre « 0/30 » illisible (mesuré). */}
+          <dl className="grid min-w-40 flex-1 grid-cols-2 gap-4 text-center sm:max-w-sm sm:grid-cols-4">
             {[
+              ['Série', `${streak.current} j`],
               ['XP', profile.xp_points],
               ['Modules', `${completed}/${rows.length}`],
               ['Niveau', profile.current_level],
@@ -92,7 +100,10 @@ export default async function DashboardPage() {
           className="card-sand rise flex flex-col p-5"
           style={{ '--i': 1 } as React.CSSProperties}
         >
-          <p className="eyebrow">Leçon du jour</p>
+          <div className="flex items-center justify-between gap-2">
+            <p className="eyebrow">Leçon du jour</p>
+            <StreakBadge streak={streak} size="sm" />
+          </div>
           <h2 className="display mt-2 text-lg">
             {daily.alreadyDone
               ? `Faite aujourd'hui — ${daily.lastScore} %`

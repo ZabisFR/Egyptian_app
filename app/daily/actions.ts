@@ -1,18 +1,22 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import { todayKey } from '@/lib/daily';
+import { getStreak, type Streak } from '@/lib/streak';
 import type { Answer } from '@/lib/quiz-scoring';
 
 /**
- * Enregistre la leçon du jour.
+ * Enregistre la leçon du jour et renvoie la série à jour.
  *
  * L'insertion peut échouer sur la contrainte unique (user_id, review_date) si l'apprenant
  * rejoue la même journée — c'est le comportement voulu et non une erreur : la première
- * tentative du jour fait foi, et l'XP n'est donc versée qu'une fois.
+ * tentative du jour fait foi, et l'XP n'est donc versée qu'une fois. La série, elle, est
+ * recalculée dans les deux cas : rejouer ne l'incrémente pas une deuxième fois, mais
+ * l'écran de résultat doit quand même pouvoir l'afficher.
  */
-export async function saveDailyReview(result: { answers: Answer[]; score: number }) {
+export async function saveDailyReview(
+  result: { answers: Answer[]; score: number }
+): Promise<Streak | undefined> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -29,7 +33,7 @@ export async function saveDailyReview(result: { answers: Answer[]; score: number
   // 23505 = violation de contrainte unique : la leçon du jour était déjà faite.
   if (error) {
     if (error.code !== '23505') throw new Error(error.message);
-    return;
+    return getStreak(user.id);
   }
 
   const { data: profile } = await supabase
@@ -45,5 +49,13 @@ export async function saveDailyReview(result: { answers: Answer[]; score: number
     .update({ xp_points: (profile?.xp_points ?? 0) + Math.round(result.score / 10) })
     .eq('id', user.id);
 
-  revalidatePath('/', 'layout');
+  // Pas de `revalidatePath` ici : /daily, /dashboard et /profile sont déjà
+  // `force-dynamic`, donc toujours frais à la prochaine navigation — revalider aurait été
+  // sans effet sur ce point. Mesuré : l'appeler déclenchait en revanche un rafraîchissement
+  // automatique de LA PAGE COURANTE dès que l'action serveur se résolvait. Comme /daily
+  // bascule sa branche de rendu sur `alreadyDone`, ce rafraîchissement démontait l'écran
+  // de résultat (mots ratés, série) moins d'une seconde après son affichage, pour le
+  // remplacer par la carte « déjà faite ». Les autres pages du site ne branchent pas leur
+  // rendu de cette façon après un envoi, elles n'ont donc jamais révélé le problème.
+  return getStreak(user.id);
 }

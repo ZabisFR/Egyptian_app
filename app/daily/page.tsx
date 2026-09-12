@@ -3,12 +3,17 @@ import DailyReview from './DailyReview';
 import { saveDailyReview } from './actions';
 import { requireProfile } from '@/lib/auth';
 import { getDailyLesson, DAILY_MIN_POOL } from '@/lib/daily';
+import { getStreak } from '@/lib/streak';
+import StreakBadge from '@/components/StreakBadge';
 
 export const dynamic = 'force-dynamic';
 
 export default async function DailyPage() {
   const profile = await requireProfile();
-  const daily = await getDailyLesson(profile.id);
+  const [daily, streak] = await Promise.all([
+    getDailyLesson(profile.id),
+    getStreak(profile.id),
+  ]);
 
   const formattedDate = new Date(`${daily.date}T12:00:00`).toLocaleDateString('fr-FR', {
     weekday: 'long',
@@ -18,7 +23,10 @@ export default async function DailyPage() {
 
   return (
     <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
-      <p className="cartouche">Leçon du jour</p>
+      <div className="flex flex-wrap items-center gap-3">
+        <p className="cartouche">Leçon du jour</p>
+        <StreakBadge streak={streak} size="sm" />
+      </div>
       <h1 className="display mt-4 text-3xl first-letter:uppercase sm:text-4xl">
         {formattedDate}
       </h1>
@@ -59,7 +67,11 @@ export default async function DailyPage() {
             un vivier de {daily.poolSize}.
           </p>
           <div className="mt-10">
-            <DailyReview questions={daily.questions} onComplete={saveDailyReview} />
+            <DailyReview
+              questions={daily.questions}
+              initialStreak={streak}
+              onComplete={saveDailyReview}
+            />
           </div>
         </>
       )}

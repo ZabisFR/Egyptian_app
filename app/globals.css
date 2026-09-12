@@ -252,12 +252,22 @@ body {
   background-attachment: fixed, scroll, scroll;
 }
 
-/* Le conteneur de page est un élément flex du layout racine. Sans `min-width: 0`, un
-   élément incompressible — mesuré : le tableau des données personnelles, 349 px de
-   largeur minimale — élargit le `<main>` au-delà du viewport et fait défiler TOUTE la
-   page horizontalement, au lieu de rester confiné à sa propre zone défilante. */
+/* Le conteneur de page est un élément flex du layout racine (colonne). `min-width: 0`
+   seul ne suffit plus depuis qu'un élément incompressible peut apparaître n'importe où
+   dans une page : chaque `<main>` porte `mx-auto`, et une marge automatique DÉSACTIVE
+   l'étirement (`align-items: stretch`) sur l'axe qu'elle occupe — ici l'axe transversal
+   d'un conteneur en colonne, donc la largeur. Sans étirement, `main` se dimensionne sur
+   son propre contenu (« shrink-to-fit ») plutôt que sur l'espace disponible : si ce
+   contenu résiste à la compression, `main` grandit au-delà du viewport et entraîne toute
+   la page dans un défilement horizontal — pas seulement lui.
+   Mesuré : la ligne de statistiques du tableau de bord (une largeur plancher à côté d'un
+   cadran de taille fixe) suffisait à pousser `<main>` de 375 à 450 px, alors que son
+   PARENT direct restait bien à 375 px. Aucune des deux règles seule n'aurait suffi :
+   `min-width: 0` évite qu'un enfant impose une largeur plancher à `main`, `width: 100%`
+   empêche `main` lui-même de se réduire à son contenu au lieu de remplir l'espace reçu. */
 #contenu > * {
   min-width: 0;
+  width: 100%;
 }
 
 ::selection {
@@ -806,6 +816,61 @@ body {
      c'est la bordure dorée, et non le fond, qui le porte. */
   background: color-mix(in srgb, var(--gold) 7%, transparent);
   border-left-color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   Série (streak) de la leçon du jour
+   -------------------------------------------------------------------------- */
+
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.streak-badge-sm {
+  padding: 0.1875rem 0.625rem;
+  font-size: 0.75rem;
+}
+.streak-badge-md {
+  padding: 0.3125rem 0.875rem;
+  font-size: 0.875rem;
+}
+
+.streak-flamme {
+  height: 1em;
+  width: 1em;
+  flex-shrink: 0;
+}
+
+/* Série active : les mêmes pigments carmine/or que le reste du site, jamais un rouge
+   d'alerte générique — le feu fait déjà le travail de signal. */
+.streak-badge-allumee {
+  border-color: color-mix(in srgb, var(--carmine) 40%, transparent);
+  background: color-mix(in srgb, var(--carmine) 10%, transparent);
+  color: var(--carmine-text);
+}
+.streak-badge-allumee .streak-flamme {
+  color: var(--gold-text);
+}
+
+/* Série rompue ou inexistante : mêmes tons neutres que le badge de niveau REF, pour ne
+   pas donner l'impression d'une erreur — c'est un état normal, pas une faute. */
+.streak-badge-eteinte {
+  border-color: var(--border);
+  background: color-mix(in srgb, var(--muted) 10%, transparent);
+  color: var(--muted);
+}
+
+/* Série vivante mais pas encore faite aujourd'hui : le seul moment où le ton doit presser
+   un peu, sans pour autant basculer sur une couleur d'erreur. */
+.streak-badge-alerte {
+  padding-left: 0.5rem;
+  border-left: 1px solid color-mix(in srgb, var(--carmine) 35%, transparent);
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
