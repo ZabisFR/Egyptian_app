@@ -14,31 +14,31 @@
       "order_index": 1,
       "section": "12.1",
       "title": "Le passif : action vs état",
-      "content_markdown": "## Jour 69 — Le passif : action vs état\n\nTu connais déjà le préfixe **it-** (Module 9) pour dire qu'une action est **subie**. Il existe un deuxième outil, le **participe passif (ism maf3uul)**, qui décrit **l'état résultant** — comme un adjectif.\n\n> 💡 Le moule du participe passif : **ma-C1C2uuC3** — on ajoute **ma-** devant la racine et on allonge la voyelle avant la 3ᵉ consonne.\n\n| Verbe (Forme I) | Participe passif | Sens |\n|---|---|---|\n| كتب — katab (écrire) | مكتوب — maktuub | écrit |\n| فتح — fata7 (ouvrir) | مفتوح — maftuu7 | ouvert |\n| قفل — 2afal (fermer) | مقفول — ma2fuul | fermé |\n| عمل — 3amal (faire) | معمول — ma3muul | fait |\n| عرف — 3irif (savoir) | معروف — ma3ruuf | connu |\n\n> ⭐ La nuance clé : **it- + verbe** = l'action se déroule / s'est déroulée. **maC1C2uuC3** = c'est l'état qui en résulte, comme une photo prise après.\n\n| Égyptien | Traduction |\n|---|---|\n| الباب اتفتح. — El-baab itfata7. | La porte s'est ouverte. (action) |\n| الباب مفتوح. — El-baab maftuu7. | La porte est ouverte. (état) |\n| الرسالة اتكتبت. — Er-resala itkatabet. | La lettre a été écrite. (action) |\n| الرسالة مكتوبة. — Er-resala maktuuba. | La lettre est écrite. (état) |",
+      "content_markdown": "## Jour 69 — Le passif : action vs état\n\nTu connais déjà le préfixe **it-** (Module 9) pour dire qu'une action est **subie**. Il existe un deuxième outil, le **participe passif (ism maf3ool)**, qui décrit **l'état résultant** — comme un adjectif.\n\n> 💡 Le moule du participe passif : **ma-C1C2ooC3** — on ajoute **ma-** devant la racine et on allonge la voyelle avant la 3ᵉ consonne.\n\n| Verbe (Forme I) | Participe passif | Sens |\n|---|---|---|\n| كتب — katab (écrire) | مكتوب — maktoob | écrit |\n| فتح — fata7 (ouvrir) | مفتوح — maftoo7 | ouvert |\n| قفل — 2afal (fermer) | مقفول — ma2fool | fermé |\n| عمل — 3amal (faire) | معمول — ma3mool | fait |\n| عرف — 3irif (savoir) | معروف — ma3roof | connu |\n\n> ⭐ La nuance clé : **it- + verbe** = l'action se déroule / s'est déroulée. **maC1C2ooC3** = c'est l'état qui en résulte, comme une photo prise après.\n\n| Égyptien | Traduction |\n|---|---|\n| الباب اتفتح. — El-baab itfata7. | La porte s'est ouverte. (action) |\n| الباب مفتوح. — El-baab maftoo7. | La porte est ouverte. (état) |\n| الرسالة اتكتبت. — Er-resala itkatabet. | La lettre a été écrite. (action) |\n| الرسالة مكتوبة. — Er-resala maktooba. | La lettre est écrite. (état) |",
       "vocab_items": [
         {
           "arabic": "مكتوب",
-          "transliteration": "maktuub",
+          "transliteration": "maktoob",
           "french": "écrit"
         },
         {
           "arabic": "مفتوح",
-          "transliteration": "maftuu7",
+          "transliteration": "maftoo7",
           "french": "ouvert"
         },
         {
           "arabic": "مقفول",
-          "transliteration": "ma2fuul",
+          "transliteration": "ma2fool",
           "french": "fermé"
         },
         {
           "arabic": "معمول",
-          "transliteration": "ma3muul",
+          "transliteration": "ma3mool",
           "french": "fait"
         },
         {
           "arabic": "معروف",
-          "transliteration": "ma3ruuf",
+          "transliteration": "ma3roof",
           "french": "connu"
         }
       ]
@@ -48,11 +48,11 @@
       "order_index": 2,
       "section": "12.2",
       "title": "Les pluriels réguliers (rappel rapide)",
-      "content_markdown": "## Jour 70 — Les pluriels réguliers (rappel rapide)\n\nDeux terminaisons fixes existent — surtout pour les personnes et les métiers :\n\n| Type | Terminaison | Exemple |\n|---|---|---|\n| Masculin (personnes) | -iin | مهندس — muhandis → مهندسين — muhandisiin (ingénieurs) |\n| Féminin (noms en -a) | -aat | سيارة — sayyaara → سيارات — sayyaraat (voitures) |",
+      "content_markdown": "## Jour 70 — Les pluriels réguliers (rappel rapide)\n\nDeux terminaisons fixes existent — surtout pour les personnes et les métiers :\n\n| Type | Terminaison | Exemple |\n|---|---|---|\n| Masculin (personnes) | -iin | مهندس — muhandis → مهندسين — muhandiseen (ingénieurs) |\n| Féminin (noms en -a) | -aat | سيارة — sayyaara → سيارات — sayyaraat (voitures) |",
       "vocab_items": [
         {
           "arabic": "مهندسين",
-          "transliteration": "muhandisiin",
+          "transliteration": "muhandiseen",
           "french": "ingénieurs"
         },
         {
@@ -67,7 +67,7 @@
       "order_index": 3,
       "section": "12.3",
       "title": "Les pluriels irréguliers « brisés » (partie 1)",
-      "content_markdown": "## Jour 71 — Les pluriels irréguliers « brisés » (1/2)\n\n> 📌 Pas de règle fixe — mais des habitudes : la majorité des noms très courants changent de **voyelles internes** au pluriel, sans suffixe régulier. Chaque pluriel s'apprend avec son singulier.\n\n| Singulier | Pluriel irrégulier | Sens |\n|---|---|---|\n| كتاب — kitaab | كتب — kutub | livre(s) |\n| ولد — walad | أولاد — awlaad | garçon(s) |\n| بنت — bint | بنات — banaat | fille(s) |\n| بيت — beit | بيوت — buyuut | maison(s) |\n| راجل — raagel | رجالة — reggaala | homme(s) |\n| شنطة — shanta | شنط — shonat | sac(s) / valise(s) |",
+      "content_markdown": "## Jour 71 — Les pluriels irréguliers « brisés » (1/2)\n\n> 📌 Pas de règle fixe — mais des habitudes : la majorité des noms très courants changent de **voyelles internes** au pluriel, sans suffixe régulier. Chaque pluriel s'apprend avec son singulier.\n\n| Singulier | Pluriel irrégulier | Sens |\n|---|---|---|\n| كتاب — kitaab | كتب — kutub | livre(s) |\n| ولد — walad | أولاد — awlaad | garçon(s) |\n| بنت — bint | بنات — banaat | fille(s) |\n| بيت — beit | بيوت — buyoot | maison(s) |\n| راجل — raagel | رجالة — reggaala | homme(s) |\n| شنطة — shanta | شنط — shonat | sac(s) / valise(s) |",
       "vocab_items": [
         {
           "arabic": "كتب",
@@ -86,7 +86,7 @@
         },
         {
           "arabic": "بيوت",
-          "transliteration": "buyuut",
+          "transliteration": "buyoot",
           "french": "maison(s) (pluriel de beit)"
         },
         {
@@ -106,26 +106,26 @@
       "order_index": 4,
       "section": "12.3",
       "title": "Les pluriels irréguliers « brisés » (partie 2)",
-      "content_markdown": "## Jour 72 — Les pluriels irréguliers « brisés » (2/2)\n\n| Singulier | Pluriel irrégulier | Sens |\n|---|---|---|\n| مدينة — madiina | مدن — mudun | ville(s) |\n| يوم — yoom | أيام — ayyaam | jour(s) |\n| شهر — shahr | شهور — shuhuur | mois |\n| سنة — sana | سنين — sniin | année(s) |\n| مطعم — mat3am | مطاعم — mataa3im | restaurant(s) |\n| شارع — shaari3 | شوارع — shawaari3 | rue(s) |",
+      "content_markdown": "## Jour 72 — Les pluriels irréguliers « brisés » (2/2)\n\n| Singulier | Pluriel irrégulier | Sens |\n|---|---|---|\n| مدينة — madeena | مدن — mudun | ville(s) |\n| يوم — yom | أيام — ayyaam | jour(s) |\n| شهر — shahr | شهور — shuhoor | mois |\n| سنة — sana | سنين — sneen | année(s) |\n| مطعم — mat3am | مطاعم — mataa3im | restaurant(s) |\n| شارع — shaari3 | شوارع — shawaari3 | rue(s) |",
       "vocab_items": [
         {
           "arabic": "مدن",
           "transliteration": "mudun",
-          "french": "ville(s) (pluriel de madiina)"
+          "french": "ville(s) (pluriel de madeena)"
         },
         {
           "arabic": "أيام",
           "transliteration": "ayyaam",
-          "french": "jour(s) (pluriel de yoom)"
+          "french": "jour(s) (pluriel de yom)"
         },
         {
           "arabic": "شهور",
-          "transliteration": "shuhuur",
+          "transliteration": "shuhoor",
           "french": "mois (pluriel de shahr)"
         },
         {
           "arabic": "سنين",
-          "transliteration": "sniin",
+          "transliteration": "sneen",
           "french": "année(s) (pluriel de sana)"
         },
         {
@@ -145,11 +145,11 @@
       "order_index": 5,
       "section": "12.4",
       "title": "Le duel : exactement deux (-ein)",
-      "content_markdown": "## Jour 73 — Le duel : exactement deux (-ein)\n\nLe français dit « deux jours » avec un chiffre séparé. L'égyptien **colle un suffixe** directement sur le nom : **-ein**. C'est extrêmement courant, surtout avec les mots de temps.\n\n> 💡 Comment ça marche : on enlève le **-a** final s'il y en a un, puis on ajoute **-ein** (souvent **-teen** pour les noms féminins en -a).\n\n| Singulier | Duel (-ein) | Sens |\n|---|---|---|\n| يوم — yoom | يومين — yumein | deux jours |\n| سنة — sana | سنتين — santeen | deux ans |\n| ساعة — saa3a | ساعتين — sa3teen | deux heures |\n| شهر — shahr | شهرين — shahrein | deux mois |\n| إيد — eed | إيدين — edein | deux mains |\n| مرة — marra | مرتين — marrateen | deux fois |\n| أسبوع — isbuu3 | أسبوعين — isbuu3ein | deux semaines |",
+      "content_markdown": "## Jour 73 — Le duel : exactement deux (-ein)\n\nLe français dit « deux jours » avec un chiffre séparé. L'égyptien **colle un suffixe** directement sur le nom : **-ein**. C'est extrêmement courant, surtout avec les mots de temps.\n\n> 💡 Comment ça marche : on enlève le **-a** final s'il y en a un, puis on ajoute **-ein** (souvent **-teen** pour les noms féminins en -a).\n\n| Singulier | Duel (-ein) | Sens |\n|---|---|---|\n| يوم — yom | يومين — yomein | deux jours |\n| سنة — sana | سنتين — santeen | deux ans |\n| ساعة — saa3a | ساعتين — sa3teen | deux heures |\n| شهر — shahr | شهرين — shahrein | deux mois |\n| إيد — eed | إيدين — edein | deux mains |\n| مرة — marra | مرتين — marrateen | deux fois |\n| أسبوع — osboo3 | أسبوعين — osboo3een | deux semaines |",
       "vocab_items": [
         {
           "arabic": "يومين",
-          "transliteration": "yumein",
+          "transliteration": "yomein",
           "french": "deux jours"
         },
         {
@@ -179,7 +179,7 @@
         },
         {
           "arabic": "أسبوعين",
-          "transliteration": "isbuu3ein",
+          "transliteration": "osboo3een",
           "french": "deux semaines"
         }
       ]
@@ -189,7 +189,7 @@
       "order_index": 6,
       "section": "Pratique",
       "title": "Exemples et mini-dialogue avec le duel",
-      "content_markdown": "## Jour 74 — Exemples et mini-dialogue\n\n**Exemples :**\n\nهرجع بعد يومين. — Harja3 ba3d yumein. *(Je reviens dans deux jours.)*\n\nباشتغل هنا من سنتين. — Bashtaghal hena min santeen. *(Je travaille ici depuis deux ans.)*\n\n### Mini-dialogue\n\n**A:** من إمتى وانت هنا؟ — Men emta wenta hena? *(Depuis quand es-tu ici ?)*\n\n**B:** من أسبوعين تقريبا. هرجع بلدي بعد شهرين. — Men isbuu3ein ta2riiban. Harja3 baladi ba3d shahrein. *(Depuis environ deux semaines. Je rentre dans mon pays dans deux mois.)*\n\n**A:** الباب اللي جنبك مقفول، ينفع تفتحه؟ — El-baab elli ganbak ma2fuul, yenfa3 tefta7o? *(La porte à côté de toi est fermée, tu peux l'ouvrir ?)*\n\n*خطوتين كمان وهنوصل! — Khatwetein kamaan wi hanwsal! (Encore deux pas et on y arrive !)*",
+      "content_markdown": "## Jour 74 — Exemples et mini-dialogue\n\n**Exemples :**\n\nهرجع بعد يومين. — Harja3 ba3d yomein. *(Je reviens dans deux jours.)*\n\nباشتغل هنا من سنتين. — Bashtaghal hena min santeen. *(Je travaille ici depuis deux ans.)*\n\n### Mini-dialogue\n\n**A:** من إمتى وانت هنا؟ — Men emta wenta hena? *(Depuis quand es-tu ici ?)*\n\n**B:** من أسبوعين تقريبا. هرجع بلدي بعد شهرين. — Men osboo3een ta2reeban. Harja3 baladi ba3d shahrein. *(Depuis environ deux semaines. Je rentre dans mon pays dans deux mois.)*\n\n**A:** الباب اللي جنبك مقفول، ينفع تفتحه؟ — El-baab elli ganbak ma2fool, yenfa3 tefta7o? *(La porte à côté de toi est fermée, tu peux l'ouvrir ?)*\n\n*خطوتين كمان وهنوصل! — Khatwetein kamaan wi hanwsal! (Encore deux pas et on y arrive !)*",
       "vocab_items": []
     }
   ]

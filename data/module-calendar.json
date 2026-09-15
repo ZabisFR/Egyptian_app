@@ -55,15 +55,15 @@
       "order_index": 2,
       "section": "Situer un moment",
       "title": "Aujourd'hui, demain, hier",
-      "content_markdown": "## Aujourd'hui, demain, hier\n\n> 📌 Règle : ces repères sont les réponses naturelles à la question **إمتى؟ (Emta ?)** — « Quand ? ». Aucun ne se construit, ils s'apprennent tels quels.\n\n| Français | Arabe | Romanisation |\n|---|---|---|\n| Aujourd'hui | النهاردة | en-naharda |\n| Demain | بكرة | bokra |\n| Hier | إمبارح | embare7 |\n| Après-demain | بعد بكرة | ba3d bokra |\n| Avant-hier | أول إمبارح | awwil embare7 |\n| Le matin | الصبح | el-sob7 |\n| Le soir | بالليل | bel-leel |\n| Maintenant | دلوقتي | delwa2ti |\n\n### Cette semaine, le mois prochain\n\n> 💡 **Dah** (ده) et **di** (دي) veulent dire « ce / cette » et se placent APRÈS le nom. **El-gay** (الجاي) signifie « qui vient », **elli fat** (اللي فات) « qui est passé ».\n\n| Français | Romanisation |\n|---|---|\n| Cette semaine | el-osboo3 dah |\n| La semaine prochaine | el-osboo3 el-gay |\n| La semaine dernière | el-osboo3 elli fat |\n| Ce mois-ci | el-shahr dah |\n| Cette année | el-sana di |\n\n**Emta 7ateegi ?** = Quand est-ce que tu viens ?\n\n**Bokra el-sob7** = Demain matin",
+      "content_markdown": "## Aujourd'hui, demain, hier\n\n> 📌 Règle : ces repères sont les réponses naturelles à la question **إمتى؟ (Emta ?)** — « Quand ? ». Aucun ne se construit, ils s'apprennent tels quels.\n\n| Français | Arabe | Romanisation |\n|---|---|---|\n| Aujourd'hui | النهاردة | en-naharda |\n| Demain | بكرة | bokra |\n| Hier | إمبارح | embare7 |\n| Après-demain | بعد بكرة | ba3d bokra |\n| Avant-hier | أول إمبارح | awwil embare7 |\n| Le matin | الصبح | es-sob7 |\n| Le soir | بالليل | bel-leel |\n| Maintenant | دلوقتي | delwa2ti |\n\n### Cette semaine, le mois prochain\n\n> 💡 **Dah** (ده) et **di** (دي) veulent dire « ce / cette » et se placent APRÈS le nom. **El-gay** (الجاي) signifie « qui vient », **elli fat** (اللي فات) « qui est passé ».\n\n| Français | Romanisation |\n|---|---|\n| Cette semaine | el-osboo3 dah |\n| La semaine prochaine | el-osboo3 el-gay |\n| La semaine dernière | el-osboo3 elli fat |\n| Ce mois-ci | el-shahr dah |\n| Cette année | el-sana di |\n\n**Emta 7ateegi ?** = Quand est-ce que tu viens ?\n\n**Bokra es-sob7** = Demain matin",
       "vocab_items": [
         { "arabic": "النهاردة", "transliteration": "en-naharda", "french": "Aujourd'hui" },
         { "arabic": "بكرة", "transliteration": "bokra", "french": "Demain" },
         { "arabic": "إمبارح", "transliteration": "embare7", "french": "Hier" },
         { "arabic": "بعد بكرة", "transliteration": "ba3d bokra", "french": "Après-demain" },
         { "arabic": "أول إمبارح", "transliteration": "awwil embare7", "french": "Avant-hier" },
-        { "arabic": "الصبح", "transliteration": "el-sob7", "french": "Le matin" },
-        { "arabic": "بالليل", "transliteration": "bel-leel", "french": "Le soir" },
+        { "arabic": "الصبح", "transliteration": "es-sob7", "french": "Le matin" },
+        { "arabic": "بالليل", "transliteration": "bel-leel", "french": "Le soir / la nuit" },
         { "arabic": "دلوقتي", "transliteration": "delwa2ti", "french": "Maintenant" },
         { "arabic": "الجاي", "transliteration": "el-gay", "french": "Prochain (qui vient)" },
         { "arabic": "اللي فات", "transliteration": "elli fat", "french": "Dernier (qui est passé)" }

@@ -14,7 +14,7 @@
       "order_index": 1,
       "section": "13.1",
       "title": "Expressions idiomatiques du quotidien (partie 1)",
-      "content_markdown": "## Jour 75 — Expressions idiomatiques du quotidien (1/2)\n\n| Expression | Sens littéral | Usage réel |\n|---|---|---|\n| على عيني وراسي — 3ala 3eini wi raasi | sur mon œil et ma tête | « avec grand plaisir » (accepter une demande) |\n| ربنا يسهل — rabbena yesahhel | que Dieu facilite | « que ça se passe bien » (avant un exam, entretien...) |\n| الله يخليك — Allah yekhalliik | que Dieu te garde | s'il te plaît / merci beaucoup |\n| نهارك سعيد — naharak sa3iid | que ta journée soit heureuse | bonne journée (formule de politesse) |",
+      "content_markdown": "## Jour 75 — Expressions idiomatiques du quotidien (1/2)\n\n| Expression | Sens littéral | Usage réel |\n|---|---|---|\n| على عيني وراسي — 3ala 3eini wi raasi | sur mon œil et ma tête | « avec grand plaisir » (accepter une demande) |\n| ربنا يسهل — rabbena yesahhel | que Dieu facilite | « que ça se passe bien » (avant un exam, entretien...) |\n| الله يخليك — Allah yekhalleek | que Dieu te garde | s'il te plaît / merci beaucoup |\n| نهارك سعيد — naharak sa3eed | que ta journée soit heureuse | bonne journée (formule de politesse) |",
       "vocab_items": [
         {
           "arabic": "على عيني وراسي",
@@ -28,12 +28,12 @@
         },
         {
           "arabic": "الله يخليك",
-          "transliteration": "Allah yekhalliik",
+          "transliteration": "Allah yekhalleek",
           "french": "s'il te plaît / merci beaucoup"
         },
         {
           "arabic": "نهارك سعيد",
-          "transliteration": "naharak sa3iid",
+          "transliteration": "naharak sa3eed",
           "french": "bonne journée"
         }
       ]
@@ -143,7 +143,7 @@
       "order_index": 6,
       "section": "Pratique",
       "title": "Mini-dialogue — mélange idiomes et proverbes",
-      "content_markdown": "## Jour 80 — Mini-dialogue — mélange idiomes et proverbes\n\n**A:** عندي مقابلة شغل بكرة، خايف شوية. — 3Andi mu2abla shoghl bokra, khayef shweyya. *(J'ai un entretien demain, un peu stressé.)*\n\n**B:** ربنا يسهل! متقلقش، اللي فات مات، ركز بس على اللي جاي. — Rabbena yesahhel! Ma-te2la2sh, elli faat maat, rakkez bas 3ala elli gayy. *(Que ça se passe bien ! T'inquiète pas, le passé c'est le passé, concentre-toi juste sur ce qui vient.)*\n\n**A:** الله يخليك، دي حاجة تجنن إنك دايما بتطمني. — Allah yekhalliik, di 7aga tgannin innak dayman bettamenni. *(Merci beaucoup, c'est incroyable que tu me rassures toujours.)*\n\n*ربنا يوفقك! — Rabbena yewaffa2ak! (Que Dieu te fasse réussir !)*",
+      "content_markdown": "## Jour 80 — Mini-dialogue — mélange idiomes et proverbes\n\n**A:** عندي مقابلة شغل بكرة، خايف شوية. — 3andi mu2abla shoghl bokra, khayef shweyya. *(J'ai un entretien demain, un peu stressé.)*\n\n**B:** ربنا يسهل! متقلقش، اللي فات مات، ركز بس على اللي جاي. — Rabbena yesahhel! Ma-te2la2sh, elli faat maat, rakkez bas 3ala elli gayy. *(Que ça se passe bien ! T'inquiète pas, le passé c'est le passé, concentre-toi juste sur ce qui vient.)*\n\n**A:** الله يخليك، دي حاجة تجنن إنك دايما بتطمني. — Allah yekhalleek, di 7aga tgannin innak dayman bettamenni. *(Merci beaucoup, c'est incroyable que tu me rassures toujours.)*\n\n*ربنا يوفقك! — Rabbena yewaffa2ak! (Que Dieu te fasse réussir !)*",
       "vocab_items": []
     }
   ]

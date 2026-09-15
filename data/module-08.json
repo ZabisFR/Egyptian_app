@@ -14,7 +14,7 @@
       "order_index": 1,
       "section": "8.1 — Le comparatif",
       "title": "Le comparatif (المقارنة)",
-      "content_markdown": "## Jour 47 — Le comparatif (المقارنة)\n\nBeaucoup d'adjectifs ont une forme spéciale de comparatif appelée **elative**, qui suit souvent le schéma **a-C1C2aC3**.\n\n> 💡 Structure de la comparaison : **[Elative] + min + [nom]** = « plus ... que ... ». Exemple : *da akbar min da* (celui-ci est plus grand que celui-là).\n\n### Adjectifs courants et leur elative\n\n| Adjectif (normal) | Elative (comparatif/superlatif) | Sens |\n|---|---|---|\n| كبير — kebir | أكبر — akbar | grand → plus grand |\n| صغير — soghayyar | أصغر — asghar | petit → plus petit |\n| جميل — gamil | أجمل — agmal | beau → plus beau |\n| رخيص — rekhis | أرخص — arkhas | pas cher → moins cher |\n| غالي — ghali | أغلى — aghla | cher → plus cher |\n| كويس — kwayyes | أحسن — a7san | bien → mieux (irrégulier) |\n| وحش — we7esh | أوحش — aw7as | mauvais → pire |\n| سريع — sarii3 | أسرع — asra3 | rapide → plus rapide |\n\n**Exemples :**\n\nالقاهرة أكبر من الإسكندرية. — El-Qahera akbar min el-Eskendereyya. *(Le Caire est plus grand qu'Alexandrie.)*\n\nالشاي ده أحلى من القهوة. — Esh-shay da a7la min el-2ahwa. *(Ce thé est meilleur que le café.)*",
+      "content_markdown": "## Jour 47 — Le comparatif (المقارنة)\n\nBeaucoup d'adjectifs ont une forme spéciale de comparatif appelée **elative**, qui suit souvent le schéma **a-C1C2aC3**.\n\n> 💡 Structure de la comparaison : **[Elative] + min + [nom]** = « plus ... que ... ». Exemple : *da akbar min da* (celui-ci est plus grand que celui-là).\n\n### Adjectifs courants et leur elative\n\n| Adjectif (normal) | Elative (comparatif/superlatif) | Sens |\n|---|---|---|\n| كبير — kebir | أكبر — akbar | grand → plus grand |\n| صغير — soghayyar | أصغر — asghar | petit → plus petit |\n| جميل — gamil | أجمل — agmal | beau → plus beau |\n| رخيص — rekhis | أرخص — arkhas | pas cher → moins cher |\n| غالي — ghali | أغلى — aghla | cher → plus cher |\n| كويس — kwayyes | أحسن — a7san | bien → mieux (irrégulier) |\n| وحش — we7esh | أوحش — aw7ash | mauvais → pire |\n| سريع — saree3 | أسرع — asra3 | rapide → plus rapide |\n\n**Exemples :**\n\nالقاهرة أكبر من الإسكندرية. — El-Qahera akbar min el-Eskendereyya. *(Le Caire est plus grand qu'Alexandrie.)*\n\nالشاي ده أحلى من القهوة. — Esh-shay da a7la min el-2ahwa. *(Ce thé est meilleur que le café.)*",
       "vocab_items": [
         {
           "arabic": "أكبر",
@@ -48,7 +48,7 @@
         },
         {
           "arabic": "أوحش",
-          "transliteration": "aw7as",
+          "transliteration": "aw7ash",
           "french": "pire"
         },
         {

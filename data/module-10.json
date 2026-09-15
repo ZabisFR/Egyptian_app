@@ -225,7 +225,7 @@
       "order_index": 5,
       "section": "10.5",
       "title": "La météo (الجو)",
-      "content_markdown": "## Jour 60 — La météo (الجو)\n\n| Égyptien | Sens |\n|---|---|\n| الجو حر. — El-gaww 7arr. | Il fait chaud. |\n| الجو برد. — El-gaww bard. | Il fait froid. |\n| بتمطر. — Betmattar. | Il pleut. |\n| الجو حلو النهاردة. — El-gaww 7elw en-naharda. | Il fait beau aujourd'hui. |\n| الصيف / الشتا — es-seif / esh-shita | l'été / l'hiver |\n| الربيع / الخريف — er-rabii3 / el-khariif | le printemps / l'automne |",
+      "content_markdown": "## Jour 60 — La météo (الجو)\n\n| Égyptien | Sens |\n|---|---|\n| الجو حر. — El-gaww 7arr. | Il fait chaud. |\n| الجو برد. — El-gaww bard. | Il fait froid. |\n| بتمطر. — Betmattar. | Il pleut. |\n| الجو حلو النهاردة. — El-gaww 7elw en-naharda. | Il fait beau aujourd'hui. |\n| الصيف / الشتا — es-seif / esh-shita | l'été / l'hiver |\n| الربيع / الخريف — er-rabee3 / el-khareef | le printemps / l'automne |",
       "vocab_items": [
         {
           "arabic": "الجو حر",
@@ -254,12 +254,12 @@
         },
         {
           "arabic": "الربيع",
-          "transliteration": "er-rabii3",
+          "transliteration": "er-rabee3",
           "french": "le printemps"
         },
         {
           "arabic": "الخريف",
-          "transliteration": "el-khariif",
+          "transliteration": "el-khareef",
           "french": "l'automne"
         }
       ]
@@ -269,7 +269,7 @@
       "order_index": 6,
       "section": "10.6",
       "title": "L'heure (الساعة)",
-      "content_markdown": "## Jour 61 — L'heure (الساعة)\n\n> 💡 Demander et donner l'heure : **الساعة كام؟ — Es-saa3a kaam?** (Quelle heure est-il ?) On répond avec **es-saa3a + numéro**, et on ajoute **wi nuss** (et demie), **wi rub3** (et quart), ou **illa rub3** (moins le quart).\n\n| Égyptien | Traduction |\n|---|---|\n| الساعة واحدة. — Es-saa3a wa7da. | Il est une heure. |\n| الساعة اتنين ونص. — Es-saa3a itnein wi nuss. | Il est deux heures et demie. |\n| الساعة أربعة وربع. — Es-saa3a arba3a wi rub3. | Il est quatre heures et quart. |\n| الساعة تلاتة إلا ربع. — Es-saa3a talata illa rub3. | Il est trois heures moins le quart. |\n| الصبح / بالليل — es-sob7 / bel-leil | le matin / la nuit |",
+      "content_markdown": "## Jour 61 — L'heure (الساعة)\n\n> 💡 Demander et donner l'heure : **الساعة كام؟ — Es-saa3a kaam?** (Quelle heure est-il ?) On répond avec **es-saa3a + numéro**, et on ajoute **wi nuss** (et demie), **wi rub3** (et quart), ou **illa rub3** (moins le quart).\n\n| Égyptien | Traduction |\n|---|---|\n| الساعة واحدة. — Es-saa3a wa7da. | Il est une heure. |\n| الساعة اتنين ونص. — Es-saa3a itnein wi nuss. | Il est deux heures et demie. |\n| الساعة أربعة وربع. — Es-saa3a arba3a wi rub3. | Il est quatre heures et quart. |\n| الساعة تلاتة إلا ربع. — Es-saa3a talata illa rub3. | Il est trois heures moins le quart. |\n| الصبح / بالليل — es-sob7 / bel-leel | le matin / la nuit |",
       "vocab_items": [
         {
           "arabic": "الساعة كام؟",
@@ -298,8 +298,8 @@
         },
         {
           "arabic": "بالليل",
-          "transliteration": "bel-leil",
-          "french": "la nuit"
+          "transliteration": "bel-leel",
+          "french": "Le soir / la nuit"
         }
       ]
     },
@@ -308,7 +308,7 @@
       "order_index": 7,
       "section": "Pratique",
       "title": "Mini-dialogue — appel avec un ami",
-      "content_markdown": "## Jour 62 — Mini-dialogue — appel avec un ami\n\n**A:** إزيك؟ عامل إيه؟ — Ezzayak? 3Amel eih? *(Comment ça va ? Quoi de neuf ?)*\n\n**B:** أنا تعبان شوية، عندي زكام. بس الشغل كويس، عندي مقابلة مهمة بكرة. — Ana ta3baan shweyya, 3andi zokaam. Bas esh-shoghl kwayyes, 3andi mu2abla mohemma bokra. *(Je suis un peu fatigué, j'ai un rhume. Mais le travail va bien, j'ai un entretien important demain.)*\n\n**A:** الساعة كام المقابلة؟ — Es-saa3a kaam el-mu2abla? *(C'est à quelle heure l'entretien ?)*\n\n**B:** الساعة عشرة الصبح. وإنت، عامل إيه مع العيلة؟ — Es-saa3a 3ashara es-sob7. Wi enta, 3amel eih ma3 el-3eila? *(À dix heures du matin. Et toi, ça va avec la famille ?)*\n\n**A:** الحمد لله، بس الجو حر أوي عندنا دلوقتي! — El-7amdu lellah, bas el-gaww 7arr awi 3andena delwa2ti! *(Dieu merci, mais il fait vraiment très chaud chez nous en ce moment !)*\n\n*كل يوم كلمة جديدة! — Kol yom kelma gedida! (Chaque jour, un nouveau mot !)*",
+      "content_markdown": "## Jour 62 — Mini-dialogue — appel avec un ami\n\n**A:** إزيك؟ عامل إيه؟ — Ezzayak? 3amel eih? *(Comment ça va ? Quoi de neuf ?)*\n\n**B:** أنا تعبان شوية، عندي زكام. بس الشغل كويس، عندي مقابلة مهمة بكرة. — Ana ta3baan shweyya, 3andi zokaam. Bas esh-shoghl kwayyes, 3andi mu2abla mohemma bokra. *(Je suis un peu fatigué, j'ai un rhume. Mais le travail va bien, j'ai un entretien important demain.)*\n\n**A:** الساعة كام المقابلة؟ — Es-saa3a kaam el-mu2abla? *(C'est à quelle heure l'entretien ?)*\n\n**B:** الساعة عشرة الصبح. وإنت، عامل إيه مع العيلة؟ — Es-saa3a 3ashara es-sob7. Wi enta, 3amel eih ma3 el-3eila? *(À dix heures du matin. Et toi, ça va avec la famille ?)*\n\n**A:** الحمد لله، بس الجو حر أوي عندنا دلوقتي! — El-7amdulillah, bas el-gaww 7arr awi 3andena delwa2ti! *(Dieu merci, mais il fait vraiment très chaud chez nous en ce moment !)*\n\n*كل يوم كلمة جديدة! — Kol yom kelma gedida! (Chaque jour, un nouveau mot !)*",
       "vocab_items": []
     }
   ]

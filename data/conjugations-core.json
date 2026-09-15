@@ -1,7 +1,7 @@
 {
   "resource_type": "verb_conjugation_reference",
   "id": "conjugations-core",
-  "title": "Conjugaisons Intégrales du Quotidien",
+  "title": "Conjugaisons intégrales du quotidien",
   "description": "Fiche de synthèse transversale : règles temporelles universelles + conjugaisons complètes des verbes clés du quotidien. Ne fait pas partie de la séquence de modules par jour — sert de référence grammaticale autonome (ex. page \"Référence verbes\" du site). Complété par 10 verbes bonus très utilisés à l'oral (dire, aimer, comprendre, savoir, écrire, ouvrir, entrer, sortir, rentrer, jouer).",
   "rules_matrix": [
     {
@@ -24,12 +24,12 @@
     },
     {
       "tense": "MODALITÉ",
-      "structure": "Ayez/Lazem/Momken + Verbe sans B-",
+      "structure": "3ayez/Lazem/Momken + Verbe sans B-",
       "example": "Lazem akol = Je dois manger",
       "negation": "Mesh + modalité"
     }
   ],
-  "rules_note": "La logique est simple : B- pour le présent (action en cours), 7a- pour le futur (action à venir), suffixes pour le passé (action terminée). Les modalités (Lazem, Momken, Ayez) projettent l'action dans le virtuel et effacent donc le B-.",
+  "rules_note": "La logique est simple : B- pour le présent (action en cours), 7a- pour le futur (action à venir), suffixes pour le passé (action terminée). Les modalités (Lazem, Momken, 3ayez) projettent l'action dans le virtuel et effacent donc le B-.",
   "verbs_compact": [
     {
       "verb_fr": "Aller",
@@ -44,7 +44,7 @@
       "root": "SH-T-R-Y",
       "present_ana": "Bashtari",
       "future_ana": "7ashtari",
-      "past_ana": "Eshtaret",
+      "past_ana": "Eshtareit",
       "imperative_m": "Eshtari !"
     },
     {
@@ -60,7 +60,7 @@
       "root": "G-Y",
       "present_ana": "Bagee",
       "future_ana": "7agee",
-      "past_ana": "Get",
+      "past_ana": "Geet",
       "imperative_m": "Ta3ala !"
     },
     {
@@ -106,10 +106,10 @@
     {
       "verb_fr": "Dire",
       "root": "2-W-L",
-      "present_ana": "Ba2uul",
-      "future_ana": "7a2uul",
+      "present_ana": "Ba2ool",
+      "future_ana": "7a2ool",
       "past_ana": "2olt",
-      "imperative_m": "2uul !"
+      "imperative_m": "2ool !"
     },
     {
       "verb_fr": "Aimer",
@@ -232,6 +232,20 @@
           "future": "7aneroo7",
           "past": "Ro7na",
           "past_negative": "Ma-ro7na-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bteroo7u",
+          "future": "7ateroo7u",
+          "past": "Ro7tu",
+          "past_negative": "Ma-ro7tu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyeroo7u",
+          "future": "7ayeroo7u",
+          "past": "Raa7u",
+          "past_negative": "Ma-raa7u-sh"
         }
       ]
     },
@@ -281,6 +295,20 @@
           "future": "7ane3mel",
           "past": "3amalna",
           "past_negative": "Ma-3amalna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bte3melu",
+          "future": "7ate3melu",
+          "past": "3amaltu",
+          "past_negative": "Ma-3amaltu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Bi3melu",
+          "future": "7ay3melu",
+          "past": "3amalu",
+          "past_negative": "Ma-3amalu-sh"
         }
       ]
     },
@@ -330,6 +358,20 @@
           "future": "7anakol",
           "past": "Akalna",
           "past_negative": "Ma-akalna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btekolu",
+          "future": "7atekolu",
+          "past": "Akaltu",
+          "past_negative": "Ma-akaltu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyakolu",
+          "future": "7ayakolu",
+          "past": "Akalu",
+          "past_negative": "Ma-akalu-sh"
         }
       ]
     },
@@ -379,6 +421,20 @@
           "future": "7aneshrab",
           "past": "Sharabna",
           "past_negative": "Ma-sharabna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bteshrabu",
+          "future": "7ateshrabu",
+          "past": "Sharabtu",
+          "past_negative": "Ma-sharabtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyeshrabu",
+          "future": "7ayeshrabu",
+          "past": "Shérebu",
+          "past_negative": "Ma-shérebu-sh"
         }
       ]
     },
@@ -428,6 +484,20 @@
           "future": "7anakhod",
           "past": "Khadna",
           "past_negative": "Ma-khadna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btekhodu",
+          "future": "7atekhodu",
+          "past": "Khadtu",
+          "past_negative": "Ma-khadtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyakhodu",
+          "future": "7ayakhodu",
+          "past": "Khadu",
+          "past_negative": "Ma-khadu-sh"
         }
       ]
     },
@@ -477,6 +547,20 @@
           "future": "7aneshoof",
           "past": "Shofna",
           "past_negative": "Ma-shofna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bteshoofu",
+          "future": "7ateshoofu",
+          "past": "Shoftu",
+          "past_negative": "Ma-shoftu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyeshoofu",
+          "future": "7ayeshoofu",
+          "past": "Shafu",
+          "past_negative": "Ma-shafu-sh"
         }
       ]
     },
@@ -526,56 +610,84 @@
           "future": "7anenam",
           "past": "Namna",
           "past_negative": "Ma-namna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btenamu",
+          "future": "7atenamu",
+          "past": "Namtu",
+          "past_negative": "Ma-namtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyenamu",
+          "future": "7ayenamu",
+          "past": "Neemu",
+          "past_negative": "Ma-neemu-sh"
         }
       ]
     },
     {
       "verb_fr": "Dire",
       "root": "2-W-L",
-      "imperative_m": "2uul !",
+      "imperative_m": "2ool !",
       "example": "2olt-lo l-ha2i2a. — Je lui ai dit la vérité.",
       "conjugations": [
         {
           "pronoun": "Ana (Je)",
-          "present": "Ba2uul",
-          "future": "7a2uul",
+          "present": "Ba2ool",
+          "future": "7a2ool",
           "past": "2olt",
           "past_negative": "Ma-2olt-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
-          "present": "Bte2uul",
-          "future": "7ate2uul",
+          "present": "Bte2ool",
+          "future": "7ate2ool",
           "past": "2olt",
           "past_negative": "Ma-2olt-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
-          "present": "Bte2uuli",
-          "future": "7ate2uuli",
+          "present": "Bte2ooli",
+          "future": "7ate2ooli",
           "past": "2olti",
-          "past_negative": "Ma-2oltish"
+          "past_negative": "Ma-2olti-sh"
         },
         {
           "pronoun": "Howa (Il)",
-          "present": "Biy2uul",
-          "future": "7ay2uul",
+          "present": "Biy2ool",
+          "future": "7ay2ool",
           "past": "2al",
-          "past_negative": "Ma-2alsh"
+          "past_negative": "Ma-2al-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
-          "present": "Bte2uul",
-          "future": "7ate2uul",
+          "present": "Bte2ool",
+          "future": "7ate2ool",
           "past": "2alet",
-          "past_negative": "Ma-2aletsh"
+          "past_negative": "Ma-2alet-sh"
         },
         {
           "pronoun": "É7na (Nous)",
-          "present": "Bene2uul",
-          "future": "7ane2uul",
+          "present": "Bene2ool",
+          "future": "7ane2ool",
           "past": "2olna",
-          "past_negative": "Ma-2olnash"
+          "past_negative": "Ma-2olna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bte2oolu",
+          "future": "7ate2oolu",
+          "past": "2oltu",
+          "past_negative": "Ma-2oltu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biy2oolu",
+          "future": "7ay2oolu",
+          "past": "2alu",
+          "past_negative": "Ma-2alu-sh"
         }
       ]
     },
@@ -590,42 +702,56 @@
           "present": "Ba7ebb",
           "future": "7a7ebb",
           "past": "7abbeit",
-          "past_negative": "Ma-7abbeitsh"
+          "past_negative": "Ma-7abbeit-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Bte7ebb",
           "future": "7ate7ebb",
           "past": "7abbeit",
-          "past_negative": "Ma-7abbeitsh"
+          "past_negative": "Ma-7abbeit-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Bte7ebbi",
           "future": "7ate7ebbi",
           "past": "7abbeiti",
-          "past_negative": "Ma-7abbeitish"
+          "past_negative": "Ma-7abbeiti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biye7ebb",
           "future": "7aye7ebb",
           "past": "7abb",
-          "past_negative": "Ma-7abbsh"
+          "past_negative": "Ma-7abb-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Bte7ebb",
           "future": "7ate7ebb",
           "past": "7abbit",
-          "past_negative": "Ma-7abbitsh"
+          "past_negative": "Ma-7abbit-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Bene7ebb",
           "future": "7ane7ebb",
           "past": "7abbeina",
-          "past_negative": "Ma-7abbeinash"
+          "past_negative": "Ma-7abbeina-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bte7ebbu",
+          "future": "7ate7ebbu",
+          "past": "7abbeitu",
+          "past_negative": "Ma-7abbeitu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biye7ebbu",
+          "future": "7aye7ebbu",
+          "past": "7abbu",
+          "past_negative": "Ma-7abbu-sh"
         }
       ]
     },
@@ -640,42 +766,56 @@
           "present": "Bafham",
           "future": "7afham",
           "past": "Fihimt",
-          "past_negative": "Ma-fihimtsh"
+          "past_negative": "Ma-fihimt-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Btefham",
           "future": "7atefham",
           "past": "Fihimt",
-          "past_negative": "Ma-fihimtsh"
+          "past_negative": "Ma-fihimt-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Btefhami",
           "future": "7atefhami",
           "past": "Fihimti",
-          "past_negative": "Ma-fihimtish"
+          "past_negative": "Ma-fihimti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyefham",
           "future": "7ayefham",
           "past": "Fihim",
-          "past_negative": "Ma-fihimsh"
+          "past_negative": "Ma-fihim-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Btefham",
           "future": "7atefham",
           "past": "Fihmet",
-          "past_negative": "Ma-fihmetsh"
+          "past_negative": "Ma-fihmet-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benefham",
           "future": "7anefham",
           "past": "Fihimna",
-          "past_negative": "Ma-fihimnash"
+          "past_negative": "Ma-fihimna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btefhamu",
+          "future": "7atefhamu",
+          "past": "Fihimtu",
+          "past_negative": "Ma-fihimtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyefhamu",
+          "future": "7ayefhamu",
+          "past": "Fihmu",
+          "past_negative": "Ma-fihmu-sh"
         }
       ]
     },
@@ -690,42 +830,56 @@
           "present": "Ba3raf",
           "future": "7a3raf",
           "past": "3ireft",
-          "past_negative": "Ma-3ireftsh"
+          "past_negative": "Ma-3ireft-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Bte3raf",
           "future": "7ate3raf",
           "past": "3ireft",
-          "past_negative": "Ma-3ireftsh"
+          "past_negative": "Ma-3ireft-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Bte3rafi",
           "future": "7ate3rafi",
           "past": "3irefti",
-          "past_negative": "Ma-3ireftish"
+          "past_negative": "Ma-3irefti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biye3raf",
           "future": "7aye3raf",
           "past": "3iref",
-          "past_negative": "Ma-3irefsh"
+          "past_negative": "Ma-3iref-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Bte3raf",
           "future": "7ate3raf",
           "past": "3irfet",
-          "past_negative": "Ma-3irfetsh"
+          "past_negative": "Ma-3irfet-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Bene3raf",
           "future": "7ane3raf",
           "past": "3irefna",
-          "past_negative": "Ma-3irefnash"
+          "past_negative": "Ma-3irefna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bte3rafu",
+          "future": "7ate3rafu",
+          "past": "3ireftu",
+          "past_negative": "Ma-3ireftu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biye3rafu",
+          "future": "7aye3rafu",
+          "past": "3irfu",
+          "past_negative": "Ma-3irfu-sh"
         }
       ]
     },
@@ -740,42 +894,56 @@
           "present": "Baktib",
           "future": "7aktib",
           "past": "Katabt",
-          "past_negative": "Ma-katabtsh"
+          "past_negative": "Ma-katabt-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Btektib",
           "future": "7atektib",
           "past": "Katabt",
-          "past_negative": "Ma-katabtsh"
+          "past_negative": "Ma-katabt-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Btektibi",
           "future": "7atektibi",
           "past": "Katabti",
-          "past_negative": "Ma-katabtish"
+          "past_negative": "Ma-katabti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyiktib",
           "future": "7ayiktib",
           "past": "Katab",
-          "past_negative": "Ma-katabsh"
+          "past_negative": "Ma-katab-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Btektib",
           "future": "7atektib",
           "past": "Katabet",
-          "past_negative": "Ma-katabetsh"
+          "past_negative": "Ma-katabet-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benektib",
           "future": "7anektib",
           "past": "Katabna",
-          "past_negative": "Ma-katabnash"
+          "past_negative": "Ma-katabna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btektibu",
+          "future": "7atektibu",
+          "past": "Katabtu",
+          "past_negative": "Ma-katabtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyiktibu",
+          "future": "7ayiktibu",
+          "past": "Katabu",
+          "past_negative": "Ma-katabu-sh"
         }
       ]
     },
@@ -790,42 +958,56 @@
           "present": "Bafta7",
           "future": "7afta7",
           "past": "Fata7t",
-          "past_negative": "Ma-fata7tsh"
+          "past_negative": "Ma-fata7t-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Btefta7",
           "future": "7atefta7",
           "past": "Fata7t",
-          "past_negative": "Ma-fata7tsh"
+          "past_negative": "Ma-fata7t-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Btefta7i",
           "future": "7atefta7i",
           "past": "Fata7ti",
-          "past_negative": "Ma-fata7tish"
+          "past_negative": "Ma-fata7ti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyifta7",
           "future": "7ayifta7",
           "past": "Fata7",
-          "past_negative": "Ma-fata7sh"
+          "past_negative": "Ma-fata7-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Btefta7",
           "future": "7atefta7",
           "past": "Fata7et",
-          "past_negative": "Ma-fata7etsh"
+          "past_negative": "Ma-fata7et-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benefta7",
           "future": "7anefta7",
           "past": "Fata7na",
-          "past_negative": "Ma-fata7nash"
+          "past_negative": "Ma-fata7na-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btefta7u",
+          "future": "7atefta7u",
+          "past": "Fata7tu",
+          "past_negative": "Ma-fata7tu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyifta7u",
+          "future": "7ayifta7u",
+          "past": "Fata7u",
+          "past_negative": "Ma-fata7u-sh"
         }
       ]
     },
@@ -840,42 +1022,56 @@
           "present": "Badkhol",
           "future": "7adkhol",
           "past": "Dakhalt",
-          "past_negative": "Ma-dakhaltsh"
+          "past_negative": "Ma-dakhalt-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Btedkhol",
           "future": "7atedkhol",
           "past": "Dakhalt",
-          "past_negative": "Ma-dakhaltsh"
+          "past_negative": "Ma-dakhalt-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Btedkholi",
           "future": "7atedkholi",
           "past": "Dakhalti",
-          "past_negative": "Ma-dakhaltish"
+          "past_negative": "Ma-dakhalti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyidkhol",
           "future": "7ayidkhol",
           "past": "Dakhal",
-          "past_negative": "Ma-dakhalsh"
+          "past_negative": "Ma-dakhal-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Btedkhol",
           "future": "7atedkhol",
           "past": "Dakhalet",
-          "past_negative": "Ma-dakhaletsh"
+          "past_negative": "Ma-dakhalet-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benedkhol",
           "future": "7anedkhol",
           "past": "Dakhalna",
-          "past_negative": "Ma-dakhalnash"
+          "past_negative": "Ma-dakhalna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btedkholu",
+          "future": "7atedkholu",
+          "past": "Dakhaltu",
+          "past_negative": "Ma-dakhaltu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyidkholu",
+          "future": "7ayidkholu",
+          "past": "Dakhalu",
+          "past_negative": "Ma-dakhalu-sh"
         }
       ]
     },
@@ -890,42 +1086,56 @@
           "present": "Bakhrog",
           "future": "7akhrog",
           "past": "Kharagt",
-          "past_negative": "Ma-kharagtsh"
+          "past_negative": "Ma-kharagt-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Btekhrog",
           "future": "7atekhrog",
           "past": "Kharagt",
-          "past_negative": "Ma-kharagtsh"
+          "past_negative": "Ma-kharagt-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Btekhrogi",
           "future": "7atekhrogi",
           "past": "Kharagti",
-          "past_negative": "Ma-kharagtish"
+          "past_negative": "Ma-kharagti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyikhrog",
           "future": "7ayikhrog",
           "past": "Kharag",
-          "past_negative": "Ma-kharagsh"
+          "past_negative": "Ma-kharag-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Btekhrog",
           "future": "7atekhrog",
           "past": "Kharaget",
-          "past_negative": "Ma-kharagetsh"
+          "past_negative": "Ma-kharaget-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benekhrog",
           "future": "7anekhrog",
           "past": "Kharagna",
-          "past_negative": "Ma-kharagnash"
+          "past_negative": "Ma-kharagna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btekhrogu",
+          "future": "7atekhrogu",
+          "past": "Kharagtu",
+          "past_negative": "Ma-kharagtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyikhrogu",
+          "future": "7ayikhrogu",
+          "past": "Kharagu",
+          "past_negative": "Ma-kharagu-sh"
         }
       ]
     },
@@ -940,42 +1150,56 @@
           "present": "Barga3",
           "future": "7arga3",
           "past": "Raga3t",
-          "past_negative": "Ma-raga3tsh"
+          "past_negative": "Ma-raga3t-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Bterga3",
           "future": "7aterga3",
           "past": "Raga3t",
-          "past_negative": "Ma-raga3tsh"
+          "past_negative": "Ma-raga3t-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Bterga3i",
           "future": "7aterga3i",
           "past": "Raga3ti",
-          "past_negative": "Ma-raga3tish"
+          "past_negative": "Ma-raga3ti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyirga3",
           "future": "7ayirga3",
           "past": "Raga3",
-          "past_negative": "Ma-raga3sh"
+          "past_negative": "Ma-raga3-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Bterga3",
           "future": "7aterga3",
           "past": "Rag3et",
-          "past_negative": "Ma-rag3etsh"
+          "past_negative": "Ma-rag3et-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benerga3",
           "future": "7anerga3",
           "past": "Raga3na",
-          "past_negative": "Ma-raga3nash"
+          "past_negative": "Ma-raga3na-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bterga3u",
+          "future": "7aterga3u",
+          "past": "Raga3tu",
+          "past_negative": "Ma-raga3tu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyirga3u",
+          "future": "7ayirga3u",
+          "past": "Rag3u",
+          "past_negative": "Ma-rag3u-sh"
         }
       ]
     },
@@ -990,48 +1214,185 @@
           "present": "Bal3ab",
           "future": "7al3ab",
           "past": "Li3ibt",
-          "past_negative": "Ma-li3ibtsh"
+          "past_negative": "Ma-li3ibt-sh"
         },
         {
           "pronoun": "Enta (Tu-m)",
           "present": "Btel3ab",
           "future": "7atel3ab",
           "past": "Li3ibt",
-          "past_negative": "Ma-li3ibtsh"
+          "past_negative": "Ma-li3ibt-sh"
         },
         {
           "pronoun": "Enti (Tu-f)",
           "present": "Btel3abi",
           "future": "7atel3abi",
           "past": "Li3ibti",
-          "past_negative": "Ma-li3ibtish"
+          "past_negative": "Ma-li3ibti-sh"
         },
         {
           "pronoun": "Howa (Il)",
           "present": "Biyil3ab",
           "future": "7ayil3ab",
           "past": "Li3ib",
-          "past_negative": "Ma-li3ibsh"
+          "past_negative": "Ma-li3ib-sh"
         },
         {
           "pronoun": "Heyya (Elle)",
           "present": "Btel3ab",
           "future": "7atel3ab",
           "past": "Li3bet",
-          "past_negative": "Ma-li3betsh"
+          "past_negative": "Ma-li3bet-sh"
         },
         {
           "pronoun": "É7na (Nous)",
           "present": "Benel3ab",
           "future": "7anel3ab",
           "past": "Li3ibna",
-          "past_negative": "Ma-li3ibnash"
+          "past_negative": "Ma-li3ibna-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Btel3abu",
+          "future": "7atel3abu",
+          "past": "Li3ibtu",
+          "past_negative": "Ma-li3ibtu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyil3abu",
+          "future": "7ayil3abu",
+          "past": "Li3bu",
+          "past_negative": "Ma-li3bu-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Acheter",
+      "root": "SH-T-R-Y",
+      "imperative_m": "Eshtari !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bashtari",
+          "future": "7ashtari",
+          "past": "Eshtareit",
+          "past_negative": "Ma-eshtareit-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bteshtari",
+          "future": "7ateshtari",
+          "past": "Eshtareit",
+          "past_negative": "Ma-eshtareit-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bteshtari",
+          "future": "7ateshtari",
+          "past": "Eshtareiti",
+          "past_negative": "Ma-eshtareiti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyeshtari",
+          "future": "7ayeshtari",
+          "past": "Eshtara",
+          "past_negative": "Ma-eshtara-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bteshtari",
+          "future": "7ateshtari",
+          "past": "Eshtaret",
+          "past_negative": "Ma-eshtaret-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Beneshtari",
+          "future": "7aneshtari",
+          "past": "Eshtareina",
+          "past_negative": "Ma-eshtareina-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bteshtaru",
+          "future": "7ateshtaru",
+          "past": "Eshtareitu",
+          "past_negative": "Ma-eshtareitu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyeshtaru",
+          "future": "7ayeshtaru",
+          "past": "Eshtaru",
+          "past_negative": "Ma-eshtaru-sh"
+        }
+      ]
+    },
+    {
+      "verb_fr": "Venir",
+      "root": "G-Y",
+      "imperative_m": "Ta3ala !",
+      "conjugations": [
+        {
+          "pronoun": "Ana (Je)",
+          "present": "Bagee",
+          "future": "7agee",
+          "past": "Geet",
+          "past_negative": "Ma-geet-sh"
+        },
+        {
+          "pronoun": "Enta (Tu-m)",
+          "present": "Bteegi",
+          "future": "7ateegi",
+          "past": "Geet",
+          "past_negative": "Ma-geet-sh"
+        },
+        {
+          "pronoun": "Enti (Tu-f)",
+          "present": "Bteegi",
+          "future": "7ateegi",
+          "past": "Geeti",
+          "past_negative": "Ma-geeti-sh"
+        },
+        {
+          "pronoun": "Howa (Il)",
+          "present": "Biyeegi",
+          "future": "7ayeegi",
+          "past": "Ga",
+          "past_negative": "Ma-gaa-sh"
+        },
+        {
+          "pronoun": "Heyya (Elle)",
+          "present": "Bteegi",
+          "future": "7ateegi",
+          "past": "Gat",
+          "past_negative": "Ma-gat-sh"
+        },
+        {
+          "pronoun": "É7na (Nous)",
+          "present": "Beneegi",
+          "future": "7aneegi",
+          "past": "Geena",
+          "past_negative": "Ma-geena-sh"
+        },
+        {
+          "pronoun": "Ento (Vous)",
+          "present": "Bteegu",
+          "future": "7ateegu",
+          "past": "Geetu",
+          "past_negative": "Ma-geetu-sh"
+        },
+        {
+          "pronoun": "Homma (Ils / Elles)",
+          "present": "Biyeegu",
+          "future": "7ayeegu",
+          "past": "Gum",
+          "past_negative": "Ma-gum-sh"
         }
       ]
     }
   ],
-  "missing_full_paradigms": [
-    "Acheter",
-    "Venir"
-  ]
+  "missing_full_paradigms": []
 }

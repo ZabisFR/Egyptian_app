@@ -5,7 +5,7 @@
     "title": "États d'esprit, sensations et structures complexes",
     "subtitle": "Jour 31 à Jour 37",
     "level": "A2",
-    "description": "Adjectifs d'états et de sensations physiques, possession Ma3a vs 3and, structures modales avec chute du B- (Lazem, Momken, Ayez).",
+    "description": "Adjectifs d'états et de sensations physiques, possession Ma3a vs 3and, structures modales avec chute du B- (Lazem, Momken, 3ayez).",
     "order_index": 4
   },
   "lessons": [
@@ -67,7 +67,7 @@
       "order_index": 3,
       "section": "SECTION 2 : La Localisation de la Possession (« Avoir »)",
       "title": "Ma3a (sur soi) vs 3and (en possession)",
-      "content_markdown": "## Jour 33 — La Localisation de la Possession (« Avoir »)\n\nL'égyptien distingue deux types de possession, traduits par deux prépositions différentes déclinées avec des pronoms suffixes :\n\n| Pronom | Ma3a (sur soi) | 3and (en possession) | Note |\n|---|---|---|---|\n| Ana (Je) | Ma3aya (J'ai sur moi) | 3andi (J'ai) | — |\n| Enta (Tu — m) | Ma3ak | 3andak | — |\n| Enti (Tu — f) | Ma3aki | 3andik | — |\n| É7na (Nous) | Ma3ana | 3andina | — |\n\n### Ma3a (معا) — Avoir sur soi\n\nPossession immédiate, physique, dans la poche. Quelque chose que l'on a sur soi au moment présent.\n\n**Ana mesh ma3aya flous en-naharda** = Je n'ai pas d'argent sur moi aujourd'hui\n\n### 3and (عند) — Avoir en possession\n\nPossession générale, durable. Quelque chose que l'on possède chez soi ou dans sa vie.\n\n**É7na 3andina wa2t** = Nous avons du temps",
+      "content_markdown": "## Jour 33 — La Localisation de la Possession (« Avoir »)\n\nL'égyptien distingue deux types de possession, traduits par deux prépositions différentes déclinées avec des pronoms suffixes :\n\n| Pronom | Ma3a (sur soi) | 3and (en possession) | Note |\n|---|---|---|---|\n| Ana (Je) | Ma3aya (J'ai sur moi) | 3andi (J'ai) | — |\n| Enta (Tu — m) | Ma3ak | 3andak | — |\n| Enti (Tu — f) | Ma3aki | 3andik | — |\n| Howa (Il) | Ma3ah | 3ando | — |\n| Heyya (Elle) | Ma3aha | 3andaha | — |\n| É7na (Nous) | Ma3ana | 3andina | — |\n| Ento (Vous) | Ma3ako | 3andoko | — |\n| Homma (Ils / Elles) | Ma3ahom | 3andohom | Une seule forme pour ils ET elles |\n\n### Ma3a (معا) — Avoir sur soi\n\nPossession immédiate, physique, dans la poche. Quelque chose que l'on a sur soi au moment présent.\n\n**Ana mesh ma3aya flous en-naharda** = Je n'ai pas d'argent sur moi aujourd'hui\n\n### 3and (عند) — Avoir en possession\n\nPossession générale, durable. Quelque chose que l'on possède chez soi ou dans sa vie.\n\n**É7na 3andina wa2t** = Nous avons du temps",
       "vocab_items": [
         {
           "arabic": "معايا",
@@ -96,7 +96,7 @@
       "order_index": 4,
       "section": "SECTION 3 : Les Structures Complexes — La Chute du « B- »",
       "title": "Vue d'ensemble — la règle d'or de la modalité",
-      "content_markdown": "## Jour 34 — Les Structures Complexes — La Chute du « B- »\n\n> ⭐ RÈGLE D'OR : Lorsque deux verbes se suivent, ou qu'un verbe est précédé par une expression de modalité (obligation, possibilité, volonté), l'action est projetée dans le virtuel ou le futur. Le deuxième verbe perd systématiquement sa signature temporelle en « B- ».\n\n| Mot-clé | Accord | Négation | Exemple |\n|---|---|---|---|\n| Lazem | Invariable | Mesh lazem | Ana lazem a3mel bokra = Je dois travailler demain |\n| Momken | Invariable | Mesh momken | Momken nakhod dah ? = Est-ce qu'on peut prendre ça ? |\n| Ayez / Ayza / Ayzeen | Accord genre + nombre | Mesh ayez / ayza | Enti ayza tishrabi shay ? = Tu (f) veux boire du thé ? |",
+      "content_markdown": "## Jour 34 — Les Structures Complexes — La Chute du « B- »\n\n> ⭐ RÈGLE D'OR : Lorsque deux verbes se suivent, ou qu'un verbe est précédé par une expression de modalité (obligation, possibilité, volonté), l'action est projetée dans le virtuel ou le futur. Le deuxième verbe perd systématiquement sa signature temporelle en « B- ».\n\n| Mot-clé | Accord | Négation | Exemple |\n|---|---|---|---|\n| Lazem | Invariable | Mesh lazem | Ana lazem a3mel bokra = Je dois travailler demain |\n| Momken | Invariable | Mesh momken | Momken nakhod dah ? = Est-ce qu'on peut prendre ça ? |\n| 3ayez / 3ayza / 3ayzeen | Accord genre + nombre | Mesh 3ayez / 3ayza | Enti 3ayza tishrabi shay ? = Tu (f) veux boire du thé ? |",
       "vocab_items": [
         {
           "arabic": "لازم",
@@ -114,8 +114,8 @@
       "day": 35,
       "order_index": 5,
       "section": "SECTION 3 : Les Structures Complexes — La Chute du « B- »",
-      "title": "L'Obligation — Lazem (لازم)",
-      "content_markdown": "## Jour 35 — L'Obligation — Lazem (لازم)\n\n**Structure :** Pronom + **Lazem** + Verbe sans B-\n\nLazem est invariable : il ne s'accorde ni en genre ni en nombre.\n\n**Ana lazem a3mel bokra** = Je dois travailler demain\n\n**Mesh lazem** = Pas nécessaire / Il ne faut pas",
+      "title": "L'obligation — Lazem (لازم)",
+      "content_markdown": "## Jour 35 — L'obligation — Lazem (لازم)\n\n**Structure :** Pronom + **Lazem** + Verbe sans B-\n\nLazem est invariable : il ne s'accorde ni en genre ni en nombre.\n\n**Ana lazem a3mel bokra** = Je dois travailler demain\n\n**Mesh lazem** = Pas nécessaire / Il ne faut pas",
       "vocab_items": [
         {
           "arabic": "أنا لازم أعمل بكرة",
@@ -133,8 +133,8 @@
       "day": 36,
       "order_index": 6,
       "section": "SECTION 3 : Les Structures Complexes — La Chute du « B- »",
-      "title": "La Possibilité / Permission — Momken (ممكن)",
-      "content_markdown": "## Jour 36 — La Possibilité / Permission — Momken (ممكن)\n\n**Structure :** Pronom + **Momken** + Verbe sans B-\n\nMomken est invariable. Placé en début de phrase, il formule une requête polie.\n\n**Momken nakhod dah ?** = Est-ce qu'on peut prendre ça ?\n\n**Mesh momken** = Impossible\n\n> 💡 Momken en tête de phrase est l'équivalent d'un « Pourrait-on... ? » ou « Est-il possible de... ? » — très utile au restaurant ou en déplacement.",
+      "title": "La possibilité / permission — Momken (ممكن)",
+      "content_markdown": "## Jour 36 — La possibilité / permission — Momken (ممكن)\n\n**Structure :** Pronom + **Momken** + Verbe sans B-\n\nMomken est invariable. Placé en début de phrase, il formule une requête polie.\n\n**Momken nakhod dah ?** = Est-ce qu'on peut prendre ça ?\n\n**Mesh momken** = Impossible\n\n> 💡 Momken en tête de phrase est l'équivalent d'un « Pourrait-on... ? » ou « Est-il possible de... ? » — très utile au restaurant ou en déplacement.",
       "vocab_items": [
         {
           "arabic": "ممكن ناخد ده؟",
@@ -152,22 +152,22 @@
       "day": 37,
       "order_index": 7,
       "section": "SECTION 3 : Les Structures Complexes — La Chute du « B- »",
-      "title": "La Volonté — Ayez / Ayza / Ayzeen (عايز)",
-      "content_markdown": "## Jour 37 — La Volonté — Ayez / Ayza / Ayzeen (عايز)\n\n**Structure :** Pronom + **Ayez / Ayza / Ayzeen** + Verbe sans B-\n\nContrairement à Lazem et Momken, **Ayez s'accorde** obligatoirement avec le sujet en genre et en nombre.\n\n| Sujet | Forme | Exemple |\n|---|---|---|\n| Masculin (Ana / Enta / Howa) | Ayez | Ana ayez ashrab meya = Je (h) veux boire de l'eau |\n| Féminin (Ana / Enti / Heyya) | Ayza | Enti ayza tishrabi shay ? = Tu (f) veux boire du thé ? |\n| Pluriel (É7na / Ento / Homma) | Ayzeen | É7na ayzeen nakhod taksi = Nous voulons prendre un taxi |\n\n**La shokran, ana mesh ayez dah** = Non merci, je (homme) ne veux pas ça",
+      "title": "La volonté — 3ayez / 3ayza / 3ayzeen (عايز)",
+      "content_markdown": "## Jour 37 — La volonté — 3ayez / 3ayza / 3ayzeen (عايز)\n\n**Structure :** Pronom + **3ayez / 3ayza / 3ayzeen** + Verbe sans B-\n\nContrairement à Lazem et Momken, **3ayez s'accorde** obligatoirement avec le sujet en genre et en nombre.\n\n| Sujet | Forme | Exemple |\n|---|---|---|\n| Masculin (Ana / Enta / Howa) | 3ayez | Ana 3ayez ashrab mayya = Je (h) veux boire de l'eau |\n| Féminin (Ana / Enti / Heyya) | 3ayza | Enti 3ayza tishrabi shay ? = Tu (f) veux boire du thé ? |\n| Pluriel (É7na / Ento / Homma) | 3ayzeen | É7na 3ayzeen nakhod taksi = Nous voulons prendre un taxi |\n\n**La shokran, ana mesh 3ayez dah** = Non merci, je (homme) ne veux pas ça",
       "vocab_items": [
         {
           "arabic": "عايز",
-          "transliteration": "Ayez",
+          "transliteration": "3ayez",
           "french": "Je/Tu/Il veut (masculin) + verbe"
         },
         {
           "arabic": "عايزة",
-          "transliteration": "Ayza",
+          "transliteration": "3ayza",
           "french": "Je/Tu/Elle veut (féminin) + verbe"
         },
         {
           "arabic": "عايزين",
-          "transliteration": "Ayzeen",
+          "transliteration": "3ayzeen",
           "french": "Nous/Vous/Ils veulent (pluriel) + verbe"
         }
       ]
