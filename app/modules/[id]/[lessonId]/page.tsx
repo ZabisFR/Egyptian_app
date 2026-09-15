@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import LessonViewer from '@/components/LessonViewer';
 import LessonReadToggle from '@/components/LessonReadToggle';
@@ -12,6 +13,25 @@ import { createClient } from '@/lib/supabase/server';
 import type { Lesson, VocabItem } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string; lessonId: string }>;
+}): Promise<Metadata> {
+  const { id, lessonId } = await params;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from('lessons')
+    .select('title, day, module_id')
+    .eq('id', lessonId)
+    .maybeSingle<Pick<Lesson, 'title' | 'day' | 'module_id'>>();
+
+  if (!data || data.module_id !== id) return { title: 'Leçon introuvable' };
+  // Le numéro de jour désambiguïse les titres qui se répètent d'un module à l'autre
+  // (« Mini-dialogue », « Exemples et mise en pratique »…).
+  return { title: data.day !== null ? `${data.title} · jour ${data.day}` : data.title };
+}
 
 export default async function LessonPage({
   params,
@@ -47,7 +67,7 @@ export default async function LessonPage({
     <main className="mx-auto max-w-3xl px-6 pb-20 pt-8 sm:px-8">
       <Link
         href={`/modules/${id}`}
-        className="inline-block py-1 text-sm text-[var(--muted)] transition-colors hover:text-[var(--ink)]"
+        className="inline-block py-2 text-sm text-[var(--muted)] transition-colors hover:text-[var(--ink)]"
       >
         ← Retour au module
       </Link>

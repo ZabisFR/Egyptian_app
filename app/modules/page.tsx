@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import ModuleCard from '@/components/ModuleCard';
 import { getUser } from '@/lib/auth';
 import { getAllProgress } from '@/lib/progress';
@@ -6,6 +7,12 @@ import { createClient } from '@/lib/supabase/server';
 import type { Level, Module } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Tous les modules',
+  description:
+    "Le parcours complet, de l'alphabet au débat : 30 modules classés par niveau, du A1 au B2, plus les fiches de référence.",
+};
 
 type ModuleRow = Module & { lessons: { count: number }[] };
 
@@ -32,12 +39,20 @@ export default async function ModulesPage() {
   const progress = await getAllProgress(user?.id ?? null);
 
   if (error) {
+    // Le détail technique part dans les journaux Vercel, pas à l'écran : un message
+    // d'erreur Supabase brut ne dit rien d'utile à un apprenant et expose au passage
+    // des noms de colonnes et des indices sur les politiques RLS.
+    console.error('Chargement des modules impossible :', error.message);
     return (
-      <main className="mx-auto max-w-3xl p-6 sm:p-8">
-        <h1 className="display text-2xl">Erreur de connexion Supabase</h1>
-        <pre className="mt-4 overflow-x-auto rounded bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] p-4 text-sm text-[var(--carmine-text)]">
-          {error.message}
-        </pre>
+      <main className="mx-auto max-w-3xl px-6 pb-20 pt-10 sm:px-8">
+        <h1 className="display text-2xl">Les modules sont momentanément indisponibles</h1>
+        <p className="mt-4 text-[var(--muted)]">
+          La liste des leçons n’a pas pu être chargée. Cela vient presque toujours d’une
+          coupure passagère : réessayez dans quelques instants.
+        </p>
+        <Link href="/modules" className="btn-sand mt-6 inline-flex">
+          Réessayer
+        </Link>
       </main>
     );
   }

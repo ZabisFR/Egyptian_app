@@ -81,7 +81,7 @@ export default function MentionsLegalesPage() {
         <span className="text-xs">◆</span>
       </div>
       <p className="mt-6 text-sm">
-        <Link href="/confidentialite" className="underline">
+        <Link href="/confidentialite" className="inline-block py-1.5 underline">
           Politique de confidentialité
         </Link>
       </p>

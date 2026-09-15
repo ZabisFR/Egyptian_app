@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import LevelBadge from '@/components/LevelBadge';
 import LessonPath from '@/components/LessonPath';
@@ -11,6 +12,28 @@ import type { Lesson, Module } from '@/lib/types';
 export const dynamic = 'force-dynamic';
 
 type LessonLink = Pick<Lesson, 'id' | 'day' | 'title' | 'section' | 'order_index'>;
+
+/*
+  Sans ces `generateMetadata`, les 30 modules et les 139 leçons partageaient tous le
+  titre d'onglet « Arabe égyptien » : impossible de distinguer cinq leçons ouvertes côte
+  à côte, et un moteur de recherche voyait 170 pages au titre identique.
+*/
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from('modules')
+    .select('title, description')
+    .eq('id', id)
+    .maybeSingle<Pick<Module, 'title' | 'description'>>();
+
+  if (!data) return { title: 'Module introuvable' };
+  return { title: data.title, description: data.description ?? undefined };
+}
 
 export default async function ModulePage({
   params,

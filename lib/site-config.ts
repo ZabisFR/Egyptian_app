@@ -37,8 +37,14 @@ export const SITE = {
   hostingProvider: 'Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis',
   databaseProvider: 'Supabase Inc., 970 Toa Payoh North, Singapour',
 
-  /** Date de dernière révision des mentions, à actualiser en cas de modification. */
-  lastUpdated: '13 août 2026',
+  /**
+   * Date de dernière révision des mentions, à actualiser en cas de modification.
+   *
+   * Elle suit les modifications DES TEXTES LÉGAUX, pas celles du site : la dernière en
+   * date est l'ajout du canal de retours et de l'adresse dédiée (24 août 2026), qui a
+   * introduit un nouveau traitement de données à mentionner.
+   */
+  lastUpdated: '24 août 2026',
 } as const;
 
 /**

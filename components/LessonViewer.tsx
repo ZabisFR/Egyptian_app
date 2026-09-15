@@ -38,7 +38,7 @@ export default function LessonViewer({
         une seule ligne rendait presque toutes les tables de leçon plus larges que
         l'écran sur mobile.
       */}
-      <article className="prose mt-2 max-w-none prose-th:text-left prose-blockquote:not-italic">
+      <article className="prose prose-lecon mt-2 max-w-none prose-th:text-left prose-blockquote:not-italic">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
@@ -53,6 +53,23 @@ export default function LessonViewer({
                 <table {...props}>{children}</table>
               </div>
             ),
+
+            /*
+              Les leçons sont rédigées avec `##` pour leur titre et `###` pour leurs
+              sections — une convention héritée du temps où ce markdown vivait dans des
+              fichiers, chacun sous un titre de document implicite. Rendu tel quel, il
+              produisait une page SANS `<h1>` : mesuré sur les 139 leçons du site. Un
+              lecteur d'écran annonce alors un document sans titre principal, et la
+              navigation par titres (touche H) démarre au deuxième niveau.
+
+              On promeut donc d'un cran à l'affichage plutôt que de réécrire le contenu :
+              le `##` de tête porte des précisions absentes du champ `title` (le numéro de
+              jour, le terme arabe — « Jour 43 — L'impératif (الأمر) »), qu'il faudrait
+              sinon dupliquer ailleurs.
+            */
+            h2: ({ node: _node, children, ...props }) => <h1 {...props}>{children}</h1>,
+            h3: ({ node: _node, children, ...props }) => <h2 {...props}>{children}</h2>,
+            h4: ({ node: _node, children, ...props }) => <h3 {...props}>{children}</h3>,
             ...(isAlphabetLesson
               ? {
                   td: ({ node: _node, children, ...props }) => {

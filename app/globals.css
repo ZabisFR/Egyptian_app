@@ -349,14 +349,47 @@ body {
   --tw-prose-td-borders: var(--border);
 }
 
-.prose :where(h2, h3) {
+.prose :where(h1, h2, h3) {
   font-family: var(--font-display), Georgia, serif;
   letter-spacing: -0.01em;
 }
 
-/* Un filet doré sous les h2 : dans une leçon de 2 000 mots, c'est ce qui permet de
+/*
+  Décalage propre aux leçons. Leur markdown est écrit en `##`/`###` et se retrouvait donc
+  rendu SANS `<h1>` — mesuré sur les 139 leçons. `components/LessonViewer.tsx` promeut
+  chaque niveau d'un cran ; les tailles de Tailwind suivraient et grossiraient tout d'un
+  palier (2,25em pour le titre au lieu de 1,5em). On décale l'échelle d'autant, pour que
+  la promotion reste purement sémantique et n'ait aucun effet visible.
+
+  Cantonné à `.prose-lecon` : les mentions légales et la page de confidentialité portent
+  `.prose` avec de VRAIS `h2`, qui doivent garder la taille et le filet d'origine.
+*/
+.prose-lecon :where(h1) {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.333;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.prose-lecon :where(h2) {
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose-lecon :where(h3) {
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Un filet doré sous le titre : dans une leçon de 2 000 mots, c'est ce qui permet de
    retrouver une section en balayant la page du regard. */
-.prose :where(h2)::after {
+.prose :where(h2)::after,
+.prose-lecon :where(h1)::after {
   content: "";
   display: block;
   width: 2.5rem;
@@ -367,6 +400,14 @@ body {
     var(--gold),
     color-mix(in srgb, var(--gold) 0%, transparent)
   );
+}
+
+/* Les deux sélecteurs ci-dessus ont la MÊME spécificité que celui-ci — `:where()` ne
+   compte pour rien — et c'est donc l'ordre du fichier qui départage. Cette annulation
+   doit rester APRÈS : placée avant, elle était ignorée et chaque sous-titre de leçon
+   héritait du filet réservé au titre (mesuré : `content: ""` au lieu de `none`). */
+.prose-lecon :where(h2)::after {
+  content: none;
 }
 
 .prose :where(blockquote) {
@@ -953,6 +994,15 @@ body {
 .glossaire-sources {
   grid-column: 2;
   font-size: 0.8125rem;
+}
+
+/* Chaque source est un lien de 13 px de haut — visé au doigt, c'est trop peu, et le
+   glossaire en aligne plusieurs par ligne. On étire la zone cliquable vers le haut et
+   vers le bas sans rien déplacer : sur un élément `inline`, le remplissage vertical
+   agrandit bien la cible mais n'entre pas dans le calcul de la hauteur de ligne, donc la
+   densité du tableau reste intacte (mesuré : 17 px → 29 px, lignes inchangées). */
+.glossaire-sources a {
+  padding-block: 0.375rem;
 }
 
 @media (min-width: 640px) {

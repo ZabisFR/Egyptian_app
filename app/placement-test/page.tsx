@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import PlacementTest from './PlacementTest';
 import { savePlacement } from './actions';
 import { getUser } from '@/lib/auth';
@@ -6,6 +7,12 @@ import { LEVEL_ORDER } from '@/lib/quiz-scoring';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Test de positionnement',
+  description:
+    "Douze questions, de l'alphabet aux formes verbales, pour situer votre niveau et savoir par quel module commencer. Aucune préparation nécessaire.",
+};
 
 type Row = {
   id: string;

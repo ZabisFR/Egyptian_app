@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ModuleQuiz from './ModuleQuiz';
 import { saveAttempt } from './actions';
@@ -10,6 +11,22 @@ import type { Module } from '@/lib/types';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from('modules')
+    .select('title')
+    .eq('id', id)
+    .maybeSingle<Pick<Module, 'title'>>();
+
+  return { title: data ? `Quiz — ${data.title}` : 'Quiz introuvable' };
+}
 
 type Row = {
   id: string;
@@ -67,7 +84,10 @@ export default async function ModuleQuizPage({
 
   return (
     <main className="mx-auto max-w-2xl px-6 pb-20 pt-10 sm:px-8">
-      <Link href={`/modules/${id}`} className="text-sm text-[var(--muted)] hover:underline">
+      <Link
+        href={`/modules/${id}`}
+        className="inline-block py-2 text-sm text-[var(--muted)] hover:underline"
+      >
         ← Retour au module
       </Link>
 

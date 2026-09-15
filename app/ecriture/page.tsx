@@ -63,7 +63,7 @@ export default function EcriturePage() {
           ne recouvre jamais exactement une lettre imprimée.
         </p>
         <p className="mt-4 text-sm">
-          <Link href="/modules/module-01" className="underline">
+          <Link href="/modules/module-01" className="inline-block py-1.5 underline">
             Revoir les leçons sur l&apos;alphabet
           </Link>
         </p>
