@@ -22,6 +22,7 @@ export type DrillSetId =
   | 'vocabulaire'
   | 'lecture'
   | 'premiere-lettre'
+  | 'formes'
   | 'phrases';
 
 export type Exercise = {
@@ -113,6 +114,12 @@ export const DRILL_SETS: DrillSet[] = [
     title: 'Première lettre',
     tagline: 'Reconnaître une lettre soudée en tête de mot',
     sample: 'بيت → ___',
+  },
+  {
+    id: 'formes',
+    title: 'Formes liées',
+    tagline: 'Reconnaître une lettre attachée, sans son nom en face',
+    sample: 'ـهـ → ___',
   },
   {
     id: 'phrases',

@@ -492,15 +492,93 @@ const FAMILIES = [
   ['Meem', 'Ha léger'],
 ];
 
+/** Le nom sans sa précision entre parenthèses : « Ha (7) » → « Ha ». */
+const bareName = (nom: string) => nom.replace(/\s*\(.*\)\s*/, '').trim();
+
+const BARE_COUNT = new Map<string, number>();
+for (const l of ALPHABET) {
+  BARE_COUNT.set(bareName(l.nom), (BARE_COUNT.get(bareName(l.nom)) ?? 0) + 1);
+}
+
+/**
+ * Ce qu'on accepte comme réponse quand la question porte sur une lettre.
+ *
+ * Le son en Arabizi passe, parce qu'identifier ح et répondre « 7 » est exactement ce qu'on
+ * demande. Le nom abrégé ne passe que s'il ne désigne qu'une lettre : « Ha » vaut aussi
+ * bien pour ح que pour ه, l'accepter validerait la confusion que l'exercice combat.
+ */
+function letterAliases(letter: (typeof ALPHABET)[number]): string[] {
+  return [
+    ...letter.arabizi.split('/').map((part) => part.trim()),
+    ...(BARE_COUNT.get(bareName(letter.nom)) === 1 ? [bareName(letter.nom)] : []),
+  ].filter(Boolean);
+}
+
+/** Les autres lettres, de la même famille de squelette d'abord. */
+function letterDistractors(letter: (typeof ALPHABET)[number], rand: () => number): string[] {
+  const family = FAMILIES.find((f) => f.includes(letter.nom)) ?? [];
+  return [
+    ...shuffle(family.filter((n) => n !== letter.nom), rand),
+    ...shuffle(ALPHABET.map((l) => l.nom).filter((n) => n !== letter.nom), rand),
+  ];
+}
+
+/** Rappel complet des quatre formes, affiché une fois la réponse donnée. */
+function formsNote(letter: (typeof ALPHABET)[number]): string {
+  const sound = letter.nom.includes('(') ? '' : ` (${letter.arabizi})`;
+  return (
+    `${letter.isole} — ${letter.nom}${sound}. ` +
+    `Isolée ${letter.isole}, début ${letter.initiale}, ` +
+    `milieu ${letter.mediane}, fin ${letter.finale}.`
+  );
+}
+
+/**
+ * « Sous cette forme, quelle lettre ? »
+ *
+ * Le pendant du tableau de `/ecriture` : là on lit les quatre formes, ici on les reconnaît
+ * sans le nom en face. Seules les formes LIÉES sont demandées — la forme isolée est déjà
+ * ce que l'atelier de tracé fait réviser.
+ *
+ * Les six lettres qui ne se lient pas à la suivante n'ont qu'une seule forme liée (ـد, la
+ * même au milieu et à la fin) : elles donnent donc un exercice au lieu de trois.
+ */
+function letterFormDrafts(): Draft[] {
+  const drafts: Draft[] = [];
+
+  for (const letter of ALPHABET) {
+    const positions = letter.attachante
+      ? ([
+          ['en début de mot', letter.initiale],
+          ['au milieu d’un mot', letter.mediane],
+          ['en fin de mot', letter.finale],
+        ] as const)
+      : ([['au milieu ou en fin de mot', letter.finale]] as const);
+
+    for (const [position, forme] of positions) {
+      const rand = mulberry32(hash(`forme|${letter.nom}|${position}`));
+
+      drafts.push({
+        set: 'formes',
+        instruction: `Quelle lettre est-ce, ${position} ?`,
+        sentence: `${forme} → ___`,
+        answer: letter.nom,
+        accepted: letterAliases(letter),
+        distractors: letterDistractors(letter, rand),
+        hint: 'son nom, ou son son en Arabizi',
+        note: formsNote(letter),
+        level: null,
+        theme: null,
+        themeLabel: null,
+      });
+    }
+  }
+
+  return drafts;
+}
+
 function firstLetterDrafts(): Draft[] {
   const byGlyph = new Map(ALPHABET.map((l) => [l.isole, l]));
-
-  // Un nom abrégé n'est accepté que s'il ne désigne qu'une lettre : « Ha » vaut aussi bien
-  // pour ح que pour ه, l'accepter validerait la confusion que l'exercice combat.
-  const bare = (nom: string) => nom.replace(/\s*\(.*\)\s*/, '').trim();
-  const bareCount = new Map<string, number>();
-  for (const l of ALPHABET) bareCount.set(bare(l.nom), (bareCount.get(bare(l.nom)) ?? 0) + 1);
-
   const drafts: Draft[] = [];
 
   for (const entry of allVocab()) {
@@ -515,30 +593,16 @@ function firstLetterDrafts(): Draft[] {
     if (!letter) continue;
 
     const rand = mulberry32(hash(`lettre|${arabic}`));
-    const family = FAMILIES.find((f) => f.includes(letter.nom)) ?? [];
-
-    const accepted = [
-      ...letter.arabizi.split('/').map((s) => s.trim()),
-      ...(bareCount.get(bare(letter.nom)) === 1 ? [bare(letter.nom)] : []),
-    ].filter(Boolean);
 
     drafts.push({
       set: 'premiere-lettre',
       instruction: 'Par quelle lettre commence ce mot ?',
       sentence: `${arabic} → ___`,
       answer: letter.nom,
-      accepted,
-      distractors: [
-        ...shuffle(family.filter((n) => n !== letter.nom), rand),
-        ...shuffle(ALPHABET.map((l) => l.nom).filter((n) => n !== letter.nom), rand),
-      ],
+      accepted: letterAliases(letter),
+      distractors: letterDistractors(letter, rand),
       hint: 'son nom, ou son son en Arabizi',
-      // Les libellés comme « Ha (7) » portent déjà leur son : le répéter donnerait
-      // « Ha (7) (7) ».
-      note:
-        `${letter.isole} — ${letter.nom}` +
-        `${letter.nom.includes('(') ? '' : ` (${letter.arabizi})`}. ` +
-        `Le mot veut dire « ${entry.french} ».`,
+      note: `${formsNote(letter)} Le mot veut dire « ${entry.french} ».`,
       level: entry.level,
       theme: entry.moduleId,
       themeLabel: entry.moduleTitle,
@@ -687,6 +751,7 @@ function main() {
     ...vocabDrafts(),
     ...readingDrafts(),
     ...firstLetterDrafts(),
+    ...letterFormDrafts(),
     ...phraseDrafts(),
   ];
 
