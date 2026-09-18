@@ -382,6 +382,35 @@ export default function LetterTracer({ police }: { police: string }) {
               Arabizi : {lettre.arabizi} · {lettre.traits} trait
               {lettre.traits > 1 ? 's' : ''}
             </p>
+
+            {/* Les trois formes liées. Elles sont ici et pas seulement dans le tableau du
+                bas parce que c'est en traçant qu'on se demande « et attachée, ça donne
+                quoi ? » — la réponse doit être sous les yeux, pas à un défilement. */}
+            <dl className="mt-4 grid grid-cols-3 gap-2 border-t border-[var(--border)] pt-3">
+              {(
+                [
+                  ['Début', lettre.initiale],
+                  ['Milieu', lettre.mediane],
+                  ['Fin', lettre.finale],
+                ] as const
+              ).map(([position, forme]) => (
+                <div key={position}>
+                  <dt className="eyebrow">{position}</dt>
+                  <dd dir="rtl" className="arabic mt-0.5 text-3xl leading-none">
+                    {forme}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            {!lettre.attachante && (
+              <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">
+                Cette lettre ne s’attache jamais à la suivante : en début de mot elle garde
+                sa forme isolée, et au milieu comme à la fin elle s’écrit pareil. C’est ce
+                qui ouvre un blanc au milieu des mots.
+              </p>
+            )}
+
             <button type="button" onClick={ecouter} className="btn-outline mt-3 w-full">
               ▶ Écouter
             </button>

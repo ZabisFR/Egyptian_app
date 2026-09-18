@@ -8,8 +8,9 @@ import { ALPHABET_AUDIO } from './alphabet-audio';
  * les redéclarer — et ce qui impose de ne jamais « nettoyer » ces libellés à la légère :
  * « Ha (7) » et « Ha léger » sont deux lettres différentes (ح et هـ).
  *
- * `isole` est la forme isolée, celle qu'on apprend à tracer en premier. Les formes liées
- * (initiale, médiane, finale) viendront plus tard s'il y a lieu.
+ * `isole` est la forme isolée, celle qu'on apprend à tracer en premier. Les trois formes
+ * liées en sont DÉRIVÉES, jamais saisies à la main : les recopier une à une pour
+ * vingt-huit lettres, c'est vingt-huit occasions de coller la mauvaise.
  */
 export type Lettre = {
   nom: string;
@@ -19,9 +20,43 @@ export type Lettre = {
   audio: string;
   /** Nombre de traits attendus, points diacritiques compris. */
   traits: number;
+  /**
+   * Se lie à la lettre SUIVANTE. Faux pour six lettres (ا د ذ ر ز و), qui s'accrochent à
+   * la précédente mais jamais à la suivante — c'est ce qui crée les blancs à l'intérieur
+   * des mots arabes, et la première chose qui déroute quand on apprend à lire.
+   */
+  attachante: boolean;
+  /** Forme en début de mot. */
+  initiale: string;
+  /** Forme au milieu d'un mot. */
+  mediane: string;
+  /** Forme en fin de mot. */
+  finale: string;
 };
 
-const LETTRES: Omit<Lettre, 'audio'>[] = [
+/**
+ * Les six lettres qui ne se lient pas à la suivante.
+ *
+ * Conséquence directe : en début de mot elles gardent leur forme isolée, et au milieu
+ * comme à la fin elles prennent la même forme — attachée à droite seulement. Deux des
+ * quatre cases du tableau sont donc des doublons, et c'est une information, pas un bug.
+ */
+const NON_ATTACHANTES = new Set(['ا', 'د', 'ذ', 'ر', 'ز', 'و']);
+
+/**
+ * Kashida (U+0640), le trait d'étirement.
+ *
+ * C'est elle qui matérialise l'attache : une lettre suivie d'une kashida prend sa forme
+ * initiale, encadrée sa forme médiane, précédée sa forme finale. On laisse donc la police
+ * faire son travail de façonnage au lieu de coder en dur les formes de présentation
+ * (U+FE70–U+FEFF), que toutes les polices arabes ne couvrent pas.
+ */
+const KASHIDA = 'ـ';
+
+/** Ce qui est réellement saisi ; tout le reste de `Lettre` en est dérivé. */
+type Saisie = Pick<Lettre, 'nom' | 'isole' | 'arabizi' | 'traits'>;
+
+const LETTRES: Saisie[] = [
   { nom: 'Alif', isole: 'ا', arabizi: 'a', traits: 1 },
   { nom: 'Ba', isole: 'ب', arabizi: 'b', traits: 2 },
   { nom: 'Ta', isole: 'ت', arabizi: 't', traits: 3 },
@@ -52,7 +87,15 @@ const LETTRES: Omit<Lettre, 'audio'>[] = [
   { nom: 'Ya', isole: 'ي', arabizi: 'y / i', traits: 3 },
 ];
 
-export const ALPHABET: Lettre[] = LETTRES.map((l) => ({
-  ...l,
-  audio: ALPHABET_AUDIO[l.nom],
-}));
+export const ALPHABET: Lettre[] = LETTRES.map((l) => {
+  const attachante = !NON_ATTACHANTES.has(l.isole);
+
+  return {
+    ...l,
+    audio: ALPHABET_AUDIO[l.nom],
+    attachante,
+    initiale: attachante ? `${l.isole}${KASHIDA}` : l.isole,
+    mediane: attachante ? `${KASHIDA}${l.isole}${KASHIDA}` : `${KASHIDA}${l.isole}`,
+    finale: `${KASHIDA}${l.isole}`,
+  };
+});

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Noto_Naskh_Arabic } from 'next/font/google';
 import LetterTracer from '@/components/LetterTracer';
+import { ALPHABET } from '@/lib/alphabet';
 
 export const metadata: Metadata = {
   title: "S'entraîner à l'écriture",
@@ -42,6 +43,100 @@ export default function EcriturePage() {
       <div className={naskh.className}>
         <LetterTracer police={naskh.style.fontFamily} />
       </div>
+
+      {/* ------------------------------------------------- Les quatre formes de chaque lettre */}
+      <section className="mt-14">
+        <div className="egypt-rule">
+          <span className="text-xs">◆</span>
+        </div>
+
+        <h2 className="display mt-8 text-2xl">Les quatre formes de chaque lettre</h2>
+        <p className="mt-3 max-w-2xl leading-relaxed text-[var(--muted)]">
+          Une lettre arabe ne s’écrit pas de la même façon selon sa place dans le mot :
+          elle se soude à ses voisines et perd une partie de son corps. C’est la raison
+          pour laquelle un mot reste illisible alors qu’on connaît toutes ses lettres —
+          soudée en tête de mot, <span className="arabic">ب</span> devient{' '}
+          <span dir="rtl" className="arabic">
+            بـ
+          </span>{' '}
+          et ne ressemble plus à ce qu’on a tracé.
+        </p>
+        <p className="mt-3 max-w-2xl leading-relaxed text-[var(--muted)]">
+          Le petit trait qui dépasse dans le tableau n’est pas un morceau de la lettre :
+          c’est l’attache, à l’endroit où la lettre voisine vient se souder.
+        </p>
+
+        {/* Six colonnes, dont quatre en arabe : sur un écran de téléphone, le tableau
+            dépasse forcément. `table-scroll` le fait défiler dans son propre cadre plutôt
+            que d'élargir la page entière. `tabIndex` pour que le cadre soit atteignable au
+            clavier — un contenu qui défile sans pouvoir recevoir le focus est inatteignable
+            sans souris. */}
+        <div className="table-scroll mt-6" tabIndex={0}>
+          <table className="w-full border-collapse text-center">
+            <caption className="sr-only">
+              Les 28 lettres de l’alphabet arabe et leurs formes isolée, initiale, médiane
+              et finale
+            </caption>
+            <thead>
+              <tr className="border-b border-[var(--border)]">
+                <th scope="col" className="px-2 py-2 text-left text-xs font-semibold">
+                  Lettre
+                </th>
+                <th scope="col" className="px-2 py-2 text-xs font-semibold">
+                  Isolée
+                </th>
+                <th scope="col" className="px-2 py-2 text-xs font-semibold">
+                  Début
+                </th>
+                <th scope="col" className="px-2 py-2 text-xs font-semibold">
+                  Milieu
+                </th>
+                <th scope="col" className="px-2 py-2 text-xs font-semibold">
+                  Fin
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {ALPHABET.map((lettre) => (
+                <tr
+                  key={lettre.nom}
+                  className="border-b border-[var(--border)] last:border-0"
+                >
+                  <th scope="row" className="whitespace-nowrap px-2 py-1.5 text-left">
+                    <span className="text-sm font-semibold">{lettre.nom}</span>
+                    {/* En bloc et non collé au nom : côte à côte, un lecteur d'écran lit
+                        « Alifa » d'un seul tenant. */}
+                    <span className="block text-xs text-[var(--muted)]">{lettre.arabizi}</span>
+                    {/* La marque tient en un mot, sur la ligne de la lettre concernée :
+                        une note de bas de tableau se lit une fois et s'oublie. */}
+                    {!lettre.attachante && (
+                      <span className="mt-0.5 block text-[0.6875rem] text-[var(--gold-text)]">
+                        ne lie pas à droite
+                      </span>
+                    )}
+                  </th>
+                  {[lettre.isole, lettre.initiale, lettre.mediane, lettre.finale].map(
+                    (forme, i) => (
+                      <td key={i} dir="rtl" className="arabic px-2 py-1.5 text-2xl">
+                        {forme}
+                      </td>
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+          Six lettres — <span className="arabic">ا د ذ ر ز و</span> — s’accrochent à celle
+          qui les précède mais jamais à celle qui les suit. Leur forme de début est donc
+          identique à leur forme isolée, et leurs formes du milieu et de la fin sont
+          identiques entre elles : les deux doublons du tableau sont une information, pas
+          une erreur. C’est aussi ce qui explique les blancs à l’intérieur des mots, comme
+          dans <span dir="rtl" className="arabic">مدرسة</span>.
+        </p>
+      </section>
 
       <section className="mt-12">
         <div className="egypt-rule">
