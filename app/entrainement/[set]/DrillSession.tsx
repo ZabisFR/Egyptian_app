@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import ArabicText from '@/components/ArabicText';
 import DrillEngine, { type DrillResult } from '@/components/DrillEngine';
 import ScoreDial from '@/components/ScoreDial';
 import type { Exercise } from '@/lib/exercises';
@@ -55,7 +56,9 @@ export default function DrillSession({
                       {/* La consigne est reprise : hors contexte, « Enta ___ » ne dit pas
                           de quel verbe il s'agissait, et la ligne devient illisible. */}
                       <p className="text-xs text-[var(--muted)]">{a.exercise.instruction}</p>
-                      <p className="mt-0.5">{a.exercise.sentence}</p>
+                      <p className="mt-0.5">
+                        <ArabicText>{a.exercise.sentence}</ArabicText>
+                      </p>
                       <p className="mt-0.5">
                         <span className="font-semibold text-[var(--malachite-text)]">
                           {a.exercise.answer}

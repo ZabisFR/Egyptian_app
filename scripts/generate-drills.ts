@@ -16,6 +16,7 @@
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { ALPHABET } from '../lib/alphabet';
 
 const DATA_DIR = 'data';
 const OUT = join(DATA_DIR, 'exercises.generated.json');
@@ -54,6 +55,22 @@ function shuffle<T>(items: T[], rand: () => number): T[] {
 
 /** Clé de comparaison des propositions : deux graphies du même mot ne font qu'un choix. */
 const key = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+/**
+ * Les deux moitiés d'une entrée « masculin / féminin ».
+ *
+ * Seize entrées du vocabulaire sont doubles (« Kwayes / Kwaysa », « Ta3ban / Ta3bana »).
+ * Exiger la chaîne entière ferait rater l'exercice à qui connaît parfaitement le mot mais
+ * n'a tapé qu'une forme — alors on accepte chaque moitié. La réponse affichée reste la
+ * paire complète : c'est l'occasion de voir l'autre forme.
+ */
+function halves(value: string): string[] {
+  if (!value.includes('/')) return [];
+  return value
+    .split('/')
+    .map((part) => part.trim())
+    .filter((part) => part.length > 1);
+}
 
 // ---------------------------------------------------------------------------
 // Modèle
@@ -333,21 +350,7 @@ function transformationDrafts(): Draft[] {
 // ---------------------------------------------------------------------------
 
 function vocabDrafts(): Draft[] {
-  type Entry = JsonVocab & { moduleId: string; moduleTitle: string; level: string };
-  const entries: Entry[] = [];
-
-  for (const file of moduleFiles) {
-    for (const lesson of file.lessons) {
-      for (const v of lesson.vocab_items ?? []) {
-        entries.push({
-          ...v,
-          moduleId: file.module.id,
-          moduleTitle: file.module.title,
-          level: file.module.level,
-        });
-      }
-    }
-  }
+  const entries = allVocab();
 
   // Un même sens porté par deux mots rendrait la réponse indécidable : on écarte les deux
   // plutôt que d'en couronner un arbitrairement.
@@ -371,7 +374,7 @@ function vocabDrafts(): Draft[] {
       instruction: 'Écris le mot en égyptien',
       sentence: `« ${entry.french} » → ___`,
       answer: entry.transliteration,
-      accepted: [],
+      accepted: halves(entry.transliteration),
       // Leurres du même thème d'abord : « pomme » se confond avec « banane », pas avec
       // « pharmacie ». Le reste du lexique ne sert que de secours pour les petits modules.
       distractors: [
@@ -385,6 +388,164 @@ function vocabDrafts(): Draft[] {
       themeLabel: entry.moduleTitle,
     };
   });
+}
+
+// ---------------------------------------------------------------------------
+// Lecture — le mot s'affiche en écriture arabe, on tape sa prononciation.
+//
+// Le module-01 et `/ecriture` enseignent l'alphabet, puis le reste du parcours bascule en
+// Arabizi et ne redemande plus jamais de lire un mot arabe. Ce jeu referme l'écart, sans
+// aucune donnée nouvelle : les 554 entrées de vocabulaire portent toutes leur écriture
+// arabe.
+//
+// Le sens inverse — « écris ce mot en arabe » — n'existe pas, et ne peut pas exister ici :
+// on ne tape pas de l'arabe sur un clavier français. Ce serait un exercice de copier-coller.
+// ---------------------------------------------------------------------------
+
+type VocabEntry = JsonVocab & { moduleId: string; moduleTitle: string; level: string };
+
+/** Le vocabulaire aplati, dans l'ordre des fichiers — stable d'une exécution à l'autre. */
+function allVocab(): VocabEntry[] {
+  const entries: VocabEntry[] = [];
+
+  for (const file of moduleFiles) {
+    for (const lesson of file.lessons) {
+      for (const v of lesson.vocab_items ?? []) {
+        entries.push({
+          ...v,
+          moduleId: file.module.id,
+          moduleTitle: file.module.title,
+          level: file.module.level,
+        });
+      }
+    }
+  }
+
+  return entries;
+}
+
+function readingDrafts(): Draft[] {
+  const usable = allVocab().filter((e) => e.arabic);
+
+  return usable.map((entry) => {
+    const arabic = entry.arabic!.trim();
+    const rand = mulberry32(hash(`lecture|${arabic}`));
+
+    // Leurres de longueur comparable. Sans cette précaution, le QCM de secours se résout
+    // en comptant les lettres au lieu de les lire.
+    const neighbours = usable
+      .filter((o) => o.transliteration !== entry.transliteration)
+      .map((o) => ({ o, gap: Math.abs(o.arabic!.trim().length - arabic.length) }))
+      .sort((a, b) => a.gap - b.gap || a.o.transliteration.localeCompare(b.o.transliteration))
+      .slice(0, 30)
+      .map((x) => x.o);
+
+    return {
+      set: 'lecture',
+      instruction: 'Lis ce mot et écris sa prononciation',
+      sentence: `${arabic} → ___`,
+      answer: entry.transliteration,
+      accepted: halves(entry.transliteration),
+      distractors: shuffle(neighbours, rand).map((o) => o.transliteration),
+      // Pas d'indice : donner le sens français ferait de l'exercice un test de vocabulaire,
+      // alors que ce qu'on entraîne ici, c'est le déchiffrage.
+      hint: null,
+      note: `Ça veut dire « ${entry.french} ».`,
+      level: entry.level,
+      theme: entry.moduleId,
+      themeLabel: entry.moduleTitle,
+    };
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Première lettre — reconnaître une lettre dans un mot attaché.
+//
+// C'est la difficulté réelle du déchiffrage : isolée, ب se reconnaît tout de suite ;
+// soudée en tête de mot elle devient بـ, et plus rien ne ressemble à ce qu'on a tracé.
+//
+// Ce n'est PAS l'exercice « quelle lettre manque au milieu du mot », qui avait été
+// envisagé : retirer une lettre d'un mot arabe change la forme de ses voisines (la
+// précédente passe en position finale), et l'apprenant lirait une graphie qui n'existe
+// pas. Le mot est donc toujours montré intact.
+// ---------------------------------------------------------------------------
+
+/** Les porteuses de hamza et la alif « nue » sont la même lettre pour cet exercice. */
+const HAMZA = /[أإآٱ]/;
+
+/**
+ * Familles de lettres partageant un squelette : seuls les points les distinguent. Ce sont
+ * elles qu'il faut mettre en face les unes des autres — proposer « Meem » en leurre d'un
+ * mot commençant par ت n'apprend rien.
+ */
+const FAMILIES = [
+  ['Ba', 'Ta', 'Tha', 'Noon', 'Ya'],
+  ['Gim', 'Ha (7)', 'Kha (5)'],
+  ['Dal', 'Dhal'],
+  ['Ra', 'Zay', 'Waw'],
+  ['Sseen', 'Sheen'],
+  ['Sad', 'Dad'],
+  ['Tta (6)', 'Dza'],
+  ["'Ayn (3)", 'Ghayn (Gh)'],
+  ['Fa', 'Qaf (2)'],
+  ['Alif', 'Lam', 'Kaf'],
+  ['Meem', 'Ha léger'],
+];
+
+function firstLetterDrafts(): Draft[] {
+  const byGlyph = new Map(ALPHABET.map((l) => [l.isole, l]));
+
+  // Un nom abrégé n'est accepté que s'il ne désigne qu'une lettre : « Ha » vaut aussi bien
+  // pour ح que pour ه, l'accepter validerait la confusion que l'exercice combat.
+  const bare = (nom: string) => nom.replace(/\s*\(.*\)\s*/, '').trim();
+  const bareCount = new Map<string, number>();
+  for (const l of ALPHABET) bareCount.set(bare(l.nom), (bareCount.get(bare(l.nom)) ?? 0) + 1);
+
+  const drafts: Draft[] = [];
+
+  for (const entry of allVocab()) {
+    const arabic = entry.arabic?.trim();
+    if (!arabic) continue;
+
+    // L'article défini et les expressions à plusieurs mots sont écartés : avec « ال », la
+    // réponse serait « Alif » quatre-vingt-seize fois.
+    if (arabic.startsWith('ال') || /\s/.test(arabic)) continue;
+
+    const letter = byGlyph.get(arabic[0].replace(HAMZA, 'ا'));
+    if (!letter) continue;
+
+    const rand = mulberry32(hash(`lettre|${arabic}`));
+    const family = FAMILIES.find((f) => f.includes(letter.nom)) ?? [];
+
+    const accepted = [
+      ...letter.arabizi.split('/').map((s) => s.trim()),
+      ...(bareCount.get(bare(letter.nom)) === 1 ? [bare(letter.nom)] : []),
+    ].filter(Boolean);
+
+    drafts.push({
+      set: 'premiere-lettre',
+      instruction: 'Par quelle lettre commence ce mot ?',
+      sentence: `${arabic} → ___`,
+      answer: letter.nom,
+      accepted,
+      distractors: [
+        ...shuffle(family.filter((n) => n !== letter.nom), rand),
+        ...shuffle(ALPHABET.map((l) => l.nom).filter((n) => n !== letter.nom), rand),
+      ],
+      hint: 'son nom, ou son son en Arabizi',
+      // Les libellés comme « Ha (7) » portent déjà leur son : le répéter donnerait
+      // « Ha (7) (7) ».
+      note:
+        `${letter.isole} — ${letter.nom}` +
+        `${letter.nom.includes('(') ? '' : ` (${letter.arabizi})`}. ` +
+        `Le mot veut dire « ${entry.french} ».`,
+      level: entry.level,
+      theme: entry.moduleId,
+      themeLabel: entry.moduleTitle,
+    });
+  }
+
+  return drafts;
 }
 
 // ---------------------------------------------------------------------------
@@ -524,6 +685,8 @@ function main() {
     ...imperativeDrafts(),
     ...transformationDrafts(),
     ...vocabDrafts(),
+    ...readingDrafts(),
+    ...firstLetterDrafts(),
     ...phraseDrafts(),
   ];
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import ArabicText from './ArabicText';
 import ProgressBar from './ProgressBar';
 import { judgeAnswer, type Verdict } from '@/lib/arabizi';
 import type { Exercise } from '@/lib/exercises';
@@ -42,7 +43,7 @@ function Sentence({ text }: { text: string }) {
     <p className="display text-2xl leading-relaxed sm:text-3xl">
       {parts.map((part, i) => (
         <span key={i}>
-          {part}
+          <ArabicText>{part}</ArabicText>
           {i < parts.length - 1 && (
             <span
               aria-label="mot manquant"
@@ -300,7 +301,7 @@ export default function DrillEngine({
 
           {exercise.note && (
             <p className="mt-2 text-sm text-[var(--muted)]">
-              {exercise.note.replace(/\*\*/g, '').replace(/\*/g, '')}
+              <ArabicText>{exercise.note.replace(/\*\*/g, '').replace(/\*/g, '')}</ArabicText>
             </p>
           )}
 

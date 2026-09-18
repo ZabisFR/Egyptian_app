@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import ArabicText from '@/components/ArabicText';
 import { listSets, SERIES_SIZE, totalCount } from '@/lib/exercises';
 
 export const metadata: Metadata = {
@@ -48,7 +49,7 @@ export default function EntrainementPage() {
               {/* L'exemple vaut mieux qu'une explication : on voit en un coup d'œil à quoi
                   ressemble l'exercice avant de s'y engager. */}
               <p className="mt-4 rounded-[var(--r-sm)] bg-[var(--surface-sunken)] px-3 py-2 font-mono text-[0.8125rem] text-[var(--ink)]">
-                {set.sample}
+                <ArabicText>{set.sample}</ArabicText>
               </p>
             </Link>
           </li>

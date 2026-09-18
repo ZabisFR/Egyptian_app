@@ -20,6 +20,8 @@ export type DrillSetId =
   | 'imperatif'
   | 'transformation'
   | 'vocabulaire'
+  | 'lecture'
+  | 'premiere-lettre'
   | 'phrases';
 
 export type Exercise = {
@@ -99,6 +101,18 @@ export const DRILL_SETS: DrillSet[] = [
     title: 'Vocabulaire',
     tagline: 'Écrire le mot égyptien, sans choix multiple',
     sample: '« pomme » → ___',
+  },
+  {
+    id: 'lecture',
+    title: 'Lire l’arabe',
+    tagline: 'Le mot s’affiche en arabe, on écrit sa prononciation',
+    sample: 'تفاح → ___',
+  },
+  {
+    id: 'premiere-lettre',
+    title: 'Première lettre',
+    tagline: 'Reconnaître une lettre soudée en tête de mot',
+    sample: 'بيت → ___',
   },
   {
     id: 'phrases',
