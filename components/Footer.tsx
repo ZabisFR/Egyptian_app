@@ -35,6 +35,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/entrainement" className="footer-link">
+                  Exercices à trous
+                </Link>
+              </li>
+              <li>
                 <Link href="/glossaire" className="footer-link">
                   Glossaire complet
                 </Link>

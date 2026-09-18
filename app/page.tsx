@@ -176,6 +176,9 @@ export default async function LandingPage() {
             <Link href="/modules/module-01" className="btn-sand">
               Ouvrir la première leçon
             </Link>
+            <Link href="/entrainement" className="btn-outline">
+              S’entraîner
+            </Link>
             <Link href="/modules/conjugations-core" className="btn-outline">
               Référence verbes
             </Link>

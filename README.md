@@ -45,10 +45,12 @@ connecté.
 npm run normalize       # uniformise la translittération de data/*.json en Arabizi
 npm run import          # charge data/*.json dans Supabase (rejouable)
 npm run generate:quiz   # génère les QCM depuis le vocabulaire + le test de positionnement
+npm run generate:drills # génère les exercices à trous dans data/exercises.generated.json
 ```
 
 À lancer dans cet ordre après tout ajout de contenu : `normalize` corrige la source,
-`import` la charge, `generate:quiz` reconstruit les questions à partir du vocabulaire chargé.
+`import` la charge, `generate:quiz` reconstruit les questions à partir du vocabulaire chargé,
+`generate:drills` reconstruit les exercices d'entraînement depuis `data/`.
 
 Les modules B1/B2 avaient été rédigés en translittération académique (`ʿarabi`, `ḥaawel`,
 `maʾfuul`) alors que les A1/A2 étaient en Arabizi (`3arabi`, `7akol`). Deux systèmes dans un
@@ -59,6 +61,12 @@ français, la substitution est donc sans risque pour les traductions.
 `generate:quiz` supprime et régénère uniquement les questions de `type = 'mcq'`. Les
 questions écrites à la main d'un autre type (les 3 questions de compréhension du module-14)
 sont préservées. La génération est déterministe : deux exécutions donnent le même résultat.
+
+`generate:drills` n'écrit pas en base : il produit `data/exercises.generated.json`, que l'app
+importe directement. Ce fichier est commité — un artefact, mais un artefact relu : une forme
+fausse s'y voit dans le diff. Comme la génération est déterministe au caractère près, un
+`git diff` vide après exécution signifie « le contenu n'a pas bougé », pas « le script n'a
+pas tourné ».
 
 ### 1. Appliquer le schéma
 

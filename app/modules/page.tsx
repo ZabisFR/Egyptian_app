@@ -119,6 +119,40 @@ export default async function ModulesPage() {
         </span>
       </Link>
 
+      {/* L'entraînement non plus n'est pas un module : il ne se termine pas et ne compte
+          dans aucune progression. Il est ici parce que la barre de navigation n'a plus la
+          place d'un lien sous 640 px — c'est le seul chemin vers lui sur mobile. */}
+      <Link
+        href="/entrainement"
+        className="card-sand card-link mt-3 flex items-center gap-4 p-4"
+      >
+        <span
+          aria-hidden="true"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] bg-[color-mix(in_srgb,var(--gold)_18%,transparent)] text-[var(--gold-text)]"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M4 17h5M15 17h5" />
+            <path d="M12 4v13" />
+            <path d="M9 7.5h6" />
+          </svg>
+        </span>
+        <span>
+          <span className="display block text-lg">Entraînement</span>
+          <span className="mt-0.5 block text-sm text-[var(--muted)]">
+            Des phrases à trous pour conjuguer, nier et écrire — on tape la réponse, rien
+            n’est noté.
+          </span>
+        </span>
+      </Link>
+
       {groups.map((group) => (
         <section key={group.level} className="mt-10">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">

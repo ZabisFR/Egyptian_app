@@ -35,6 +35,11 @@ export default async function Navbar() {
         <div className="flex items-center gap-3.5 text-sm sm:gap-4">
           <VocabSearch />
           <NavLink href="/modules">Modules</NavLink>
+          {/* Pas de lien vers /entrainement ici, et ce n'est pas un oubli : la barre est
+              pleine. Mesuré à 768 px — largeur maximale de la barre, quel que soit l'écran
+              — un lien de plus fait passer sa hauteur de 70 à 83 px, parce que le nom du
+              site se casse en deux. L'entraînement est donc atteignable par la liste des
+              modules, le tableau de bord et le pied de page. */}
 
           {profile ? (
             <>

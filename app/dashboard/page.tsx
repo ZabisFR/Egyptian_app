@@ -5,6 +5,7 @@ import StreakBadge from '@/components/StreakBadge';
 import { requireProfile } from '@/lib/auth';
 import { getAllProgress } from '@/lib/progress';
 import { getDailyLesson } from '@/lib/daily';
+import { totalCount } from '@/lib/exercises';
 import { getStreak } from '@/lib/streak';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, Module } from '@/lib/types';
@@ -139,6 +140,24 @@ export default async function DashboardPage() {
             </Link>
           </section>
         )}
+
+        {/* L'entraînement est la seule carte du tableau de bord qui n'affiche aucun
+            chiffre personnel : il n'en produit pas. C'est précisément ce qu'on veut dire —
+            on peut s'y tromper sans que cela compte nulle part. */}
+        <section
+          className="card-sand rise flex flex-col p-5"
+          style={{ '--i': 3 } as React.CSSProperties}
+        >
+          <p className="eyebrow">Entraînement</p>
+          <h2 className="display mt-2 text-lg">{totalCount()} exercices à trous</h2>
+          <p className="mt-1 flex-1 text-sm text-[var(--muted)]">
+            Conjuguer, nier, transformer, écrire. On tape la réponse — rien n’est
+            enregistré.
+          </p>
+          <Link href="/entrainement" className="btn-outline mt-4 w-full">
+            S’exercer
+          </Link>
+        </section>
       </div>
 
       <h2 className="eyebrow mt-12">Tous les modules</h2>
