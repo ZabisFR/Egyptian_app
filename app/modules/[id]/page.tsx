@@ -6,6 +6,7 @@ import LessonPath from '@/components/LessonPath';
 import ProgressBar from '@/components/ProgressBar';
 import { getUser } from '@/lib/auth';
 import { getAllProgress, getReadLessons } from '@/lib/progress';
+import { QUIZ_SIZE } from '@/lib/quiz-scoring';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, Module } from '@/lib/types';
 
@@ -156,7 +157,8 @@ export default async function ModulePage({
         quiz={
           (quizCount ?? 0) > 0
             ? {
-                count: quizCount ?? 0,
+                // La banque en compte davantage, mais une tentative n'en pose que QUIZ_SIZE.
+                count: Math.min(quizCount ?? 0, QUIZ_SIZE),
                 passed: moduleProgress?.quizPassed ?? false,
                 bestScore: moduleProgress?.bestScore ?? null,
                 unlocked:

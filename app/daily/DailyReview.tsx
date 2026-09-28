@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import ArabicText from '@/components/ArabicText';
 import QuizEngine, { type QuizQuestionView, type QuizResult } from '@/components/QuizEngine';
 import ScoreDial from '@/components/ScoreDial';
 import StreakBadge from '@/components/StreakBadge';
@@ -59,14 +60,16 @@ export default function DailyReview({
                     if (!q) return null;
                     return (
                       <li key={a.question_id} className="py-2 text-sm">
-                        <p className="text-[var(--muted)]">{q.question_text}</p>
+                        <p className="text-[var(--muted)]">
+                          <ArabicText>{q.question_text}</ArabicText>
+                        </p>
                         <p className="mt-1">
                           <span className="text-[var(--carmine-text)] line-through">
-                            {a.given}
+                            <ArabicText>{a.given}</ArabicText>
                           </span>
                           {' → '}
                           <span className="font-medium text-[var(--malachite-text)]">
-                            {q.correct_answer}
+                            <ArabicText>{q.correct_answer}</ArabicText>
                           </span>
                         </p>
                       </li>

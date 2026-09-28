@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useTransition } from 'react';
+import ArabicText from './ArabicText';
 import ProgressBar from './ProgressBar';
 import { scorePercent, type Answer } from '@/lib/quiz-scoring';
 
@@ -134,7 +135,7 @@ export default function QuizEngine({
       {/* `key` sur la question : React remonte le bloc à chaque changement, ce qui rejoue
           l'animation d'entrée. Sans lui, seul le texte changerait, sur place. */}
       <h2 key={question.id} className="display rise mt-8 text-2xl leading-snug sm:text-3xl">
-        {question.question_text}
+        <ArabicText>{question.question_text}</ArabicText>
       </h2>
 
       {/* Annonce vocale du résultat : sans elle, un lecteur d'écran ne signale que le
@@ -171,7 +172,9 @@ export default function QuizEngine({
                 <span className="choice-key" aria-hidden="true">
                   {i + 1}
                 </span>
-                <span className="flex-1 text-left">{choice}</span>
+                <span className="flex-1 text-left">
+                  <ArabicText>{choice}</ArabicText>
+                </span>
                 {picked !== null && isCorrect && (
                   <span aria-hidden="true" className="text-[var(--malachite-text)]">
                     ✓

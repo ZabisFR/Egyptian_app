@@ -4,7 +4,7 @@ import type { QuizQuestionView } from '@/components/QuizEngine';
 
 /** Nombre d'items dans la leçon du jour. Court par construction : le but est qu'elle soit
  *  faite tous les jours, pas qu'elle soit exhaustive. */
-export const DAILY_SIZE = 8;
+export const DAILY_SIZE = 10;
 
 /** Il faut au moins de quoi construire un QCM à 4 choix. */
 export const DAILY_MIN_POOL = 4;
@@ -122,29 +122,38 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
 
   const questions: QuizQuestionView[] = picked.map((item, i) => {
     const itemSeed = hash(`${seed}:${item.id}`);
-    const reverse = i % 3 === 2; // une question sur trois dans le sens français → arabizi
+
+    // Trois formats en alternance : le sens (arabe → français), la production (français →
+    // arabizi) et la lecture (écriture arabe seule → arabizi). Le troisième retombe sur le
+    // premier pour un mot sans écriture arabe.
+    const kind = i % 3 === 1 ? 'say' : i % 3 === 2 && item.arabic ? 'read' : 'meaning';
+    const toArabizi = kind !== 'meaning';
 
     const distractors: string[] = [];
     const seen = new Set<string>();
     for (const candidate of seededShuffle(pool, itemSeed)) {
       if (candidate.french === item.french) continue;
-      const value = reverse ? candidate.transliteration : candidate.french;
+      if (candidate.transliteration === item.transliteration) continue;
+      const value = toArabizi ? candidate.transliteration : candidate.french;
       if (seen.has(value)) continue;
       seen.add(value);
       distractors.push(value);
       if (distractors.length === 3) break;
     }
 
-    const correct = reverse ? item.transliteration : item.french;
+    const correct = toArabizi ? item.transliteration : item.french;
     const label = item.arabic
       ? `« ${item.arabic} » (${item.transliteration})`
       : `« ${item.transliteration} »`;
 
     return {
       id: item.id,
-      question_text: reverse
-        ? `Comment dit-on « ${item.french} » ?`
-        : `Que veut dire ${label} ?`,
+      question_text:
+        kind === 'say'
+          ? `Comment dit-on « ${item.french} » ?`
+          : kind === 'read'
+            ? `Comment se prononce « ${item.arabic} » ?`
+            : `Que veut dire ${label} ?`,
       choices: seededShuffle([correct, ...distractors], itemSeed),
       correct_answer: correct,
       difficulty: null,

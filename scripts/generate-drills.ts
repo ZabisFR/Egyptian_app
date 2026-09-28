@@ -89,9 +89,17 @@ type Exercise = {
   level: string | null;
   theme: string | null;
   themeLabel: string | null;
+  family: string;
 };
 
-type Draft = Omit<Exercise, 'id' | 'choices'> & { distractors: string[] };
+/**
+ * `family` est facultatif dans un brouillon : à défaut, deux exercices d'un même jeu sont
+ * de la même famille s'ils attendent la même réponse. Voir `drawSeries()`.
+ */
+type Draft = Omit<Exercise, 'id' | 'choices' | 'family'> & {
+  distractors: string[];
+  family?: string;
+};
 
 /**
  * Finalise un brouillon : identifiant stable et quatre propositions.
@@ -117,9 +125,14 @@ function finish(draft: Draft): Exercise | null {
 
   const id = `${draft.set}-${hash(`${draft.set}|${draft.sentence}|${draft.answer}`).toString(36)}`;
   const rand = mulberry32(hash(id));
-  const { distractors: _distractors, ...rest } = draft;
+  const { distractors: _distractors, family, ...rest } = draft;
 
-  return { id, ...rest, choices: shuffle([draft.answer, ...picked], rand) };
+  return {
+    id,
+    ...rest,
+    choices: shuffle([draft.answer, ...picked], rand),
+    family: family ?? `${draft.set}|${key(draft.answer)}`,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -195,6 +208,24 @@ function splitPronoun(raw: string): { token: string; french: string } {
   };
 }
 
+/**
+ * Compléments de temps, tous tirés du module « Calendrier ». Ils ne changent pas la forme
+ * attendue, mais ils changent la phrase : sans eux, les 152 exercices d'un temps
+ * s'écrivent tous « Pronom ___ » et finissent par se confondre.
+ */
+const TIME_WORDS: Record<string, string[]> = {
+  present: ['Delwa2ti', 'Kol yom', 'En-naharda'],
+  futur: ['Bokra', 'Ba3d bokra', 'Bel-leel', 'El-osboo3 el-gay'],
+  passe: ['Embare7', 'Awwil embare7', 'Es-sob7', 'El-osboo3 elli fat'],
+};
+
+/**
+ * Des prénoms à la place de « Howa », « Heyya », « Homma ». La forme attendue ne change
+ * pas, mais il faut retrouver soi-même le pronom — c'est ce qui se passe dans une vraie
+ * phrase, où l'on parle rarement de « il ». « wi » (et) est la graphie du cours.
+ */
+const NAMES: Record<string, string> = { Howa: 'Karim', Heyya: 'Mona', Homma: 'Karim wi Mona' };
+
 function conjugationDrafts(): Draft[] {
   const drafts: Draft[] = [];
 
@@ -212,20 +243,39 @@ function conjugationDrafts(): Draft[] {
         const otherTenses = TENSES.filter((t) => t.set !== tense.set).map((t) => row[t.field]);
 
         const rand = mulberry32(hash(`${verb.verb_fr}|${tense.set}|${row.pronoun}`));
-
-        drafts.push({
+        const distractors = [...shuffle(sameTense, rand), ...otherTenses];
+        const base = {
           set: tense.set,
           instruction: `${verb.verb_fr} — ${tense.label}`,
-          sentence: `${token} ___`,
           answer: row[tense.field],
-          // On accepte que le pronom soit retapé avec la forme : c'est la phrase entière.
-          accepted: [`${token} ${row[tense.field]}`],
-          distractors: [...shuffle(sameTense, rand), ...otherTenses],
+          distractors,
           hint: french,
           note: `${tense.note} Racine ${verb.root}.`,
           level: 'REF',
           theme: null,
           themeLabel: null,
+          family: `${tense.set}|${verb.verb_fr}|${token}`,
+        };
+
+        drafts.push({
+          ...base,
+          sentence: `${token} ___`,
+          // On accepte que le pronom soit retapé avec la forme : c'est la phrase entière.
+          accepted: [`${token} ${row[tense.field]}`],
+        });
+
+        // Deuxième version, en situation : un complément de temps, et un prénom une fois
+        // sur deux quand le pronom s'y prête. Même famille que la première : les deux ne
+        // tombent jamais dans la même série.
+        const words = TIME_WORDS[tense.set];
+        const when = words[Math.floor(rand() * words.length)];
+        const subject = NAMES[token] && rand() < 0.5 ? NAMES[token] : token.toLowerCase();
+
+        drafts.push({
+          ...base,
+          sentence: `${when}, ${subject} ___`,
+          accepted: [`${subject} ${row[tense.field]}`],
+          hint: subject === token.toLowerCase() ? french : `${subject} = ${french}`,
         });
       }
     }
@@ -260,7 +310,127 @@ function negationDrafts(): Draft[] {
         level: 'REF',
         theme: null,
         themeLabel: null,
+        family: `neg-passe|${verb.verb_fr}|${token}`,
       });
+
+      // Présent et futur : la règle du cours (`rules_matrix`) est « Mesh + verbe », le
+      // verbe ne bougeant pas. C'est l'autre moitié de la négation, et elle manquait :
+      // sans elle, le jeu laissait croire que ma- … -sh vaut pour tous les temps.
+      for (const tense of NEGATABLE) {
+        const form = row[tense.field];
+        const answer = `Mesh ${form.toLowerCase()}`;
+        const other = NEGATABLE.find((t) => t !== tense)!;
+
+        drafts.push({
+          set: 'negation',
+          instruction: 'Mets cette forme au négatif',
+          sentence: `${form} → ___`,
+          answer,
+          accepted: [`${token} ${answer}`],
+          // Pas de « Ma-baroo7-sh » en leurre : l'égyptien parlé l'emploie aussi, ce
+          // serait marquer faux une réponse juste. Les leurres restent dans la règle du
+          // cours — autre pronom, ou bon pronom au mauvais temps.
+          distractors: [
+            ...shuffle(
+              verb.conjugations
+                .filter((c) => c.pronoun !== row.pronoun)
+                .map((c) => `Mesh ${c[tense.field].toLowerCase()}`),
+              rand
+            ),
+            `Mesh ${row[other.field].toLowerCase()}`,
+          ],
+          hint: `${french} — ${tense.label}`,
+          note: `Au ${tense.label}, on nie avec **Mesh** devant le verbe, qui ne change pas. Le **ma- … -sh** encadrant, c’est pour le passé.`,
+          level: 'REF',
+          theme: null,
+          themeLabel: null,
+          family: `neg-${tense.field}|${verb.verb_fr}|${token}`,
+        });
+      }
+    }
+  }
+
+  return drafts;
+}
+
+const NEGATABLE = [
+  { field: 'present' as const, label: 'présent' },
+  { field: 'future' as const, label: 'futur' },
+];
+
+// ---------------------------------------------------------------------------
+// Modalités — Lazem (devoir), Momken (pouvoir), 3ayez (vouloir).
+//
+// Le cours (jours 35 à 37, et `rules_matrix`) les résume d'une règle : elles « projettent
+// l'action dans le virtuel et effacent donc le B- ». Le verbe qui suit est la forme nue :
+// le présent sans son B-, soit le futur sans son 7a-. Les deux dérivations se recoupent,
+// sauf à la 1re personne où « 7a- + a- » a fusionné (7akol) — d'où le présent pour « ana ».
+// ---------------------------------------------------------------------------
+
+/** 3ayez s'accorde en genre et en nombre — « ana » au masculin, comme dans le cours. */
+const WANT: Record<string, string> = {
+  Ana: '3ayez',
+  Enta: '3ayez',
+  Howa: '3ayez',
+  Enti: '3ayza',
+  Heyya: '3ayza',
+  É7na: '3ayzeen',
+  Ento: '3ayzeen',
+  Homma: '3ayzeen',
+};
+
+function bareForm(row: Conjugation, token: string): string {
+  return token === 'Ana' ? row.present.replace(/^B/, '') : row.future.replace(/^7a/, '');
+}
+
+function modalityDrafts(): Draft[] {
+  const drafts: Draft[] = [];
+
+  for (const verb of conjugations.verbs_full) {
+    for (const row of verb.conjugations) {
+      const { token, french } = splitPronoun(row.pronoun);
+      const rand = mulberry32(hash(`modal|${verb.verb_fr}|${row.pronoun}`));
+      const answer = bareForm(row, token);
+
+      const modals = [
+        { word: 'lazem', label: 'Lazem', sense: 'devoir', rule: 'Lazem est invariable.' },
+        { word: 'momken', label: 'Momken', sense: 'pouvoir', rule: 'Momken est invariable.' },
+        {
+          word: WANT[token],
+          label: '3ayez',
+          sense: 'vouloir',
+          rule: `3ayez s’accorde avec le sujet : ici **${WANT[token]}**.`,
+        },
+      ];
+
+      // Deux modalités sur trois par pronom : assez pour varier, sans tripler un jeu dont
+      // la réponse, elle, ne change pas d'une modalité à l'autre.
+      for (const modal of shuffle(modals, rand).slice(0, 2)) {
+        drafts.push({
+          set: 'modalites',
+          instruction: `${verb.verb_fr} — après ${modal.label} (${modal.sense})`,
+          sentence: `${token} ${modal.word} ___`,
+          answer,
+          accepted: [`${modal.word} ${answer}`, `${token} ${modal.word} ${answer}`],
+          // Le premier leurre est LA faute : garder le B- du présent.
+          distractors: [
+            row.present,
+            row.future,
+            ...shuffle(
+              verb.conjugations
+                .filter((c) => c.pronoun !== row.pronoun)
+                .map((c) => bareForm(c, splitPronoun(c.pronoun).token)),
+              rand
+            ),
+          ],
+          hint: french,
+          note: `Après une modalité, le verbe perd son **B-** : ${token} ${modal.word} **${answer}**, pas « ${row.present} ». ${modal.rule}`,
+          level: 'REF',
+          theme: null,
+          themeLabel: null,
+          family: `modal|${verb.verb_fr}|${token}`,
+        });
+      }
     }
   }
 
@@ -269,30 +439,51 @@ function negationDrafts(): Draft[] {
 
 function imperativeDrafts(): Draft[] {
   const all = conjugations.verbs_full;
+  const drafts: Draft[] = [];
 
-  return all.map((verb) => {
+  for (const verb of all) {
     const rand = mulberry32(hash(`imp|${verb.verb_fr}`));
-
-    return {
+    const others = shuffle(
+      all.filter((v) => v.verb_fr !== verb.verb_fr).map((v) => v.imperative_m),
+      rand
+    );
+    const base = {
       set: 'imperatif',
-      instruction: 'Donne l’ordre, à un homme',
-      sentence: `« ${verb.verb_fr} » → ___`,
       answer: verb.imperative_m,
       accepted: [verb.imperative_m.replace(/\s*!\s*$/, '')],
-      distractors: shuffle(
-        all.filter((v) => v.verb_fr !== verb.verb_fr).map((v) => v.imperative_m),
-        rand
-      ),
-      hint: null,
       note: `L’impératif part du présent « enta » et perd son préfixe. Racine ${verb.root}.`,
       level: 'REF',
       theme: null,
       themeLabel: null,
+      family: `imp|${verb.verb_fr}`,
     };
-  });
+
+    drafts.push({
+      ...base,
+      instruction: 'Donne l’ordre, à un homme',
+      sentence: `« ${verb.verb_fr} » → ___`,
+      distractors: others,
+      hint: null,
+    });
+
+    // Le chemin inverse : partir de la forme conjuguée, comme le dit la règle. Le leurre
+    // de tête est la forme de départ elle-même, préfixe compris.
+    const enta = verb.conjugations.find((c) => splitPronoun(c.pronoun).token === 'Enta');
+    if (enta) {
+      drafts.push({
+        ...base,
+        instruction: 'Transforme en ordre',
+        sentence: `Enta ${enta.present.toLowerCase()} → ___`,
+        distractors: [enta.present, ...others],
+        hint: verb.verb_fr.toLowerCase(),
+      });
+    }
+  }
+
+  return drafts;
 }
 
-/** Deux transformations : celle qui fait le futur, celle qui ramène au présent. */
+/** Quatre transformations, dans les deux sens entre chaque paire de temps utile. */
 const SHIFTS = [
   {
     from: 'present' as const,
@@ -301,10 +492,22 @@ const SHIFTS = [
     note: 'On remplace **B-** par **7a-** : même verbe, même pronom, autre temps.',
   },
   {
+    from: 'future' as const,
+    to: 'present' as const,
+    instruction: 'Passe cette forme au présent',
+    note: 'On remplace **7a-** par **B-** : le reste du verbe ne bouge pas.',
+  },
+  {
     from: 'past' as const,
     to: 'present' as const,
     instruction: 'Passe cette forme au présent',
     note: 'Le passé se lit sur les suffixes ; le présent, sur le préfixe **B-**.',
+  },
+  {
+    from: 'present' as const,
+    to: 'past' as const,
+    instruction: 'Passe cette forme au passé',
+    note: 'Le **B-** tombe, et c’est un suffixe final (-t, -ti, -na, -tu…) qui marque le passé.',
   },
 ];
 
@@ -352,29 +555,42 @@ function transformationDrafts(): Draft[] {
 function vocabDrafts(): Draft[] {
   const entries = allVocab();
 
-  // Un même sens porté par deux mots rendrait la réponse indécidable : on écarte les deux
-  // plutôt que d'en couronner un arbitrairement.
-  const byFrench = new Map<string, number>();
+  // Un même sens peut être porté par plusieurs mots (« Voiture » : 3arabeyya, 3arabiyya…).
+  // Plutôt que d'écarter ces entrées, on accepte chacune des formes du cours : la réponse
+  // reste décidable, et aucune d'elles ne peut servir de leurre à l'autre.
+  const frenchKey = (e: VocabEntry) => e.french.trim().toLowerCase();
+  const byFrench = new Map<string, VocabEntry[]>();
   for (const e of entries) {
-    const k = e.french.trim().toLowerCase();
-    byFrench.set(k, (byFrench.get(k) ?? 0) + 1);
+    byFrench.set(frenchKey(e), [...(byFrench.get(frenchKey(e)) ?? []), e]);
   }
 
-  const usable = entries.filter((e) => byFrench.get(e.french.trim().toLowerCase()) === 1);
+  // Une seule entrée par sens et par forme : deux modules qui enseignent le même mot ne
+  // font pas deux exercices.
+  const seenPair = new Set<string>();
+  const usable = entries.filter((e) => {
+    const k = `${frenchKey(e)}|${key(e.transliteration)}`;
+    if (seenPair.has(k)) return false;
+    seenPair.add(k);
+    return true;
+  });
 
   return usable.map((entry) => {
+    const synonyms = (byFrench.get(frenchKey(entry)) ?? [])
+      .map((o) => o.transliteration)
+      .filter((t) => key(t) !== key(entry.transliteration));
+    const synonymKeys = new Set(synonyms.map(key));
+    const notSynonym = (o: VocabEntry) =>
+      frenchKey(o) !== frenchKey(entry) && !synonymKeys.has(key(o.transliteration));
     const rand = mulberry32(hash(`vocab|${entry.moduleId}|${entry.french}`));
-    const sameTheme = usable.filter(
-      (o) => o.moduleId === entry.moduleId && o.french !== entry.french
-    );
-    const others = usable.filter((o) => o.moduleId !== entry.moduleId);
+    const sameTheme = usable.filter((o) => o.moduleId === entry.moduleId && notSynonym(o));
+    const others = usable.filter((o) => o.moduleId !== entry.moduleId && notSynonym(o));
 
     return {
       set: 'vocabulaire',
       instruction: 'Écris le mot en égyptien',
       sentence: `« ${entry.french} » → ___`,
       answer: entry.transliteration,
-      accepted: halves(entry.transliteration),
+      accepted: [...halves(entry.transliteration), ...synonyms, ...synonyms.flatMap(halves)],
       // Leurres du même thème d'abord : « pomme » se confond avec « banane », pas avec
       // « pharmacie ». Le reste du lexique ne sert que de secours pour les petits modules.
       distractors: [
@@ -612,130 +828,251 @@ function firstLetterDrafts(): Draft[] {
   return drafts;
 }
 
+/** Voyelles brèves, shadda, sukun, alif suscrite et kashida : pas des lettres. */
+const MARKS = /[ً-ٰٟـ]/g;
+
+/**
+ * Dernière lettre — le pendant de la première, sur l'autre bout du mot, là où la lettre
+ * prend sa forme finale (ـه, ـي, ـة…). C'est la forme que `/ecriture` montre le moins et
+ * que les mots du cours exercent le plus : le féminin, le pluriel en -een, les pronoms
+ * suffixes s'y jouent tous.
+ *
+ * Les mots qui finissent par ة (ta marbouta), ى ou ء sont écartés : ce ne sont pas des
+ * lettres du tableau de 28, la réponse n'aurait pas de nom dans le cours.
+ */
+function lastLetterDrafts(): Draft[] {
+  const byGlyph = new Map(ALPHABET.map((l) => [l.isole, l]));
+  const drafts: Draft[] = [];
+
+  for (const entry of allVocab()) {
+    const arabic = entry.arabic?.trim();
+    if (!arabic || /\s/.test(arabic)) continue;
+
+    const bare = arabic.replace(MARKS, '');
+    if (bare.length < 2) continue;
+
+    const letter = byGlyph.get(bare.at(-1)!.replace(HAMZA, 'ا'));
+    if (!letter) continue;
+
+    const rand = mulberry32(hash(`derniere|${arabic}`));
+
+    drafts.push({
+      set: 'derniere-lettre',
+      instruction: 'Par quelle lettre finit ce mot ?',
+      sentence: `${arabic} → ___`,
+      answer: letter.nom,
+      accepted: letterAliases(letter),
+      distractors: letterDistractors(letter, rand),
+      hint: 'son nom, ou son son en Arabizi',
+      note: `${formsNote(letter)} Le mot veut dire « ${entry.french} ».`,
+      level: entry.level,
+      theme: entry.moduleId,
+      themeLabel: entry.moduleTitle,
+    });
+  }
+
+  return drafts;
+}
+
 // ---------------------------------------------------------------------------
-// Phrases à trous — extraites des tableaux de leçon.
+// Phrases à trous — extraites des leçons.
 //
-// Un seul gabarit est reconnu : une cellule « arabe — romanisation » suivie d'une cellule
-// de traduction. C'est le seul dont le sens des colonnes ne dépende pas d'un en-tête, et
+// Trois sources, toutes à gabarit fixe, jamais interprétées d'après un en-tête de tableau :
 // les en-têtes varient trop (61 formes distinctes dans `data/`) pour qu'on s'y fie. Mieux
 // vaut un jeu plus petit et juste qu'un jeu large où une ligne sur cinq est un contresens.
+//
+// 1. Une ligne de tableau à deux cellules, « arabe — romanisation » (ou « arabe
+//    (romanisation) ») puis la traduction.
+// 2. Un exemple en gras dans le texte : « **Ana lazem a3mel bokra** = Je dois… ».
+// 3. Une entrée de vocabulaire de trois mots ou plus : c'est déjà une phrase.
 // ---------------------------------------------------------------------------
 
 const ARABIC = /[؀-ۿ]/;
 
-/** Ce qui disqualifie une ligne : parenthèse d'explication, glose « = … », gabarit à trou. */
-const NOISY = /[()[\]=*/…]/;
+/**
+ * Ce qui disqualifie une romanisation : parenthèse, glose « = … », gabarit à trou, formule
+ * de grammaire (« law + présent »).
+ */
+const NOISY = /[()[\]=*/…+→]/;
 
-function phraseDrafts(): Draft[] {
-  type Phrase = {
-    words: string[];
-    french: string;
-    arabic: string;
-    moduleId: string;
-    moduleTitle: string;
-    level: string;
-  };
+/**
+ * Dans la traduction, seules les gloses et les gabarits disqualifient. Une parenthèse y est
+ * une précision (« Je veux (femme) ») qui aide au contraire à trouver la bonne forme — c'est
+ * elle qui écartait à tort une cinquantaine de lignes.
+ */
+const NOISY_FRENCH = /[[\]=*…]/;
 
+type Phrase = {
+  words: string[];
+  french: string;
+  arabic: string | null;
+  moduleId: string;
+  moduleTitle: string;
+  level: string;
+};
+
+/** « arabe — roman » ou « roman — arabe » ou « arabe (roman) » → les deux moitiés. */
+function splitArabic(cell: string): { arabic: string; roman: string } | null {
+  const parts = cell.split(/\s+[—–]\s+/);
+  if (parts.length === 2) {
+    const [a, b] = parts;
+    if (ARABIC.test(a) && !ARABIC.test(b)) return { arabic: a, roman: b };
+    if (ARABIC.test(b) && !ARABIC.test(a)) return { arabic: b, roman: a };
+    return null;
+  }
+
+  const m = cell.match(/^([^()]+?)\s*\(([^()]+)\)$/);
+  if (m && ARABIC.test(m[1]) && !ARABIC.test(m[2])) return { arabic: m[1], roman: m[2] };
+
+  return null;
+}
+
+function collectPhrases(): Phrase[] {
   const phrases: Phrase[] = [];
+  const seen = new Set<string>();
+
+  function add(roman: string, french: string, arabic: string | null, file: JsonModuleFile) {
+    roman = roman.trim();
+    french = french.trim().replace(/\s*\|\s*$/, '');
+    if (!roman || !french || NOISY.test(roman) || NOISY_FRENCH.test(french)) return;
+    if (ARABIC.test(roman) || ARABIC.test(french)) return;
+
+    const words = roman.split(/\s+/).filter(Boolean);
+    // Trois vrais mots : le « ? » isolé de « Éh dah ? » n'en est pas un.
+    if (words.filter((w) => /[a-z0-9]/i.test(w)).length < 3) return;
+
+    // Deux leçons, ou une leçon et son vocabulaire, citent souvent la même phrase.
+    const k = key(roman);
+    if (seen.has(k)) return;
+    seen.add(k);
+
+    phrases.push({
+      words,
+      french,
+      arabic: arabic?.trim() || null,
+      moduleId: file.module.id,
+      moduleTitle: file.module.title,
+      level: file.module.level,
+    });
+  }
 
   for (const file of moduleFiles) {
     for (const lesson of file.lessons) {
       for (const line of lesson.content_markdown.split('\n')) {
         const t = line.trim();
-        if (!t.startsWith('|') || !t.endsWith('|')) continue;
 
-        const cells = t
-          .slice(1, -1)
-          .split('|')
-          .map((c) => c.trim());
-        if (cells.length !== 2) continue;
+        if (t.startsWith('|') && t.endsWith('|')) {
+          const cells = t
+            .slice(1, -1)
+            .split('|')
+            .map((c) => c.trim());
+          if (cells.length !== 2) continue;
 
-        const [left, french] = cells;
-        if (!ARABIC.test(left) || ARABIC.test(french)) continue;
+          const split = splitArabic(cells[0]);
+          if (split) add(split.roman, cells[1], split.arabic, file);
+          continue;
+        }
 
-        const parts = left.split(/\s+[—–]\s+/);
-        if (parts.length !== 2) continue;
+        const bold = t.match(/^\*\*([^*]+)\*\*\s*=\s*(.+)$/);
+        if (bold) {
+          const left = bold[1].replace(/^Exemple\s*:\s*/i, '');
+          const split = splitArabic(left);
+          if (split) add(split.roman, bold[2], split.arabic, file);
+          else if (!ARABIC.test(left)) add(left, bold[2], null, file);
+        }
+      }
 
-        const [arabic, roman] = parts;
-        if (NOISY.test(roman) || NOISY.test(french)) continue;
-
-        const words = roman.split(/\s+/).filter(Boolean);
-        if (words.length < 3) continue;
-
-        phrases.push({
-          words,
-          french,
-          arabic,
-          moduleId: file.module.id,
-          moduleTitle: file.module.title,
-          level: file.module.level,
-        });
+      for (const v of lesson.vocab_items ?? []) {
+        add(v.transliteration, v.french, v.arabic ?? null, file);
       }
     }
   }
 
-  /**
-   * Quel mot masquer. Pas au hasard : un trou sur « el- » ou « fi » ne fait rien
-   * travailler. On vise le mot porteur de grammaire — préfixe de temps, négation
-   * encadrante — et à défaut le mot le plus long, qui est presque toujours le verbe.
-   */
-  function pickWord(words: string[]): number {
-    let best = -1;
-    let bestScore = -Infinity;
+  return phrases;
+}
 
-    words.forEach((word, i) => {
-      const bare = strip(word);
-      if (bare.length < 3) return;
+/**
+ * Le score d'un mot comme trou. Pas au hasard : un trou sur « el- » ou « fi » ne fait rien
+ * travailler. On vise le mot porteur de grammaire — préfixe de temps, négation
+ * encadrante — et à défaut le mot le plus long, qui est presque toujours le verbe.
+ */
+function blankScore(word: string): number {
+  const bare = strip(word);
+  if (bare.length < 3) return -Infinity;
 
-      let score = bare.length / 10;
-      if (/^(ba|bt|bn|bi|bey|biy)/i.test(bare)) score += 3; // présent
-      if (/^(7a|7at|7an|7ay)/i.test(bare)) score += 3; // futur
-      if (/^ma/i.test(bare) && /sh$/i.test(bare)) score += 4; // négation encadrante
-      if (/^mesh$/i.test(bare)) score += 2;
+  let score = bare.length / 10;
+  if (/^(ba|bt|bn|bi|bey|biy)/i.test(bare)) score += 3; // présent
+  if (/^(7a|7at|7an|7ay)/i.test(bare)) score += 3; // futur
+  if (/^ma/i.test(bare) && /sh$/i.test(bare)) score += 4; // négation encadrante
+  if (/^mesh$/i.test(bare)) score += 2;
+  if (/^(lazem|momken|3ayez|3ayza|3ayzeen)$/i.test(bare)) score += 2; // modalités
 
-      if (score > bestScore) {
-        bestScore = score;
-        best = i;
-      }
-    });
+  return score;
+}
 
-    return best;
-  }
-
+function phraseDrafts(): Draft[] {
+  const phrases = collectPhrases();
   const drafts: Draft[] = [];
-  const pool = phrases.flatMap((p) => p.words.map(strip)).filter((w) => w.length >= 3);
+  const pool = [...new Set(phrases.flatMap((p) => p.words.map(strip)))].filter(
+    (w) => w.length >= 3
+  );
 
   for (const phrase of phrases) {
-    const index = pickWord(phrase.words);
-    if (index < 0) continue;
+    // Deux trous par phrase quand elle s'y prête : le mot porteur de grammaire, puis le
+    // suivant au score. Ils sont de la même famille, donc jamais dans la même série — on
+    // retrouve la phrase plus tard, mais on n'y bute pas sur le même mot.
+    const ranked = phrase.words
+      .map((word, i) => ({ i, score: blankScore(word) }))
+      .filter((x) => x.score > -Infinity)
+      .sort((a, b) => b.score - a.score || a.i - b.i);
 
-    const raw = phrase.words[index];
-    const answer = strip(raw);
+    const picks = ranked.slice(0, 1);
+    const second = ranked[1];
+    if (second && strip(phrase.words[second.i]).length >= 4) picks.push(second);
 
-    // La ponctuation finale reste dans la phrase : c'est le mot qu'on demande, pas le
-    // point qui le suit.
-    const blanked = [...phrase.words];
-    blanked[index] = raw.replace(answer, '___');
+    for (const { i } of picks) {
+      const raw = phrase.words[i];
+      const answer = strip(raw);
 
-    const rand = mulberry32(hash(`phrase|${phrase.arabic}|${answer}`));
+      // La ponctuation finale reste dans la phrase : c'est le mot qu'on demande, pas le
+      // point qui le suit.
+      const blanked = [...phrase.words];
+      blanked[i] = raw.replace(answer, '___');
 
-    drafts.push({
-      set: 'phrases',
-      instruction: 'Complète la phrase',
-      sentence: blanked.join(' '),
-      answer,
-      accepted: [],
-      // Des mots venus des autres phrases du corpus : plausibles, et dans la même langue.
-      distractors: shuffle(pool, rand),
-      hint: phrase.french,
-      note: `${phrase.arabic} — ${phrase.words.join(' ')}`,
-      level: phrase.level,
-      theme: phrase.moduleId,
-      themeLabel: phrase.moduleTitle,
-    });
+      const rand = mulberry32(hash(`phrase|${phrase.words.join(' ')}|${answer}`));
+      const roman = phrase.words.join(' ');
+
+      drafts.push({
+        set: 'phrases',
+        instruction: 'Complète la phrase',
+        sentence: blanked.join(' '),
+        answer,
+        accepted: [],
+        // Des mots venus des autres phrases du corpus : plausibles, et dans la même langue.
+        // Pas ceux de la phrase elle-même, qui pourraient s'y lire aussi bien.
+        // Même casse initiale que la réponse : sinon, en milieu de phrase, le seul mot en
+        // minuscule parmi quatre se désigne tout seul.
+        distractors: shuffle(
+          pool.filter((w) => !phrase.words.some((pw) => key(pw) === key(w))),
+          rand
+        ).map((w) => sameCase(w, answer)),
+        hint: phrase.french,
+        note: phrase.arabic ? `${phrase.arabic} — ${roman}` : roman,
+        level: phrase.level,
+        theme: phrase.moduleId,
+        themeLabel: phrase.moduleTitle,
+        family: `phrase|${key(roman)}`,
+      });
+    }
   }
 
   return drafts;
+}
+
+/** Donne à `word` la casse initiale de `model`. */
+function sameCase(word: string, model: string): string {
+  const upper = model[0] !== model[0].toLowerCase();
+  return (upper ? word[0].toUpperCase() : word[0].toLowerCase()) + word.slice(1);
 }
 
 const strip = (word: string) => word.replace(/[.,!?;:«»"'’]/g, '');
@@ -747,10 +1084,12 @@ function main() {
     ...conjugationDrafts(),
     ...negationDrafts(),
     ...imperativeDrafts(),
+    ...modalityDrafts(),
     ...transformationDrafts(),
     ...vocabDrafts(),
     ...readingDrafts(),
     ...firstLetterDrafts(),
+    ...lastLetterDrafts(),
     ...letterFormDrafts(),
     ...phraseDrafts(),
   ];

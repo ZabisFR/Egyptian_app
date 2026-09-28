@@ -18,10 +18,12 @@ export type DrillSetId =
   | 'passe'
   | 'negation'
   | 'imperatif'
+  | 'modalites'
   | 'transformation'
   | 'vocabulaire'
   | 'lecture'
   | 'premiere-lettre'
+  | 'derniere-lettre'
   | 'formes'
   | 'phrases';
 
@@ -45,6 +47,11 @@ export type Exercise = {
   /** Module ou thème d'origine, pour filtrer une série. */
   theme: string | null;
   themeLabel: string | null;
+  /**
+   * Deux exercices de même famille ne tombent jamais dans la même série : le même verbe au
+   * même pronom sous deux habillages, la même phrase avec deux trous, le même mot…
+   */
+  family: string;
 };
 
 export type DrillSet = {
@@ -82,7 +89,7 @@ export const DRILL_SETS: DrillSet[] = [
   {
     id: 'negation',
     title: 'Négation',
-    tagline: 'Encadrer le verbe : ma- … -sh',
+    tagline: 'Mesh au présent et au futur, ma- … -sh au passé',
     sample: 'Ro7t → ___',
   },
   {
@@ -92,9 +99,15 @@ export const DRILL_SETS: DrillSet[] = [
     sample: '« Vas-y ! » → ___',
   },
   {
+    id: 'modalites',
+    title: 'Lazem, momken, 3ayez',
+    tagline: 'Devoir, pouvoir, vouloir : le verbe qui suit perd son B-',
+    sample: 'Ana lazem ___ (manger)',
+  },
+  {
     id: 'transformation',
     title: 'Changer de temps',
-    tagline: 'Passer une forme du présent au futur, du passé au présent',
+    tagline: 'Passer une forme d’un temps à l’autre, dans les deux sens',
     sample: 'Baroo7 → (futur) ___',
   },
   {
@@ -114,6 +127,12 @@ export const DRILL_SETS: DrillSet[] = [
     title: 'Première lettre',
     tagline: 'Reconnaître une lettre soudée en tête de mot',
     sample: 'بيت → ___',
+  },
+  {
+    id: 'derniere-lettre',
+    title: 'Dernière lettre',
+    tagline: 'Reconnaître une lettre sous sa forme finale',
+    sample: 'كتاب → ___',
   },
   {
     id: 'formes',
@@ -194,15 +213,27 @@ export function drawSeries({
   const pool = forSet(set).filter((e) => !theme || e.theme === theme);
   const rand = mulberry32(seed);
 
-  // Fisher-Yates partiel : on ne mélange que ce qu'on va prendre.
+  // Fisher-Yates, arrêté dès que la série est pleine. Un exercice dont la famille est déjà
+  // tirée est sauté : sans cela, « Ana ___ » et « Bokra, ana ___ » (même verbe, même
+  // réponse) pourraient se suivre, et la série donnerait l'impression de se répéter.
+  // C'est une préférence, pas une règle : sur un petit thème (« Première lettre » filtré sur
+  // un module de dix mots), les écartés complètent la série plutôt que de la laisser à 3.
   const items = [...pool];
-  const take = Math.min(size, items.length);
-  for (let i = 0; i < take; i++) {
+  const series: Exercise[] = [];
+  const skipped: Exercise[] = [];
+  const families = new Set<string>();
+  for (let i = 0; i < items.length && series.length < size; i++) {
     const j = i + Math.floor(rand() * (items.length - i));
     [items[i], items[j]] = [items[j], items[i]];
+    if (families.has(items[i].family)) {
+      skipped.push(items[i]);
+      continue;
+    }
+    families.add(items[i].family);
+    series.push(items[i]);
   }
 
-  return items.slice(0, take);
+  return [...series, ...skipped].slice(0, Math.min(size, items.length));
 }
 
 export function totalCount(): number {

@@ -13,6 +13,13 @@ const PASS_RATIO = 0.6;
  */
 export const PASS_THRESHOLD = 70;
 
+/**
+ * Nombre de questions d'une tentative de quiz de module. La banque d'un module en compte
+ * davantage (`scripts/generate-quiz.ts`) : chaque tentative en tire ce nombre, si bien
+ * que « Refaire » pose d'autres questions au lieu de remélanger les mêmes.
+ */
+export const QUIZ_SIZE = 10;
+
 export type Answer = {
   question_id: string;
   given: string;

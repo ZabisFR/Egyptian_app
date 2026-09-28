@@ -1,9 +1,10 @@
+import { randomInt } from 'node:crypto';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import ModuleQuiz from './ModuleQuiz';
 import { saveAttempt } from './actions';
-import { PASS_THRESHOLD } from '@/lib/quiz-scoring';
+import { PASS_THRESHOLD, QUIZ_SIZE } from '@/lib/quiz-scoring';
 import { parseSeed, seededShuffle } from '@/lib/shuffle';
 import { getUser } from '@/lib/auth';
 import { createClient } from '@/lib/supabase/server';
@@ -31,7 +32,7 @@ export async function generateMetadata({
 type Row = {
   id: string;
   question_text: string;
-  options: { choices?: string[] } | null;
+  options: { choices?: string[]; item?: string } | null;
   correct_answer: string;
   difficulty: string | null;
 };
@@ -45,6 +46,12 @@ export default async function ModuleQuizPage({
 }) {
   const { id } = await params;
   const seed = parseSeed((await searchParams).seed);
+
+  // Sans graine, on en tire une et on redirige : le rendu reste une fonction de l'URL
+  // (serveur et hydratation concordent), et chaque arrivée sur le quiz tire une autre
+  // sélection dans la banque.
+  if (seed === null) redirect(`/modules/${id}/quiz?seed=${randomInt(1, 1_000_000)}`);
+
   const supabase = await createClient();
 
   const [user, { data: mod }, { data: rows }] = await Promise.all([
@@ -63,11 +70,20 @@ export default async function ModuleQuizPage({
   // sont pas jouables par le moteur de QCM et sont écartées ici.
   const playable = (rows ?? []).filter((q) => q.options?.choices?.length);
 
-  // Rejouer un quiz ne doit pas se réduire à mémoriser une séquence : le bouton
-  // « Refaire » ajoute une graine à l'URL, et l'ordre est recalculé à partir d'elle.
-  // Déterministe, donc identique côté serveur et côté client — pas de désynchronisation
-  // à l'hydratation, et aucun appel aléatoire pendant le rendu.
-  const ordered = seed === null ? playable : seededShuffle(playable, seed);
+  // Rejouer un quiz ne doit pas se réduire à mémoriser une séquence : la banque d'un module
+  // compte jusqu'à 48 questions, et chaque graine en tire `QUIZ_SIZE`. Le bouton « Refaire »
+  // change la graine, donc les questions — pas seulement leur ordre. Déterministe :
+  // identique côté serveur et côté client, aucun appel aléatoire pendant le rendu.
+  // Un même mot n'est interrogé qu'une fois par tentative, même s'il a deux questions.
+  const ordered: Row[] = [];
+  const items = new Set<string>();
+  for (const q of seededShuffle(playable, seed)) {
+    if (ordered.length === QUIZ_SIZE) break;
+    const item = q.options?.item;
+    if (item && items.has(item)) continue;
+    if (item) items.add(item);
+    ordered.push(q);
+  }
 
   const questions: QuizQuestionView[] = ordered.map((q) => ({
     id: q.id,

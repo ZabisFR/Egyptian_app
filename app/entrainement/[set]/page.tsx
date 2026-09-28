@@ -1,6 +1,7 @@
+import { randomInt } from 'node:crypto';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import DrillSession from './DrillSession';
 import { parseSeed } from '@/lib/shuffle';
 import {
@@ -37,11 +38,16 @@ export default async function DrillSetPage({
   const theme = first(query.theme) ?? null;
   const themes = themesOf(set.id as DrillSetId);
 
-  // Pas de graine dans l'URL = première série. On en prend une fixe plutôt que `Math.random()`
-  // pendant le rendu : la page reste idempotente, et le tirage ne change pas entre le HTML
-  // envoyé par le serveur et l'hydratation côté client. Le bouton « Nouvelle série » écrit
-  // ensuite une graine dans l'URL, ce qui rend chaque série partageable et rejouable.
-  const seed = parseSeed(first(query.seed)) ?? 1;
+  // Pas de graine dans l'URL : on en tire une et on redirige vers l'URL qui la porte. Une
+  // graine fixe rendait la page idempotente, mais chaque arrivée depuis le sommaire
+  // redonnait alors exactement la même première série. Avec la redirection, le rendu reste
+  // une fonction de l'URL (serveur et hydratation concordent), et la série est partageable.
+  const seed = parseSeed(first(query.seed));
+  if (seed === null) {
+    const params = new URLSearchParams({ seed: String(randomInt(1, 1_000_000)) });
+    if (theme) params.set('theme', theme);
+    redirect(`/entrainement/${set.id}?${params}`);
+  }
 
   const exercises = drawSeries({ set: set.id, seed, theme, size: SERIES_SIZE });
 
