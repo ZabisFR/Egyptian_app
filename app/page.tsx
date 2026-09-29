@@ -56,12 +56,13 @@ export default async function LandingPage() {
       {/* ---------------------------------------------------------------- Ouverture */}
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-14 pt-12 sm:px-8 md:grid-cols-[1.2fr_0.8fr] md:pt-16">
         <div>
-          <p className="cartouche rise">Dialecte cairote</p>
+          {/* Pas d'animation d'entrée sur le titre et l'introduction : un élément encore
+              à opacité 0 au premier affichage n'est pas compté par le navigateur comme
+              « contenu principal ». Lighthouse retenait alors le petit bouton Connexion et
+              datait l'affichage complet à 2,2 s au lieu de ~1 s (mesuré). */}
+          <p className="cartouche">Dialecte cairote</p>
 
-          <h1
-            className="display rise mt-5 text-[2.7rem] leading-[1.02] sm:text-7xl"
-            style={{ '--i': 1 } as React.CSSProperties}
-          >
+          <h1 className="display mt-5 text-[2.7rem] leading-[1.02] sm:text-7xl">
             Parler l&apos;arabe{' '}
             {/* La virgule reste collée au mot surligné : sinon elle ouvrait la ligne suivante. */}
             <span className="whitespace-nowrap">
@@ -73,19 +74,13 @@ export default async function LandingPage() {
             </span>
           </h1>
 
-          <p
-            className="rise mt-6 max-w-xl text-lg leading-relaxed text-[var(--muted)]"
-            style={{ '--i': 2 } as React.CSSProperties}
-          >
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--muted)]">
             Un parcours en {moduleCount} modules, {lessonCount} leçons et {vocabCount} mots,
             de l&apos;alphabet jusqu&apos;au débat : le <em>gim</em> égyptien, le <em>qaf</em>{' '}
             qui devient coup de glotte, et l&apos;Arabizi que les Égyptiens écrivent vraiment.
           </p>
 
-          <div
-            className="rise mt-8 flex flex-wrap gap-4"
-            style={{ '--i': 3 } as React.CSSProperties}
-          >
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/modules" className="btn-sand px-6 py-3 text-base">
               Commencer par le début
             </Link>

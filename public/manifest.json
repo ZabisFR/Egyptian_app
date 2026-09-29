@@ -4,8 +4,8 @@
   "description": "Apprendre l'arabe égyptien (Ammiya) du niveau A1 au B2",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1B2A4A",
-  "theme_color": "#1B2A4A",
+  "background_color": "#fbf4e6",
+  "theme_color": "#1f1d45",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
