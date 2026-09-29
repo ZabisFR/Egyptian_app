@@ -78,7 +78,7 @@ export default function MentionsLegalesPage() {
       </div>
 
       <div className="egypt-rule mt-12">
-        <span className="text-xs">◆</span>
+        <span className="text-sm" aria-hidden="true">✦</span>
       </div>
       <p className="mt-6 text-sm">
         <Link href="/confidentialite" className="inline-block py-1.5 underline">

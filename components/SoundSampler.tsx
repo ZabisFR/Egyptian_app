@@ -109,7 +109,8 @@ export default function SoundSampler() {
                 {/* L'onde ne s'affiche que pendant la lecture : c'est le seul retour visuel
                     fiable quand le téléphone est en silencieux. */}
                 {isPlaying && <span aria-hidden="true" className="sound-ripple" />}
-                <span className="arabic relative text-5xl leading-none" aria-hidden="true">
+                {/* Pas de `.arabic` : cette classe (hors couche) impose 1.25em et écrasait la taille. */}
+                <span className="pop-sticker-letter relative" aria-hidden="true">
                   {sound.letter}
                 </span>
               </span>

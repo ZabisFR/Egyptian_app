@@ -51,7 +51,10 @@ export default async function LandingPage() {
     ]);
 
   return (
-    <main className="pb-24">
+    // `overflow-x-clip` : le bandeau de mots est plus large que l'écran et penché ; sans
+    // cette coupe, il faisait défiler toute la page de 17 px à 375 px (mesuré). `clip` et non
+    // `hidden` : pas de conteneur de défilement, donc rien ne casse les ancres (#sons).
+    <main className="overflow-x-clip pb-24">
       {/* ---------------------------------------------------------------- Ouverture */}
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-14 pt-12 sm:px-8 md:grid-cols-[1.2fr_0.8fr] md:pt-16">
         <div>

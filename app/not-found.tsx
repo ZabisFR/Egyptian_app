@@ -39,7 +39,7 @@ export default function NotFound() {
       </div>
 
       <div className="egypt-rule mt-14">
-        <span className="text-xs">◆</span>
+        <span className="text-sm" aria-hidden="true">✦</span>
       </div>
     </main>
   );

@@ -71,7 +71,7 @@ export default async function DrillSetPage({
         // d'office repousserait l'exercice sous la ligne de flottaison. Un `<details>`
         // plutôt qu'un bouton : il s'ouvre sans JavaScript et s'annonce tout seul.
         <details className="mt-5" open={!!theme}>
-          <summary className="cursor-pointer text-sm text-[var(--muted)] hover:text-[var(--ink)]">
+          <summary className="inline-block cursor-pointer py-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--ink)]">
             {theme
               ? `Thème : ${themes.find((t) => t.value === theme)?.label ?? theme}`
               : `Filtrer par thème (${themes.length})`}

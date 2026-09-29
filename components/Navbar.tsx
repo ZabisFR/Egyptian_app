@@ -32,7 +32,9 @@ export default async function Navbar() {
           <span className="display hidden text-xl sm:inline">Arabe égyptien</span>
         </Link>
 
-        <div className="flex items-center gap-3.5 text-sm font-semibold sm:gap-5">
+        {/* gap-2 sous 640 px : avec les cibles de 44 px, gap-3.5 faisait déborder la barre de
+            5 px à 375 px (mesuré). */}
+        <div className="flex items-center gap-2 text-sm font-semibold sm:gap-5">
           <VocabSearch />
           <NavLink href="/modules">Modules</NavLink>
           {/* L'entraînement n'apparaît qu'à 1024 px : en dessous, la barre est pleine. Il
@@ -67,7 +69,7 @@ export default async function Navbar() {
               <ThemeToggle />
               {/* Libellé court sous 640 px : avec « Se connecter », la barre dépassait à
                   375 px une fois la recherche ajoutée (mesuré). */}
-              <Link href="/auth/login" className="btn-outline shrink-0 whitespace-nowrap px-4 py-2">
+              <Link href="/auth/login" className="btn-outline shrink-0 whitespace-nowrap px-3.5 py-2 sm:px-4">
                 <span className="sm:hidden">Connexion</span>
                 <span className="hidden sm:inline">Se connecter</span>
               </Link>

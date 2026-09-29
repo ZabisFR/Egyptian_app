@@ -83,7 +83,7 @@ export default function DrillSession({
             )}
 
             {missed.length === 0 && (
-              <p className="mt-7 rounded-[var(--r-sm)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-4 py-3 text-sm text-[var(--malachite-text)]">
+              <p className="mt-7 rounded-2xl border-2 border-[var(--line-strong)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-4 py-3 text-sm text-[var(--malachite-text)]">
                 Série parfaite. Relancez-en une : le tirage change à chaque fois.
               </p>
             )}

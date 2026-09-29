@@ -9,7 +9,7 @@ import type { AuthState } from '@/app/auth/actions';
 // minimale confortable au doigt. Le fond `surface` le détache du grain de papyrus, sur
 // lequel un champ transparent se repérait mal.
 const INPUT =
-  'mt-1.5 w-full rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3 text-sm outline-none transition-colors focus:border-[var(--gold)]';
+  'pop-field mt-1.5 w-full px-3.5 py-3 text-sm outline-none';
 
 function SubmitButton({ label }: { label: string }) {
   const { pending } = useFormStatus();
@@ -38,7 +38,7 @@ export default function AuthForm({
     <div className="mx-auto w-full max-w-sm px-6 py-14">
       <span
         aria-hidden="true"
-        className="flex h-11 w-11 items-center justify-center rounded-[0.8rem] bg-[var(--lapis)] text-2xl leading-none text-[var(--gold)] shadow-[var(--shadow-1)]"
+        className="pop-tone-grenade flex h-12 w-12 -rotate-6 items-center justify-center rounded-full border-2 border-[var(--line-strong)] bg-[var(--tone)] text-2xl leading-none text-[var(--on)]"
       >
         ع
       </span>
@@ -92,7 +92,7 @@ export default function AuthForm({
         {state.error && (
           <p
             role="alert"
-            className="mt-4 rounded-[var(--r-sm)] bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] px-3 py-2.5 text-sm text-[var(--carmine-text)]"
+            className="mt-4 rounded-2xl border-2 border-[var(--line-strong)] bg-[color-mix(in_srgb,var(--carmine)_12%,transparent)] px-3 py-2.5 text-sm text-[var(--carmine-text)]"
           >
             {state.error}
           </p>
@@ -100,7 +100,7 @@ export default function AuthForm({
         {state.notice && (
           <p
             role="status"
-            className="mt-4 rounded-[var(--r-sm)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-3 py-2.5 text-sm text-[var(--malachite-text)]"
+            className="mt-4 rounded-2xl border-2 border-[var(--line-strong)] bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] px-3 py-2.5 text-sm text-[var(--malachite-text)]"
           >
             {state.notice}
           </p>

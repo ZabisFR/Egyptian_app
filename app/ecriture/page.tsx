@@ -29,7 +29,7 @@ const naskh = Noto_Naskh_Arabic({
 
 export default function EcriturePage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 pb-20 pt-10 sm:px-8">
+    <main className="mx-auto max-w-3xl px-4 pb-20 pt-10 sm:px-8">
       <header>
         <p className="eyebrow">Atelier d&apos;écriture</p>
         <h1 className="display mt-2 text-4xl">Tracer les lettres</h1>
@@ -40,14 +40,18 @@ export default function EcriturePage() {
         </p>
       </header>
 
-      <div className={naskh.className}>
+      {/* Geist d'abord, Naskh ensuite : Geist n'a aucun glyphe arabe, donc le latin reste
+          en Geist et seules les lettres arabes retombent sur Naskh. Avec `naskh.className`,
+          tout le bloc (boutons, légendes) s'affichait dans le latin à empattements de
+          Naskh. Le canvas, lui, reçoit Naskh explicitement par `police`. */}
+      <div style={{ fontFamily: `var(--font-geist-sans), ${naskh.style.fontFamily}` }}>
         <LetterTracer police={naskh.style.fontFamily} />
       </div>
 
       {/* ------------------------------------------------- Les quatre formes de chaque lettre */}
       <section className="mt-14">
         <div className="egypt-rule">
-          <span className="text-xs">◆</span>
+          <span className="text-sm" aria-hidden="true">✦</span>
         </div>
 
         <h2 className="display mt-8 text-2xl">Les quatre formes de chaque lettre</h2>
@@ -140,7 +144,7 @@ export default function EcriturePage() {
 
       <section className="mt-12">
         <div className="egypt-rule">
-          <span className="text-xs">◆</span>
+          <span className="text-sm" aria-hidden="true">✦</span>
         </div>
         <h2 className="display mt-8 text-xl">Comment la note est calculée</h2>
         <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">

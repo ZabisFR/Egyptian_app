@@ -170,12 +170,12 @@ export default async function DashboardPage() {
             <li key={r.id}>
               <Link
                 href={`/modules/${r.id}`}
-                className="flex items-center gap-3 rounded-[var(--r-sm)] px-2 py-3 transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_9%,transparent)]"
+                className="flex items-center gap-3 rounded-2xl px-2 py-3 transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_9%,transparent)]"
               >
                 <span className="min-w-0 flex-1 truncate text-sm">{r.title}</span>
                 <span
                   aria-hidden="true"
-                  className="hidden h-1.5 w-24 shrink-0 overflow-hidden rounded-full bg-[var(--surface-sunken)] sm:block"
+                  className="hidden h-3 w-24 shrink-0 overflow-hidden rounded-full border-2 border-[var(--line-strong)] bg-[var(--surface)] sm:block"
                 >
                   <span
                     className="block h-full rounded-full bg-[var(--gold)]"

@@ -55,7 +55,7 @@ export default function GlossaireFiltre({
 
   return (
     <div className="mt-8">
-      <div className="search-field rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)]">
+      <div className="search-field pop-field">
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"

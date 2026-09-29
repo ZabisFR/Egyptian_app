@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="mt-auto border-t-2 border-[var(--line-strong)] bg-[color-mix(in_srgb,var(--surface-sunken)_70%,transparent)]">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">
         <div className="egypt-rule">
-          <span className="text-sm">✦</span>
+          <span className="text-sm" aria-hidden="true">✦</span>
         </div>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-[1.4fr_1fr_1fr]">

@@ -43,7 +43,7 @@ export default function ModuleQuiz({
             </div>
 
             <p
-              className={`mt-7 rounded-[var(--r-sm)] px-4 py-3 text-sm ${
+              className={`mt-7 rounded-2xl border-2 border-[var(--line-strong)] px-4 py-3 text-sm ${
                 passed
                   ? 'bg-[color-mix(in_srgb,var(--malachite)_12%,transparent)] text-[var(--malachite-text)]'
                   : 'bg-[color-mix(in_srgb,var(--gold)_14%,transparent)] text-[var(--gold-text)]'

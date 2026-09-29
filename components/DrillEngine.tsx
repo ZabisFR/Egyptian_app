@@ -212,12 +212,8 @@ export default function DrillEngine({
             spellCheck={false}
             placeholder="Tapez le mot manquant"
             aria-invalid={verdict === 'wrong'}
-            className={`w-full rounded-[var(--r-sm)] border bg-[var(--surface)] px-4 py-3.5 text-lg outline-none transition-colors ${
-              verdict === null
-                ? 'border-[var(--border)] focus:border-[var(--gold)]'
-                : verdict === 'wrong'
-                  ? 'border-[var(--carmine)]'
-                  : 'border-[var(--malachite)]'
+            className={`pop-field w-full px-4 py-3.5 text-lg outline-none ${
+              verdict === null ? '' : verdict === 'wrong' ? 'pop-field-wrong' : 'pop-field-right'
             }`}
           />
         </label>
