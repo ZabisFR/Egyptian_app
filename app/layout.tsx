@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icons/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/icons/apple-icon-180x180.png', sizes: '180x180' },
-      { url: '/icons/apple-icon-152x152.png', sizes: '152x152' },
-      { url: '/icons/apple-icon-167x167.png', sizes: '167x167' },
+      { url: '/icons/apple-icon-180x180.png?v=2', sizes: '180x180' },
+      { url: '/icons/apple-icon-152x152.png?v=2', sizes: '152x152' },
+      { url: '/icons/apple-icon-167x167.png?v=2', sizes: '167x167' },
     ],
   },
   appleWebApp: {
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
     siteName: 'Arabe égyptien',
     title: 'Arabe égyptien — parler le dialecte du Caire',
     description: DESCRIPTION,
-    images: [{ url: '/icons/icon-512x512.png', width: 512, height: 512 }],
+    images: [{ url: '/icons/icon-512x512.png?v=2', width: 512, height: 512 }],
   },
   twitter: {
     card: 'summary',
     title: 'Arabe égyptien — parler le dialecte du Caire',
     description: DESCRIPTION,
-    images: ['/icons/icon-512x512.png'],
+    images: ['/icons/icon-512x512.png?v=2'],
   },
 };
 
