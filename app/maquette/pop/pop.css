@@ -348,24 +348,60 @@ body:has(.popcaire) {
 /* ---------------------------------------------------------------- Bandeau défilant */
 
 .pp-marquee {
-  overflow: hidden;
+  display: flex;
+  align-items: center;
   border-block: 3px solid var(--p-line);
   background: var(--p-yellow);
   color: var(--p-on);
   rotate: -1.5deg;
   margin-inline: -1rem;
 }
+.pp-marquee-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+/* Des marges internes plutôt qu'un `gap` : les deux moitiés du ruban restent strictement
+   identiques, et la boucle à -50 % ne saute pas. */
 .pp-marquee-track {
   display: flex;
-  gap: 1.5rem;
   width: max-content;
   padding-block: 0.8rem;
   font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: 800;
   white-space: nowrap;
 }
+.pp-marquee-word {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding-inline: 0.75rem;
+}
+.pp-marquee-fr {
+  font-size: 0.55em;
+  font-weight: 600;
+}
 .pp-marquee-star {
+  margin-left: 0.75rem;
   color: var(--p-on);
+}
+.pp-marquee-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: 0.5rem 1.5rem;
+  border-radius: 999px;
+  border: 2.5px solid var(--p-on);
+  background: transparent;
+  color: var(--p-on);
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.pp-marquee-toggle:hover {
+  background: rgb(255 255 255 / 0.35);
 }
 
 /* ---------------------------------------------------------------- Chiffres */
@@ -625,7 +661,12 @@ body:has(.popcaire) {
 
 @media (prefers-reduced-motion: no-preference) {
   .pp-marquee-track {
-    animation: pp-scroll 28s linear infinite;
+    animation: pp-scroll 34s linear infinite;
+  }
+  .pp-marquee:hover .pp-marquee-track,
+  .pp-marquee:focus-within .pp-marquee-track,
+  .pp-marquee[data-paused] .pp-marquee-track {
+    animation-play-state: paused;
   }
   .pp-sticker {
     animation: pp-wobble 4s ease-in-out infinite;
@@ -633,6 +674,12 @@ body:has(.popcaire) {
   }
   .pp-sticker-word {
     animation: none;
+  }
+}
+/* Sans animation, le bandeau n'a plus rien à mettre en pause. */
+@media (prefers-reduced-motion: reduce) {
+  .pp-marquee-toggle {
+    display: none;
   }
 }
 @keyframes pp-scroll {

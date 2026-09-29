@@ -3,13 +3,14 @@ import './switcher.css';
 
 /**
  * Barre flottante pour passer d'une maquette à l'autre. Neutre à dessein (noir et blanc) :
- * elle ne doit favoriser aucun des quatre styles qu'elle sert à comparer.
+ * elle ne doit favoriser aucun des styles qu'elle sert à comparer.
  */
 
 const STYLES = [
   { href: '/maquette', label: 'Conte oriental' },
   { href: '/maquette/aventure', label: 'Jeu d’aventure' },
   { href: '/maquette/pop', label: 'Pop du Caire' },
+  { href: '/maquette/pop-orient', label: 'Pop oriental' },
   { href: '/maquette/papyrus', label: 'Papyrus enchanté' },
   { href: '/maquette/mix', label: 'Mix ✦' },
 ] as const;
