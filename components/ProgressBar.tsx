@@ -25,10 +25,10 @@ export default function ProgressBar({
         aria-valuemin={0}
         aria-valuemax={max}
         aria-label={label ?? 'Progression'}
-        className="h-2 w-full overflow-hidden rounded-full bg-[var(--surface-sunken)] shadow-[inset_0_1px_2px_rgb(var(--shadow-color)/0.12)]"
+        className="h-3.5 w-full overflow-hidden rounded-full border-2 border-[var(--line-strong)] bg-[var(--surface)]"
       >
         <div
-          className="h-full rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--carmine)] transition-[width] duration-500 ease-out"
+          className="h-full rounded-full bg-gradient-to-r from-[var(--pop-gold)] to-[var(--pop-turquoise)] transition-[width] duration-500 ease-out"
           style={{ width: `${pct}%` }}
         />
       </div>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import ModuleCard from '@/components/ModuleCard';
 import { getUser } from '@/lib/auth';
+import { LEVEL_TONE } from '@/lib/level-tone';
 import { getAllProgress } from '@/lib/progress';
 import { createClient } from '@/lib/supabase/server';
 import type { Level, Module } from '@/lib/types';
@@ -75,92 +76,84 @@ export default async function ModulesPage() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl px-6 pb-20 pt-10 sm:px-8">
+    <main className="mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-8">
       <header>
-        <p className="eyebrow">Le programme</p>
-        <h1 className="display mt-2 text-4xl">Modules</h1>
-        <p className="mt-2 text-sm text-[var(--muted)]">
+        <p className="cartouche">Le programme</p>
+        <h1 className="display mt-4 text-5xl sm:text-6xl">
+          Choisis ton <span className="pop-hl pop-tone-saffron">module</span>
+        </h1>
+        <p className="mt-3 text-[var(--muted)]">
           {modules.length} modules · {total} leçons
           {user && ` · ${done} terminé${done > 1 ? 's' : ''}`}
         </p>
       </header>
 
-      <div className="egypt-rule mt-6">
-        <span className="text-xs">◆</span>
-      </div>
-
-      {/* Le glossaire n'est pas un module : il ne s'apprend pas, il se consulte. Il a donc
-          sa carte à part, avant la liste, plutôt qu'une ligne perdue au milieu du
-          programme. */}
-      <Link href="/glossaire" className="card-sand card-link mt-8 flex items-center gap-4 p-4">
-        <span
-          aria-hidden="true"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] bg-[color-mix(in_srgb,var(--lapis)_14%,transparent)] text-[var(--lapis-text)]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H19v16H5.5A1.5 1.5 0 0 1 4 18.5Z" />
-            <path d="M8 8h7M8 12h7" />
-          </svg>
-        </span>
-        <span>
-          <span className="display block text-lg">Glossaire</span>
-          <span className="mt-0.5 block text-sm text-[var(--muted)]">
-            Tout le vocabulaire du site en une page, cherchable en français, en arabe ou en
-            Arabizi.
-          </span>
-        </span>
-      </Link>
-
-      {/* L'entraînement non plus n'est pas un module : il ne se termine pas et ne compte
-          dans aucune progression. Il est ici parce que la barre de navigation n'a plus la
-          place d'un lien sous 640 px — c'est le seul chemin vers lui sur mobile. */}
-      <Link
-        href="/entrainement"
-        className="card-sand card-link mt-3 flex items-center gap-4 p-4"
-      >
-        <span
-          aria-hidden="true"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] bg-[color-mix(in_srgb,var(--gold)_18%,transparent)] text-[var(--gold-text)]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 17h5M15 17h5" />
-            <path d="M12 4v13" />
-            <path d="M9 7.5h6" />
-          </svg>
-        </span>
-        <span>
-          <span className="display block text-lg">Entraînement</span>
-          <span className="mt-0.5 block text-sm text-[var(--muted)]">
-            Des phrases à trous pour conjuguer, nier et écrire — on tape la réponse, rien
-            n’est noté.
-          </span>
-        </span>
-      </Link>
+      {/* Le glossaire et l'entraînement ne sont pas des modules : ils ne s'apprennent pas
+          jusqu'au bout, ils se consultent. Ils ont donc leurs cartes à part, avant le
+          programme. L'entraînement est ici parce que la barre de navigation n'a plus la
+          place d'un lien sous 1024 px — c'est son chemin principal sur mobile. */}
+      <ul className="mt-8 grid gap-5 sm:grid-cols-2">
+        <li>
+          <Link href="/glossaire" className="pop-card pop-card-row pop-tone-sand">
+            <span aria-hidden="true" className="pop-num">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H19v16H5.5A1.5 1.5 0 0 1 4 18.5Z" />
+                <path d="M8 8h7M8 12h7" />
+              </svg>
+            </span>
+            <span>
+              <span className="display block text-xl">Glossaire</span>
+              <span className="mt-0.5 block text-sm font-medium">
+                Tout le vocabulaire du site, cherchable en français, en arabe ou en Arabizi.
+              </span>
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link href="/entrainement" className="pop-card pop-card-row pop-tone-saffron">
+            <span aria-hidden="true" className="pop-num">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 17h5M15 17h5" />
+                <path d="M12 4v13" />
+                <path d="M9 7.5h6" />
+              </svg>
+            </span>
+            <span>
+              <span className="display block text-xl">Entraînement</span>
+              <span className="mt-0.5 block text-sm font-medium">
+                Des phrases à trous pour conjuguer, nier et écrire — rien n’est noté.
+              </span>
+            </span>
+          </Link>
+        </li>
+      </ul>
 
       {groups.map((group) => (
-        <section key={group.level} className="mt-10">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <h2 className="display text-xl">Niveau {group.level}</h2>
+        <section key={group.level} className="mt-14">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <h2 className="display text-3xl">
+              Niveau <span className={`pop-hl ${LEVEL_TONE[group.level]}`}>{group.level}</span>
+            </h2>
             <p className="text-sm text-[var(--muted)]">{LEVEL_INTRO[group.level]}</p>
           </div>
 
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {group.modules.map((m, i) => (
               <li
                 key={m.id}

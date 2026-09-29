@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { DuneIcon, PyramidIcon } from './DuneIcon';
 
 export type PathLesson = {
   id: string;
@@ -48,7 +47,7 @@ function Trail({ from, to }: { from: number; to: number }) {
       {STEPS.map(({ t, side, opacity }) => (
         <span
           key={t}
-          className="dune-node block h-2.5 w-[7px] rounded-full bg-[var(--sand-near)]"
+          className="dune-node block h-2.5 w-2.5 rounded-full bg-[var(--gold)]"
           style={
             {
               '--offset': from + (to - from) * t + side * 7,
@@ -125,28 +124,25 @@ export default function LessonPath({
                     <Link
                       href={`/modules/${moduleId}/${lesson.id}`}
                       aria-label={`${lesson.day === null ? '' : `Jour ${lesson.day} — `}${lesson.title}${lesson.read ? ' (lue)' : ''}`}
-                      className={`dune-node group relative flex h-16 w-16 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 ${
+                      className={`dune-node lesson-node ${
                         lesson.read ? 'node-done' : 'node-todo'
                       } ${isCurrent ? 'node-current' : ''}`}
                       style={{ '--offset': offset } as React.CSSProperties}
                     >
-                      <DuneIcon />
-                      {lesson.read && (
-                        <span className="absolute -bottom-0.5 -right-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--malachite)] text-xs font-bold text-[var(--on-lapis)] shadow">
-                          ✓
-                        </span>
-                      )}
+                      {/* Lue : une coche à la place du numéro. La couleur ne porte donc
+                          jamais seule l'information. */}
+                      <span aria-hidden="true">{lesson.read ? '✓' : rank + 1}</span>
                     </Link>
 
                     <div
-                      className="dune-node mt-2 max-w-40 text-center"
+                      className="dune-node mt-3 max-w-40 text-center"
                       style={{ '--offset': offset } as React.CSSProperties}
                     >
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--gold-text)]">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--malachite-text)]">
                         {lesson.day === null ? 'Étape' : `Jour ${lesson.day}`}
                       </p>
                       <p
-                        className={`display mt-0.5 text-[13px] leading-snug ${
+                        className={`display mt-0.5 text-sm leading-snug ${
                           isCurrent ? 'text-[var(--ink)]' : 'text-[var(--muted)]'
                         }`}
                       >
@@ -170,16 +166,11 @@ export default function LessonPath({
             <Link
               href={`/modules/${moduleId}/quiz`}
               aria-label={`Quiz du module, ${quiz.count} questions${quiz.passed ? ', réussi' : ''}`}
-              className={`relative flex h-24 w-24 items-center justify-center rounded-full transition-transform duration-200 hover:scale-105 sm:h-28 sm:w-28 ${
-                quiz.unlocked || quiz.passed ? '' : 'pyramid-locked'
+              className={`quiz-node ${quiz.passed ? 'quiz-node-passed' : ''} ${
+                quiz.unlocked || quiz.passed ? '' : 'quiz-node-locked'
               }`}
             >
-              <PyramidIcon />
-              {quiz.passed && (
-                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-[var(--malachite)] text-sm font-bold text-[var(--on-lapis)] shadow">
-                  ✓
-                </span>
-              )}
+              <span aria-hidden="true">{quiz.passed ? '✓' : '✦'}</span>
             </Link>
 
             <p className="display mt-3 text-lg">Quiz du module</p>

@@ -45,6 +45,9 @@ const SOUNDS = [
   },
 ];
 
+/** Une teinte par son, dans l'ordre des autocollants de l'accueil. */
+const TONES = ['pop-tone-grenade', 'pop-tone-gold', 'pop-tone-turquoise', 'pop-tone-saffron'];
+
 export default function SoundSampler() {
   const [playing, setPlaying] = useState<string | null>(null);
 
@@ -88,7 +91,7 @@ export default function SoundSampler() {
   }
 
   return (
-    <ul className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+    <ul className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {SOUNDS.map((sound, i) => {
         const isPlaying = playing === sound.src;
         return (
@@ -97,32 +100,28 @@ export default function SoundSampler() {
               type="button"
               onClick={() => play(sound.src)}
               aria-label={`Écouter la lettre ${sound.name}, transcrite ${sound.digit} en Arabizi`}
-              className={`card-sand card-link flex h-full w-full flex-col items-center p-4 text-center sm:p-5 ${
+              aria-pressed={isPlaying}
+              className={`pop-card ${TONES[i % TONES.length]} w-full items-center text-center ${
                 isPlaying ? 'sound-card-on' : ''
               }`}
             >
-              <span className="relative flex h-16 w-16 items-center justify-center">
+              <span className="relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-[var(--on)] bg-[var(--veil)]">
                 {/* L'onde ne s'affiche que pendant la lecture : c'est le seul retour visuel
                     fiable quand le téléphone est en silencieux. */}
                 {isPlaying && <span aria-hidden="true" className="sound-ripple" />}
-                <span
-                  className="arabic relative text-4xl leading-none text-[var(--lapis)]"
-                  aria-hidden="true"
-                >
+                <span className="arabic relative text-5xl leading-none" aria-hidden="true">
                   {sound.letter}
                 </span>
               </span>
 
-              <span className="mt-1 flex items-center gap-1.5">
-                <span className="cartouche tabular">{sound.digit}</span>
-                <span className="text-sm font-semibold">{sound.name}</span>
+              <span className="mt-3 flex items-center gap-2">
+                <span className="pop-chip tabular">{sound.digit}</span>
+                <span className="display text-lg">{sound.name}</span>
               </span>
 
-              <span className="mt-2 text-xs leading-relaxed text-[var(--muted)]">
-                {sound.hint}
-              </span>
+              <span className="mt-2 text-sm font-medium leading-relaxed">{sound.hint}</span>
 
-              <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--gold-text)]">
+              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold">
                 <span aria-hidden="true">{isPlaying ? '❚❚' : '▶'}</span>
                 {isPlaying ? 'En cours' : 'Écouter'}
               </span>

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import LevelBadge from '@/components/LevelBadge';
 import LessonPath from '@/components/LessonPath';
 import ProgressBar from '@/components/ProgressBar';
 import { getUser } from '@/lib/auth';
 import { getAllProgress, getReadLessons } from '@/lib/progress';
+import { LEVEL_TONE } from '@/lib/level-tone';
 import { QUIZ_SIZE } from '@/lib/quiz-scoring';
 import { createClient } from '@/lib/supabase/server';
 import type { Lesson, Module } from '@/lib/types';
@@ -77,7 +77,7 @@ export default async function ModulePage({
   }
 
   return (
-    <main className="mx-auto max-w-3xl px-6 pb-20 pt-8 sm:px-8">
+    <main className="mx-auto max-w-3xl px-4 pb-20 pt-8 sm:px-8">
       <Link
         href="/modules"
         // `inline-block` + `py-1` : le lien nu ne faisait que 18 px de haut, sous les
@@ -87,18 +87,28 @@ export default async function ModulePage({
         ← Tous les modules
       </Link>
 
-      <header className="mt-5">
-        {mod.order_index < 99 && <p className="eyebrow">Module {mod.number}</p>}
-        <div className="mt-1.5 flex flex-wrap items-baseline gap-3">
-          <h1 className="display text-3xl sm:text-4xl">{mod.title}</h1>
-          <LevelBadge level={mod.level} />
+      {/* L'en-tête prend la couleur du niveau : on sait où l'on est dans le programme
+          avant même d'avoir lu le titre. */}
+      <header className={`pop-card mt-5 ${LEVEL_TONE[mod.level] ?? LEVEL_TONE.REF}`}>
+        <div className="flex flex-wrap items-center gap-3">
+          {mod.order_index < 99 && (
+            <span aria-hidden="true" className="pop-num">
+              {mod.number}
+            </span>
+          )}
+          <span className="pop-chip">
+            {mod.order_index < 99 ? `Module ${mod.number} · ` : ''}
+            {mod.level}
+          </span>
         </div>
-        {mod.subtitle && <p className="mt-1 text-[var(--muted)]">{mod.subtitle}</p>}
+        <h1 className="display mt-4 text-4xl leading-[1.05] sm:text-5xl">{mod.title}</h1>
+        {mod.subtitle && <p className="mt-2 font-semibold">{mod.subtitle}</p>}
         {mod.description && (
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
-            {mod.description}
-          </p>
+          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed">{mod.description}</p>
         )}
+      </header>
+
+      <div>
 
         {user && moduleProgress && moduleProgress.lessonsTotal > 0 && (
           <div className="mt-6">
@@ -116,25 +126,18 @@ export default async function ModulePage({
             />
           </div>
         )}
-
-      </header>
+      </div>
 
       {/* Le module de l'alphabet est le seul où l'on apprend à FORMER les lettres :
           c'est là que l'atelier de tracé a sa place, pas dans une barre globale. */}
       {mod.id === 'module-01' && (
-        <Link
-          href="/ecriture"
-          className="card-sand card-link mt-6 flex items-center gap-4 p-4"
-        >
-          <span
-            aria-hidden="true"
-            className="arabic flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] bg-[color-mix(in_srgb,var(--lapis)_14%,transparent)] text-xl leading-none text-[var(--lapis-text)]"
-          >
+        <Link href="/ecriture" className="pop-card pop-card-row pop-tone-saffron mt-8">
+          <span aria-hidden="true" className="pop-num text-2xl">
             ع
           </span>
           <span>
-            <span className="display block text-base">S&apos;entraîner à les tracer</span>
-            <span className="mt-0.5 block text-sm text-[var(--muted)]">
+            <span className="display block text-lg">S&apos;entraîner à les tracer</span>
+            <span className="mt-0.5 block text-sm font-medium">
               Écrivez chaque lettre au doigt ou au stylet et obtenez un pourcentage de
               ressemblance avec le modèle.
             </span>

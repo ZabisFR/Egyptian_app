@@ -6,15 +6,15 @@ import FeedbackActions from './FeedbackActions';
 // pas un simple confort de navigation.
 export default function Footer() {
   return (
-    <footer className="mt-auto border-t border-[var(--border)] bg-[color-mix(in_srgb,var(--surface-sunken)_55%,transparent)]">
-      <div className="mx-auto max-w-3xl px-6 py-10 sm:px-8">
+    <footer className="mt-auto border-t-2 border-[var(--line-strong)] bg-[color-mix(in_srgb,var(--surface-sunken)_70%,transparent)]">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-8">
         <div className="egypt-rule">
-          <span className="text-xs">◆</span>
+          <span className="text-sm">✦</span>
         </div>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="display text-base">Arabe égyptien</p>
+            <p className="display text-2xl">Arabe égyptien</p>
             <p className="mt-1.5 text-sm leading-relaxed text-[var(--muted)]">
               Le dialecte qu&apos;on parle au Caire, appris comme on apprend une langue
               vivante : par l&apos;oreille, l&apos;usage et la répétition.
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Encart de retours : une langue vivante se corrige par ses locuteurs. */}
         <div className="card-sand mt-10 flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="display text-base">Une coquille, une tournure qui sonne faux ?</p>
+            <p className="display text-lg">Une coquille, une tournure qui sonne faux ?</p>
             <p className="mt-1 text-sm text-[var(--muted)]">
               Les retours des locuteurs sont ce qui corrige le contenu. Suggestions de
               modules bienvenues aussi.

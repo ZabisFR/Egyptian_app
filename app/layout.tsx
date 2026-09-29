@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Geist } from 'next/font/google';
+import { Bricolage_Grotesque, Geist } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SITE } from '@/lib/site-config';
@@ -10,15 +10,13 @@ const geistSans = Geist({
   subsets: ['latin'],
 });
 
-// Garamond : la lettre d'édition française. Elle porte les titres pendant que les motifs
-// égyptiens restent cantonnés à l'ornement — l'inverse donnerait une affiche de péplum.
-//
-// Une seule graisse : `.display` n'utilise que le 600. Charger aussi le 500 et le 700
-// revenait à télécharger deux fichiers que rien n'affiche.
-const display = Cormorant_Garamond({
+// Bricolage Grotesque : une grotesque d'affiche, ronde et franche, pour le style « Pop du
+// Caire ». Elle porte les titres (`.display`, 800) et les chiffres mis en avant ; le corps
+// de texte reste en Geist, plus sobre à la lecture longue.
+const display = Bricolage_Grotesque({
   variable: '--font-display',
   subsets: ['latin'],
-  weight: ['600'],
+  weight: ['700', '800'],
 });
 
 const DESCRIPTION =
@@ -77,8 +75,8 @@ export const metadata: Metadata = {
 // du papyrus, visible sur iOS comme un bandeau qui n'appartient pas au site.
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fbf6ec' },
-    { media: '(prefers-color-scheme: dark)', color: '#14100b' },
+    { media: '(prefers-color-scheme: light)', color: '#fbf4e6' },
+    { media: '(prefers-color-scheme: dark)', color: '#0e1130' },
   ],
 };
 

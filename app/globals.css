@@ -26,64 +26,64 @@
 
   /* Papyrus : un blanc cassé chaud plutôt qu'un blanc pur, pour que le sable des dunes
      ne paraisse pas posé sur une feuille de bureau. */
-  --background: #fbf6ec;
-  --foreground: #2a2119;
-  --ink: #2a2119;
-  --muted: #6f6250;
-  --border: #e0d2b8;
+  --background: #fbf4e6;
+  --foreground: #1f1d45;
+  --ink: #1f1d45;
+  --muted: #57527a;
+  --border: #e4d3ae;
 
   /* Trois plans de surface au lieu d'un seul : une carte posée sur le papyrus, un
      encart posé sur la carte, et un creux (champ de saisie, piste de progression) ne
      peuvent pas partager la même valeur sans que la hiérarchie s'aplatisse. */
-  --surface: #fffdf8;
+  --surface: #fffaf1;
   --surface-raised: #ffffff;
-  --surface-sunken: #f2e9d8;
+  --surface-sunken: #f3e7cc;
 
   /* Pigments égyptiens : lapis-lazuli, ocre rouge, or, malachite. Ils remplacent la
      grille neutre de Tailwind partout où une couleur porte du sens. */
-  --lapis: #1f4e79;
-  --carmine: #9c3b2e;
-  --gold: #b8862b;
-  --malachite: #2f7d5c;
+  --lapis: #2e3582;
+  --carmine: #b8433a;
+  --gold: #d9a13c;
+  --malachite: #1fa39a;
 
   /* Déclinaisons LISIBLES des pigments. Un pigment décoratif (filet, aplat, bordure) et
      une couleur de texte n'ont pas les mêmes contraintes : sur le papyrus, `--gold` ne
      tient que 3,0:1, très en dessous des 4,5:1 exigés pour du texte. Ces variantes sont
      mesurées contre le fond réel sur lequel elles s'affichent, pas estimées à l'œil. */
-  --gold-text: #856019;
-  --lapis-text: #1a4267;
-  --carmine-text: #8d3527;
-  --malachite-text: #256349;
+  --gold-text: #85600f;
+  --lapis-text: #2e3582;
+  --carmine-text: #9e362e;
+  --malachite-text: #11706a;
 
   /* Texte posé sur un aplat de pigment (boutons pleins). */
-  --on-lapis: #fbf6ec;
-  --on-gold: #2a2119;
-  --on-carmine: #fbf6ec;
+  --on-lapis: #fbf4e6;
+  --on-gold: #1f1d45;
+  --on-carmine: #fbf4e6;
 
   /* Texte des badges de niveau, mesuré contre le fond teinté de chaque badge
      (voir components/LevelBadge.tsx). */
-  --badge-a1: #1d3e5c;
-  --badge-a2: #28624c;
-  --badge-b1: #7a581c;
-  --badge-b2: #8b372b;
+  --badge-a1: #11706a;
+  --badge-a2: #85600f;
+  --badge-b1: #9e362e;
+  --badge-b2: #2e3582;
 
   /* Décor : chemin de dunes et planche gravée. */
-  --sand-sky: #f6e7c8;
-  --sand-sun: #e8a13a;
-  --sand-far: #e0bd82;
-  --sand-mid: #d8ab68;
-  --sand-near: #cb9a52;
+  --sand-sky: #f5ead3;
+  --sand-sun: #f2a65a;
+  --sand-far: #e8d3a2;
+  --sand-mid: #dcc08a;
+  --sand-near: #c9a86a;
   --sand-line: #c9ad83;
-  --stone-light: #d8c9ae;
-  --stone-dark: #a89271;
-  --hz-sky-top: #f0dfbe;
-  --hz-sky-bottom: #f9d8a1;
-  --hz-mono: #b08a52;
+  --stone-light: #e8d3a2;
+  --stone-dark: #b89a64;
+  --hz-sky-top: #2e3582;
+  --hz-sky-bottom: #6a4e8c;
+  --hz-mono: #1f1d45;
 
   /* ------------------------------------------------------------------ Élévation
      Les ombres sont teintées de brun, jamais de noir pur : une ombre grise sur du
      papyrus donne un gris sale très reconnaissable, celui des maquettes non finies. */
-  --shadow-color: 74 58 36;
+  --shadow-color: 31 29 69;
   --shadow-1: 0 1px 2px rgb(var(--shadow-color) / 0.06);
   --shadow-2:
     0 1px 2px rgb(var(--shadow-color) / 0.06), 0 8px 20px -10px rgb(var(--shadow-color) / 0.18);
@@ -93,9 +93,9 @@
   /* ------------------------------------------------------------------ Rayons
      Une échelle courte : trois valeurs suffisent, et deux cartes voisines qui diffèrent
      de 2 px de rayon se voient immédiatement. */
-  --r-sm: 0.5rem;
-  --r-md: 0.875rem;
-  --r-lg: 1.25rem;
+  --r-sm: 0.9rem;
+  --r-md: 1.4rem;
+  --r-lg: 2rem;
 
   /* ------------------------------------------------------------------ Mouvement
      Une seule courbe pour tout le site. Les durées sont courtes : au-delà de ~250 ms,
@@ -105,6 +105,30 @@
   --t-fast: 120ms;
   --t-mid: 200ms;
   --t-slow: 420ms;
+
+  /* ------------------------------------------------------------------ Pop oriental
+     Les aplats du style « Pop du Caire », aux couleurs du Conte oriental. Deux familles :
+     les CLAIRS (or, turquoise, safran, sable) portent l'encre --pop-ink, les PROFONDS
+     (grenade, indigo) portent la crème --pop-cream. Ils ne changent pas avec le thème :
+     ce sont des autocollants, ils gardent leur couleur la nuit. Contraste mesuré ≥ 4,5:1
+     pour chaque couple aplat / encre. */
+  --pop-gold: #f4c95d;
+  --pop-turquoise: #4fd1c5;
+  --pop-saffron: #f2a65a;
+  --pop-sand: #e8d3a2;
+  --pop-grenade: #b8433a;
+  --pop-indigo: #2e3582;
+  --pop-ink: #1f1d45;
+  --pop-cream: #fbf4e6;
+
+  /* Le trait épais des contours et l'ombre dure décalée : l'encre le jour, l'or la nuit
+     (des lanternes sur fond indigo). */
+  --line-strong: #1f1d45;
+  --pop-shadow: 4px 4px 0 var(--line-strong);
+  --pop-shadow-lg: 6px 6px 0 var(--line-strong);
+
+  /* Carrelage d'étoiles à huit branches, en filigrane sur tout le site. */
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='.2' stroke-width='1'%3E%3Crect x='26' y='26' width='36' height='36' rx='3'/%3E%3Crect x='26' y='26' width='36' height='36' rx='3' transform='rotate(45 44 44)'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* --------------------------------------------------------------------------
@@ -120,99 +144,107 @@
   :root:not([data-theme="light"]) {
     color-scheme: dark;
 
-    --background: #14100b;
-    --foreground: #ece3d4;
-    --ink: #ece3d4;
-    --muted: #a3947c;
-    --border: #3a3024;
+    --background: #0e1130;
+    --foreground: #f6eedc;
+    --ink: #f6eedc;
+    --muted: #b9b3d9;
+    --border: #2e3470;
 
-    --surface: #1e1811;
-    --surface-raised: #262019;
-    --surface-sunken: #100d09;
+    --surface: #171b46;
+    --surface-raised: #20255a;
+    --surface-sunken: #0a0c26;
 
-    --lapis: #6f9fd0;
-    --carmine: #d4796a;
-    --gold: #d9a942;
-    --malachite: #4faa80;
+    --lapis: #8f98ff;
+    --carmine: #ff8a7a;
+    --gold: #f2c464;
+    --malachite: #4fd1c5;
 
     /* Sur fond nuit, l'or est déjà à 8,8:1 : pas besoin de le décliner. */
-    --gold-text: #d9a942;
-    --lapis-text: #8fb6dd;
-    --carmine-text: #e0968a;
-    --malachite-text: #62bf94;
+    --gold-text: #f2c464;
+    --lapis-text: #aab1ff;
+    --carmine-text: #ff9d8f;
+    --malachite-text: #6ee0d5;
 
     /* Le lapis devient clair pour rester lisible en lien, donc le texte posé dessus doit
        passer au sombre — un blanc cassé n'y tiendrait que 2,1:1 (mesuré). */
-    --on-lapis: #10161d;
-    --on-gold: #2a2119;
-    --on-carmine: #2a1410;
+    --on-lapis: #0e1130;
+    --on-gold: #1f1d45;
+    --on-carmine: #0e1130;
 
-    --badge-a1: #88add1;
-    --badge-a2: #57bda8;
-    --badge-b1: #ddb55f;
-    --badge-b2: #d8897a;
+    --badge-a1: #6ee0d5;
+    --badge-a2: #f2c464;
+    --badge-b1: #ff9d8f;
+    --badge-b2: #aab1ff;
 
-    --sand-sky: #2a2118;
-    --sand-sun: #c78a2e;
-    --sand-far: #5e4a30;
-    --sand-mid: #6c5434;
-    --sand-near: #7c6038;
-    --sand-line: #58472f;
-    --stone-light: #6b5a3e;
-    --stone-dark: #3a2f20;
-    --hz-sky-top: #121826;
-    --hz-sky-bottom: #3d2b1c;
-    --hz-mono: #1d160f;
+    --sand-sky: #20255a;
+    --sand-sun: #f2a65a;
+    --sand-far: #3a3f7a;
+    --sand-mid: #454a8a;
+    --sand-near: #535aa0;
+    --sand-line: #4a5090;
+    --stone-light: #6a6fb0;
+    --stone-dark: #2e3470;
+    --hz-sky-top: #070920;
+    --hz-sky-bottom: #2b2463;
+    --hz-mono: #0c0c2a;
 
     --shadow-color: 0 0 0;
+
+    --pop-ink: #0e1130;
+    --line-strong: #f2c464;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23f2c464' stroke-opacity='.09' stroke-width='1'%3E%3Crect x='26' y='26' width='36' height='36' rx='3'/%3E%3Crect x='26' y='26' width='36' height='36' rx='3' transform='rotate(45 44 44)'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --background: #14100b;
-  --foreground: #ece3d4;
-  --ink: #ece3d4;
-  --muted: #a3947c;
-  --border: #3a3024;
+  --background: #0e1130;
+  --foreground: #f6eedc;
+  --ink: #f6eedc;
+  --muted: #b9b3d9;
+  --border: #2e3470;
 
-  --surface: #1e1811;
-  --surface-raised: #262019;
-  --surface-sunken: #100d09;
+  --surface: #171b46;
+  --surface-raised: #20255a;
+  --surface-sunken: #0a0c26;
 
-  --lapis: #6f9fd0;
-  --carmine: #d4796a;
-  --gold: #d9a942;
-  --malachite: #4faa80;
+  --lapis: #8f98ff;
+  --carmine: #ff8a7a;
+  --gold: #f2c464;
+  --malachite: #4fd1c5;
 
-  --gold-text: #d9a942;
-  --lapis-text: #8fb6dd;
-  --carmine-text: #e0968a;
-  --malachite-text: #62bf94;
+  --gold-text: #f2c464;
+  --lapis-text: #aab1ff;
+  --carmine-text: #ff9d8f;
+  --malachite-text: #6ee0d5;
 
-  --on-lapis: #10161d;
-  --on-gold: #2a2119;
-  --on-carmine: #2a1410;
+  --on-lapis: #0e1130;
+  --on-gold: #1f1d45;
+  --on-carmine: #0e1130;
 
-  --badge-a1: #88add1;
-  --badge-a2: #57bda8;
-  --badge-b1: #ddb55f;
-  --badge-b2: #d8897a;
+  --badge-a1: #6ee0d5;
+  --badge-a2: #f2c464;
+  --badge-b1: #ff9d8f;
+  --badge-b2: #aab1ff;
 
-  --sand-sky: #2a2118;
-  --sand-sun: #c78a2e;
-  --sand-far: #5e4a30;
-  --sand-mid: #6c5434;
-  --sand-near: #7c6038;
-  --sand-line: #58472f;
-  --stone-light: #6b5a3e;
-  --stone-dark: #3a2f20;
-  --hz-sky-top: #121826;
-  --hz-sky-bottom: #3d2b1c;
-  --hz-mono: #1d160f;
+  --sand-sky: #20255a;
+  --sand-sun: #f2a65a;
+  --sand-far: #3a3f7a;
+  --sand-mid: #454a8a;
+  --sand-near: #535aa0;
+  --sand-line: #4a5090;
+  --stone-light: #6a6fb0;
+  --stone-dark: #2e3470;
+  --hz-sky-top: #070920;
+  --hz-sky-bottom: #2b2463;
+  --hz-mono: #0c0c2a;
 
   --shadow-color: 0 0 0;
+
+  --pop-ink: #0e1130;
+  --line-strong: #f2c464;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23f2c464' stroke-opacity='.09' stroke-width='1'%3E%3Crect x='26' y='26' width='36' height='36' rx='3'/%3E%3Crect x='26' y='26' width='36' height='36' rx='3' transform='rotate(45 44 44)'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 @theme inline {
@@ -230,26 +262,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), "Segoe UI", Tahoma, sans-serif;
-  /* Grain de papyrus : deux trames croisées très pâles, plus un halo doré en haut de
-     page. Une image de fond serait plus riche mais interdirait le rendu hors ligne et
-     alourdirait chaque page. */
+  /* Carrelage d'étoiles à huit branches en filigrane (un SVG de 88 px inline, aucune
+     requête), plus un halo doré en haut de page. */
   background-image:
     radial-gradient(
       120% 70% at 50% -20%,
-      color-mix(in srgb, var(--gold) 9%, transparent) 0%,
+      color-mix(in srgb, var(--gold) 12%, transparent) 0%,
       transparent 60%
     ),
-    repeating-linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--border) 22%, transparent) 0 1px,
-      transparent 1px 7px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      color-mix(in srgb, var(--border) 14%, transparent) 0 1px,
-      transparent 1px 9px
-    );
-  background-attachment: fixed, scroll, scroll;
+    var(--pattern);
+  background-attachment: fixed, scroll;
 }
 
 /* Le conteneur de page est un élément flex du layout racine (colonne). `min-width: 0`
@@ -289,12 +311,11 @@ body {
    3. Typographie
    ========================================================================== */
 
-/* Titres en serif : la typographie française d'édition tempère le motif égyptien, qui
-   vire vite au décor de film s'il porte aussi les titres. */
+/* Titres d'affiche : grotesque grasse, serrée, comme les enseignes du Caire. */
 .display {
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
   /* Équilibre les titres sur deux lignes plutôt que de laisser un mot orphelin — le
      réglage d'édition que la composition française applique à la main depuis toujours. */
   text-wrap: balance;
@@ -305,10 +326,10 @@ body {
    avec trois valeurs différentes. */
 .eyebrow {
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--malachite-text);
 }
 
 /* L'arabe a besoin de plus de corps que le latin pour rester lisible : les diacritiques
@@ -350,8 +371,9 @@ body {
 }
 
 .prose :where(h1, h2, h3) {
-  font-family: var(--font-display), Georgia, serif;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 /*
@@ -475,30 +497,33 @@ body {
 
 /* Cartouche : l'ovale qui entoure un nom royal en hiéroglyphes. Ici, tout ce qui
    identifie — niveau, statut, étiquette. */
+/* Étiquette pop : une pastille cerclée d'encre, légèrement penchée. Garde son nom de
+   « cartouche » : c'est toujours l'ovale qui isole un nom. */
 .cartouche {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
-  background: color-mix(in srgb, var(--gold) 12%, transparent);
-  padding: 0.1875rem 0.75rem;
+  border: 2px solid var(--line-strong);
+  background: var(--surface);
+  padding: 0.25rem 0.8rem;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--gold-text);
+  color: var(--ink);
+  rotate: -2deg;
 }
 
 /* Frise : la bande peinte qui court en haut des stèles. Deux pixels suffisent à poser le
    registre égyptien sans charger chaque page d'ornements. */
 .frieze {
-  height: 2px;
+  height: 4px;
   background: linear-gradient(
     to right,
-    var(--carmine),
-    var(--gold) 35%,
-    var(--malachite) 65%,
-    var(--lapis)
+    var(--pop-grenade) 0 25%,
+    var(--pop-gold) 25% 50%,
+    var(--pop-turquoise) 50% 75%,
+    var(--pop-indigo) 75%
   );
 }
 
@@ -508,7 +533,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: color-mix(in srgb, var(--gold) 55%, transparent);
+  color: var(--gold);
 }
 .egypt-rule::before,
 .egypt-rule::after {
@@ -522,11 +547,12 @@ body {
    5. Surfaces
    ========================================================================== */
 
+/* Carte pop : rayon généreux, contour d'encre (d'or la nuit), ombre dure décalée. */
 .card-sand {
-  border-radius: var(--r-md);
-  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  border: 2px solid var(--line-strong);
   background: var(--surface);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--pop-shadow);
 }
 
 /* Carte cliquable : le relief se lit au survol, pas au repos. Une page de quinze cartes
@@ -538,13 +564,12 @@ body {
     border-color var(--t-mid) var(--ease);
 }
 .card-link:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
-  border-color: color-mix(in srgb, var(--gold) 45%, var(--border));
+  transform: translate(-2px, -2px);
+  box-shadow: var(--pop-shadow-lg);
 }
 .card-link:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-1);
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--line-strong);
 }
 
 /* ==========================================================================
@@ -558,48 +583,48 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: var(--r-sm);
-  /* 0.6875rem × 2 + 1 ligne de 0.875rem ≈ 44 px de haut : la cible tactile recommandée,
-     atteinte par le remplissage plutôt que par une hauteur fixe qui casserait les
-     boutons à deux lignes sur mobile. */
-  padding: 0.6875rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+  border-radius: 999px;
+  /* ≈ 44 px de haut : la cible tactile recommandée, atteinte par le remplissage plutôt
+     que par une hauteur fixe qui casserait les boutons à deux lignes sur mobile. */
+  padding: 0.625rem 1.35rem;
+  border: 2px solid transparent;
+  font-size: 0.9375rem;
+  font-weight: 700;
   transition:
     background-color var(--t-fast) var(--ease),
     border-color var(--t-fast) var(--ease),
     transform var(--t-fast) var(--ease),
     box-shadow var(--t-fast) var(--ease);
 }
+/* On « enfonce » le bouton : l'ombre dure disparaît sous lui. */
 .btn-sand:active,
-.btn-outline:active,
+.btn-outline:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--line-strong);
+}
 .btn-ghost:active {
   transform: translateY(1px);
 }
 
+/* Bouton principal : l'or des lanternes, encre indigo, contour et ombre dure. */
 .btn-sand {
   position: relative;
   overflow: hidden;
-  background: var(--lapis);
-  color: var(--on-lapis);
-  box-shadow: var(--shadow-1);
+  border-color: var(--line-strong);
+  background: var(--pop-gold);
+  color: var(--pop-ink);
+  box-shadow: var(--pop-shadow);
 }
 .btn-sand:hover {
-  background: color-mix(in srgb, var(--lapis) 88%, var(--ink));
-  box-shadow: var(--shadow-2);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--pop-shadow-lg);
 }
-/* Reflet doré qui traverse le bouton au survol — l'or passé sur le lapis, comme sur les
-   pectoraux. Purement décoratif, donc `aria-hidden` par nature (pseudo-élément). */
+/* Reflet qui traverse le bouton au survol. Purement décoratif (pseudo-élément). */
 .btn-sand::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    100deg,
-    transparent 30%,
-    color-mix(in srgb, var(--gold) 45%, transparent) 50%,
-    transparent 70%
-  );
+  background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / 0.5) 50%, transparent 70%);
   transform: translateX(-100%);
   transition: transform var(--t-slow) var(--ease);
 }
@@ -608,12 +633,14 @@ body {
 }
 
 .btn-outline {
-  border: 1px solid var(--border);
+  border-color: var(--line-strong);
+  background: var(--surface);
   color: var(--ink);
+  box-shadow: var(--pop-shadow);
 }
 .btn-outline:hover {
-  background: color-mix(in srgb, var(--gold) 10%, transparent);
-  border-color: color-mix(in srgb, var(--gold) 50%, var(--border));
+  transform: translate(-2px, -2px);
+  box-shadow: var(--pop-shadow-lg);
 }
 
 .btn-ghost {
@@ -650,23 +677,27 @@ body {
   /* 3.25rem : au-dessus des 44 px recommandés pour une cible tactile, même quand la
      réponse tient sur un seul mot court. */
   min-height: 3.25rem;
-  border-radius: var(--r-sm);
-  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  border: 2px solid var(--line-strong);
   background: var(--surface);
   padding: 0.75rem 1rem;
   font-size: 0.9375rem;
+  font-weight: 500;
   color: var(--ink);
+  box-shadow: 3px 3px 0 var(--line-strong);
   transition:
-    border-color var(--t-fast) var(--ease),
     background-color var(--t-fast) var(--ease),
-    transform var(--t-fast) var(--ease);
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
 }
 .choice:hover:not(:disabled) {
-  border-color: color-mix(in srgb, var(--gold) 60%, transparent);
-  background: color-mix(in srgb, var(--gold) 7%, var(--surface));
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--line-strong);
+  background: color-mix(in srgb, var(--pop-gold) 22%, var(--surface));
 }
 .choice:active:not(:disabled) {
-  transform: scale(0.99);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--line-strong);
 }
 .choice:disabled {
   cursor: default;
@@ -679,21 +710,34 @@ body {
   height: 1.75rem;
   width: 1.75rem;
   flex-shrink: 0;
-  border-radius: 0.5rem;
-  background: var(--surface-sunken);
+  border-radius: 999px;
+  background: var(--pop-ink);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--muted);
+  color: var(--pop-cream);
 }
 
+/* Bonne réponse : aplat turquoise ; mauvaise : aplat grenade. L'encre est fixe, choisie
+   pour chaque aplat (voir les jetons --pop-*), et non celle du thème. */
 .choice-right {
-  border-color: var(--malachite);
-  background: color-mix(in srgb, var(--malachite) 12%, var(--surface));
+  background: var(--pop-turquoise);
+  color: var(--pop-ink);
 }
 .choice-wrong {
-  border-color: var(--carmine);
-  background: color-mix(in srgb, var(--carmine) 12%, var(--surface));
+  background: var(--pop-grenade);
+  color: var(--pop-cream);
+}
+.choice-right .choice-gloss {
+  color: var(--pop-ink);
+}
+.choice-wrong .choice-gloss {
+  color: var(--pop-cream);
+}
+.choice-right .choice-key,
+.choice-wrong .choice-key {
+  background: var(--pop-cream);
+  color: var(--pop-ink);
 }
 /* Les réponses non retenues s'effacent sans disparaître : on doit pouvoir les relire
    pour comprendre son erreur. */
@@ -735,8 +779,8 @@ body {
   position: absolute;
   inset-inline: 0;
   bottom: 0;
-  height: 2px;
-  border-radius: 2px;
+  height: 3px;
+  border-radius: 3px;
   background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
@@ -766,14 +810,16 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.75rem;
+  width: 2.75rem;
   /* Sans cette ligne, la barre de navigation le comprimait à 34 px sur mobile (mesuré) —
-     sous la cible tactile de 40 px que sa taille est justement censée garantir. */
+     sous la cible tactile de 44 px que sa taille est justement censée garantir. */
   flex-shrink: 0;
   justify-content: center;
   border-radius: 999px;
   color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
   transition:
     background-color var(--t-fast) var(--ease),
     color var(--t-fast) var(--ease);
@@ -788,8 +834,8 @@ body {
   .search-trigger {
     width: 12rem;
     justify-content: flex-start;
-    border-radius: var(--r-sm);
-    border: 1px solid var(--border);
+    border-radius: 999px;
+    border: 2px solid var(--line-strong);
     background: var(--surface);
     padding-inline: 0.75rem;
     font-size: 0.8125rem;
@@ -823,9 +869,9 @@ body {
   flex-direction: column;
   overflow: hidden;
   border-radius: var(--r-lg);
-  border: 1px solid var(--border);
+  border: 2px solid var(--line-strong);
   background: var(--surface-raised);
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--pop-shadow-lg);
   animation: rise 200ms var(--ease) both;
 }
 
@@ -1377,15 +1423,15 @@ body {
    changement doit rester lisible même pour qui ne perçoit pas la couleur — d'où le
    libellé « En cours » qui change aussi, et l'onde qui bouge. */
 .sound-card-on {
-  border-color: color-mix(in srgb, var(--lapis) 55%, transparent);
-  background: color-mix(in srgb, var(--lapis) 7%, var(--surface));
+  outline: 4px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .sound-ripple {
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  border: 2px solid color-mix(in srgb, var(--lapis) 45%, transparent);
+  border: 2px solid var(--on, var(--lapis));
   animation: ripple 1.1s var(--ease) infinite;
 }
 @keyframes ripple {
@@ -1492,10 +1538,10 @@ body {
 @keyframes dune-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--sand-sun) 55%, transparent);
+    box-shadow: 4px 4px 0 var(--line-strong), 0 0 0 0 color-mix(in srgb, var(--gold) 60%, transparent);
   }
   50% {
-    box-shadow: 0 0 0 10px color-mix(in srgb, var(--sand-sun) 0%, transparent);
+    box-shadow: 4px 4px 0 var(--line-strong), 0 0 0 12px color-mix(in srgb, var(--gold) 0%, transparent);
   }
 }
 .node-current {
@@ -1503,6 +1549,428 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .node-current {
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--sand-sun) 45%, transparent);
+    box-shadow: 4px 4px 0 var(--line-strong), 0 0 0 5px color-mix(in srgb, var(--gold) 55%, transparent);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Nœuds du chemin des leçons, en pastilles pop
+   -------------------------------------------------------------------------- */
+
+.lesson-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border: 2.5px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--line-strong);
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-variant-numeric: lining-nums;
+  transition:
+    transform 160ms var(--ease-back),
+    box-shadow 160ms var(--ease);
+}
+@media (min-width: 640px) {
+  .lesson-node {
+    width: 4.75rem;
+    height: 4.75rem;
+    font-size: 1.5rem;
+  }
+}
+/* Le décalage du serpentin est porté par `transform` (.dune-node) : le survol joue donc
+   sur l'ombre et l'échelle via `scale`, qui se compose avec lui sans l'écraser. */
+.lesson-node:hover {
+  scale: 1.08;
+  box-shadow: 6px 6px 0 var(--line-strong);
+}
+.lesson-node.node-done {
+  background: var(--pop-turquoise);
+  color: var(--pop-ink);
+}
+.lesson-node.node-current {
+  background: var(--pop-gold);
+  color: var(--pop-ink);
+}
+
+/* Le quiz, au bout du chemin : une grande pastille grenade marquée d'une étoile. */
+.quiz-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border: 3px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--pop-grenade);
+  color: var(--pop-cream);
+  box-shadow: 6px 6px 0 var(--line-strong);
+  font-size: 2.25rem;
+  font-weight: 800;
+  rotate: -6deg;
+  transition:
+    scale 160ms var(--ease-back),
+    box-shadow 160ms var(--ease);
+}
+.quiz-node:hover {
+  scale: 1.06;
+  box-shadow: 8px 8px 0 var(--line-strong);
+}
+.quiz-node-passed {
+  background: var(--pop-turquoise);
+  color: var(--pop-ink);
+}
+/* Pas encore débloqué (leçons non lues) : accessible quand même, mais en pointillés. */
+.quiz-node-locked {
+  border-style: dashed;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   11. Pop oriental — aplats, autocollants, bandeau
+   --------------------------------------------------------------------------
+   Les pièces du style « Pop du Caire » : aplats de couleur pleine cerclés d'encre, ombres
+   dures, formes très rondes. Chaque aplat fixe son couple fond / encre via deux variables
+   (--tone, --on) posées par une classe `pop-tone-*` : l'encre ne dépend que de l'aplat, et
+   reste donc mesurée une fois pour toutes (≥ 4,5:1).
+   ========================================================================== */
+
+.pop-tone-gold {
+  --tone: var(--pop-gold);
+  --on: var(--pop-ink);
+  --veil: rgb(255 255 255 / 0.55);
+}
+.pop-tone-turquoise {
+  --tone: var(--pop-turquoise);
+  --on: var(--pop-ink);
+  --veil: rgb(255 255 255 / 0.55);
+}
+.pop-tone-saffron {
+  --tone: var(--pop-saffron);
+  --on: var(--pop-ink);
+  --veil: rgb(255 255 255 / 0.55);
+}
+.pop-tone-sand {
+  --tone: var(--pop-sand);
+  --on: var(--pop-ink);
+  --veil: rgb(255 255 255 / 0.55);
+}
+/* Aplats profonds : encre crème, et un voile sombre plutôt que blanc sous les pastilles —
+   un voile blanc éclaircirait le fond sous le texte crème. */
+.pop-tone-grenade {
+  --tone: var(--pop-grenade);
+  --on: var(--pop-cream);
+  --veil: rgb(0 0 0 / 0.18);
+}
+.pop-tone-indigo {
+  --tone: var(--pop-indigo);
+  --on: var(--pop-cream);
+  --veil: rgb(0 0 0 / 0.18);
+}
+
+/* Mot surligné dans un titre : une pastille penchée derrière le mot. */
+.pop-hl {
+  display: inline-block;
+  padding: 0 0.2em;
+  border-radius: 0.4em;
+  background: var(--tone);
+  color: var(--on);
+  rotate: -1.5deg;
+}
+.pop-hl:nth-of-type(even) {
+  rotate: 1.5deg;
+}
+
+/* Carte pleine couleur (modules, entrées du hub…). */
+.pop-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.35rem;
+  border: 2.5px solid var(--line-strong);
+  border-radius: 2rem;
+  background: var(--tone);
+  color: var(--on);
+  box-shadow: var(--pop-shadow-lg);
+  text-decoration: none;
+  transition:
+    transform 160ms var(--ease),
+    box-shadow 160ms var(--ease);
+}
+a.pop-card:hover {
+  transform: translate(-3px, -3px) rotate(-0.6deg);
+  box-shadow: 9px 9px 0 var(--line-strong);
+}
+a.pop-card:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--line-strong);
+}
+/* Variante horizontale (icône à gauche). Une classe dédiée plutôt que `flex-row` :
+   les styles de ce fichier sont hors couche et l'emportent sur les utilitaires Tailwind. */
+.pop-card-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.pop-card-muted {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Pastille ronde du numéro : aux couleurs inversées de la carte. */
+.pop-num {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: var(--on);
+  color: var(--tone);
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Pastille d'étiquette posée sur un aplat (niveau, statut). */
+.pop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.7rem;
+  border: 2px solid var(--on);
+  border-radius: 999px;
+  background: var(--veil);
+  color: var(--on);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Piste de progression posée sur un aplat. */
+.pop-bar {
+  display: block;
+  flex: 1;
+  height: 0.8rem;
+  overflow: hidden;
+  border: 2px solid var(--on);
+  border-radius: 999px;
+  background: var(--veil);
+}
+.pop-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--on);
+}
+
+/* Chiffre clé en forme organique : quatre rayons elliptiques différents. */
+.pop-blob {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 7.5rem;
+  padding: 1rem 0.5rem;
+  border: 2.5px solid var(--line-strong);
+  border-radius: 58% 42% 55% 45% / 45% 55% 45% 55%;
+  background: var(--tone);
+  color: var(--on);
+  font-weight: 600;
+  text-align: center;
+}
+.pop-blob:nth-child(2) {
+  border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%;
+}
+.pop-blob:nth-child(3) {
+  border-radius: 52% 48% 62% 38% / 42% 58% 42% 58%;
+}
+.pop-blob strong {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+
+/* Autocollant rond (les quatre sons de l'Arabizi). */
+.pop-sticker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  width: clamp(6.75rem, 30vw, 8.75rem);
+  aspect-ratio: 1;
+  border: 3px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--tone);
+  color: var(--on);
+  box-shadow: 5px 5px 0 var(--line-strong);
+  rotate: calc(var(--i, 0) * 6deg - 9deg);
+  cursor: pointer;
+  transition:
+    transform 200ms var(--ease-back),
+    box-shadow 200ms var(--ease);
+}
+.pop-sticker:hover {
+  transform: translate(-2px, -3px) rotate(4deg);
+  box-shadow: 7px 8px 0 var(--line-strong);
+}
+.pop-sticker:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--line-strong);
+}
+.pop-sticker[data-playing] {
+  outline: 4px solid var(--gold);
+  outline-offset: 5px;
+}
+/* Pas de classe `.arabic` ici : son interligne de 2 poussait la lettre contre le chiffre. */
+.pop-sticker-letter {
+  font-family: "Segoe UI", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  font-size: clamp(2.8rem, 10vw, 3.6rem);
+  line-height: 1.15;
+}
+.pop-sticker-digit {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.pop-sticker-play {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.2rem;
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 2px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.65rem;
+}
+
+/* Bandeau de mots qui défile (components/WordMarquee.tsx). Indigo et or le jour, or et
+   indigo la nuit : il s'inverse avec le thème. */
+.pop-marquee {
+  --band: var(--pop-indigo);
+  --band-ink: var(--pop-cream);
+  --band-star: var(--pop-gold);
+  display: flex;
+  align-items: center;
+  margin-inline: -1rem;
+  border-block: 3px solid var(--gold);
+  background: var(--band);
+  color: var(--band-ink);
+  rotate: -1.5deg;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pop-marquee {
+    --band: var(--pop-gold);
+    --band-ink: #0e1130;
+    --band-star: var(--pop-grenade);
+  }
+}
+:root[data-theme="dark"] .pop-marquee {
+  --band: var(--pop-gold);
+  --band-ink: #0e1130;
+  --band-star: var(--pop-grenade);
+}
+.pop-marquee-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+/* Des marges internes plutôt qu'un `gap` : les deux moitiés du ruban restent strictement
+   identiques, et la boucle à -50 % ne saute pas. */
+.pop-marquee-track {
+  display: flex;
+  width: max-content;
+  padding-block: 0.75rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.pop-marquee-word {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding-inline: 0.75rem;
+}
+.pop-marquee-fr {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.55em;
+  font-weight: 600;
+}
+.pop-marquee-star {
+  margin-left: 0.75rem;
+  color: var(--band-star);
+}
+.pop-marquee-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: 0.5rem 1.5rem;
+  border: 2.5px solid var(--band-ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--band-ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.pop-marquee-toggle:hover {
+  background: color-mix(in srgb, var(--band-ink) 15%, transparent);
+}
+.pop-marquee-toggle:focus-visible {
+  outline-color: var(--band-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pop-marquee-track {
+    animation: pop-scroll 34s linear infinite;
+  }
+  .pop-marquee:hover .pop-marquee-track,
+  .pop-marquee:focus-within .pop-marquee-track,
+  .pop-marquee[data-paused] .pop-marquee-track {
+    animation-play-state: paused;
+  }
+  .pop-sticker {
+    animation: pop-wobble 4.5s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * -1.1s);
+  }
+}
+/* Sans animation, le bandeau n'a plus rien à mettre en pause. */
+@media (prefers-reduced-motion: reduce) {
+  .pop-marquee-toggle {
+    display: none;
+  }
+}
+@keyframes pop-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pop-wobble {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -5px;
   }
 }

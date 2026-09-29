@@ -64,7 +64,7 @@ export default function ThemeToggle() {
             ? 'Passer au thème sombre'
             : 'Passer au thème clair'
       }
-      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[var(--muted)] transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_14%,transparent)] hover:text-[var(--ink)]"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--ink)] transition-colors hover:bg-[color-mix(in_srgb,var(--gold)_14%,transparent)] hover:text-[var(--ink)]"
     >
       <svg
         viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ export default function ThemeToggle() {
         className="h-5 w-5"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="2"
         strokeLinecap="round"
       >
         {goingDark ? (

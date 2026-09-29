@@ -131,7 +131,7 @@ export default function LetterTracer({ police }: { police: string }) {
     }
 
     ctx.strokeStyle =
-      getComputedStyle(canvas).getPropertyValue('--trace-encre').trim() || '#1f4e79';
+      getComputedStyle(canvas).getPropertyValue('--trace-encre').trim() || '#2e3582';
     ctx.lineWidth = EPAISSEUR * cote;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
