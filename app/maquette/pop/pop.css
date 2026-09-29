@@ -1,0 +1,651 @@
+/* ==========================================================================
+   Maquette « Pop du Caire »
+   --------------------------------------------------------------------------
+   Crème chaude (clair) / nuit prune (sombre). Les aplats vifs portent TOUJOURS l'encre
+   prune, jamais du blanc : c'est ce qui laisse des couleurs aussi saturées passer le
+   seuil de 4,5:1. Les cartes gardent leurs aplats clairs dans les deux thèmes — ce sont
+   des autocollants, ils ne changent pas de couleur la nuit.
+   ========================================================================== */
+
+.popcaire {
+  --p-bg: #fff3e2;
+  --p-surface: #fffaf3;
+  --p-ink: #2b1238;
+  --p-muted: #5b4566;
+  --p-line: #2b1238;
+
+  /* Aplats (fond d'autocollant, de carte, de surlignage). */
+  --p-pink: #ff5c93;
+  --p-yellow: #ffcf3f;
+  --p-teal: #2fd3bf;
+  --p-orange: #ff8a4c;
+  --p-blue: #7fa7ff;
+  --p-lime: #b9e45a;
+
+  /* L'encre posée sur les aplats : identique dans les deux thèmes. */
+  --p-on: #2b1238;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .popcaire {
+    --p-bg: #1b0f24;
+    --p-surface: #2a1838;
+    --p-ink: #fff3e2;
+    --p-muted: #d6c3df;
+    --p-line: #fff3e2;
+  }
+}
+:root[data-theme="dark"] .popcaire {
+  --p-bg: #1b0f24;
+  --p-surface: #2a1838;
+  --p-ink: #fff3e2;
+  --p-muted: #d6c3df;
+  --p-line: #fff3e2;
+}
+
+body:has(.popcaire) {
+  background: #fff3e2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body:has(.popcaire) {
+    background: #1b0f24;
+  }
+}
+:root[data-theme="dark"] body:has(.popcaire) {
+  background: #1b0f24;
+}
+
+/* ---------------------------------------------------------------- Socle */
+
+.popcaire {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  background: var(--p-bg);
+  color: var(--p-ink);
+  overflow-x: clip;
+}
+.pp-wrap {
+  margin-inline: auto;
+  max-width: 70rem;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .pp-wrap {
+    padding-inline: 2rem;
+  }
+}
+.popcaire :focus-visible {
+  outline: 3px solid var(--p-ink);
+  outline-offset: 3px;
+}
+.pp-muted {
+  color: var(--p-muted);
+}
+.pp-title,
+.pp-h2,
+.pp-btn,
+.pp-brand-name,
+.pp-blob strong,
+.pp-card-num,
+.pp-card-title,
+.pp-cta-title,
+.pp-marquee,
+.pp-sticker-word,
+.pp-level-tag {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+}
+
+/* ---------------------------------------------------------------- En-tête */
+
+.pp-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--p-bg) 90%, transparent);
+  backdrop-filter: blur(10px);
+}
+.pp-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 4.5rem;
+}
+.pp-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  color: inherit;
+  text-decoration: none;
+}
+.pp-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: var(--p-pink);
+  color: var(--p-on);
+  font-size: 1.3rem;
+  font-weight: 700;
+  rotate: -8deg;
+}
+.pp-brand-name {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.pp-nav {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pp-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.9rem;
+  border-radius: 999px;
+  color: var(--p-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.pp-nav a:hover {
+  background: var(--p-yellow);
+  color: var(--p-on);
+}
+.pp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+@media (max-width: 719px) {
+  .pp-nav {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- Boutons */
+
+.pp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.4rem;
+  padding: 0.75rem 1.7rem;
+  border-radius: 999px;
+  border: 2.5px solid var(--p-line);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--p-line);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+.pp-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--p-line);
+}
+.pp-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--p-line);
+}
+.pp-btn-sm {
+  min-height: 2.75rem;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.95rem;
+  box-shadow: 3px 3px 0 var(--p-line);
+}
+.pp-btn-pink {
+  background: var(--p-pink);
+  color: var(--p-on);
+}
+.pp-btn-outline {
+  background: var(--p-surface);
+  color: var(--p-ink);
+}
+.pp-btn-ink {
+  background: var(--p-ink);
+  color: var(--p-bg);
+}
+.pp-btn-cream {
+  background: #fff3e2;
+  color: #2b1238;
+  border-color: #2b1238;
+  box-shadow: 4px 4px 0 #2b1238;
+}
+
+/* ---------------------------------------------------------------- Ouverture */
+
+.pp-hero {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  padding-block: 3rem 3.5rem;
+}
+@media (min-width: 900px) {
+  .pp-hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    padding-block: 4.5rem 4rem;
+  }
+}
+.pp-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--p-line);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  rotate: -2deg;
+}
+.pp-title {
+  margin: 1.2rem 0 0;
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+/* Le surlignage : une pastille de couleur penchée derrière le mot, pas un soulignement. */
+.pp-hl {
+  display: inline-block;
+  padding: 0 0.2em;
+  border-radius: 0.4em;
+  color: var(--p-on);
+  rotate: -1.5deg;
+}
+.pp-hl-pink {
+  background: var(--p-pink);
+}
+.pp-hl-yellow {
+  background: var(--p-yellow);
+  rotate: 1.5deg;
+}
+.pp-hl-teal {
+  background: var(--p-teal);
+}
+.pp-hl-orange {
+  background: var(--p-orange);
+}
+.pp-lead {
+  max-width: 34rem;
+  margin: 1.4rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--p-muted);
+}
+.pp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.pp-actions-center {
+  justify-content: center;
+}
+
+/* Les autocollants : les quatre lettres de l'Arabizi, de travers, qui se chevauchent. */
+.pp-stickers {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  max-width: 22rem;
+  margin-inline: auto;
+}
+.pp-sticker {
+  --tone: var(--p-yellow);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: clamp(7rem, 30vw, 9.5rem);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  border: 3px solid var(--p-line);
+  background: var(--tone);
+  color: var(--p-on);
+  box-shadow: 5px 5px 0 var(--p-line);
+  rotate: calc(var(--i, 0) * 7deg - 10deg);
+}
+.pp-sticker[data-tone="pink"] {
+  --tone: var(--p-pink);
+}
+.pp-sticker[data-tone="teal"] {
+  --tone: var(--p-teal);
+}
+.pp-sticker[data-tone="orange"] {
+  --tone: var(--p-orange);
+}
+.pp-sticker-letter {
+  font-size: clamp(2.6rem, 9vw, 3.6rem);
+  line-height: 1;
+}
+.pp-sticker-digit {
+  margin-top: 0.2rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.pp-sticker-word {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: auto;
+  aspect-ratio: auto;
+  padding: 0.4rem 1rem;
+  translate: -50% -50%;
+  rotate: -12deg;
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+/* ---------------------------------------------------------------- Bandeau défilant */
+
+.pp-marquee {
+  overflow: hidden;
+  border-block: 3px solid var(--p-line);
+  background: var(--p-yellow);
+  color: var(--p-on);
+  rotate: -1.5deg;
+  margin-inline: -1rem;
+}
+.pp-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding-block: 0.8rem;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.pp-marquee-star {
+  color: var(--p-on);
+}
+
+/* ---------------------------------------------------------------- Chiffres */
+
+.pp-blobs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+/* Des formes organiques plutôt que des rectangles : quatre rayons elliptiques différents. */
+.pp-blob {
+  --tone: var(--p-yellow);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 8rem;
+  padding: 1rem 0.5rem;
+  border: 3px solid var(--p-line);
+  border-radius: 58% 42% 55% 45% / 45% 55% 45% 55%;
+  background: var(--tone);
+  color: var(--p-on);
+  font-weight: 600;
+  text-align: center;
+}
+.pp-blob:nth-child(2) {
+  border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%;
+}
+.pp-blob:nth-child(3) {
+  border-radius: 52% 48% 62% 38% / 42% 58% 42% 58%;
+}
+.pp-blob[data-tone="teal"] {
+  --tone: var(--p-teal);
+}
+.pp-blob[data-tone="pink"] {
+  --tone: var(--p-pink);
+}
+.pp-blob strong {
+  display: block;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------------- Sections */
+
+.pp-section {
+  margin-top: 5rem;
+}
+.pp-h2 {
+  margin: 0;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.pp-section-lead {
+  margin: 0.8rem 0 0;
+}
+
+/* ---------------------------------------------------------------- Cartes */
+
+.pp-cards {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 620px) {
+  .pp-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 980px) {
+  .pp-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.pp-card {
+  --tone: var(--p-yellow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.4rem;
+  border: 3px solid var(--p-line);
+  border-radius: 2rem;
+  background: var(--tone);
+  color: var(--p-on);
+  text-decoration: none;
+  box-shadow: 6px 6px 0 var(--p-line);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+.pp-card:hover {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 9px 9px 0 var(--p-line);
+}
+.pp-card[data-tone="teal"] {
+  --tone: var(--p-teal);
+}
+.pp-card[data-tone="pink"] {
+  --tone: var(--p-pink);
+}
+.pp-card[data-tone="orange"] {
+  --tone: var(--p-orange);
+}
+.pp-card[data-tone="blue"] {
+  --tone: var(--p-blue);
+}
+.pp-card[data-tone="lime"] {
+  --tone: var(--p-lime);
+}
+.pp-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.pp-card-num {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+  background: var(--p-on);
+  color: #fff3e2;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.pp-card-level {
+  padding: 0.25rem 0.7rem;
+  border: 2px solid var(--p-on);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.55);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  rotate: 3deg;
+}
+.pp-card-title {
+  margin-top: 1.1rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.pp-card-sub {
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+.pp-card-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.3rem;
+  font-weight: 700;
+}
+.pp-card-bar {
+  flex: 1;
+  height: 0.8rem;
+  overflow: hidden;
+  border: 2px solid var(--p-on);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.55);
+}
+.pp-card-bar span {
+  display: block;
+  height: 100%;
+  background: var(--p-on);
+}
+
+/* ---------------------------------------------------------------- Niveaux */
+
+.pp-levels {
+  display: grid;
+  gap: 0.9rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pp-level {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem 0.9rem 0.9rem;
+  border: 2.5px solid var(--p-line);
+  border-radius: 999px;
+  background: var(--p-surface);
+  line-height: 1.4;
+}
+.pp-level-tag {
+  --tone: var(--p-teal);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 999px;
+  background: var(--tone);
+  color: var(--p-on);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.pp-level[data-tone="1"] .pp-level-tag {
+  --tone: var(--p-yellow);
+}
+.pp-level[data-tone="2"] .pp-level-tag {
+  --tone: var(--p-orange);
+}
+.pp-level[data-tone="3"] .pp-level-tag {
+  --tone: var(--p-pink);
+}
+
+/* ---------------------------------------------------------------- Appel final */
+
+.pp-cta {
+  margin-top: 5rem;
+  padding: 3rem 1.5rem;
+  border: 3px solid var(--p-line);
+  border-radius: 2.5rem;
+  background: var(--p-pink);
+  color: var(--p-on);
+  text-align: center;
+  box-shadow: 8px 8px 0 var(--p-line);
+}
+.pp-cta-title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.pp-cta p {
+  margin: 0.9rem 0 0;
+  font-weight: 500;
+}
+.pp-cta .pp-btn-ink {
+  background: #2b1238;
+  color: #fff3e2;
+  border-color: #2b1238;
+  box-shadow: 4px 4px 0 #2b1238;
+}
+
+.pp-footer {
+  padding-block: 3rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* ---------------------------------------------------------------- Mouvement */
+
+@media (prefers-reduced-motion: no-preference) {
+  .pp-marquee-track {
+    animation: pp-scroll 28s linear infinite;
+  }
+  .pp-sticker {
+    animation: pp-wobble 4s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * -1s);
+  }
+  .pp-sticker-word {
+    animation: none;
+  }
+}
+@keyframes pp-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pp-wobble {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}

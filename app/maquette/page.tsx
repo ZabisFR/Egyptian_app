@@ -4,6 +4,7 @@ import { Reem_Kufi } from 'next/font/google';
 import ThemeToggle from '@/components/ThemeToggle';
 import { createClient } from '@/lib/supabase/server';
 import type { Level, Module } from '@/lib/types';
+import StyleSwitcher from './StyleSwitcher';
 import './conte.css';
 
 /**
@@ -61,7 +62,8 @@ export default async function MaquettePage() {
   const sample = all.filter((m) => m.level !== 'REF').slice(0, 6);
 
   return (
-    <div className={`conte ${kufi.variable}`}>
+    <div className={`conte maquette ${kufi.variable}`}>
+      <StyleSwitcher current="/maquette" />
       <div className="conte-sky" aria-hidden="true" />
 
       {/* ------------------------------------------------------------- En-tête */}
