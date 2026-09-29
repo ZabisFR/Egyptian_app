@@ -84,9 +84,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
+    // `suppressHydrationWarning` : le script anti-flash ci-dessous pose `data-theme` sur
+    // <html> avant l'hydratation, React verrait sinon un attribut absent du rendu serveur.
+    // L'exemption ne vaut que pour les attributs de cet élément, pas pour ses enfants.
     <html
       lang="fr"
       className={`${geistSans.variable} ${display.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
         {/*
