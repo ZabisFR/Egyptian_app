@@ -1,0 +1,899 @@
+/* ==========================================================================
+   Maquette « Conte oriental »
+   --------------------------------------------------------------------------
+   Tout est rangé sous `.conte` : cette feuille ne touche rien hors de la maquette.
+   Deux ambiances, comme le site actuel :
+   — le palais au jour (clair) : crème, encre indigo, or, turquoise ;
+   — la nuit des lanternes (sombre) : indigo profond, or chaud, turquoise vive.
+
+   Même mécanique de bascule que globals.css : préférence système par la requête média,
+   choix explicite par `data-theme` sur <html>. Les trois blocs de jetons doivent rester
+   synchronisés.
+   ========================================================================== */
+
+/* La maquette apporte sa propre barre et son propre pied de page. */
+body:has(.conte) > nav,
+body:has(.conte) > footer {
+  display: none;
+}
+/* Sous la maquette, le fond du site (papyrus ou nuit brune) dépasserait d'une bande. */
+body:has(.conte) {
+  background: #fbf4e6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body:has(.conte) {
+    background: #0e1130;
+  }
+}
+:root[data-theme="dark"] body:has(.conte) {
+  background: #0e1130;
+}
+
+.conte {
+  /* Palais au jour. Les couleurs de TEXTE (`-text`, `--c-muted`) sont choisies pour tenir
+     4,5:1 sur le fond et sur les cartes ; les pigments nus ne servent qu'au décor. */
+  --c-bg: #fbf4e6;
+  --c-surface: #fffaf1;
+  --c-surface-2: #f5ead3;
+  --c-ink: #1f1d45;
+  --c-muted: #57527a;
+  --c-line: #e4d3ae;
+
+  --c-gold: #d9a13c;
+  --c-gold-hi: #f4cf6a;
+  --c-gold-text: #85600f;
+  --c-turquoise: #1fa39a;
+  --c-turquoise-text: #11706a;
+  --c-pomegranate: #c2473c;
+  --c-indigo: #2e3582;
+
+  --c-sky-top: #1c2160;
+  --c-sky-bottom: #6a4e8c;
+  --c-skyline-far: #3a2f6b;
+  --c-skyline-near: #221c4a;
+  --c-moon: #fbe7a8;
+  --c-glow: #ffc85a;
+
+  --c-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='.22' stroke-width='1'%3E%3Crect x='26' y='26' width='36' height='36' rx='3'/%3E%3Crect x='26' y='26' width='36' height='36' rx='3' transform='rotate(45 44 44)'/%3E%3Cpath d='M0 0l10 10M88 0 78 10M0 88l10-10M88 88 78 78'/%3E%3C/g%3E%3C/svg%3E");
+
+  --c-shadow: 46 36 90;
+  --c-r: 1.5rem;
+  --c-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --c-ease-back: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .conte {
+    --c-bg: #0e1130;
+    --c-surface: #171b46;
+    --c-surface-2: #20255a;
+    --c-ink: #f6eedc;
+    --c-muted: #b9b3d9;
+    --c-line: #2e3470;
+
+    --c-gold: #f2c464;
+    --c-gold-hi: #ffe19a;
+    --c-gold-text: #f2c464;
+    --c-turquoise: #4fd1c5;
+    --c-turquoise-text: #6ee0d5;
+    --c-pomegranate: #ff8a7a;
+    --c-indigo: #8f98ff;
+
+    --c-sky-top: #070920;
+    --c-sky-bottom: #2b2463;
+    --c-skyline-far: #1b1a48;
+    --c-skyline-near: #0c0c2a;
+    --c-moon: #fff1c2;
+    --c-glow: #ffc85a;
+
+    --c-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23f2c464' stroke-opacity='.09' stroke-width='1'%3E%3Crect x='26' y='26' width='36' height='36' rx='3'/%3E%3Crect x='26' y='26' width='36' height='36' rx='3' transform='rotate(45 44 44)'/%3E%3Cpath d='M0 0l10 10M88 0 78 10M0 88l10-10M88 88 78 78'/%3E%3C/g%3E%3C/svg%3E");
+
+    --c-shadow: 0 0 0;
+  }
+}
+
+:root[data-theme="dark"] .conte {
+  --c-bg: #0e1130;
+  --c-surface: #171b46;
+  --c-surface-2: #20255a;
+  --c-ink: #f6eedc;
+  --c-muted: #b9b3d9;
+  --c-line: #2e3470;
+
+  --c-gold: #f2c464;
+  --c-gold-hi: #ffe19a;
+  --c-gold-text: #f2c464;
+  --c-turquoise: #4fd1c5;
+  --c-turquoise-text: #6ee0d5;
+  --c-pomegranate: #ff8a7a;
+  --c-indigo: #8f98ff;
+
+  --c-sky-top: #070920;
+  --c-sky-bottom: #2b2463;
+  --c-skyline-far: #1b1a48;
+  --c-skyline-near: #0c0c2a;
+  --c-moon: #fff1c2;
+  --c-glow: #ffc85a;
+
+  --c-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23f2c464' stroke-opacity='.09' stroke-width='1'%3E%3Crect x='26' y='26' width='36' height='36' rx='3'/%3E%3Crect x='26' y='26' width='36' height='36' rx='3' transform='rotate(45 44 44)'/%3E%3Cpath d='M0 0l10 10M88 0 78 10M0 88l10-10M88 88 78 78'/%3E%3C/g%3E%3C/svg%3E");
+
+  --c-shadow: 0 0 0;
+}
+
+/* ---------------------------------------------------------------- Socle */
+
+.conte {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: var(--c-bg);
+  color: var(--c-ink);
+  overflow-x: clip;
+}
+
+/* Le carrelage d'étoiles, plus deux halos : l'un doré en haut, l'autre turquoise plus bas. */
+.conte-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60rem 30rem at 85% -5%, color-mix(in srgb, var(--c-gold) 22%, transparent), transparent 70%),
+    radial-gradient(50rem 30rem at 0% 45%, color-mix(in srgb, var(--c-turquoise) 12%, transparent), transparent 70%),
+    var(--c-pattern);
+}
+
+.conte-wrap {
+  margin-inline: auto;
+  max-width: 72rem;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .conte-wrap {
+    padding-inline: 2rem;
+  }
+}
+
+.conte :focus-visible {
+  outline: 3px solid var(--c-turquoise);
+  outline-offset: 3px;
+}
+
+.conte-kufi {
+  font-family: var(--font-kufi), serif;
+}
+.conte-muted {
+  color: var(--c-muted);
+}
+.conte-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------- En-tête */
+
+.conte-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--c-bg) 80%, transparent);
+  border-bottom: 1px solid var(--c-line);
+}
+/* Un filet or → turquoise → or sous la barre, en guise de frise. */
+.conte-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c-gold), var(--c-turquoise), var(--c-gold), transparent);
+  opacity: 0.7;
+}
+
+.conte-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 4rem;
+}
+
+.conte-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  text-decoration: none;
+  color: inherit;
+}
+.conte-brand-name {
+  font-family: var(--font-display), serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.conte-brand .conte-kufi {
+  font-size: 1.1rem;
+  color: var(--c-ink);
+}
+
+.conte-nav {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.conte-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  color: var(--c-ink);
+  text-decoration: none;
+  transition: background-color 150ms var(--c-ease);
+}
+.conte-nav a:hover {
+  background: color-mix(in srgb, var(--c-gold) 16%, transparent);
+}
+
+.conte-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* Sous 720 px, la barre ne garde que l'essentiel : la marque et les actions. Le vrai site
+   aura un menu repliable ; la maquette montre la hiérarchie, pas encore ce menu. */
+@media (max-width: 719px) {
+  .conte-nav {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
+  .conte-brand-name {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- Boutons */
+
+.conte-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition:
+    transform 180ms var(--c-ease-back),
+    box-shadow 180ms var(--c-ease),
+    background-color 180ms var(--c-ease);
+}
+.conte-btn:hover {
+  transform: translateY(-2px);
+}
+.conte-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+.conte-btn-sm {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9375rem;
+}
+
+/* Le bouton or : un dégradé de feuille d'or, un reflet en haut, une ombre chaude. Le texte
+   reste en encre indigo — l'or clair ne porterait pas un texte blanc lisible. */
+.conte-btn-gold {
+  color: #1f1d45;
+  background: linear-gradient(180deg, var(--c-gold-hi), var(--c-gold));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.55),
+    0 8px 22px -10px color-mix(in srgb, var(--c-gold) 80%, transparent);
+}
+.conte-btn-gold:hover {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.55),
+    0 14px 28px -12px color-mix(in srgb, var(--c-gold) 90%, transparent);
+}
+
+.conte-btn-ghost {
+  color: var(--c-ink);
+  border: 1.5px solid color-mix(in srgb, var(--c-ink) 22%, transparent);
+  background: color-mix(in srgb, var(--c-surface) 60%, transparent);
+}
+.conte-btn-ghost:hover {
+  border-color: var(--c-gold);
+  background: color-mix(in srgb, var(--c-gold) 10%, var(--c-surface));
+}
+
+/* ---------------------------------------------------------------- Ouverture */
+
+.conte-hero {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  padding-block: 3rem 2rem;
+}
+@media (min-width: 860px) {
+  .conte-hero {
+    grid-template-columns: 1.15fr 0.85fr;
+    padding-block: 4.5rem 3rem;
+  }
+}
+
+.conte-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--c-turquoise) 13%, transparent);
+  color: var(--c-turquoise-text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.conte-title {
+  margin: 1.1rem 0 0;
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 6.5vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+}
+/* « du Caire » : en or, souligné d'une vague tracée en SVG — la seule fantaisie du titre,
+   qui reste lisible d'un seul regard. */
+.conte-title-accent {
+  color: var(--c-gold-text);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 6c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4' fill='none' stroke='%231fa39a' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 100% / 1.4rem 0.35em;
+  padding-bottom: 0.12em;
+  white-space: nowrap;
+}
+
+.conte-lead {
+  max-width: 34rem;
+  margin: 1.4rem 0 0;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--c-muted);
+}
+
+.conte-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.conte-actions-center {
+  justify-content: center;
+}
+
+.conte-hero-art {
+  display: flex;
+  justify-content: center;
+}
+.conte-window {
+  width: min(100%, 22rem);
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgb(var(--c-shadow) / 0.25));
+}
+
+.conte-sky-top {
+  stop-color: var(--c-sky-top);
+}
+.conte-sky-bottom {
+  stop-color: var(--c-sky-bottom);
+}
+.conte-star {
+  fill: #fff6d8;
+}
+.conte-moon {
+  fill: var(--c-moon);
+}
+.conte-skyline-far {
+  fill: var(--c-skyline-far);
+}
+.conte-skyline-near {
+  fill: var(--c-skyline-near);
+}
+.conte-windows-lit {
+  fill: var(--c-glow);
+}
+.conte-frame {
+  fill: none;
+  stroke: var(--c-gold);
+  stroke-width: 8;
+}
+.conte-frame-inner {
+  fill: none;
+  stroke: var(--c-gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 6;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.conte-lantern-chain {
+  stroke: var(--c-gold);
+  stroke-width: 1.5;
+}
+.conte-lantern-metal {
+  fill: var(--c-gold);
+}
+.conte-lantern-glass {
+  fill: color-mix(in srgb, var(--c-glow) 85%, #fff);
+  stroke: var(--c-gold);
+  stroke-width: 2;
+}
+.conte-lantern-lines {
+  fill: none;
+  stroke: color-mix(in srgb, var(--c-gold) 70%, #7a4b10);
+  stroke-width: 1.2;
+}
+.conte-lantern-glow {
+  fill: var(--c-glow);
+  opacity: 0.18;
+}
+
+/* ---------------------------------------------------------------- Chiffres */
+
+.conte-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.conte-stat {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 1.1rem 0.5rem;
+  border-radius: 2rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  box-shadow: 0 10px 30px -18px rgb(var(--c-shadow) / 0.35);
+  text-align: center;
+}
+.conte-stat-glyph {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--c-gold) 18%, transparent);
+  color: var(--c-gold-text);
+}
+.conte-stat-glyph svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.conte-stat-value {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  /* Le Garamond dessine par défaut des chiffres bas de casse (« 1 4 1 » dansant). */
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.conte-stat-label {
+  font-size: 0.875rem;
+  color: var(--c-muted);
+}
+
+/* ---------------------------------------------------------------- Ornement */
+
+.conte-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 3.5rem;
+  color: var(--c-gold);
+}
+.conte-ornament span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+}
+.conte-ornament svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 5;
+}
+
+/* ---------------------------------------------------------------- Sections */
+
+.conte-section-head {
+  max-width: 40rem;
+}
+.conte-h2 {
+  margin: 0.9rem 0 0;
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.1;
+}
+.conte-h3 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+.conte-section-lead {
+  margin: 0.75rem 0 0;
+  color: var(--c-muted);
+  font-size: 0.9375rem;
+}
+
+/* ---------------------------------------------------------------- Médaillon étoilé */
+
+.conte-medallion {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  --m-fill: var(--c-gold);
+}
+.conte-medallion[data-tone="0"] {
+  --m-fill: var(--c-turquoise);
+}
+.conte-medallion[data-tone="1"] {
+  --m-fill: var(--c-gold);
+}
+.conte-medallion[data-tone="2"] {
+  --m-fill: var(--c-pomegranate);
+}
+.conte-medallion[data-tone="3"] {
+  --m-fill: var(--c-indigo);
+}
+.conte-medallion svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.conte-medallion rect {
+  fill: var(--m-fill);
+}
+.conte-medallion-core {
+  fill: var(--c-surface);
+  stroke: var(--m-fill);
+  stroke-width: 2;
+}
+.conte-medallion-content {
+  position: relative;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------------- Cartes en arche */
+
+.conte-cards {
+  display: grid;
+  gap: 2.75rem 1.25rem;
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 600px) {
+  .conte-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 980px) {
+  .conte-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* L'arche : un dôme elliptique en haut (rayons 50 % × 4 rem), des angles doux en bas. Le
+   médaillon du numéro chevauche le sommet, comme la clé de voûte. */
+.conte-card {
+  --accent: var(--c-turquoise);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 3rem 1.5rem 1.4rem;
+  border: 1px solid var(--c-line);
+  border-radius: 50% 50% var(--c-r) var(--c-r) / 4rem 4rem var(--c-r) var(--c-r);
+  background:
+    radial-gradient(18rem 8rem at 50% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    var(--c-surface);
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 16px 36px -22px rgb(var(--c-shadow) / 0.45);
+  transition:
+    transform 220ms var(--c-ease-back),
+    box-shadow 220ms var(--c-ease),
+    border-color 220ms var(--c-ease);
+}
+/* Un second filet à l'intérieur, en pointillés dorés : le liseré des carreaux peints. */
+.conte-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.conte-card[data-level="A2"] {
+  --accent: var(--c-gold);
+}
+.conte-card[data-level="B1"] {
+  --accent: var(--c-pomegranate);
+}
+.conte-card[data-level="B2"] {
+  --accent: var(--c-indigo);
+}
+.conte-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--c-line));
+  box-shadow: 0 26px 44px -24px rgb(var(--c-shadow) / 0.55);
+}
+
+.conte-card-top {
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  translate: -50% 0;
+  transition: rotate 400ms var(--c-ease-back);
+}
+.conte-card:hover .conte-card-top {
+  rotate: 22.5deg;
+}
+/* Le numéro tourne en sens inverse de l'étoile : il reste droit pendant qu'elle pivote. */
+.conte-card:hover .conte-card-number {
+  rotate: -22.5deg;
+}
+.conte-card-number {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--c-ink);
+  font-variant-numeric: tabular-nums;
+  transition: rotate 400ms var(--c-ease-back);
+}
+
+.conte-card-level {
+  align-self: center;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+.conte-card-title {
+  margin-top: 0.8rem;
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+.conte-card-sub {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--c-muted);
+}
+
+.conte-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  font-size: 0.875rem;
+}
+.conte-progress {
+  flex: 1 1 6rem;
+  max-width: 9rem;
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--c-surface-2);
+}
+.conte-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--c-gold), var(--c-turquoise));
+}
+
+.conte-chip {
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--c-line);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.conte-chip-done {
+  border-color: transparent;
+  background: color-mix(in srgb, var(--c-turquoise) 16%, transparent);
+  color: var(--c-turquoise-text);
+}
+
+/* ---------------------------------------------------------------- Chemin */
+
+.conte-path {
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+/* Le fil pointillé qui relie les étapes : vertical sur mobile, horizontal au-delà. */
+.conte-path::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  border-left: 2px dashed color-mix(in srgb, var(--c-gold) 60%, transparent);
+}
+.conte-path-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.conte-path-level {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--c-ink);
+}
+.conte-path-step p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+@media (min-width: 860px) {
+  .conte-path {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .conte-path::before {
+    top: 2rem;
+    bottom: auto;
+    left: 12%;
+    right: 12%;
+    border-left: 0;
+    border-top: 2px dashed color-mix(in srgb, var(--c-gold) 60%, transparent);
+  }
+  .conte-path-step {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---------------------------------------------------------------- Appel final */
+
+.conte-cta {
+  position: relative;
+  margin-block: 5rem 4rem;
+  padding: 5rem 1.5rem 3rem;
+  border-radius: 50% 50% 2rem 2rem / 5rem 5rem 2rem 2rem;
+  background:
+    radial-gradient(24rem 12rem at 50% 0%, color-mix(in srgb, var(--c-glow) 22%, transparent), transparent 70%),
+    var(--c-surface);
+  border: 1px solid var(--c-line);
+  text-align: center;
+  box-shadow: 0 30px 60px -36px rgb(var(--c-shadow) / 0.5);
+}
+.conte-cta-lantern {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: 3.5rem;
+  height: 7rem;
+  margin-left: -1.75rem;
+}
+.conte-cta-text {
+  max-width: 30rem;
+  margin: 0.9rem auto 0;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------- Pied */
+
+.conte-footer {
+  padding-bottom: 2.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+.conte-footer .conte-ornament {
+  margin-block: 0 1rem;
+}
+
+/* ---------------------------------------------------------------- Mouvement
+   Tout ce qui bouge est ici, et seulement pour qui n'a pas demandé à réduire les
+   animations : sans ce réglage, la page reste entièrement statique et complète. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .conte-hero-text > *,
+  .conte-hero-art,
+  .conte-stat {
+    animation: conte-rise 700ms var(--c-ease) both;
+  }
+  .conte-hero-text > :nth-child(2) {
+    animation-delay: 80ms;
+  }
+  .conte-hero-text > :nth-child(3) {
+    animation-delay: 160ms;
+  }
+  .conte-hero-text > :nth-child(4) {
+    animation-delay: 240ms;
+  }
+  .conte-hero-art {
+    animation-delay: 200ms;
+  }
+
+  .conte-star {
+    animation: conte-twinkle 3.2s ease-in-out infinite;
+    animation-delay: calc(var(--d, 0) * -0.7s);
+  }
+
+  /* Balancement autour du point d'accroche : le haut de la chaîne. */
+  .conte-sway {
+    transform-box: fill-box;
+    transform-origin: 50% 0;
+    animation: conte-sway 5s ease-in-out infinite;
+    animation-delay: calc(var(--d, 0) * -2.3s);
+  }
+  .conte-cta-lantern {
+    transform-origin: 50% 0;
+    animation: conte-sway 5.5s ease-in-out infinite;
+  }
+}
+
+@keyframes conte-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes conte-twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes conte-sway {
+  0%,
+  100% {
+    rotate: -4deg;
+  }
+  50% {
+    rotate: 4deg;
+  }
+}
