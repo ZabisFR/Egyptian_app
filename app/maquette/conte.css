@@ -561,14 +561,15 @@ body:has(.conte) {
 .conte-medallion[data-tone="3"] {
   --m-fill: var(--c-indigo);
 }
-.conte-medallion svg {
+/* Enfant direct seulement : un SVG posé DANS le médaillon (une coche) garde sa taille. */
+.conte-medallion > svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   overflow: visible;
 }
-.conte-medallion rect {
+.conte-medallion > svg rect {
   fill: var(--m-fill);
 }
 .conte-medallion-core {

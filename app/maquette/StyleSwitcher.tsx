@@ -11,6 +11,7 @@ const STYLES = [
   { href: '/maquette/aventure', label: 'Jeu d’aventure' },
   { href: '/maquette/pop', label: 'Pop du Caire' },
   { href: '/maquette/papyrus', label: 'Papyrus enchanté' },
+  { href: '/maquette/mix', label: 'Mix ✦' },
 ] as const;
 
 export default function StyleSwitcher({ current }: { current: (typeof STYLES)[number]['href'] }) {
