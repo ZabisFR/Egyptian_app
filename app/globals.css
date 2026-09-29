@@ -67,19 +67,6 @@
   --badge-b1: #9e362e;
   --badge-b2: #2e3582;
 
-  /* Décor : chemin de dunes et planche gravée. */
-  --sand-sky: #f5ead3;
-  --sand-sun: #f2a65a;
-  --sand-far: #e8d3a2;
-  --sand-mid: #dcc08a;
-  --sand-near: #c9a86a;
-  --sand-line: #c9ad83;
-  --stone-light: #e8d3a2;
-  --stone-dark: #b89a64;
-  --hz-sky-top: #2e3582;
-  --hz-sky-bottom: #6a4e8c;
-  --hz-mono: #1f1d45;
-
   /* ------------------------------------------------------------------ Élévation
      Les ombres sont teintées de brun, jamais de noir pur : une ombre grise sur du
      papyrus donne un gris sale très reconnaissable, celui des maquettes non finies. */
@@ -176,17 +163,6 @@
     --badge-b1: #ff9d8f;
     --badge-b2: #aab1ff;
 
-    --sand-sky: #20255a;
-    --sand-sun: #f2a65a;
-    --sand-far: #3a3f7a;
-    --sand-mid: #454a8a;
-    --sand-near: #535aa0;
-    --sand-line: #4a5090;
-    --stone-light: #6a6fb0;
-    --stone-dark: #2e3470;
-    --hz-sky-top: #070920;
-    --hz-sky-bottom: #2b2463;
-    --hz-mono: #0c0c2a;
 
     --shadow-color: 0 0 0;
 
@@ -228,17 +204,6 @@
   --badge-b1: #ff9d8f;
   --badge-b2: #aab1ff;
 
-  --sand-sky: #20255a;
-  --sand-sun: #f2a65a;
-  --sand-far: #3a3f7a;
-  --sand-mid: #454a8a;
-  --sand-near: #535aa0;
-  --sand-line: #4a5090;
-  --stone-light: #6a6fb0;
-  --stone-dark: #2e3470;
-  --hz-sky-top: #070920;
-  --hz-sky-bottom: #2b2463;
-  --hz-mono: #0c0c2a;
 
   --shadow-color: 0 0 0;
 
