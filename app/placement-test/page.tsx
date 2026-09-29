@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PlacementTest from './PlacementTest';
 import { savePlacement } from './actions';
 import { getUser } from '@/lib/auth';
-import { createClient } from '@/lib/supabase/server';
+import { getPlacementQuestions } from '@/lib/content';
 import { LEVEL_ORDER } from '@/lib/quiz-scoring';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
@@ -14,24 +14,8 @@ export const metadata: Metadata = {
     "Douze questions, de l'alphabet aux formes verbales, pour situer votre niveau et savoir par quel module commencer. Aucune préparation nécessaire.",
 };
 
-type Row = {
-  id: string;
-  question_text: string;
-  options: { choices: string[] } | null;
-  correct_answer: string;
-  difficulty: string | null;
-};
-
 export default async function PlacementTestPage() {
-  const supabase = await createClient();
-  const [user, { data }] = await Promise.all([
-    getUser(),
-    supabase
-      .from('quiz_questions')
-      .select('id, question_text, options, correct_answer, difficulty')
-      .is('module_id', null)
-      .returns<Row[]>(),
-  ]);
+  const [user, data] = await Promise.all([getUser(), getPlacementQuestions()]);
 
   // Ordre A1 → B2 : l'apprenant doit rencontrer les paliers dans l'ordre croissant pour
   // que l'arrêt au premier échec ait du sens.
@@ -45,7 +29,7 @@ export default async function PlacementTestPage() {
     .map((q) => ({
       id: q.id,
       question_text: q.question_text,
-      choices: q.options!.choices,
+      choices: q.options!.choices!,
       correct_answer: q.correct_answer,
       difficulty: q.difficulty,
     }));

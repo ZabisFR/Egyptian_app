@@ -9,8 +9,7 @@ import { getReadLessons } from '@/lib/progress';
 import FeedbackActions from '@/components/FeedbackActions';
 import HashHighlight from '@/components/HashHighlight';
 import { SITE } from '@/lib/site-config';
-import { createClient } from '@/lib/supabase/server';
-import type { Lesson, VocabItem } from '@/lib/types';
+import { getLesson, getModuleLessons } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
 
@@ -20,12 +19,7 @@ export async function generateMetadata({
   params: Promise<{ id: string; lessonId: string }>;
 }): Promise<Metadata> {
   const { id, lessonId } = await params;
-  const supabase = await createClient();
-  const { data } = await supabase
-    .from('lessons')
-    .select('title, day, module_id')
-    .eq('id', lessonId)
-    .maybeSingle<Pick<Lesson, 'title' | 'day' | 'module_id'>>();
+  const data = await getLesson(lessonId);
 
   if (!data || data.module_id !== id) return { title: 'Leçon introuvable' };
   // Le numéro de jour désambiguïse les titres qui se répètent d'un module à l'autre
@@ -39,29 +33,19 @@ export default async function LessonPage({
   params: Promise<{ id: string; lessonId: string }>;
 }) {
   const { id, lessonId } = await params;
-  const supabase = await createClient();
 
-  const user = await getUser();
-  const [{ data: lesson }, { data: siblings }, readLessons] = await Promise.all([
-    supabase
-      .from('lessons')
-      .select('*, vocab_items(*)')
-      .eq('id', lessonId)
-      .maybeSingle<Lesson & { vocab_items: VocabItem[] }>(),
-    supabase
-      .from('lessons')
-      .select('id, title')
-      .eq('module_id', id)
-      .order('order_index')
-      .returns<Pick<Lesson, 'id' | 'title'>[]>(),
-    getReadLessons(user?.id ?? null, id),
+  const [lesson, siblings, user] = await Promise.all([
+    getLesson(lessonId),
+    getModuleLessons(id),
+    getUser(),
   ]);
+  const readLessons = await getReadLessons(user?.id ?? null, id);
 
   if (!lesson || lesson.module_id !== id) notFound();
 
-  const at = siblings!.findIndex((l) => l.id === lessonId);
-  const prev = at > 0 ? siblings![at - 1] : null;
-  const next = at < siblings!.length - 1 ? siblings![at + 1] : null;
+  const at = siblings.findIndex((l) => l.id === lessonId);
+  const prev = at > 0 ? siblings[at - 1] : null;
+  const next = at < siblings.length - 1 ? siblings[at + 1] : null;
 
   return (
     <main className="mx-auto max-w-3xl px-6 pb-20 pt-8 sm:px-8">

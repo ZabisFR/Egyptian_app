@@ -1,3 +1,4 @@
+import { getModules } from '@/lib/content';
 import { createClient } from '@/lib/supabase/server';
 import { PASS_THRESHOLD } from '@/lib/quiz-scoring';
 import type { ModuleStatus } from '@/lib/types';
@@ -29,18 +30,13 @@ export function deriveStatus(
   return 'not_started';
 }
 
-/** Progression de l'utilisateur sur tous les modules, en 3 requêtes quel que soit leur nombre. */
+/**
+ * Progression de l'utilisateur sur tous les modules. Le nombre de leçons vient du cache de
+ * contenu ; seules les deux lectures propres à l'utilisateur interrogent la base, et
+ * aucune pour un visiteur anonyme.
+ */
 export async function getAllProgress(userId: string | null) {
-  const supabase = await createClient();
-
-  const { data: modules } = await supabase
-    .from('modules')
-    .select('id, lessons(count)')
-    .returns<{ id: string; lessons: { count: number }[] }[]>();
-
-  const totals = new Map(
-    (modules ?? []).map((m) => [m.id, m.lessons[0]?.count ?? 0])
-  );
+  const totals = new Map((await getModules()).map((m) => [m.id, m.lessonCount]));
 
   if (!userId) {
     return new Map<string, ModuleProgress>(
@@ -58,6 +54,7 @@ export async function getAllProgress(userId: string | null) {
     );
   }
 
+  const supabase = await createClient();
   const [{ data: reads }, { data: progressRows }] = await Promise.all([
     supabase
       .from('lesson_completions')

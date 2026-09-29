@@ -7,12 +7,9 @@ import { getUser } from '@/lib/auth';
 import { getAllProgress, getReadLessons } from '@/lib/progress';
 import { LEVEL_TONE } from '@/lib/level-tone';
 import { QUIZ_SIZE } from '@/lib/quiz-scoring';
-import { createClient } from '@/lib/supabase/server';
-import type { Lesson, Module } from '@/lib/types';
+import { getModule, getModuleLessons, getQuizBank, type LessonLink } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
-
-type LessonLink = Pick<Lesson, 'id' | 'day' | 'title' | 'section' | 'order_index'>;
 
 /*
   Sans ces `generateMetadata`, les 30 modules et les 139 leçons partageaient tous le
@@ -25,12 +22,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const supabase = await createClient();
-  const { data } = await supabase
-    .from('modules')
-    .select('title, description')
-    .eq('id', id)
-    .maybeSingle<Pick<Module, 'title' | 'description'>>();
+  const data = await getModule(id);
 
   if (!data) return { title: 'Module introuvable' };
   return { title: data.title, description: data.description ?? undefined };
@@ -42,28 +34,22 @@ export default async function ModulePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const supabase = await createClient();
-  const user = await getUser();
 
-  const [{ data: mod }, { data: lessons }, { count: quizCount }, readLessons, progress] =
-    await Promise.all([
-    supabase.from('modules').select('*').eq('id', id).maybeSingle<Module>(),
-    supabase
-      .from('lessons')
-      .select('id, day, title, section, order_index')
-      .eq('module_id', id)
-      .order('order_index')
-      .returns<LessonLink[]>(),
-    supabase
-      .from('quiz_questions')
-      .select('*', { count: 'exact', head: true })
-      .eq('module_id', id)
-      .eq('type', 'mcq'),
-    getReadLessons(user?.id ?? null, id),
-    getAllProgress(user?.id ?? null),
+  // Contenu (cache) et utilisateur en parallèle, puis la progression, qui dépend de lui.
+  const [mod, lessons, bank, user] = await Promise.all([
+    getModule(id),
+    getModuleLessons(id),
+    getQuizBank(id),
+    getUser(),
   ]);
 
   if (!mod) notFound();
+
+  const [readLessons, progress] = await Promise.all([
+    getReadLessons(user?.id ?? null, id),
+    getAllProgress(user?.id ?? null),
+  ]);
+  const quizCount = bank.filter((q) => q.type === 'mcq').length;
 
   const moduleProgress = progress.get(id);
 

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SITE } from '@/lib/site-config';
-import { createClient } from '@/lib/supabase/server';
+import { getLessonLinks, getModules } from '@/lib/content';
 
 // Le contenu pédagogique est public : les modules et leurs leçons ont vocation à être
 // indexés. Le sitemap est généré depuis la base plutôt que codé en dur, pour rester juste
@@ -18,23 +18,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   try {
-    const supabase = await createClient();
-    const [{ data: modules }, { data: lessons }] = await Promise.all([
-      supabase.from('modules').select('id').returns<{ id: string }[]>(),
-      supabase
-        .from('lessons')
-        .select('id, module_id')
-        .returns<{ id: string; module_id: string }[]>(),
-    ]);
+    const [modules, lessons] = await Promise.all([getModules(), getLessonLinks()]);
 
     return [
       ...staticRoutes,
-      ...(modules ?? []).map((m) => ({
+      ...modules.map((m) => ({
         url: `${SITE.url}/modules/${m.id}`,
         changeFrequency: 'monthly' as const,
         priority: 0.8,
       })),
-      ...(lessons ?? []).map((l) => ({
+      ...lessons.map((l) => ({
         url: `${SITE.url}/modules/${l.module_id}/${l.id}`,
         changeFrequency: 'monthly' as const,
         priority: 0.7,

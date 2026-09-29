@@ -4,6 +4,12 @@ import { NextResponse, type NextRequest } from 'next/server';
 // Les Server Components ne peuvent pas écrire de cookies : sans ce middleware, un token
 // expiré ne serait jamais rafraîchi et l'utilisateur serait déconnecté silencieusement.
 export async function middleware(request: NextRequest) {
+  // Pas de cookie de session Supabase (`sb-…-auth-token`) : visiteur anonyme, rien à
+  // rafraîchir. On évite alors de monter un client pour chaque page et chaque préchargement.
+  if (!request.cookies.getAll().some((c) => c.name.startsWith('sb-'))) {
+    return NextResponse.next({ request });
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -29,5 +35,9 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
+  // Ni les fichiers statiques, ni les sons, ni robots/sitemap/manifeste : aucun n'a besoin
+  // d'une session.
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|mp3|txt|xml|json)$).*)',
+  ],
 };

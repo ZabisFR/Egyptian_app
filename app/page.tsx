@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import SoundSampler from '@/components/SoundSampler';
 import WordMarquee from '@/components/WordMarquee';
-import { createClient } from '@/lib/supabase/server';
+import { getContentCounts } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,13 +42,11 @@ const STICKERS = [
 ];
 
 export default async function LandingPage() {
-  const supabase = await createClient();
-  const [{ count: moduleCount }, { count: lessonCount }, { count: vocabCount }] =
-    await Promise.all([
-      supabase.from('modules').select('*', { count: 'exact', head: true }),
-      supabase.from('lessons').select('*', { count: 'exact', head: true }),
-      supabase.from('vocab_items').select('*', { count: 'exact', head: true }),
-    ]);
+  const {
+    modules: moduleCount,
+    lessons: lessonCount,
+    vocab: vocabCount,
+  } = await getContentCounts();
 
   return (
     // `overflow-x-clip` : le bandeau de mots est plus large que l'écran et penché ; sans

@@ -1,5 +1,6 @@
 import 'server-only';
-import { createClient } from '@/lib/supabase/server';
+import { unstable_cache } from 'next/cache';
+import { CONTENT_TAG, contentClient } from '@/lib/content';
 import type { VocabHit } from '@/lib/search';
 
 /**
@@ -23,10 +24,17 @@ type Row = {
   } | null;
 };
 
-export async function getVocabIndex(): Promise<VocabHit[]> {
-  const supabase = await createClient();
+/**
+ * Mis en cache comme le reste du contenu (voir lib/content.ts) : le glossaire et la
+ * recherche globale relisaient les 554 mots, avec leurs jointures, à chaque appel.
+ */
+export const getVocabIndex = unstable_cache(readVocabIndex, ['content', 'vocab-index:v1'], {
+  revalidate: 3600,
+  tags: [CONTENT_TAG],
+});
 
-  const { data, error } = await supabase
+async function readVocabIndex(): Promise<VocabHit[]> {
+  const { data, error } = await contentClient()
     .from('vocab_items')
     .select(
       'id, arabic, transliteration, french, lessons(id, title, day, module_id, modules(title))'

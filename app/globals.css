@@ -1747,3 +1747,29 @@ a.pop-card:active {
     translate: 0 -5px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Squelette de chargement (app/loading.tsx)
+   Des formes aux couleurs du site qui « respirent » doucement. Le décalage `--i` évite
+   que toutes les cartes clignotent en même temps. Sous `prefers-reduced-motion`, la
+   garde globale fige l'animation : il reste des formes pâles, immobiles.
+   -------------------------------------------------------------------------- */
+
+.skeleton {
+  background: color-mix(in srgb, var(--ink) 9%, var(--surface));
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 120ms);
+}
+.skeleton-card {
+  border: 2px solid color-mix(in srgb, var(--line-strong) 25%, transparent);
+  border-radius: 2rem;
+}
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}

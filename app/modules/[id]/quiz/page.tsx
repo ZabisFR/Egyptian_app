@@ -7,9 +7,8 @@ import { saveAttempt } from './actions';
 import { PASS_THRESHOLD, QUIZ_SIZE } from '@/lib/quiz-scoring';
 import { parseSeed, seededShuffle } from '@/lib/shuffle';
 import { getUser } from '@/lib/auth';
-import { createClient } from '@/lib/supabase/server';
+import { getModule, getQuizBank, getVocabLite, type QuizRow } from '@/lib/content';
 import { glossesOf, makeGlosser } from '@/lib/glosses';
-import type { Module } from '@/lib/types';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
 export const dynamic = 'force-dynamic';
@@ -20,23 +19,12 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const supabase = await createClient();
-  const { data } = await supabase
-    .from('modules')
-    .select('title')
-    .eq('id', id)
-    .maybeSingle<Pick<Module, 'title'>>();
+  const data = await getModule(id);
 
   return { title: data ? `Quiz — ${data.title}` : 'Quiz introuvable' };
 }
 
-type Row = {
-  id: string;
-  question_text: string;
-  options: { choices?: string[]; item?: string } | null;
-  correct_answer: string;
-  difficulty: string | null;
-};
+type Row = QuizRow;
 
 export default async function ModuleQuizPage({
   params,
@@ -53,31 +41,23 @@ export default async function ModuleQuizPage({
   // sélection dans la banque.
   if (seed === null) redirect(`/modules/${id}/quiz?seed=${randomInt(1, 1_000_000)}`);
 
-  const supabase = await createClient();
-
-  const [user, { data: mod }, { data: rows }, { data: vocab }] = await Promise.all([
+  // Module, banque de questions et vocabulaire viennent du cache de contenu. Tout le
+  // vocabulaire, pas seulement celui du module : les leurres d'un petit module viennent
+  // des autres modules du même niveau, et il faut pouvoir les traduire aussi.
+  const [user, mod, rows, vocab] = await Promise.all([
     getUser(),
-    supabase.from('modules').select('*').eq('id', id).maybeSingle<Module>(),
-    supabase
-      .from('quiz_questions')
-      .select('id, question_text, options, correct_answer, difficulty')
-      .eq('module_id', id)
-      .returns<Row[]>(),
-    // Tout le vocabulaire, pas seulement celui du module : les leurres d'un petit module
-    // viennent des autres modules du même niveau.
-    supabase
-      .from('vocab_items')
-      .select('arabic, transliteration, french')
-      .returns<{ arabic: string | null; transliteration: string; french: string }[]>(),
+    getModule(id),
+    getQuizBank(id),
+    getVocabLite(),
   ]);
 
-  const glosser = makeGlosser(vocab ?? []);
+  const glosser = makeGlosser(vocab);
 
   if (!mod) notFound();
 
   // Les questions de compréhension écrites à la main n'ont pas de `choices` : elles ne
   // sont pas jouables par le moteur de QCM et sont écartées ici.
-  const playable = (rows ?? []).filter((q) => q.options?.choices?.length);
+  const playable = rows.filter((q) => q.options?.choices?.length);
 
   // Rejouer un quiz ne doit pas se réduire à mémoriser une séquence : la banque d'un module
   // compte jusqu'à 48 questions, et chaque graine en tire `QUIZ_SIZE`. Le bouton « Refaire »

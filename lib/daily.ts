@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { getLessonLinks, getVocabLite } from '@/lib/content';
 import { seededShuffle } from '@/lib/shuffle';
 import { glossesOf, makeGlosser } from '@/lib/glosses';
 import type { QuizQuestionView } from '@/components/QuizEngine';
@@ -63,17 +64,17 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
   const supabase = await createClient();
   const date = todayKey();
 
-  const [{ data: completions }, { data: allLessons }, { data: existing }] =
+  // Le sommaire des leçons et le vocabulaire viennent du cache de contenu : seules les
+  // leçons lues et la révision du jour sont propres à l'utilisateur.
+  const [{ data: completions }, allLessons, allVocab, { data: existing }] =
     await Promise.all([
       supabase
         .from('lesson_completions')
         .select('module_id, lesson_order_index')
         .eq('user_id', userId)
         .returns<{ module_id: string; lesson_order_index: number }[]>(),
-      supabase
-        .from('lessons')
-        .select('id, module_id, order_index')
-        .returns<{ id: string; module_id: string; order_index: number }[]>(),
+      getLessonLinks(),
+      getVocabLite(),
       supabase
         .from('daily_reviews')
         .select('score')
@@ -85,7 +86,7 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
   const readKeys = new Set(
     (completions ?? []).map((c) => `${c.module_id}#${c.lesson_order_index}`)
   );
-  const readLessonIds = (allLessons ?? [])
+  const readLessonIds = allLessons
     .filter((l) => readKeys.has(`${l.module_id}#${l.order_index}`))
     .map((l) => l.id);
 
@@ -100,11 +101,8 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
     return { ...base, questions: [], poolSize: 0 };
   }
 
-  const { data: vocab } = await supabase
-    .from('vocab_items')
-    .select('id, arabic, transliteration, french, lesson_id')
-    .in('lesson_id', readLessonIds)
-    .returns<VocabRow[]>();
+  const readSet = new Set(readLessonIds);
+  const vocab: VocabRow[] = allVocab.filter((v) => readSet.has(v.lesson_id));
 
   // Une traduction qui apparaît deux fois dans le vivier rendrait un distracteur aussi
   // correct que la réponse attendue.

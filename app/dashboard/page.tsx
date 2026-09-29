@@ -7,27 +7,21 @@ import { getAllProgress } from '@/lib/progress';
 import { getDailyLesson } from '@/lib/daily';
 import { totalCount } from '@/lib/exercises';
 import { getStreak } from '@/lib/streak';
-import { createClient } from '@/lib/supabase/server';
-import type { Lesson, Module } from '@/lib/types';
+import { getModuleLessons, getModules } from '@/lib/content';
+import { getReadLessons } from '@/lib/progress';
 
 export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
   const profile = await requireProfile();
-  const supabase = await createClient();
-
-  const [progress, daily, streak, { data: modules }] = await Promise.all([
+  const [progress, daily, streak, modules] = await Promise.all([
     getAllProgress(profile.id),
     getDailyLesson(profile.id),
     getStreak(profile.id),
-    supabase
-      .from('modules')
-      .select('id, title, level, order_index')
-      .order('order_index')
-      .returns<Pick<Module, 'id' | 'title' | 'level' | 'order_index'>[]>(),
+    getModules(),
   ]);
 
-  const rows = (modules ?? []).map((m) => ({ ...m, progress: progress.get(m.id) }));
+  const rows = modules.map((m) => ({ ...m, progress: progress.get(m.id) }));
   const completed = rows.filter((r) => r.progress?.status === 'completed').length;
   const lessonsRead = rows.reduce((n, r) => n + (r.progress?.lessonsRead ?? 0), 0);
   const lessonsTotal = rows.reduce((n, r) => n + (r.progress?.lessonsTotal ?? 0), 0);
@@ -42,23 +36,13 @@ export default async function DashboardPage() {
 
   const nextLesson = current ? await findNextLesson(current.id) : null;
 
+  // Les leçons du module viennent du cache ; les deux lectures partent ensemble.
   async function findNextLesson(moduleId: string) {
-    const { data } = await supabase
-      .from('lessons')
-      .select('id, title, order_index')
-      .eq('module_id', moduleId)
-      .order('order_index')
-      .returns<Pick<Lesson, 'id' | 'title' | 'order_index'>[]>();
-
-    const { data: done } = await supabase
-      .from('lesson_completions')
-      .select('lesson_order_index')
-      .eq('user_id', profile.id)
-      .eq('module_id', moduleId)
-      .returns<{ lesson_order_index: number }[]>();
-
-    const read = new Set((done ?? []).map((d) => d.lesson_order_index));
-    return (data ?? []).find((l) => !read.has(l.order_index)) ?? null;
+    const [lessons, read] = await Promise.all([
+      getModuleLessons(moduleId),
+      getReadLessons(profile.id, moduleId),
+    ]);
+    return lessons.find((l) => !read.has(l.order_index)) ?? null;
   }
 
   const globalPct = lessonsTotal === 0 ? 0 : Math.round((lessonsRead / lessonsTotal) * 100);

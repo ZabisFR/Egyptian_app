@@ -4,7 +4,7 @@ import ModuleCard from '@/components/ModuleCard';
 import { getUser } from '@/lib/auth';
 import { LEVEL_TONE } from '@/lib/level-tone';
 import { getAllProgress } from '@/lib/progress';
-import { createClient } from '@/lib/supabase/server';
+import { getModules } from '@/lib/content';
 import type { Level, Module } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Le parcours complet, de l'alphabet au débat : 30 modules classés par niveau, du A1 au B2, plus les fiches de référence.",
 };
 
-type ModuleRow = Module & { lessons: { count: number }[] };
+type ModuleRow = Module & { lessonCount: number };
 
 /** Ce que chaque palier apporte, affiché en tête de groupe. */
 const LEVEL_INTRO: Record<Level, string> = {
@@ -27,15 +27,18 @@ const LEVEL_INTRO: Record<Level, string> = {
 };
 
 export default async function ModulesPage() {
-  const supabase = await createClient();
-  const [{ data: modules, error }, user] = await Promise.all([
-    supabase
-      .from('modules')
-      .select('*, lessons(count)')
-      .order('order_index')
-      .returns<ModuleRow[]>(),
-    getUser(),
-  ]);
+  // Utilisateur et contenu en parallèle ; la progression dépend de l'utilisateur, elle
+  // attend donc la première promesse, mais le contenu vient du cache (quelques ms).
+  let modules: ModuleRow[];
+  let user: Awaited<ReturnType<typeof getUser>>;
+  let error: Error | null = null;
+  try {
+    [modules, user] = await Promise.all([getModules(), getUser()]);
+  } catch (e) {
+    modules = [];
+    user = null;
+    error = e as Error;
+  }
 
   const progress = await getAllProgress(user?.id ?? null);
 
@@ -58,7 +61,7 @@ export default async function ModulesPage() {
     );
   }
 
-  const total = modules.reduce((n, m) => n + (m.lessons[0]?.count ?? 0), 0);
+  const total = modules.reduce((n, m) => n + m.lessonCount, 0);
   const done = modules.filter((m) => progress.get(m.id)?.status === 'completed').length;
 
   // Un groupe par niveau, dans l'ordre où chaque niveau apparaît pour la première fois.
@@ -164,7 +167,7 @@ export default async function ModulesPage() {
               >
                 <ModuleCard
                   module={m}
-                  lessonCount={m.lessons[0]?.count ?? 0}
+                  lessonCount={m.lessonCount}
                   status={progress.get(m.id)?.status ?? 'not_started'}
                   lessonsRead={progress.get(m.id)?.lessonsRead ?? 0}
                 />

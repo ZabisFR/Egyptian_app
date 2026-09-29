@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import GlossaireFiltre from '@/components/GlossaireFiltre';
-import { createClient } from '@/lib/supabase/server';
+import { getModules } from '@/lib/content';
 import { getVocabIndex } from '@/lib/vocab-index';
 import { foldArabic, foldArabizi, foldLatin, type VocabHit } from '@/lib/search';
 
@@ -73,13 +73,7 @@ export default async function GlossairePage() {
   // (`order_index`) et non l'alphabet des traductions : sans cette requête, les thèmes
   // sortaient dans l'ordre d'apparition des mots dans le glossaire, c'est-à-dire au
   // hasard.
-  const supabase = await createClient();
-  const { data: modules } = await supabase
-    .from('modules')
-    .select('id, order_index')
-    .order('order_index')
-    .returns<{ id: string; order_index: number }[]>();
-  const rang = new Map((modules ?? []).map((m) => [m.id, m.order_index]));
+  const rang = new Map((await getModules()).map((m) => [m.id, m.order_index]));
 
   const compte = new Map<string, { titre: string; n: number }>();
   for (const e of entrees) {
