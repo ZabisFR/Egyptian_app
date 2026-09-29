@@ -701,6 +701,23 @@ body {
   opacity: 0.45;
 }
 
+/* Traduction d'une proposition, révélée après la réponse. */
+.choice-gloss {
+  display: block;
+  margin-top: 0.125rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+/* Sur une proposition atténuée, la traduction est une information à lire, pas un bouton
+   inactif : à l'opacité 0.45 (et même 0.8, mesuré à 3.8:1 en thème clair) elle passerait
+   sous les 4.5:1. L'atténuation se fait alors par la couleur, qui garde le contraste. */
+.choice-faded:has(.choice-gloss) {
+  opacity: 1;
+  color: var(--muted);
+}
+
 /* Lien de navigation : le soulignement doré grandit au survol et remplit toute la
    largeur sur la page courante. L'état actif s'accroche à `aria-current="page"` plutôt
    qu'à une classe dédiée — la même information sert au lecteur d'écran et au style, donc

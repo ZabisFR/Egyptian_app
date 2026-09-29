@@ -17,6 +17,13 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ALPHABET } from '../lib/alphabet';
+import {
+  genderNote,
+  infinitives,
+  translate,
+  translateImperative,
+  translateModal,
+} from './french-conjugations';
 
 const DATA_DIR = 'data';
 const OUT = join(DATA_DIR, 'exercises.generated.json');
@@ -90,15 +97,19 @@ type Exercise = {
   theme: string | null;
   themeLabel: string | null;
   family: string;
+  /** La traduction de chaque proposition (réponse comprise), quand on la connaît. */
+  glosses: Record<string, string>;
 };
 
 /**
  * `family` est facultatif dans un brouillon : à défaut, deux exercices d'un même jeu sont
  * de la même famille s'ils attendent la même réponse. Voir `drawSeries()`.
  */
-type Draft = Omit<Exercise, 'id' | 'choices' | 'family'> & {
+type Draft = Omit<Exercise, 'id' | 'choices' | 'family' | 'glosses'> & {
   distractors: string[];
   family?: string;
+  /** Traductions propres à l'exercice, prioritaires sur celles du jeu (voir `glossFor`). */
+  glosses?: Record<string, string>;
 };
 
 /**
@@ -125,13 +136,20 @@ function finish(draft: Draft): Exercise | null {
 
   const id = `${draft.set}-${hash(`${draft.set}|${draft.sentence}|${draft.answer}`).toString(36)}`;
   const rand = mulberry32(hash(id));
-  const { distractors: _distractors, family, ...rest } = draft;
+  const { distractors: _distractors, family, glosses: own, ...rest } = draft;
+
+  const glosses: Record<string, string> = {};
+  for (const choice of [draft.answer, ...picked]) {
+    const gloss = own?.[choice] ?? glossFor(draft.set, choice);
+    if (gloss) glosses[choice] = gloss;
+  }
 
   return {
     id,
     ...rest,
     choices: shuffle([draft.answer, ...picked], rand),
     family: family ?? `${draft.set}|${key(draft.answer)}`,
+    glosses,
   };
 }
 
@@ -406,7 +424,10 @@ function modalityDrafts(): Draft[] {
       // Deux modalités sur trois par pronom : assez pour varier, sans tripler un jeu dont
       // la réponse, elle, ne change pas d'une modalité à l'autre.
       for (const modal of shuffle(modals, rand).slice(0, 2)) {
+        const sentence = translateModal(modal.sense as 'devoir' | 'pouvoir' | 'vouloir', verb.verb_fr, token);
         drafts.push({
+          // La bonne réponse se traduit avec sa modalité : « il peut sortir ».
+          glosses: sentence ? { [answer]: sentence + genderNote(token) } : undefined,
           set: 'modalites',
           instruction: `${verb.verb_fr} — après ${modal.label} (${modal.sense})`,
           sentence: `${token} ${modal.word} ___`,
@@ -1078,6 +1099,86 @@ function sameCase(word: string, model: string): string {
 const strip = (word: string) => word.replace(/[.,!?;:«»"'’]/g, '');
 
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Traductions — ce que veut dire chaque proposition, affiché une fois la réponse donnée.
+// Revoir les trois leurres traduits (« Beneroo7 = nous allons ») apprend autant que la
+// bonne réponse : c'est là qu'on voit ce qui distingue les formes.
+// ---------------------------------------------------------------------------
+
+/** Accumule plusieurs traductions sous une même forme : « Ro7t » = je suis allé / tu es allé. */
+class Glossary {
+  private map = new Map<string, string[]>();
+
+  add(form: string, text: string | null) {
+    if (!text) return;
+    const k = key(form);
+    const list = this.map.get(k) ?? [];
+    if (!list.includes(text)) list.push(text);
+    this.map.set(k, list);
+  }
+
+  get(form: string): string | null {
+    const list = this.map.get(key(form));
+    return list ? list.slice(0, 3).join(' / ') : null;
+  }
+}
+
+const TENSE_OF = { present: 'present', future: 'future', past: 'past' } as const;
+
+let glossaries: { verbs: Glossary; vocab: Glossary; letters: Glossary } | null = null;
+
+function buildGlossaries() {
+  const verbs = new Glossary();
+  const vocab = new Glossary();
+  const letters = new Glossary();
+
+  for (const verb of conjugations.verbs_full) {
+    for (const row of verb.conjugations) {
+      const { token } = splitPronoun(row.pronoun);
+      const note = genderNote(token);
+      const with_ = (t: string | null) => (t ? t + note : null);
+
+      for (const field of ['present', 'future', 'past'] as const) {
+        verbs.add(row[field], with_(translate(verb.verb_fr, token, TENSE_OF[field])));
+      }
+      verbs.add(row.past_negative, with_(translate(verb.verb_fr, token, 'past', true)));
+      for (const field of ['present', 'future'] as const) {
+        verbs.add(`Mesh ${row[field]}`, with_(translate(verb.verb_fr, token, field, true)));
+      }
+
+      const subject = splitPronoun(row.pronoun).french;
+      verbs.add(
+        bareForm(row, token),
+        `${infinitives(verb.verb_fr).join(' / ')} — sans B-, ${subject}`
+      );
+    }
+    verbs.add(verb.imperative_m, translateImperative(verb.verb_fr));
+  }
+
+  for (const entry of allVocab()) {
+    vocab.add(entry.transliteration, entry.french);
+    for (const half of halves(entry.transliteration)) vocab.add(half, entry.french);
+  }
+
+  for (const letter of ALPHABET) {
+    letters.add(letter.nom, `${letter.isole} — son « ${letter.arabizi} »`);
+  }
+
+  return { verbs, vocab, letters };
+}
+
+const VERB_SETS = new Set(['present', 'futur', 'passe', 'negation', 'imperatif', 'modalites', 'transformation']);
+const LETTER_SETS = new Set(['premiere-lettre', 'derniere-lettre', 'formes']);
+
+function glossFor(set: string, value: string): string | null {
+  glossaries ??= buildGlossaries();
+  if (VERB_SETS.has(set)) return glossaries.verbs.get(value);
+  if (LETTER_SETS.has(set)) return glossaries.letters.get(value);
+  // Un mot de phrase peut être une forme verbale conjuguée (« benakhod ») plutôt qu'une
+  // entrée du vocabulaire.
+  return glossaries.vocab.get(value) ?? (set === 'phrases' ? glossaries.verbs.get(value) : null);
+}
 
 function main() {
   const drafts = [

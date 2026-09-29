@@ -71,6 +71,12 @@ export default function DailyReview({
                           <span className="font-medium text-[var(--malachite-text)]">
                             <ArabicText>{q.correct_answer}</ArabicText>
                           </span>
+                          {q.glosses?.[q.correct_answer] && (
+                            <span className="text-[var(--muted)]">
+                              {' '}
+                              (<ArabicText>{q.glosses[q.correct_answer]}</ArabicText>)
+                            </span>
+                          )}
                         </p>
                       </li>
                     );

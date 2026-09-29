@@ -8,6 +8,7 @@ import { PASS_THRESHOLD, QUIZ_SIZE } from '@/lib/quiz-scoring';
 import { parseSeed, seededShuffle } from '@/lib/shuffle';
 import { getUser } from '@/lib/auth';
 import { createClient } from '@/lib/supabase/server';
+import { glossesOf, makeGlosser } from '@/lib/glosses';
 import type { Module } from '@/lib/types';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
@@ -54,7 +55,7 @@ export default async function ModuleQuizPage({
 
   const supabase = await createClient();
 
-  const [user, { data: mod }, { data: rows }] = await Promise.all([
+  const [user, { data: mod }, { data: rows }, { data: vocab }] = await Promise.all([
     getUser(),
     supabase.from('modules').select('*').eq('id', id).maybeSingle<Module>(),
     supabase
@@ -62,7 +63,15 @@ export default async function ModuleQuizPage({
       .select('id, question_text, options, correct_answer, difficulty')
       .eq('module_id', id)
       .returns<Row[]>(),
+    // Tout le vocabulaire, pas seulement celui du module : les leurres d'un petit module
+    // viennent des autres modules du même niveau.
+    supabase
+      .from('vocab_items')
+      .select('arabic, transliteration, french')
+      .returns<{ arabic: string | null; transliteration: string; french: string }[]>(),
   ]);
+
+  const glosser = makeGlosser(vocab ?? []);
 
   if (!mod) notFound();
 
@@ -91,6 +100,7 @@ export default async function ModuleQuizPage({
     choices: q.options!.choices!,
     correct_answer: q.correct_answer,
     difficulty: q.difficulty,
+    glosses: glossesOf(q.options!.choices!, glosser),
   }));
 
   async function onComplete(result: Parameters<typeof saveAttempt>[1]) {

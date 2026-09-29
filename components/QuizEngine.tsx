@@ -11,6 +11,8 @@ export type QuizQuestionView = {
   choices: string[];
   correct_answer: string;
   difficulty: string | null;
+  /** Traduction de chaque proposition, révélée après la réponse (voir `lib/glosses.ts`). */
+  glosses?: Record<string, string>;
 };
 
 export type QuizResult = { answers: Answer[]; score: number };
@@ -174,6 +176,12 @@ export default function QuizEngine({
                 </span>
                 <span className="flex-1 text-left">
                   <ArabicText>{choice}</ArabicText>
+                  {/* Après la réponse seulement : avant, la traduction la donnerait. */}
+                  {picked !== null && question.glosses?.[choice] && (
+                    <span className="choice-gloss">
+                      <ArabicText>{question.glosses[choice]}</ArabicText>
+                    </span>
+                  )}
                 </span>
                 {picked !== null && isCorrect && (
                   <span aria-hidden="true" className="text-[var(--malachite-text)]">

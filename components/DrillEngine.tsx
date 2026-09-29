@@ -266,7 +266,15 @@ export default function DrillEngine({
                   <span className="choice-key" aria-hidden="true">
                     {i + 1}
                   </span>
-                  <span className="flex-1 text-left">{choice}</span>
+                  <span className="flex-1 text-left">
+                    {choice}
+                    {/* La traduction n'apparaît qu'après la réponse : avant, elle la donnerait. */}
+                    {verdict !== null && exercise.glosses[choice] && (
+                      <span className="choice-gloss">
+                        <ArabicText>{exercise.glosses[choice]}</ArabicText>
+                      </span>
+                    )}
+                  </span>
                 </button>
               </li>
             );
@@ -298,6 +306,14 @@ export default function DrillEngine({
             {verdict === 'close' && `Juste — au détail près : on écrit « ${exercise.answer} ».`}
             {verdict === 'wrong' && `Raté. La réponse était « ${exercise.answer} ».`}
           </p>
+
+          {exercise.glosses[exercise.answer] && (
+            <p className="mt-1 text-sm">
+              <span className="font-medium">{exercise.answer}</span>
+              {' = '}
+              <ArabicText>{exercise.glosses[exercise.answer]}</ArabicText>
+            </p>
+          )}
 
           {exercise.note && (
             <p className="mt-2 text-sm text-[var(--muted)]">

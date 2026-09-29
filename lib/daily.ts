@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { seededShuffle } from '@/lib/shuffle';
+import { glossesOf, makeGlosser } from '@/lib/glosses';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
 /** Nombre d'items dans la leçon du jour. Court par construction : le but est qu'elle soit
@@ -120,6 +121,9 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
   const seed = hash(`${userId}:${date}`);
   const picked = seededShuffle(pool, seed).slice(0, DAILY_SIZE);
 
+  // Les leurres viennent du même vivier : il suffit à les traduire tous.
+  const glosser = makeGlosser(pool);
+
   const questions: QuizQuestionView[] = picked.map((item, i) => {
     const itemSeed = hash(`${seed}:${item.id}`);
 
@@ -157,6 +161,7 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
       choices: seededShuffle([correct, ...distractors], itemSeed),
       correct_answer: correct,
       difficulty: null,
+      glosses: glossesOf([correct, ...distractors], glosser),
     };
   });
 

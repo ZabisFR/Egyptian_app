@@ -63,6 +63,12 @@ export default function DrillSession({
                         <span className="font-semibold text-[var(--malachite-text)]">
                           {a.exercise.answer}
                         </span>
+                        {a.exercise.glosses[a.exercise.answer] && (
+                          <span>
+                            {' '}
+                            (<ArabicText>{a.exercise.glosses[a.exercise.answer]}</ArabicText>)
+                          </span>
+                        )}
                         {a.given.trim() && (
                           <span className="text-[var(--muted)]">
                             {' '}

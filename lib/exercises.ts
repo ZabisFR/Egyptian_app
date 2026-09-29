@@ -52,6 +52,11 @@ export type Exercise = {
    * même pronom sous deux habillages, la même phrase avec deux trous, le même mot…
    */
   family: string;
+  /**
+   * La traduction de chaque proposition, réponse comprise : « Beneroo7 » → « nous allons ».
+   * Affichée une fois la réponse donnée. Une proposition sans traduction connue n'y figure pas.
+   */
+  glosses: Record<string, string>;
 };
 
 export type DrillSet = {
