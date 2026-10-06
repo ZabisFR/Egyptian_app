@@ -54,6 +54,7 @@ rôle :
 - choisir le design parmi plusieurs maquettes ;
 - tester le site, repérer ce qui n'allait pas (questions trop répétitives, pages lentes,
   design trop « scolaire ») et demander les corrections ;
+- modifier moi-même le code quand le résultat proposé ne me convient pas ;
 - déployer et maintenir le site.
 
 ## Organisation du code
