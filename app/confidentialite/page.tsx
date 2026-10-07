@@ -21,7 +21,9 @@ export default function ConfidentialitePage() {
         <p>
           Ce site ne pratique aucun traçage publicitaire, n&apos;utilise aucun outil
           d&apos;analyse d&apos;audience, et ne transmet vos données à aucun tiers à des fins
-          commerciales. Les seuls cookies déposés servent à vous garder connecté.
+          commerciales. Les seuls cookies déposés servent à vous garder connecté. Seule
+          exception, si vous l&apos;utilisez : les messages écrits au tuteur IA sont envoyés
+          à Google pour produire la réponse (voir <a href="#tuteur">Tuteur IA</a>).
         </p>
 
         <h2>Responsable du traitement</h2>
@@ -66,6 +68,15 @@ export default function ConfidentialitePage() {
               <td>
                 Leçons lues, scores aux quiz, niveau estimé, points d&apos;expérience — pour
                 vous permettre de reprendre où vous en étiez
+              </td>
+            </tr>
+            <tr>
+              <td>Compteur de messages au tuteur IA</td>
+              <td>Votre usage du tuteur</td>
+              <td>
+                Nombre de messages envoyés par jour et heure du dernier, pour appliquer la
+                limite quotidienne. Le contenu des messages n&apos;est pas enregistré sur
+                nos serveurs.
               </td>
             </tr>
           </tbody>
@@ -116,12 +127,33 @@ export default function ConfidentialitePage() {
           <li>
             <strong>{SITE.databaseProvider}</strong> — base de données et authentification.
           </li>
+          <li>
+            <strong>Google LLC (API Gemini)</strong> — réponses du tuteur IA, pour les
+            comptes qui l&apos;utilisent.
+          </li>
         </ul>
         <p>
           Ces prestataires agissent comme sous-traitants au sens du RGPD. Selon la région
           d&apos;hébergement configurée, vos données peuvent être traitées hors de
           l&apos;Union européenne ; ces transferts sont alors encadrés par les clauses
           contractuelles types de la Commission européenne.
+        </p>
+
+        <h2 id="tuteur">Tuteur IA</h2>
+        <p>
+          Le tuteur IA, réservé aux comptes connectés, repose sur le service Gemini de
+          Google. Quand vous lui écrivez, votre message et les derniers échanges de la
+          conversation sont transmis à Google pour générer la réponse. Le site ne conserve
+          pas le contenu de ces conversations : elles disparaissent quand vous quittez la
+          page.
+        </p>
+        <p>
+          Le site utilise l&apos;offre gratuite de l&apos;API Gemini. Dans ce cadre, les
+          conditions de Google l&apos;autorisent à utiliser les messages reçus pour améliorer
+          ses produits, et des personnes peuvent être amenées à les relire.{' '}
+          <strong>N&apos;écrivez donc au tuteur aucune information personnelle ou
+          confidentielle.</strong> Le tuteur est facultatif : le reste du site fonctionne
+          sans lui.
         </p>
 
         <h2>Durée de conservation</h2>

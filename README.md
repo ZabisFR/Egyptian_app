@@ -21,6 +21,8 @@ A1 au B2 : alphabet, Arabizi, vocabulaire, grammaire et conjugaison.
   choisir.
 - **Écriture** : tracer les 28 lettres de l'alphabet au doigt, à la souris ou au stylet,
   et obtenir un pourcentage de ressemblance avec le modèle.
+- **Tuteur IA** : un chat (Google Gemini) qui répond en arabe, en Arabizi et en français et
+  corrige les phrases de l'élève. Réservé aux comptes, 20 messages par jour.
 - **Test de positionnement** : 12 questions pour savoir par quel niveau commencer.
 - **Leçon du jour** : une révision quotidienne des mots des leçons déjà lues.
 - **Suivi de progression** : compte utilisateur, leçons lues, XP et tableau de bord.
@@ -40,6 +42,7 @@ A1 au B2 : alphabet, Arabizi, vocabulaire, grammaire et conjugaison.
 - [Tailwind CSS v4](https://tailwindcss.com)
 - [Supabase](https://supabase.com) : base PostgreSQL, authentification, sécurité par
   lignes (RLS)
+- [AI SDK](https://ai-sdk.dev) + Google Gemini pour le tuteur IA
 - Hébergement sur [Vercel](https://vercel.com) : chaque push sur `main` est déployé
   automatiquement.
 
@@ -85,6 +88,8 @@ Settings → API keys) :
 
 - `NEXT_PUBLIC_SUPABASE_URL` et `NEXT_PUBLIC_SUPABASE_ANON_KEY` : utilisées par
   l'application.
+- `GOOGLE_GENERATIVE_AI_API_KEY` : clé Gemini pour le tuteur IA (serveur uniquement), à
+  créer sur https://aistudio.google.com/apikey. `CHAT_MODEL` (facultative) change le modèle.
 - `SUPABASE_SECRET_KEY` : utilisée **uniquement** par les scripts d'import, jamais exposée
   au navigateur et jamais configurée sur Vercel, car elle contourne les règles RLS.
 
@@ -98,6 +103,7 @@ Dans Supabase → SQL Editor, exécuter dans l'ordre les fichiers de `supabase/m
 4. `004_profiles_on_signup.sql` : création du profil à l'inscription
 5. `005_lesson_completions.sql` : leçons lues
 6. `006_daily_reviews.sql` : historique de la leçon du jour
+7. `007_chat_usage.sql` : quota de messages du tuteur IA
 
 > Le `003` est indispensable. Sans lui, si RLS est activé sur les tables de contenu, les
 > lectures anonymes renvoient un tableau vide **avec un statut 200**, sans erreur.

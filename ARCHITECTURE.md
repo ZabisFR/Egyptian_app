@@ -104,6 +104,20 @@ C'est le cœur à lire en premier pour comprendre une règle métier : tout ce q
 
 **Le lien de la Navbar n'apparaît qu'à 1024 px** : la barre, élargie à `max-w-6xl` avec la refonte, a la place d'un lien « S’entraîner » sur grand écran, pas en dessous. Sous 1024 px, les entrées sont l'accueil, `/modules` (carte à côté du glossaire), le tableau de bord et le pied de page.
 
+### Tuteur IA
+
+| Fichier | Rôle |
+|---|---|
+| `app/tuteur/page.tsx` | Page `/tuteur`. Connecté : affiche le chat et le nombre de messages restants (lu dans `chat_usage`) ; sinon, boutons de connexion et d'inscription. |
+| `components/ChatTutor.tsx` | Le chat côté navigateur : envoie l'historique à `/api/chat`, lit la réponse en flux et l'affiche au fil de l'eau. Chaque ligne de réponse porte `dir="auto"` (l'arabe s'aligne à droite). En cas d'échec (réseau, 429, IA), le message est rendu à l'élève dans le champ. Rien n'est enregistré : la conversation disparaît en quittant la page. |
+| `app/api/chat/route.ts` | Route serveur, dans l'ordre : connexion (401), validation zod (400), quota en base via la RPC `consume_chat_message` (429), puis appel à Gemini (`streamText` de `ai` v7). Attend le premier morceau de texte avant de répondre : une erreur Gemini devient un 502 lisible au lieu d'un flux vide. Restants dans l'en-tête `X-Chat-Remaining`. |
+| `lib/chat-config.ts` | **Toutes les limites réglables** : 20 messages/jour, 5/minute, 500 caractères, 10 messages d'historique, 400 jetons de réponse ; modèle par défaut si `CHAT_MODEL` est vide. |
+| `lib/chat-prompt.ts` | Le prompt système du tuteur (« Ostaz ») : égyptien du Caire, réponse en arabe + Arabizi + français, refus poli hors sujet. |
+
+**Variables d'environnement** : `GOOGLE_GENERATIVE_AI_API_KEY` (serveur uniquement, jamais `NEXT_PUBLIC_`) et `CHAT_MODEL` (facultative). Sans clé, la route répond 503 et le reste du site fonctionne.
+
+**Piège** : les modèles Gemini récents « réfléchissent » avant de répondre, et cette réflexion compte dans les 400 jetons. `thinkingFor()` dans la route la réduit au minimum selon la génération du modèle ; en changeant `CHAT_MODEL`, vérifier que les réponses ne sortent pas vides ou tronquées.
+
 ### Leçon du jour
 
 | Fichier | Rôle |
@@ -136,6 +150,7 @@ Chaque fichier est numéroté et doit être exécuté une seule fois, dans l'ord
 | `004_profiles_on_signup.sql` | Trigger `security definer` qui crée la ligne `profiles` à l'inscription (la table n'a pas de policy INSERT, un utilisateur ne peut pas créer sa propre ligne autrement). |
 | `005_lesson_completions.sql` | Table des leçons lues. Clé sur `(module_id, lesson_order_index)` et **pas** `lessons.id` : `npm run import` régénère les UUID des leçons à chaque réimport, une clé étrangère vers `lessons.id` effacerait toute la progression en cascade. |
 | `006_daily_reviews.sql` | Historique de la leçon du jour, contrainte unique `(user_id, review_date)`. |
+| `007_chat_usage.sql` | Quota du tuteur IA : table `chat_usage` (une ligne par utilisateur et par jour de Paris), lecture seule pour l'utilisateur, et fonction `consume_chat_message(daily_limit, minute_limit)` qui vérifie et incrémente en une opération (`for update` : des requêtes parallèles ne passent pas toutes). Le fuseau est écrit en dur dans la fonction. |
 
 ---
 

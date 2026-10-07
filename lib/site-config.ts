@@ -44,7 +44,7 @@ export const SITE = {
    * date est l'ajout du canal de retours et de l'adresse dédiée (24 août 2026), qui a
    * introduit un nouveau traitement de données à mentionner.
    */
-  lastUpdated: '24 août 2026',
+  lastUpdated: '7 octobre 2026',
 } as const;
 
 /**

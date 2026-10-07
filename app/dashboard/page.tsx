@@ -142,6 +142,20 @@ export default async function DashboardPage() {
             S’exercer
           </Link>
         </section>
+
+        <section
+          className="card-sand rise flex flex-col p-5"
+          style={{ '--i': 4 } as React.CSSProperties}
+        >
+          <p className="eyebrow">Tuteur IA</p>
+          <h2 className="display mt-2 text-lg">Une question sur l’arabe ?</h2>
+          <p className="mt-1 flex-1 text-sm text-[var(--muted)]">
+            Le tuteur répond en arabe, en Arabizi et en français, et corrige vos phrases.
+          </p>
+          <Link href="/tuteur" className="btn-outline mt-4 w-full">
+            Discuter
+          </Link>
+        </section>
       </div>
 
       <h2 className="eyebrow mt-12">Tous les modules</h2>

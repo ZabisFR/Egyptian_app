@@ -1773,3 +1773,117 @@ a.pop-card:active {
     opacity: 0.45;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Tuteur IA (components/ChatTutor.tsx)
+   Bulles de l'élève en or, à droite ; réponses du tuteur sur la surface du thème, à
+   gauche. Le texte des bulles n'impose aucun sens d'écriture : chaque ligne porte
+   `dir="auto"`, l'arabe s'aligne donc à droite dans la bulle, le français à gauche.
+   -------------------------------------------------------------------------- */
+
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 16rem;
+  max-height: min(60vh, 34rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1rem;
+  border: 2.5px solid var(--line-strong);
+  border-radius: 1.75rem;
+  background: var(--surface-sunken);
+  box-shadow: var(--pop-shadow);
+}
+.chat-log:focus-visible {
+  outline: 3px solid var(--lapis);
+  outline-offset: 3px;
+}
+
+.chat-bubble {
+  max-width: min(36rem, 88%);
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--line-strong);
+  border-radius: 1.35rem;
+  overflow-wrap: anywhere;
+  line-height: 1.55;
+}
+.chat-bubble-user {
+  align-self: flex-end;
+  border-bottom-right-radius: 0.4rem;
+  background: var(--pop-gold);
+  color: var(--pop-ink);
+  white-space: pre-wrap;
+}
+.chat-bubble-tutor {
+  align-self: flex-start;
+  border-bottom-left-radius: 0.4rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.chat-suggestion {
+  min-height: 44px;
+  padding: 0.5rem 0.95rem;
+  border: 2px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
+  transition: transform 140ms var(--ease);
+}
+.chat-suggestion:hover:not(:disabled) {
+  transform: translate(-1px, -2px);
+}
+.chat-suggestion:disabled {
+  opacity: 0.5;
+}
+
+.chat-error {
+  margin-top: 0.85rem;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--carmine);
+  border-radius: 1rem;
+  color: var(--carmine-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Trois points qui sautillent pendant que le tuteur prépare sa réponse. */
+.chat-typing {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.35rem 0;
+}
+.chat-typing > span[aria-hidden] {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--muted);
+  animation: chat-typing 1s ease-in-out infinite;
+}
+.chat-typing > span[aria-hidden]:nth-child(2) {
+  animation-delay: 150ms;
+}
+.chat-typing > span[aria-hidden]:nth-child(3) {
+  animation-delay: 300ms;
+}
+@keyframes chat-typing {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-typing > span[aria-hidden] {
+    animation: none;
+    opacity: 0.7;
+  }
+}
