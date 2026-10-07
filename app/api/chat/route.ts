@@ -3,7 +3,12 @@ import { streamText, type ModelMessage } from 'ai';
 import { google, type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
-import { CHAT_LIMITS, DEFAULT_CHAT_MODEL, MAX_ASSISTANT_CHARS } from '@/lib/chat-config';
+import {
+  CHAT_LIMITS,
+  DEFAULT_CHAT_MODEL,
+  FALLBACK_CHAT_MODEL,
+  MAX_ASSISTANT_CHARS,
+} from '@/lib/chat-config';
 import { TUTOR_INSTRUCTIONS } from '@/lib/chat-prompt';
 
 /**
@@ -134,14 +139,20 @@ export async function POST(request: Request) {
   }
 
   // 4. Appel à Gemini, en flux.
-  const model = process.env.CHAT_MODEL?.trim() || DEFAULT_CHAT_MODEL;
-  const start = (thinkingConfig: GoogleLanguageModelOptions['thinkingConfig']) =>
+  //
+  // Pas de `abortSignal: request.signal` : le signal de la requête peut se déclencher dès
+  // que la route a renvoyé sa réponse, et coupait alors Gemini après quelques mots, sans
+  // erreur (réponses tronquées constatées en production le 07/10/2026). Gemini n'est
+  // arrêté que si le navigateur ferme vraiment la connexion : voir `cancel()` plus bas.
+  const abort = new AbortController();
+  const primary = process.env.CHAT_MODEL?.trim() || DEFAULT_CHAT_MODEL;
+  const start = (model: string, thinkingConfig: GoogleLanguageModelOptions['thinkingConfig']) =>
     streamText({
       model: google(model),
       instructions: TUTOR_INSTRUCTIONS,
       messages: history as ModelMessage[],
       maxOutputTokens: CHAT_LIMITS.maxOutputTokens,
-      abortSignal: request.signal,
+      abortSignal: abort.signal,
       providerOptions: {
         google: { thinkingConfig } satisfies GoogleLanguageModelOptions,
       },
@@ -159,17 +170,28 @@ export async function POST(request: Request) {
     }
   };
 
-  let parts = start(thinkingFor(model));
+  let model = primary;
+  let parts = start(model, thinkingFor(model));
   let first = '';
   try {
     try {
       first = await firstText(parts);
     } catch (e) {
-      // Chaque modèle n'accepte pas chaque réglage de réflexion, et `CHAT_MODEL` peut
-      // désigner n'importe lequel : si Google refuse ce réglage, on réessaie une fois sans.
-      if (!(e instanceof Error && /thinking/i.test(e.message))) throw e;
-      console.warn('Tuteur : réglage de réflexion refusé, nouvel essai sans :', e.message);
-      parts = start(undefined);
+      const message = e instanceof Error ? e.message : String(e);
+      if (/thinking/i.test(message)) {
+        // Chaque modèle n'accepte pas chaque réglage de réflexion, et `CHAT_MODEL` peut
+        // désigner n'importe lequel : si Google refuse ce réglage, on réessaie sans.
+        console.warn('Tuteur : réglage de réflexion refusé, nouvel essai sans :', message);
+        parts = start(model, undefined);
+      } else if (/high demand|overloaded|unavailable|503/i.test(message)) {
+        // Modèle saturé chez Google (fréquent sur l'offre gratuite) : un essai sur l'autre
+        // modèle Flash, qui a sa propre capacité.
+        model = FALLBACK_CHAT_MODEL[model] ?? DEFAULT_CHAT_MODEL;
+        console.warn(`Tuteur : ${primary} saturé, nouvel essai avec ${model}.`);
+        parts = start(model, thinkingFor(model));
+      } else {
+        throw e;
+      }
       first = await firstText(parts);
     }
   } catch (e) {
@@ -181,6 +203,8 @@ export async function POST(request: Request) {
   }
 
   const encoder = new TextEncoder();
+  let length = first.length;
+  let finishReason = '?';
   const stream = new ReadableStream<Uint8Array>({
     start(controller) {
       controller.enqueue(encoder.encode(first));
@@ -192,9 +216,18 @@ export async function POST(request: Request) {
       try {
         for (;;) {
           const { value, done } = await parts.next();
-          if (done || value.type === 'abort') return controller.close();
+          if (done || value.type === 'abort') {
+            // Une ligne par réponse : si une réponse paraît coupée, les journaux Vercel
+            // disent si Gemini a fini (`stop`), manqué de jetons (`length`) ou été coupé.
+            console.info(
+              `Tuteur : réponse terminée — ${model}, ${finishReason}${done ? '' : ' (interrompue)'}, ${length} caractères.`,
+            );
+            return controller.close();
+          }
+          if (value.type === 'finish') finishReason = value.finishReason;
           if (value.type === 'error') throw value.error;
           if (value.type === 'text-delta' && value.text) {
+            length += value.text.length;
             controller.enqueue(encoder.encode(value.text));
             return;
           }
@@ -206,8 +239,9 @@ export async function POST(request: Request) {
         controller.error(e);
       }
     },
-    async cancel() {
-      await parts.return?.();
+    // Le navigateur a fermé la connexion (page quittée) : inutile de laisser Gemini écrire.
+    cancel() {
+      abort.abort();
     },
   });
 
@@ -215,6 +249,9 @@ export async function POST(request: Request) {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'no-store',
+      // Demande aux intermédiaires de ne pas retenir le flux : sans tampon, chaque morceau
+      // part dès qu'il arrive.
+      'X-Accel-Buffering': 'no',
       'X-Chat-Remaining': String(quota.remaining),
     },
   });

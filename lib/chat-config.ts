@@ -27,11 +27,22 @@ export const CHAT_LIMITS = {
 export const MAX_ASSISTANT_CHARS = 2500;
 
 /**
- * Modèle utilisé si `CHAT_MODEL` n'est pas défini. `gemini-flash-latest` suit la version
- * Flash courante de Google : pas de modèle retiré du service à surveiller. Pour figer une
- * version précise, définir `CHAT_MODEL` (ex. `gemini-2.5-flash`) sans toucher au code.
+ * Modèle utilisé si `CHAT_MODEL` n'est pas défini. Les alias `-latest` suivent la version
+ * courante de Google : pas de modèle retiré du service à surveiller (`gemini-2.5-flash`,
+ * par exemple, n'existe plus).
+ *
+ * Flash-Lite plutôt que Flash : mesuré le 07/10/2026 avec le prompt du tuteur, Flash
+ * (3.8) répondait en ~10 s et refusait une requête sur deux pour surcharge (503) sur
+ * l'offre gratuite ; Flash-Lite (3.5) répondait en ~1,5 s, sans refus. Pour privilégier la
+ * qualité, définir `CHAT_MODEL=gemini-flash-latest` sur Vercel, sans toucher au code.
  */
-export const DEFAULT_CHAT_MODEL = 'gemini-flash-latest';
+export const DEFAULT_CHAT_MODEL = 'gemini-flash-lite-latest';
+
+/** Modèle de secours quand le premier est saturé chez Google (erreur 503). */
+export const FALLBACK_CHAT_MODEL: Record<string, string> = {
+  'gemini-flash-lite-latest': 'gemini-flash-latest',
+  'gemini-flash-latest': 'gemini-flash-lite-latest',
+};
 
 /**
  * Le « jour » du quota suit l'heure de Paris : le site s'adresse à des francophones, un
