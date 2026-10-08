@@ -1887,3 +1887,119 @@ a.pop-card:active {
     opacity: 0.7;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Ostaz, le personnage du tuteur (components/TutorMascot.tsx, page d'accueil)
+   Le « dock » ne prend aucune hauteur (`height: 0`) : il colle au bas de l'écran pendant
+   le défilement de l'accueil, puis se pose dans la marge basse du <main>, au-dessus du
+   pied de page. Le personnage et sa bulle débordent vers le haut.
+   -------------------------------------------------------------------------- */
+
+.tutor-mascot-dock {
+  position: sticky;
+  bottom: 1rem;
+  z-index: 30;
+  height: 0;
+  /* Place réservée sous la dernière section : en fin de défilement, le personnage s'y
+     pose au lieu de recouvrir les boutons de « Yalla, on commence ? ». */
+  margin-top: 12rem;
+  pointer-events: none;
+}
+
+.tutor-mascot {
+  position: absolute;
+  right: max(1rem, calc((100vw - 72rem) / 2 + 1rem));
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+  color: var(--ink);
+  text-decoration: none;
+  pointer-events: auto;
+  animation: mascot-in 600ms var(--ease-back) 600ms both;
+}
+.tutor-mascot:focus-visible {
+  outline: 3px solid var(--lapis);
+  outline-offset: 4px;
+  border-radius: 1.5rem;
+}
+
+.tutor-mascot-face {
+  width: 7.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(4px 4px 0 var(--line-strong));
+  transform-origin: 50% 90%;
+  animation: mascot-bob 3.2s ease-in-out 1.4s infinite;
+  transition: transform 200ms var(--ease-back);
+}
+.tutor-mascot:hover .tutor-mascot-face {
+  animation-play-state: paused;
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.tutor-mascot-bubble {
+  position: relative;
+  max-width: 13.5rem;
+  margin-bottom: 6rem;
+  padding: 0.65rem 0.9rem;
+  border: 2.5px solid var(--line-strong);
+  border-radius: 1.25rem 1.25rem 0.35rem 1.25rem;
+  background: var(--surface);
+  box-shadow: 4px 4px 0 var(--line-strong);
+  font-size: 0.875rem;
+  line-height: 1.35;
+  animation: mascot-in 500ms var(--ease-back) 1.1s both;
+  transition: transform 200ms var(--ease-back);
+}
+.tutor-mascot:hover .tutor-mascot-bubble {
+  transform: translate(-2px, -3px);
+}
+.tutor-mascot-bubble strong {
+  color: var(--carmine-text);
+}
+.tutor-mascot-hello {
+  display: block;
+  font-family: "Segoe UI", "Noto Naskh Arabic", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* Sur téléphone, la bulle se fait plus discrète pour ne pas masquer le texte. */
+@media (max-width: 639px) {
+  .tutor-mascot {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+  .tutor-mascot-face {
+    width: 4.5rem;
+  }
+  .tutor-mascot-bubble {
+    max-width: 7.5rem;
+    margin-bottom: 0;
+    padding: 0.4rem 0.7rem;
+    border-radius: 1rem 1rem 0.35rem 1rem;
+    font-size: 0.78rem;
+  }
+  .tutor-mascot-hello {
+    font-size: 1rem;
+  }
+}
+
+@keyframes mascot-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.85);
+  }
+}
+@keyframes mascot-bob {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg) translateY(-3px);
+  }
+}
