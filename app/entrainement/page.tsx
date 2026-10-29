@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import ArabicText from '@/components/ArabicText';
 import { listSets, SERIES_SIZE, totalCount, type DrillSetId } from '@/lib/exercises';
+import { trustedAudioCount } from '@/lib/vocab-audio';
 
 export const metadata: Metadata = {
   title: 'Entraînement',
@@ -47,12 +48,30 @@ export default function EntrainementPage() {
       </h1>
 
       <p className="mt-4 max-w-2xl text-[var(--muted)]">
-        {totalCount()} exercices à trous tirés du contenu des modules. On tape la réponse,
-        on ne la choisit pas — et rien n’est enregistré : ni score, ni XP, ni progression.
-        C’est le brouillon, le quiz de module reste la copie.
+        {totalCount()} exercices à trous tirés du contenu des modules, où l’on tape la
+        réponse au lieu de la choisir, et un exercice d’écoute. Rien n’est enregistré : ni
+        score, ni XP, ni progression. C’est le brouillon, le quiz de module reste la copie.
       </p>
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* L'écoute n'est pas un exercice à trous (elle se fait en QCM, sur le vocabulaire
+            au son de confiance) : elle a sa propre page, hors du catalogue généré. */}
+        <li>
+          <Link href="/entrainement/ecoute" className="pop-card pop-tone-grenade">
+            <div className="flex items-start justify-between gap-3">
+              <h2 className="display text-2xl leading-tight">À l’oreille</h2>
+              <span className="pop-chip tabular shrink-0">{trustedAudioCount()}</span>
+            </div>
+            <p className="mt-1.5 text-sm font-medium">
+              Le mot est prononcé, pas écrit : retrouvez son sens.
+            </p>
+            <p className="mt-auto pt-4">
+              <span className="block rounded-2xl border-2 border-[var(--on)] bg-[var(--veil)] px-3 py-2 font-mono text-[0.8125rem]">
+                ▶ … → « fille »
+              </span>
+            </p>
+          </Link>
+        </li>
         {sets.map((set) => (
           <li key={set.id}>
             <Link href={`/entrainement/${set.id}`} className={`pop-card ${FAMILY_TONE[set.id]}`}>

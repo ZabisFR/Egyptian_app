@@ -9,7 +9,9 @@ import { getReadLessons } from '@/lib/progress';
 import FeedbackActions from '@/components/FeedbackActions';
 import HashHighlight from '@/components/HashHighlight';
 import { SITE } from '@/lib/site-config';
-import { getLesson, getModuleLessons } from '@/lib/content';
+import { getLesson, getModuleLessons, getVocabLite } from '@/lib/content';
+import LessonListening from '@/components/LessonListening';
+import { hashSeed, listenable, listeningSeries } from '@/lib/listening';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,14 +36,23 @@ export default async function LessonPage({
 }) {
   const { id, lessonId } = await params;
 
-  const [lesson, siblings, user] = await Promise.all([
+  const [lesson, siblings, user, allVocab] = await Promise.all([
     getLesson(lessonId),
     getModuleLessons(id),
     getUser(),
+    getVocabLite(),
   ]);
   const readLessons = await getReadLessons(user?.id ?? null, id);
 
   if (!lesson || lesson.module_id !== id) notFound();
+
+  // Exercice d'écoute sur les mots de la leçon (leurres pris d'abord dans la leçon, puis
+  // dans tout le vocabulaire). Graine = la leçon : même ordre à chaque visite, ce qui garde
+  // le rendu serveur et l'hydratation d'accord ; « Recommencer » mélange côté client.
+  const listening =
+    listenable(lesson.vocab_items).length >= 2
+      ? listeningSeries(lesson.vocab_items, allVocab, allVocab, hashSeed(lesson.id), 20)
+      : [];
 
   const at = siblings.findIndex((l) => l.id === lessonId);
   const prev = at > 0 ? siblings[at - 1] : null;
@@ -62,6 +73,8 @@ export default async function LessonPage({
       <div className="mt-4">
         <LessonViewer lesson={lesson} vocab={lesson.vocab_items} />
       </div>
+
+      {listening.length >= 2 && <LessonListening questions={listening} />}
 
       <div className="mt-10 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
         <LessonReadToggle

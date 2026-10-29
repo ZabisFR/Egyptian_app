@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { getLessonLinks, getVocabLite } from '@/lib/content';
 import { seededShuffle } from '@/lib/shuffle';
 import { glossesOf, makeGlosser } from '@/lib/glosses';
+import { listeningQuestion } from '@/lib/listening';
 import type { QuizQuestionView } from '@/components/QuizEngine';
 
 /** Nombre d'items dans la leçon du jour. Court par construction : le but est qu'elle soit
@@ -54,7 +55,8 @@ export type DailyLesson = {
 };
 
 /**
- * Construit la leçon du jour à partir du vocabulaire des leçons déjà marquées lues.
+ * Construit la leçon du jour à partir du vocabulaire des leçons déjà marquées lues. Une
+ * question sur quatre est une question d'écoute (`lib/listening.ts`) quand le mot a un son.
  *
  * On ne révise que ce que l'apprenant a effectivement lu : une révision qui interroge sur
  * du contenu jamais vu n'est pas une révision, c'est un test surprise. Les distracteurs
@@ -125,10 +127,15 @@ export async function getDailyLesson(userId: string): Promise<DailyLesson> {
   const questions: QuizQuestionView[] = picked.map((item, i) => {
     const itemSeed = hash(`${seed}:${item.id}`);
 
-    // Trois formats en alternance : le sens (arabe → français), la production (français →
-    // arabizi) et la lecture (écriture arabe seule → arabizi). Le troisième retombe sur le
-    // premier pour un mot sans écriture arabe.
-    const kind = i % 3 === 1 ? 'say' : i % 3 === 2 && item.arabic ? 'read' : 'meaning';
+    // Quatre formats en alternance : le sens (arabe → français), la production (français →
+    // arabizi), la lecture (écriture arabe seule → arabizi) et l'écoute (le mot joué sans
+    // être écrit → français). La lecture retombe sur le sens pour un mot sans écriture
+    // arabe ; l'écoute aussi, pour un mot sans son de confiance.
+    if (i % 4 === 3) {
+      const listening = listeningQuestion(item, seededShuffle(pool, itemSeed), pool, itemSeed);
+      if (listening) return listening;
+    }
+    const kind = i % 4 === 1 ? 'say' : i % 4 === 2 && item.arabic ? 'read' : 'meaning';
     const toArabizi = kind !== 'meaning';
 
     const distractors: string[] = [];

@@ -61,7 +61,10 @@ export default function DailyReview({
                     return (
                       <li key={a.question_id} className="py-2 text-sm">
                         <p className="text-[var(--muted)]">
-                          <ArabicText>{q.question_text}</ArabicText>
+                          {/* Question d'écoute : l'énoncé ne dit pas quel mot c'était. */}
+                          <ArabicText>
+                            {q.reveal ? `Écoute : ${q.reveal}` : q.question_text}
+                          </ArabicText>
                         </p>
                         <p className="mt-1">
                           <span className="text-[var(--carmine-text)] line-through">

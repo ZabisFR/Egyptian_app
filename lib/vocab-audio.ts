@@ -31,6 +31,11 @@ export function audioKey(arabic: string): string {
   return arabic.trim().normalize('NFC');
 }
 
+/** Nombre de mots au son de confiance (sommaire de l'entraînement, sans lire la base). */
+export function trustedAudioCount(): number {
+  return Object.keys(entries).filter((key) => vocabAudioSrc(key)).length;
+}
+
 /** URL du son d'un mot, ou `null` s'il n'en a pas de fiable (gabarit de grammaire, son
  *  refusé ou pas encore écouté, mot ajouté après la dernière génération). */
 export function vocabAudioSrc(arabic: string | null | undefined): string | null {

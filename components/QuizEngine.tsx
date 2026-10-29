@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useTransition } from 'react';
+import { useEffect, useRef, useState, useTransition } from 'react';
 import ArabicText from './ArabicText';
 import ProgressBar from './ProgressBar';
 import { scorePercent, type Answer } from '@/lib/quiz-scoring';
@@ -13,6 +13,11 @@ export type QuizQuestionView = {
   difficulty: string | null;
   /** Traduction de chaque proposition, révélée après la réponse (voir `lib/glosses.ts`). */
   glosses?: Record<string, string>;
+  /** Question d'écoute (`lib/listening.ts`) : le son à faire entendre. Le mot n'est pas
+   *  écrit dans la question, sinon on la lirait au lieu de l'écouter. */
+  audio?: string;
+  /** Ce qu'on montre une fois la réponse donnée : le mot entendu, écrit. */
+  reveal?: string;
 };
 
 export type QuizResult = { answers: Answer[]; score: number };
@@ -37,6 +42,33 @@ export default function QuizEngine({
   const question = questions[index];
   const isLast = index === questions.length - 1;
   const wasRight = picked !== null && picked === question.correct_answer;
+
+  // Question d'écoute : le son part de lui-même à l'arrivée de la question. Le clic qui a
+  // mené ici (« Question suivante », « Commencer ») autorise la lecture ; si le navigateur
+  // la refuse quand même, le bouton « Écouter » reste là.
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+  function play() {
+    if (!question.audio) return;
+    audioRef.current?.pause();
+    const audio = new Audio(question.audio);
+    // L'état suit les événements du lecteur, jamais un appel direct : c'est lui qui sait
+    // si la lecture a vraiment démarré (le navigateur peut la refuser).
+    audio.onplay = () => setPlaying(true);
+    audio.onpause = audio.onended = () => setPlaying(false);
+    audioRef.current = audio;
+    audio.play().catch(() => {});
+  }
+  useEffect(() => {
+    if (done || !question.audio) return;
+    play();
+    return () => {
+      audioRef.current?.pause();
+      audioRef.current = null;
+    };
+    // Une fois par question : `play` change à chaque rendu, la question non.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question.id, done]);
 
   // Série de bonnes réponses consécutives : c'est la mécanique qui donne envie
   // d'enchaîner. Recalculée depuis les réponses plutôt que gardée dans un état à part —
@@ -85,10 +117,20 @@ export default function QuizEngine({
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.metaKey || event.ctrlKey || event.altKey) return;
+      // Une frappe dans un champ (la recherche du haut de page) appartient au champ :
+      // sans ce garde, taper « r » ou un chiffre y rejouait le son ou choisissait une réponse.
+      const target = event.target as HTMLElement | null;
+      if (target?.closest('input, textarea, select, [contenteditable="true"]')) return;
 
       if (event.key === 'Enter' && picked !== null) {
         event.preventDefault();
         next();
+        return;
+      }
+
+      if (question.audio && (event.key === 'r' || event.key === 'R')) {
+        event.preventDefault();
+        play();
         return;
       }
 
@@ -139,6 +181,29 @@ export default function QuizEngine({
       <h2 key={question.id} className="display rise mt-8 text-2xl leading-snug sm:text-3xl">
         <ArabicText>{question.question_text}</ArabicText>
       </h2>
+
+      {question.audio && (
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={play}
+            className="btn-outline gap-2"
+            aria-label={playing ? 'Lecture en cours, réécouter' : 'Écouter le mot'}
+          >
+            <span aria-hidden="true">{playing ? '♪' : '▶'}</span>
+            {picked === null ? 'Écouter' : 'Réécouter'}
+            <kbd className="hidden rounded border border-current px-1.5 py-0.5 text-[10px] font-semibold opacity-70 sm:inline">
+              R
+            </kbd>
+          </button>
+          {/* Le mot écrit n'apparaît qu'après la réponse : avant, on le lirait. */}
+          {picked !== null && question.reveal && (
+            <p className="fade-in text-lg font-semibold">
+              <ArabicText>{question.reveal}</ArabicText>
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Annonce vocale du résultat : sans elle, un lecteur d'écran ne signale que le
           changement de couleur — c'est-à-dire rien. */}
