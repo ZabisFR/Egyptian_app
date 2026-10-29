@@ -257,7 +257,13 @@ async function importPayload({ module, lessons }: ImportPayload) {
 }
 
 async function main() {
-  const files = (await readdir(DATA_DIR)).filter((f) => f.endsWith('.json')).sort();
+  // Seuls les modules et la référence de conjugaison sont du contenu : `data/` contient
+  // aussi des fichiers générés (exercices, manifeste audio) qui n'ont rien à faire en base.
+  const files = (await readdir(DATA_DIR))
+    .filter(
+      (f) => (f.startsWith('module-') && f.endsWith('.json')) || f === 'conjugations-core.json'
+    )
+    .sort();
   const total = { modules: 0, lessons: 0, vocab: 0, quiz: 0 };
 
   for (const file of files) {

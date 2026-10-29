@@ -1,9 +1,11 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 
-// Les Server Components ne peuvent pas écrire de cookies : sans ce middleware, un token
+// Les Server Components ne peuvent pas écrire de cookies : sans ce proxy, un token
 // expiré ne serait jamais rafraîchi et l'utilisateur serait déconnecté silencieusement.
-export async function middleware(request: NextRequest) {
+// (Next 16 a renommé `middleware.ts` en `proxy.ts` ; le rôle est le même, mais il tourne
+// désormais sous Node.js et non plus sous le runtime Edge.)
+export async function proxy(request: NextRequest) {
   // Pas de cookie de session Supabase (`sb-…-auth-token`) : visiteur anonyme, rien à
   // rafraîchir. On évite alors de monter un client pour chaque page et chaque préchargement.
   if (!request.cookies.getAll().some((c) => c.name.startsWith('sb-'))) {

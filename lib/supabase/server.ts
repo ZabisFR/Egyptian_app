@@ -17,7 +17,7 @@ export async function createClient() {
             );
           } catch {
             // Appelé depuis un Server Component : les cookies y sont en lecture seule.
-            // Le rafraîchissement de session est alors pris en charge par le middleware.
+            // Le rafraîchissement de session est alors pris en charge par le proxy (`proxy.ts`).
           }
         },
       },
