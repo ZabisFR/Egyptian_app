@@ -48,7 +48,7 @@
       "order_index": 2,
       "section": "Référence",
       "title": "Métiers courants (2/2)",
-      "content_markdown": "## Métiers courants\n\n| Égyptien | Sens |\n|---|---|\n| ضابط — dabet | policier / officier |\n| طيار — tayyar | pilote |\n| طباخ — tabbakh | cuisinier |\n| سائق — sa2e2 | chauffeur |\n| تاجر — taagir | commerçant |",
+      "content_markdown": "## Métiers courants\n\n| Égyptien | Sens |\n|---|---|\n| ضابط — dabet | policier / officier |\n| طيار — tayyar | pilote |\n| طباخ — tabbakh | cuisinier |\n| سواق — sawwa2 | chauffeur |\n| تاجر — taagir | commerçant |",
       "vocab_items": [
         {
           "arabic": "ضابط",
@@ -66,8 +66,8 @@
           "french": "cuisinier"
         },
         {
-          "arabic": "سائق",
-          "transliteration": "sa2e2",
+          "arabic": "سواق",
+          "transliteration": "sawwa2",
           "french": "chauffeur"
         },
         {

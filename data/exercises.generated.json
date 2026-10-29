@@ -74578,7 +74578,7 @@
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "sa2e2",
+        "sawwa2",
         "mo7ami",
         "tayyar",
         "doktor"
@@ -74587,7 +74587,7 @@
       "glosses": {
         "doktor": "médecin",
         "mo7ami": "avocat",
-        "sa2e2": "chauffeur",
+        "sawwa2": "chauffeur",
         "tayyar": "pilote"
       }
     },
@@ -74630,7 +74630,7 @@
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "sa2e2",
+        "sawwa2",
         "modarres",
         "mumarrida",
         "mohandes"
@@ -74639,7 +74639,7 @@
       "glosses": {
         "mohandes": "ingénieur",
         "mumarrida": "infirmière",
-        "sa2e2": "chauffeur",
+        "sawwa2": "chauffeur",
         "modarres": "professeur / enseignant"
       }
     },
@@ -74656,7 +74656,7 @@
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "sa2e2",
+        "sawwa2",
         "tabbakh",
         "mo7ami",
         "mumarrida"
@@ -74665,7 +74665,7 @@
       "glosses": {
         "mo7ami": "avocat",
         "tabbakh": "cuisinier",
-        "sa2e2": "chauffeur",
+        "sawwa2": "chauffeur",
         "mumarrida": "infirmière"
       }
     },
@@ -74684,7 +74684,7 @@
       "choices": [
         "doktor",
         "tayyar",
-        "sa2e2",
+        "sawwa2",
         "mumarrida"
       ],
       "family": "vocabulaire|mumarrida",
@@ -74692,7 +74692,7 @@
         "mumarrida": "infirmière",
         "tayyar": "pilote",
         "doktor": "médecin",
-        "sa2e2": "chauffeur"
+        "sawwa2": "chauffeur"
       }
     },
     {
@@ -74774,26 +74774,26 @@
       }
     },
     {
-      "id": "vocabulaire-iho6a5",
+      "id": "vocabulaire-1g0lbm9",
       "set": "vocabulaire",
       "instruction": "Écris le mot en égyptien",
       "sentence": "« chauffeur » → ___",
-      "answer": "sa2e2",
+      "answer": "sawwa2",
       "accepted": [],
       "hint": null,
-      "note": "En écriture arabe : سائق",
+      "note": "En écriture arabe : سواق",
       "level": "REF",
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "sa2e2",
+        "sawwa2",
+        "mo7ami",
         "taagir",
-        "mumarrida",
-        "mo7ami"
+        "mumarrida"
       ],
-      "family": "vocabulaire|sa2e2",
+      "family": "vocabulaire|sawwa2",
       "glosses": {
-        "sa2e2": "chauffeur",
+        "sawwa2": "chauffeur",
         "mumarrida": "infirmière",
         "taagir": "commerçant",
         "mo7ami": "avocat"
@@ -74813,7 +74813,7 @@
       "themeLabel": "Les métiers",
       "choices": [
         "tabbakh",
-        "sa2e2",
+        "sawwa2",
         "doktor",
         "taagir"
       ],
@@ -74821,7 +74821,7 @@
       "glosses": {
         "taagir": "commerçant",
         "tabbakh": "cuisinier",
-        "sa2e2": "chauffeur",
+        "sawwa2": "chauffeur",
         "doktor": "médecin"
       }
     },
@@ -88857,11 +88857,11 @@
       }
     },
     {
-      "id": "lecture-416fpt",
+      "id": "lecture-vf1jl",
       "set": "lecture",
       "instruction": "Lis ce mot et écris sa prononciation",
-      "sentence": "سائق → ___",
-      "answer": "sa2e2",
+      "sentence": "سواق → ___",
+      "answer": "sawwa2",
       "accepted": [],
       "hint": null,
       "note": "Ça veut dire « chauffeur ».",
@@ -88869,17 +88869,17 @@
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "3asher",
-        "3arabi",
-        "7osan",
-        "sa2e2"
+        "Ahwa",
+        "2amees",
+        "arkhas",
+        "sawwa2"
       ],
-      "family": "lecture|sa2e2",
+      "family": "lecture|sawwa2",
       "glosses": {
-        "sa2e2": "chauffeur",
-        "3arabi": "Arabe / L'arabe",
-        "7osan": "cheval",
-        "3asher": "Dixième"
+        "sawwa2": "chauffeur",
+        "Ahwa": "Le café",
+        "arkhas": "moins cher",
+        "2amees": "chemise"
       }
     },
     {
@@ -100306,10 +100306,10 @@
       }
     },
     {
-      "id": "premiere-lettre-1tp657k",
+      "id": "premiere-lettre-x3fpw0",
       "set": "premiere-lettre",
       "instruction": "Par quelle lettre commence ce mot ?",
-      "sentence": "سائق → ___",
+      "sentence": "سواق → ___",
       "answer": "Sseen",
       "accepted": [
         "s",
@@ -100321,8 +100321,8 @@
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "Kha (5)",
         "Sseen",
+        "Qaf (2)",
         "Dhal",
         "Sheen"
       ],
@@ -100331,7 +100331,7 @@
         "Sseen": "س — son « s »",
         "Sheen": "ش — son « sh »",
         "Dhal": "ذ — son « z / dh »",
-        "Kha (5)": "خ — son « kh »"
+        "Qaf (2)": "ق — son « 2 / q »"
       }
     },
     {
@@ -110094,10 +110094,10 @@
       }
     },
     {
-      "id": "derniere-lettre-i314v0",
+      "id": "derniere-lettre-dmaonk",
       "set": "derniere-lettre",
       "instruction": "Par quelle lettre finit ce mot ?",
-      "sentence": "سائق → ___",
+      "sentence": "سواق → ___",
       "answer": "Qaf (2)",
       "accepted": [
         "2",
@@ -110110,8 +110110,8 @@
       "theme": "jobs-core",
       "themeLabel": "Les métiers",
       "choices": [
-        "Meem",
-        "Ta",
+        "Sseen",
+        "Zay",
         "Qaf (2)",
         "Fa"
       ],
@@ -110119,8 +110119,8 @@
       "glosses": {
         "Qaf (2)": "ق — son « 2 / q »",
         "Fa": "ف — son « f »",
-        "Ta": "ت — son « t »",
-        "Meem": "م — son « m »"
+        "Sseen": "س — son « s »",
+        "Zay": "ز — son « z »"
       }
     },
     {
