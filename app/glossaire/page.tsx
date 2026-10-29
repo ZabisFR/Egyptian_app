@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import GlossaireFiltre from '@/components/GlossaireFiltre';
+import LetterAudioButton from '@/components/LetterAudioButton';
+import { vocabAudioSrc } from '@/lib/vocab-audio';
 import { getModules } from '@/lib/content';
 import { getVocabIndex } from '@/lib/vocab-index';
 import { foldArabic, foldArabizi, foldLatin, type VocabHit } from '@/lib/search';
@@ -18,6 +20,7 @@ type Entree = {
   arabe: string | null;
   translitteration: string;
   francais: string;
+  audio: string | null;
   /** Toutes les leçons où le mot apparaît — un mot peut être enseigné à deux endroits. */
   sources: { m: string; mt: string; l: string; lt: string; d: number | null; i: string }[];
 };
@@ -45,6 +48,7 @@ function grouper(index: VocabHit[]): Entree[] {
         arabe: hit.a,
         translitteration: hit.t,
         francais: hit.f,
+        audio: vocabAudioSrc(hit.a),
         sources: [source],
       });
   }
@@ -129,7 +133,16 @@ export default async function GlossairePage() {
             <span className="arabic glossaire-arabe" dir="rtl">
               {e.arabe ?? '—'}
             </span>
-            <span className="font-semibold">{e.translitteration}</span>
+            {/* Le bouton suit l'Arabizi plutôt que l'arabe : la colonne arabe fait 6,5 rem,
+                un bouton de 40 px y repousserait les expressions longues sur deux lignes.
+                `glossaire-audio` (globals.css) : la cible reste de 40 px sans rendre
+                chacune des 544 lignes plus haute. */}
+            <span className="font-semibold">
+              {e.translitteration}
+              {e.audio && (
+                <LetterAudioButton src={e.audio} label={e.translitteration} className="glossaire-audio" />
+              )}
+            </span>
             <span className="text-[var(--muted)]">{e.francais}</span>
             <span className="glossaire-sources">
               {e.sources.map((s, i) => (

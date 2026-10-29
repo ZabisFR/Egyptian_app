@@ -11,9 +11,12 @@ let activeStop: (() => void) | null = null;
 export default function LetterAudioButton({
   src,
   label,
+  className = '',
 }: {
   src: string;
   label: string;
+  /** Classes ajoutées au bouton, par exemple une marge négative dans une liste dense. */
+  className?: string;
 }) {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -56,7 +59,7 @@ export default function LetterAudioButton({
         setPlaying(true);
         audio.play().catch(() => setPlaying(false));
       }}
-      className="group ml-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center align-middle"
+      className={`group ml-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center align-middle ${className}`}
     >
       {/*
         Le bouton lui-même fait 40x40 — la zone de clic recommandée pour le tactile —

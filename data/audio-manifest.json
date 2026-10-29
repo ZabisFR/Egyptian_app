@@ -1,0 +1,2629 @@
+{
+  "entries": {
+    "آيوه": {
+      "file": "8240f1ebe623.mp3",
+      "text": "أيْوَه",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أبريل": {
+      "file": "aa57db81e7d4.mp3",
+      "text": "أبريل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أبيض": {
+      "file": "ec42045b5b90.mp3",
+      "text": "أبيض",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أجمل": {
+      "file": "86d921776359.mp3",
+      "text": "أجمل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أحسن": {
+      "file": "75c4ac1fa5b0.mp3",
+      "text": "أحسن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أحمر": {
+      "file": "96cab1ba1b55.mp3",
+      "text": "أحمر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أخضر": {
+      "file": "a6b0763996cc.mp3",
+      "text": "أخضر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أربعة": {
+      "file": "a28f76c6d258.mp3",
+      "text": "أربعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أربعين": {
+      "file": "2225c0127cc0.mp3",
+      "text": "أربعين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أرخص": {
+      "file": "c5701833642b.mp3",
+      "text": "أرخص",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أرنب": {
+      "file": "1ea41bc613eb.mp3",
+      "text": "أرنب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أريد": {
+      "file": "613dfb4f99c6.mp3",
+      "text": "أريد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أزرق": {
+      "file": "b2d33354b53c.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"ˈʔazraʔ\">أزرق</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أسبوع": {
+      "file": "b9028253de79.mp3",
+      "text": "أسبوع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أسبوعين": {
+      "file": "22160971aafd.mp3",
+      "text": "أسبوعين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أسرع": {
+      "file": "72937cf3b4b7.mp3",
+      "text": "أسرع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أصغر": {
+      "file": "9833447f2c93.mp3",
+      "text": "أصغر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أصفر": {
+      "file": "62b07216189a.mp3",
+      "text": "أصفر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أعتقد إن": {
+      "file": "c45815552ea4.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "أغسطس": {
+      "file": "70667b3fc365.mp3",
+      "text": "أغسطس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أغلى": {
+      "file": "dd447914d0cd.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "أكبر": {
+      "file": "7930619e9aff.mp3",
+      "text": "أكبر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أكتوبر": {
+      "file": "3dd643445418.mp3",
+      "text": "أكتوبر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أنا": {
+      "file": "941ddf4bb6af.mp3",
+      "text": "أنا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أنا حاسس إن": {
+      "file": "0d41cad075fb.mp3",
+      "text": "أنا حاسس إن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أنا شايف إن": {
+      "file": "08cb8012bcf0.mp3",
+      "text": "أنا شايف إن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أنا لازم أعمل بكرة": {
+      "file": "aac9a4398371.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "أنا مش موافق خالص": {
+      "file": "9f42b3816221.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "أنا من فرنسا": {
+      "file": "11969de8fde8.mp3",
+      "text": "أنا من فرنسا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أنا موافق": {
+      "file": "086932e02a67.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "أهلاً وسهلاً": {
+      "file": "751754057036.mp3",
+      "text": "أهلاً وسهلاً",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أو": {
+      "file": "d2624f52cf43.mp3",
+      "text": "أو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أوحش": {
+      "file": "5dec6a93945f.mp3",
+      "text": "أوحش",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أول": {
+      "file": "e55fe1f0c882.mp3",
+      "text": "أول",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أول إمبارح": {
+      "file": "d158c8e9ef6f.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "أول مرة": {
+      "file": "4f4fb80eac59.mp3",
+      "text": "أول مرة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أولاد": {
+      "file": "de44a7a5e093.mp3",
+      "text": "أولاد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أيام": {
+      "file": "194c9fc2111a.mp3",
+      "text": "أيام",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "أين": {
+      "file": "861d9c3d601b.mp3",
+      "text": "أين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إحنا": {
+      "file": "c3f896801a2c.mp3",
+      "text": "إحنا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إزاي؟": {
+      "file": "f7ab890d2a0a.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إزيَّك؟": {
+      "file": "ec248cf5b627.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إزيِّك؟": {
+      "file": "2cea68f8fcac.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إسود": {
+      "file": "f8e7184a97c5.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إلا ربع": {
+      "file": "44718a968707.mp3",
+      "text": "إلا ربع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إمبارح": {
+      "file": "1d10bf190b96.mp3",
+      "text": "إمبارح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إمتى؟": {
+      "file": "833a1bd68b69.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إن شاء الله": {
+      "file": "b092517c16f1.mp3",
+      "text": "إن شاء الله",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إنترنت": {
+      "file": "0daf322cd307.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إنتو": {
+      "file": "98614ed1ed60.mp3",
+      "text": "إنتو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إنتَ": {
+      "file": "1d4cedd78736.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إنتِ": {
+      "file": "18fc8bac2e26.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إنجليزي": {
+      "file": "568e0860eca3.mp3",
+      "text": "إنجليزي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إيد": {
+      "file": "1e6d55805542.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "إيدين": {
+      "file": "a5d8448cf9fd.mp3",
+      "text": "إيدين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إيه ده؟": {
+      "file": "1fb5a5614032.mp3",
+      "text": "إيه ده؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "إيه؟": {
+      "file": "2972a0f1b381.mp3",
+      "text": "إيه؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اتباع": {
+      "file": "6e61c6638de6.mp3",
+      "text": "اِتْباع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اتضرب": {
+      "file": "d4d29701c4da.mp3",
+      "text": "اتضرب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اتعلّم": {
+      "file": "62e97b6afd1b.mp3",
+      "text": "اتعلّم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اتغيّر": {
+      "file": "090b104c257b.mp3",
+      "text": "اتغيّر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اتفتح": {
+      "file": "d2b554adb27c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اتفرّج": {
+      "file": "34121630f889.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اتفهّم": {
+      "file": "e0720e6b3fb7.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اتكتب": {
+      "file": "6a5711e04c7e.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اتكسر": {
+      "file": "f53e211a5438.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اتكلّم": {
+      "file": "61cb43064fc8.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اتنين": {
+      "file": "a65de6a7aec2.mp3",
+      "text": "اتنين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اجتمع": {
+      "file": "9d0db27121c3.mp3",
+      "text": "اجتمع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "استخدم": {
+      "file": "dc92744df142.mp3",
+      "text": "استخدم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "استعمل": {
+      "file": "140565767476.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "استغرب": {
+      "file": "6cb4e97c6272.mp3",
+      "text": "استغرب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "استقبل": {
+      "file": "abf9ca26444c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "استنى": {
+      "file": "84befbe6250e.mp3",
+      "text": "استنى",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اسمي...": {
+      "file": "88e06b398c8e.mp3",
+      "text": "اسمي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اسمَك إيه؟": {
+      "file": "79021b70e05a.mp3",
+      "text": "اسمَك إيه؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اسمِك إيه؟": {
+      "file": "5cab5e07237e.mp3",
+      "text": "اسمِك إيه؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اشترى": {
+      "file": "914e89305ff1.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اشتغل": {
+      "file": "ea2648614881.mp3",
+      "text": "اشتغل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اشرب": {
+      "file": "dfbdee89b4ab.mp3",
+      "text": "اشرب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اقعد": {
+      "file": "f7e0153aa0ef.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اقف": {
+      "file": "8b19d028a3a4.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الأحسن": {
+      "file": "0d16154f6e6f.mp3",
+      "text": "الأحسن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الأخ": {
+      "file": "203f57953f04.mp3",
+      "text": "الأخ",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الأخت": {
+      "file": "56a682bdab7c.mp3",
+      "text": "الأخت",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الأربع": {
+      "file": "54d7e8a3df6a.mp3",
+      "text": "الأربع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الأوتوبيس": {
+      "file": "e5f139b2138a.mp3",
+      "text": "الأوتوبيس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الأول": {
+      "file": "e7af6ad9e8bb.mp3",
+      "text": "الأول",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الإفطار": {
+      "file": "aba722e3a9d5.mp3",
+      "text": "الإفطار",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الإيد": {
+      "file": "9074f5bd0d93.mp3",
+      "text": "الإيد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الابن": {
+      "file": "6d6abe1baf3b.mp3",
+      "text": "الابن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الاتنين": {
+      "file": "3e28c54e5638.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الاجتماع": {
+      "file": "d8a15c31c1e0.mp3",
+      "text": "الاجتماع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الامتحان": {
+      "file": "beecd26d1dd2.mp3",
+      "text": "الامتحان",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "البطن": {
+      "file": "e865c0382a84.mp3",
+      "text": "البطن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "البنت": {
+      "file": "00ad4415e356.mp3",
+      "text": "البنت",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "البنك": {
+      "file": "40734cd92c8f.mp3",
+      "text": "البنك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "البوستة": {
+      "file": "acc2b44ab6ea.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "التاكسي": {
+      "file": "d708cf0adbe3.mp3",
+      "text": "التاكسي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "التلات": {
+      "file": "d79e070ef930.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "التوكتوك": {
+      "file": "96979e6842de.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الجامع": {
+      "file": "edc5a9aa9c35.mp3",
+      "text": "الجامع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الجامعة": {
+      "file": "959647a589c4.mp3",
+      "text": "الجامعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الجاي": {
+      "file": "9518d6a9343d.mp3",
+      "text": "الجاي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الجمعة": {
+      "file": "8d067a376a65.mp3",
+      "text": "الجمعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الجو برد": {
+      "file": "8e8d84fdbf91.mp3",
+      "text": "الجو برد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الجو حر": {
+      "file": "1baeb720fa5c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الجواز": {
+      "file": "3f1b3fad09eb.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الحجز": {
+      "file": "19a4efac189c.mp3",
+      "text": "الحجز",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الحد": {
+      "file": "f8542e7af455.mp3",
+      "text": "الحد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الحديقة": {
+      "file": "f2acb6f896ce.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الحل ممكن يكون": {
+      "file": "39b5fbeda74c.mp3",
+      "text": "الحل ممكن يكون",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الحلق": {
+      "file": "991c9eac3de5.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"elˈħalʔ\">الحلق</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الحمام": {
+      "file": "e191aef7d217.mp3",
+      "text": "الحمام",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الحمد لله": {
+      "file": "c6e09f392ca6.mp3",
+      "text": "الحمد لله",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الخال": {
+      "file": "a9a44be8a983.mp3",
+      "text": "الخال",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الخالة": {
+      "file": "3db1a5e86183.mp3",
+      "text": "الخالة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الخريف": {
+      "file": "e35bc370392a.mp3",
+      "text": "الخريف",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الخميس": {
+      "file": "ea7bf454d273.mp3",
+      "text": "الخميس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الدرس": {
+      "file": "f3647760eaa4.mp3",
+      "text": "الدرس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الدور": {
+      "file": "c46562fdc5e5.mp3",
+      "text": "الدور",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الراس": {
+      "file": "df9d7dbf2697.mp3",
+      "text": "الراس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الربيع": {
+      "file": "24d624088a8d.mp3",
+      "text": "الربيع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الرجل": {
+      "file": "ba3ebefe2000.mp3",
+      "text": "الرِّجْل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الزميل": {
+      "file": "bf14361543f9.mp3",
+      "text": "الزميل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الزوج": {
+      "file": "e7e2b4ad36e5.mp3",
+      "text": "الزوج",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الزوجة": {
+      "file": "70189d6dad55.mp3",
+      "text": "الزوجة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الساعة كام؟": {
+      "file": "a05c1696c07b.mp3",
+      "text": "الساعة كام؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "السبت": {
+      "file": "c7e6b0c840ed.mp3",
+      "text": "السبت",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "السوبر ماركت": {
+      "file": "8d8cc395e46c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الشتا": {
+      "file": "e5e713b42f9f.mp3",
+      "text": "الشتا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الشغل": {
+      "file": "6047860ec139.mp3",
+      "text": "الشغل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الشنطة": {
+      "file": "36701b6c8380.mp3",
+      "text": "الشنطة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصالة": {
+      "file": "203a6b0497f2.mp3",
+      "text": "الصالة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصبح": {
+      "file": "1c6eb134c05f.mp3",
+      "text": "الصبح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصفحة": {
+      "file": "6d9919fa1682.mp3",
+      "text": "الصفحة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصلاة": {
+      "file": "587310d3d169.mp3",
+      "text": "الصلاة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصيام": {
+      "file": "9d00d44ac066.mp3",
+      "text": "الصيام",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصيدلية": {
+      "file": "68d403b97ff9.mp3",
+      "text": "الصيدلية",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الصيف": {
+      "file": "274366dc8499.mp3",
+      "text": "الصيف",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الضهر": {
+      "file": "e0008fed2820.mp3",
+      "text": "الضهر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الطالب": {
+      "file": "574bbbfe36bf.mp3",
+      "text": "الطالب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الطيارة": {
+      "file": "7702052e394d.mp3",
+      "text": "الطيارة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "العجلة": {
+      "file": "142cac38f483.mp3",
+      "text": "العجلة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "العربية": {
+      "file": "9970632f55af.mp3",
+      "text": "العربية",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "العم": {
+      "file": "cf037d72a0ae.mp3",
+      "text": "العم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "العمة": {
+      "file": "ffc73b38ca41.mp3",
+      "text": "العمة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "العيد": {
+      "file": "f6ebf6b3d9ff.mp3",
+      "text": "العيد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الفصل": {
+      "file": "36cab5aadd8c.mp3",
+      "text": "الفصل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الفندق": {
+      "file": "8cea08e68d51.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "القرد في عين أمه غزال": {
+      "file": "9c67dbd296a9.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "القطر": {
+      "file": "2f22fada2a9f.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"elˈʔatˤr\">القطر</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "القلم": {
+      "file": "66fcbb3364de.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"elˈʔalam\">القلم</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الكراسة": {
+      "file": "cc994fdbdec6.mp3",
+      "text": "الكراسة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الكنيسة": {
+      "file": "c1cad210b120.mp3",
+      "text": "الكنيسة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الله يخليك": {
+      "file": "080071165b07.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اللي": {
+      "file": "bbdb8191212a.mp3",
+      "text": "اللي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اللي فات": {
+      "file": "fe56de8e2a47.mp3",
+      "text": "اللي فات",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اللي فات مات": {
+      "file": "af6293e2f6c2.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "اللي يتلسع من الشوربة ينفخ في الزبادي": {
+      "file": "8f8e249ecc32.mp3",
+      "text": "اللي يتلسع من الشوربة ينفخ في الزبادي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المترو": {
+      "file": "c9283d02994c.mp3",
+      "text": "المترو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المحطة": {
+      "file": "1962247355f6.mp3",
+      "text": "المحطة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المدرسة": {
+      "file": "b95fd1098286.mp3",
+      "text": "المدرسة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المدير": {
+      "file": "ec918b249710.mp3",
+      "text": "المدير",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المرتب": {
+      "file": "3120d794ab60.mp3",
+      "text": "المرتب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المستشفى": {
+      "file": "350dafa808b3.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "المشكلة إن": {
+      "file": "14bd9eaec66e.mp3",
+      "text": "المشكلة إن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المطار": {
+      "file": "982c91325d7f.mp3",
+      "text": "المطار",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المطبخ": {
+      "file": "f45710521152.mp3",
+      "text": "المطبخ",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "المكتب": {
+      "file": "1bb4880c2e6b.mp3",
+      "text": "المكتب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "الموتوسيكل": {
+      "file": "19826fb5508e.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "النهاردة": {
+      "file": "f615e044a5b8.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "الواجب": {
+      "file": "1b3782bc5921.mp3",
+      "text": "الواجب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "انتظر": {
+      "file": "6ec868cce697.mp3",
+      "text": "انتظر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "اهتم": {
+      "file": "eff98fd9a22f.mp3",
+      "text": "اهتم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "باب": {
+      "file": "3b25b51a9c10.mp3",
+      "text": "باب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بابا": {
+      "file": "afa325dbf601.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "باسورد": {
+      "file": "d77a1ebb0f5a.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بالليل": {
+      "file": "02a9c58d8847.mp3",
+      "text": "بالليل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بتعملي إيه؟": {
+      "file": "18386170d7c2.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بتمطر": {
+      "file": "e6d3bbe41d28.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "برتقال": {
+      "file": "6ee62d813aef.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "برتقالي": {
+      "file": "cb52310b5304.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "برج": {
+      "file": "abbffa9c69f4.mp3",
+      "text": "برج",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بردان / بردانة": {
+      "file": "b1e26c8fe7a6.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "برضه": {
+      "file": "b7e36c0f2bbb.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "برنامج": {
+      "file": "10d843e1bf72.mp3",
+      "text": "برنامج",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بس": {
+      "file": "007303915f27.mp3",
+      "text": "بس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بص": {
+      "file": "b54c340c983b.mp3",
+      "text": "بُصّ",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بصرف النظر عن": {
+      "file": "ae732fac2690.mp3",
+      "text": "بصرف النظر عن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بصل": {
+      "file": "f562cafdd56b.mp3",
+      "text": "بصل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بطاطس": {
+      "file": "fad0745388d4.mp3",
+      "text": "بطاطس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بطيخ": {
+      "file": "81deadd5eebf.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بعد بكرة": {
+      "file": "071aa9d93cc4.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بعدين": {
+      "file": "bf82a81131a5.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بقرة": {
+      "file": "a7d17cf001e6.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"ˈbaʔara\">بقرة</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بكام ده؟": {
+      "file": "0971ddad1699.mp3",
+      "text": "بكام ده؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بكرة": {
+      "file": "448ccf482a83.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بمبي": {
+      "file": "8ff38080280d.mp3",
+      "text": "بمبي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بنات": {
+      "file": "c23810bbcd1b.mp3",
+      "text": "بنات",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بنت": {
+      "file": "2bff8fd69d3f.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بنطلون": {
+      "file": "f191eb6227c5.mp3",
+      "text": "بنطلون",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بنفسجي": {
+      "file": "013ff80b0a98.mp3",
+      "text": "بنفسجي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بني": {
+      "file": "cd8d5b737db4.mp3",
+      "text": "بُنّي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بين": {
+      "file": "9a3aec0e3ceb.mp3",
+      "text": "بين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بيوت": {
+      "file": "7941b70a1c6a.mp3",
+      "text": "بيوت",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بَاخُد": {
+      "file": "c6dd30f10c7f.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بَاكُل": {
+      "file": "212fa4006ca7.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "بَتْكَلِّم": {
+      "file": "4b72c3616ce7.mp3",
+      "text": "بَتْكَلِّم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بَشْرَب": {
+      "file": "4172d773df46.mp3",
+      "text": "بَشْرَب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "بَعْمِل": {
+      "file": "b2c059ced5eb.mp3",
+      "text": "بَعْمِل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تابلت": {
+      "file": "5f97b84781b4.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "تاجر": {
+      "file": "625e3fc75b99.mp3",
+      "text": "تاجر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تاسع": {
+      "file": "5b913c8121a3.mp3",
+      "text": "تاسع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تالت": {
+      "file": "13d1632b65a4.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "تامن": {
+      "file": "058fe95ebc3c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "تاني": {
+      "file": "61195bb810f3.mp3",
+      "text": "تاني",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تحت": {
+      "file": "0e3f64b485f2.mp3",
+      "text": "تحت",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تذكرة": {
+      "file": "3a05f071fa47.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ترابيزة": {
+      "file": "f529367373c0.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "تسعة": {
+      "file": "9ac1436afd2e.mp3",
+      "text": "تسعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تسعين": {
+      "file": "79fd9299a78b.mp3",
+      "text": "تسعين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تشرفنا": {
+      "file": "e5d87dfd926a.mp3",
+      "text": "تشرفنا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تطبيق": {
+      "file": "b177f0b389bb.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"tatˤˈbiːʔ\">تطبيق</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تعالى": {
+      "file": "c00c631a7ff0.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "تعبان / تعبانة": {
+      "file": "51173e1d114c.mp3",
+      "text": "تعبان، تعبانة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تفاح": {
+      "file": "37f9207697fd.mp3",
+      "text": "تفاح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تلاتة": {
+      "file": "2d1560d33c93.mp3",
+      "text": "تلاتة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تلاتين": {
+      "file": "4f6194acf883.mp3",
+      "text": "تلاتين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تلاجة": {
+      "file": "14f8c9747f2c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "تمام": {
+      "file": "11a3826e6500.mp3",
+      "text": "تمام",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تمانية": {
+      "file": "122399368207.mp3",
+      "text": "تمانية",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تمانين": {
+      "file": "026629b5f07e.mp3",
+      "text": "تمانين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تنزيل": {
+      "file": "4dcf6033fcec.mp3",
+      "text": "تنزيل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "تيتا": {
+      "file": "2ecff9677797.mp3",
+      "text": "تيتا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جاكيت": {
+      "file": "7c87bf75cec5.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جاموسة": {
+      "file": "60ee6ee3ecb8.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جاهز / جاهزة": {
+      "file": "b2d3d4bb6f5c.mp3",
+      "text": "جاهز، جاهزة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جاي": {
+      "file": "cbd194b94bdc.mp3",
+      "text": "جاي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جاية": {
+      "file": "e3f2c37bff1e.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جايين": {
+      "file": "9af34f465ceb.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جدو": {
+      "file": "8da2fff5a72c.mp3",
+      "text": "جدو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جزر": {
+      "file": "e7761d78b222.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جزمة": {
+      "file": "38f2a8b3dd13.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جعان / جعانة": {
+      "file": "e880cffe3921.mp3",
+      "text": "جعان، جعانة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جلابية": {
+      "file": "6cfa7dedab9e.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جمل": {
+      "file": "678574ea77d6.mp3",
+      "text": "جمل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جميل": {
+      "file": "26cb06feaded.mp3",
+      "text": "جميل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جميلة": {
+      "file": "d72444640c3d.mp3",
+      "text": "جميلة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جنب": {
+      "file": "518e29332fe1.mp3",
+      "text": "جنب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "جنية": {
+      "file": "f10712b64992.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "جيد": {
+      "file": "c4242fc2ec70.mp3",
+      "text": "جيد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "حاروح الشغل بكرة": {
+      "file": "8fdb1dc6d1be.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "حاول": {
+      "file": "debc5c96ecf3.mp3",
+      "text": "حاول",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "حب": {
+      "file": "55bb022e81f8.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "حتى": {
+      "file": "7de07dded604.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "حران / حرانة": {
+      "file": "65aadb0a82cb.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "حصان": {
+      "file": "7365f7020439.mp3",
+      "text": "حصان",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "حمار": {
+      "file": "856addfc456d.mp3",
+      "text": "حمار",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خامس": {
+      "file": "b0bad2cd8b25.mp3",
+      "text": "خامس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خد": {
+      "file": "77e27777f59f.mp3",
+      "text": "خُد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خد أول شارع على اليمين": {
+      "file": "faecb8137e49.mp3",
+      "text": "خُد أوِّل شارِع على اليمين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خروف": {
+      "file": "4ca311eec62f.mp3",
+      "text": "خروف",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خلاص": {
+      "file": "033afd75f7ac.mp3",
+      "text": "خلاص",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خمسة": {
+      "file": "9e2e223b9d90.mp3",
+      "text": "خمسة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خمسين": {
+      "file": "0cea7e90a553.mp3",
+      "text": "خمسين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خوخ": {
+      "file": "27b8558cecc9.mp3",
+      "text": "خوخ",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "خيار": {
+      "file": "9e1bfa85cd56.mp3",
+      "text": "خيار",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "درّس": {
+      "file": "5f42fe8e420c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "دكتور": {
+      "file": "312588aa460d.mp3",
+      "text": "دكتور",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "دلوقتي": {
+      "file": "de839bb167dc.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ده": {
+      "file": "5b8a8b2e13fa.mp3",
+      "text": "ده",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "دهبي": {
+      "file": "a8e5c69c9bc8.mp3",
+      "text": "دهبي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "دول": {
+      "file": "3b3342eb8e6e.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "دولاب": {
+      "file": "fcb78e7be4d6.mp3",
+      "text": "دولاب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "دي": {
+      "file": "1ee0ab48f9cb.mp3",
+      "text": "دي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "دي حاجة تجنن": {
+      "file": "873759a7a373.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ديسمبر": {
+      "file": "8e5dbca72c3c.mp3",
+      "text": "ديسمبر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رابع": {
+      "file": "41ca3f36d5c4.mp3",
+      "text": "رابع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "راس": {
+      "file": "1bba3b53979a.mp3",
+      "text": "راس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رايح": {
+      "file": "a14096b40c7e.mp3",
+      "text": "رايح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رايحة": {
+      "file": "115116d7a3a2.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "رايحين": {
+      "file": "18e048fcac0e.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ربنا يسهل": {
+      "file": "89110cc6586e.mp3",
+      "text": "ربنا يسهل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رجالة": {
+      "file": "8fe860ea1b96.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "رخيص": {
+      "file": "bb4c2d78af26.mp3",
+      "text": "رخيص",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رسالة": {
+      "file": "01bf0988cfe2.mp3",
+      "text": "رسالة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ركبة": {
+      "file": "3644dabbdb5b.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "رمادي": {
+      "file": "1a1680d56320.mp3",
+      "text": "رمادي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رمضان": {
+      "file": "8b6c945cd4f9.mp3",
+      "text": "رمضان",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "رمضان كريم": {
+      "file": "3fa75b994be8.mp3",
+      "text": "رمضان كريم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "روح": {
+      "file": "43547a965e6a.mp3",
+      "text": "روح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "زعلان / زعلانة": {
+      "file": "fd53e7658ad7.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "زي": {
+      "file": "a6b7a594f5c5.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "سابع": {
+      "file": "397fb4fb5262.mp3",
+      "text": "سابع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سادس": {
+      "file": "9659e827f2d1.mp3",
+      "text": "سادس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ساعة": {
+      "file": "40add5d3e4a1.mp3",
+      "text": "ساعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ساعتين": {
+      "file": "cceff1700b48.mp3",
+      "text": "ساعتين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ساعد": {
+      "file": "eb14416d0f4d.mp3",
+      "text": "ساعد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سافر": {
+      "file": "3dfde840b977.mp3",
+      "text": "سافر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سبتمبر": {
+      "file": "c7013f9905c3.mp3",
+      "text": "سبتمبر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سبعة": {
+      "file": "2aa605ccfe9c.mp3",
+      "text": "سبعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سبعين": {
+      "file": "436f5891a663.mp3",
+      "text": "سبعين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ستة": {
+      "file": "8e900d23ccca.mp3",
+      "text": "ستة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ستين": {
+      "file": "0215dc1ed969.mp3",
+      "text": "ستين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سرير": {
+      "file": "e0f948a7c90c.mp3",
+      "text": "سرير",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سماعة": {
+      "file": "094418d73443.mp3",
+      "text": "سماعة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سمكة": {
+      "file": "2ac39bc19eb7.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "سنان": {
+      "file": "eded390d67af.mp3",
+      "text": "سنان",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سنة": {
+      "file": "f91a7c9817c8.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "سنتين": {
+      "file": "01c15a62deff.mp3",
+      "text": "سنتين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سنين": {
+      "file": "aaa2d996f132.mp3",
+      "text": "سنين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "سواق": {
+      "file": "92164cc7a8a6.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "سيارات": {
+      "file": "5f50b2b43aa5.mp3",
+      "text": "سيارات",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شاحن": {
+      "file": "0924aec3ae52.mp3",
+      "text": "شاحن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شاشة": {
+      "file": "1370648801ae.mp3",
+      "text": "شاشة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شاي": {
+      "file": "18a4d1446bdb.mp3",
+      "text": "شاي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شعر": {
+      "file": "28e3a74a2bc0.mp3",
+      "text": "شَعْر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شكراً": {
+      "file": "ddc849160b94.mp3",
+      "text": "شكراً",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شمس": {
+      "file": "757be7aac514.mp3",
+      "text": "شمس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شنط": {
+      "file": "93fc64752663.mp3",
+      "text": "شُنَط",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شنطة": {
+      "file": "19d91a118ddf.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "شنطتِك": {
+      "file": "954f0a667993.mp3",
+      "text": "شنطتِك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شهر": {
+      "file": "492a5598dee1.mp3",
+      "text": "شهر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شهرين": {
+      "file": "a36481a6f090.mp3",
+      "text": "شهرين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شهور": {
+      "file": "46e0c5e7df83.mp3",
+      "text": "شهور",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شوارع": {
+      "file": "29d550a070c5.mp3",
+      "text": "شوارع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "شوية": {
+      "file": "93a5af23b2ab.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "صاحب": {
+      "file": "9d4a22dd2db9.mp3",
+      "text": "صاحب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "صباع": {
+      "file": "d9dd0f25b04d.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "صفر": {
+      "file": "8fe6e53eb018.mp3",
+      "text": "صفر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ضابط": {
+      "file": "eeea6bd43160.mp3",
+      "text": "ضابط",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "طاقية": {
+      "file": "76aa5cb40fb5.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "طب": {
+      "file": "da07c039a0dd.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "طباخ": {
+      "file": "0378bb7dbb2b.mp3",
+      "text": "طباخ",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "طعمية": {
+      "file": "7b8e928ba3a9.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "طماطم": {
+      "file": "ef7a1102f9e7.mp3",
+      "text": "طماطم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "طيار": {
+      "file": "fcfd04cfdeca.mp3",
+      "text": "طيار",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عارف": {
+      "file": "3e5e41fb5e61.mp3",
+      "text": "عارف",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عارفة": {
+      "file": "4a564839c9df.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "عارفين": {
+      "file": "4afad867a790.mp3",
+      "text": "عارفين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عاشر": {
+      "file": "b71d712375e3.mp3",
+      "text": "عاشر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عامل": {
+      "file": "84f38c0ef9ce.mp3",
+      "text": "عامل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عايز": {
+      "file": "13e483c17e23.mp3",
+      "text": "عايز",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عايز لون تاني": {
+      "file": "1acf961280e9.mp3",
+      "text": "عايز لون تاني",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عايزة": {
+      "file": "532c512208f0.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "عايزين": {
+      "file": "444e0fa61815.mp3",
+      "text": "عايزين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عربي": {
+      "file": "404841693fc2.mp3",
+      "text": "عربي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عربيتنا": {
+      "file": "387b10a1818e.mp3",
+      "text": "عربيتنا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عربيته": {
+      "file": "2ca7f93fe16c.mp3",
+      "text": "عربيته",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عربيتي": {
+      "file": "c83c12eafeee.mp3",
+      "text": "عربيتي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عشان": {
+      "file": "95de37cb71b1.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "عشان كده": {
+      "file": "22a0b45011fb.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "عشرة": {
+      "file": "00aaa8ea554f.mp3",
+      "text": "عشرة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عشرين": {
+      "file": "a1da8458347c.mp3",
+      "text": "عشرين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عصفور": {
+      "file": "fae3b134596e.mp3",
+      "text": "عصفور",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عطشان / عطشانة": {
+      "file": "29b55ee78e8d.mp3",
+      "text": "عطشان، عطشانة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "على": {
+      "file": "16dc1dd16a89.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "على عيني وراسي": {
+      "file": "e4199365d7ab.mp3",
+      "text": "على عيني وراسي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "على فكرة": {
+      "file": "6bd25d9ae72e.mp3",
+      "text": "على فكرة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "علّم": {
+      "file": "e3e64f085b41.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "عنب": {
+      "file": "0d5ed7ec4717.mp3",
+      "text": "عنب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عنده": {
+      "file": "61eb0cf7b4dc.mp3",
+      "text": "عنده",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندها": {
+      "file": "e25bfdd2e691.mp3",
+      "text": "عندها",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندي": {
+      "file": "7d7ae6ac118f.mp3",
+      "text": "عندي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندي حرارة": {
+      "file": "0dbe0c489839.mp3",
+      "text": "عندي حرارة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندي زكام": {
+      "file": "430dbc29fdaa.mp3",
+      "text": "عندي زكام",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندي صداع": {
+      "file": "6780bcc40151.mp3",
+      "text": "عندي صداع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندَك": {
+      "file": "4d45248661ec.mp3",
+      "text": "عندَك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عندِك": {
+      "file": "34f459bf0812.mp3",
+      "text": "عندِك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عيش": {
+      "file": "5934eb78ac00.mp3",
+      "text": "عيش",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "عين": {
+      "file": "675b46a5bc80.mp3",
+      "text": "عين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "غالي": {
+      "file": "35142f13b113.mp3",
+      "text": "غالي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "غامق": {
+      "file": "87bdcbe0af1a.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "غرفة النوم": {
+      "file": "b922e11358ba.mp3",
+      "text": "غرفة النوم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "غيّر": {
+      "file": "0cf2bf29be44.mp3",
+      "text": "غيّر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فاتح": {
+      "file": "1dccac8503d2.mp3",
+      "text": "فاتح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فاهم": {
+      "file": "fc6ce7b2c092.mp3",
+      "text": "فاهم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فاهمة": {
+      "file": "9ef53c80afb8.mp3",
+      "text": "فاهمة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فاهمين": {
+      "file": "50688d6476c7.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "فبراير": {
+      "file": "36e82573d106.mp3",
+      "text": "فبراير",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فجأة": {
+      "file": "2142eb810fc8.mp3",
+      "text": "فجأة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فرخة": {
+      "file": "9209760dee6c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "فرنساوي": {
+      "file": "ee8e934c9b51.mp3",
+      "text": "فرنساوي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فرنسي": {
+      "file": "cc6fec458430.mp3",
+      "text": "فرنسي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فرنسية": {
+      "file": "858e891e5914.mp3",
+      "text": "فرنسية",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فستان": {
+      "file": "9906f074d62b.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "فضي": {
+      "file": "1485ba4f8c58.mp3",
+      "text": "فضي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فكّر": {
+      "file": "f6f337a1c405.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "فلوس": {
+      "file": "3edbf0372d49.mp3",
+      "text": "فلوس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فهّم": {
+      "file": "ad4df1f97a96.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "فوق": {
+      "file": "c5a2b45b5c70.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "فول": {
+      "file": "86b27ba66026.mp3",
+      "text": "فول",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "في": {
+      "file": "aef2099d8967.mp3",
+      "text": "في",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "في الآخر": {
+      "file": "f271b84d1b50.mp3",
+      "text": "في الآخر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "في الحقيقة": {
+      "file": "6980ae91a1f6.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "في رأيي": {
+      "file": "be867ac107c6.mp3",
+      "text": "في رأيي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "في رأيي إنت غلطان": {
+      "file": "c108a5b8ed1e.mp3",
+      "text": "في رأيي إنت غلطان",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "في نفس الوقت": {
+      "file": "59b15e0d3472.mp3",
+      "text": "في نفس <phoneme alphabet=\"ipa\" ph=\"elwaʔt\">الوقت</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "فين؟": {
+      "file": "5422b2867167.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "قابل": {
+      "file": "21ab88fe814f.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "قدام": {
+      "file": "b5b8e75890bf.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "قطة": {
+      "file": "c3c3a26e1f58.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "قلب": {
+      "file": "82f1b4b7d9bd.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"ʔalb\">قلب</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "قميص": {
+      "file": "580ed9b1c0fd.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "قهوة": {
+      "file": "974c2ea91115.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"ʔahwa\">قهوة</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كام؟": {
+      "file": "59ecc3a8de27.mp3",
+      "text": "كام؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كاميرا": {
+      "file": "e0196909b96c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كتابنا": {
+      "file": "8a668f5cb75c.mp3",
+      "text": "كتابنا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كتابه": {
+      "file": "b39a086603d4.mp3",
+      "text": "كتابه",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كتابها": {
+      "file": "9f3bc62176ae.mp3",
+      "text": "كتابها",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كتابي": {
+      "file": "d73e4c1b95da.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كتابَك": {
+      "file": "5dd392752ea0.mp3",
+      "text": "كتابَك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كتابِك": {
+      "file": "6ce9e313f3ac.mp3",
+      "text": "كتابِك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كتب": {
+      "file": "908b9e887acd.mp3",
+      "text": "كُتُب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كتف": {
+      "file": "87719738d566.mp3",
+      "text": "كتف",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كرسي": {
+      "file": "fc3146669aaa.mp3",
+      "text": "كرسي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كسّر": {
+      "file": "98ed13bf3c63.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كشري": {
+      "file": "e8871b91c54b.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كفتة": {
+      "file": "4166b97b166b.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كل": {
+      "file": "b1a93b0027e1.mp3",
+      "text": "كُل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كل سنة وانت طيب": {
+      "file": "d8a404c4e032.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كلب": {
+      "file": "ec0c56b3b9a2.mp3",
+      "text": "كلب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كله تمام": {
+      "file": "b4653ad2f763.mp3",
+      "text": "كله تمام",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كمان": {
+      "file": "788da0f68c5d.mp3",
+      "text": "كمان",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كنبة": {
+      "file": "a0345dc54f74.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كومبيوتر": {
+      "file": "693adcb74a15.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كويس / كويسة": {
+      "file": "519b64bdd46f.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "كيف حالك؟": {
+      "file": "928c958ebcdd.mp3",
+      "text": "كيف حالك؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "كَلَّم": {
+      "file": "7917ff2132b5.mp3",
+      "text": "كَلَّم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لأن": {
+      "file": "d4670b3133b3.mp3",
+      "text": "لأن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لا": {
+      "file": "5c528d9fa396.mp3",
+      "text": "لا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لا أعرف": {
+      "file": "6f9ef24d70de.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "لازم": {
+      "file": "a1e28559211e.mp3",
+      "text": "لازم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لاكن": {
+      "file": "20f622b33d9c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "لبني": {
+      "file": "db7f8a325227.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "لو": {
+      "file": "a800ea178125.mp3",
+      "text": "لو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لو سمحت": {
+      "file": "08d4e8ede550.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "لو سمحت / لو سمحتي": {
+      "file": "663fae3b2825.mp3",
+      "text": "لو سمحت، لو سمحتي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لو طيب": {
+      "file": "d8b00256fae9.mp3",
+      "text": "لو طيب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لو ممكن": {
+      "file": "ddfa878bdf07.mp3",
+      "text": "لو ممكن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لون": {
+      "file": "bdcd892ed98a.mp3",
+      "text": "لون",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "لونه إيه؟": {
+      "file": "6d0edf558bd8.mp3",
+      "text": "لونه إيه؟",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ليه؟": {
+      "file": "ac4553779bb2.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ماتاكلش": {
+      "file": "525ec55495a0.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ماتخافش": {
+      "file": "85cb6c870135.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ماتروحش": {
+      "file": "71893fdd12a9.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ماتكتبش": {
+      "file": "b6f23f24bff4.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مارس": {
+      "file": "452ec922a214.mp3",
+      "text": "مارس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ماشوفتوش إمبارح": {
+      "file": "897703657801.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ماشي": {
+      "file": "db2c6466acb4.mp3",
+      "text": "ماشي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ماما": {
+      "file": "07946462f6a5.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مانجا": {
+      "file": "74613c83e631.mp3",
+      "text": "مانجا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مايو": {
+      "file": "391eb76ab061.mp3",
+      "text": "مايو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مبسوط / مبسوطة": {
+      "file": "255e2c5a84dd.mp3",
+      "text": "مبسوط، مبسوطة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "متفق معاك تماما": {
+      "file": "ea8be9bd13b8.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مثلا": {
+      "file": "26f69c52dbd2.mp3",
+      "text": "مثلا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "محامي": {
+      "file": "5d326e24a685.mp3",
+      "text": "محامي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "محشي": {
+      "file": "6bf0dcaaed03.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مدرس": {
+      "file": "bbf6cc38d37a.mp3",
+      "text": "مدرس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مدن": {
+      "file": "cb15a311f52d.mp3",
+      "text": "مُدُن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مرة تانية": {
+      "file": "6b788adf16b8.mp3",
+      "text": "مرة تانية",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مرتين": {
+      "file": "05630e8aa0e4.mp3",
+      "text": "مرتين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مش لازم": {
+      "file": "e580c702e117.mp3",
+      "text": "مش لازم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مش مشكلة": {
+      "file": "ce8390ddae3b.mp3",
+      "text": "مش مشكلة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مش ممكن": {
+      "file": "059130ec2ff8.mp3",
+      "text": "مش ممكن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مش ناقصة!": {
+      "file": "c032533e762c.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مصر": {
+      "file": "9f5f187b5811.mp3",
+      "text": "مصر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مطاعم": {
+      "file": "7af1c46cdde4.mp3",
+      "text": "مطاعم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مع": {
+      "file": "f3c3b73b8039.mp3",
+      "text": "مع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مع إن": {
+      "file": "d42bf3e5baf0.mp3",
+      "text": "مع إن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "معايا": {
+      "file": "698c958772c9.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "معروف": {
+      "file": "e972cd029824.mp3",
+      "text": "معروف",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "معمول": {
+      "file": "fbde7f6ffd38.mp3",
+      "text": "معمول",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مفتوح": {
+      "file": "85e181e21811.mp3",
+      "text": "مفتوح",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مقفول": {
+      "file": "89ad6cdaf7a2.mp3",
+      "text": "<phoneme alphabet=\"ipa\" ph=\"maʔˈfuːl\">مقفول</phoneme>",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مكتوب": {
+      "file": "c728b2e71f72.mp3",
+      "text": "مكتوب",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ملوخية": {
+      "file": "a4bee7dbf384.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ممرضة": {
+      "file": "4de9dddec407.mp3",
+      "text": "ممرضة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ممكن": {
+      "file": "4ecae6440725.mp3",
+      "text": "ممكن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ممكن ناخد ده؟": {
+      "file": "e8c45c18b44b.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "من": {
+      "file": "aa7099e27834.mp3",
+      "text": "مِن",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "من غير": {
+      "file": "1595dbf01dc6.mp3",
+      "text": "من غير",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "من فضلَك": {
+      "file": "8ea1668e25e7.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "من فضلِك": {
+      "file": "a37c2385bbc5.mp3",
+      "text": "من فضلِك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "من ناحية... من ناحية تانية": {
+      "file": "652cda9bc70d.mp3",
+      "text": "من ناحية، من ناحية تانية",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "من وجهة نظري": {
+      "file": "61f3d4a4eef5.mp3",
+      "text": "من وجهة نظري",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مهندس": {
+      "file": "7aa976a648e5.mp3",
+      "text": "مهندس",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مهندسين": {
+      "file": "c36788192e68.mp3",
+      "text": "مهندسين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "موبايل": {
+      "file": "a67f43d3d2ec.mp3",
+      "text": "موبايل",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "موز": {
+      "file": "66dbc2e1c012.mp3",
+      "text": "موز",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "مين؟": {
+      "file": "18a51cb9f0a3.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مَيّة": {
+      "file": "69d2cf10f192.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "مِيّة": {
+      "file": "11f5fa6e9d85.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "نظارة": {
+      "file": "86c32309e908.mp3",
+      "text": "نظارة",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "نهارك سعيد": {
+      "file": "4544e5a99cd3.mp3",
+      "text": "نهارك سعيد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "نوفمبر": {
+      "file": "ba5e1d7ccc32.mp3",
+      "text": "نوفمبر",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "هما": {
+      "file": "554bea168381.mp3",
+      "text": "هما",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "هنا": {
+      "file": "8f493b6134ef.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "هناك": {
+      "file": "0ec5f1af51ab.mp3",
+      "text": "هناك",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "هو": {
+      "file": "1b78792ee787.mp3",
+      "text": "هو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "هي": {
+      "file": "7a8987158725.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "و": {
+      "file": "304117b6c7c9.mp3",
+      "text": "وِ",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "و ربع": {
+      "file": "2f9e1767abf7.mp3",
+      "text": "و ربع",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "و نص": {
+      "file": "a2618aa657f1.mp3",
+      "text": "و نص",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "وإنتَ؟ / وإنتي؟": {
+      "file": "d876eab878be.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "واحد": {
+      "file": "91bd5660dc72.mp3",
+      "text": "واحد",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "واي فاي": {
+      "file": "ee0314745973.mp3",
+      "text": "واي فاي",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "وبعد كده": {
+      "file": "7a640263a31f.mp3",
+      "text": "وبعد كده",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "ودن": {
+      "file": "22d9e1764735.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ورا": {
+      "file": "b6f52f79798a.mp3",
+      "text": "ورا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "وش": {
+      "file": "eee7a6192d5b.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "وصّل": {
+      "file": "1b66ad2217db.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "وقت": {
+      "file": "5d5eedfa60bc.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "ولا": {
+      "file": "999a97b04a83.mp3",
+      "text": "وَلّا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يد واحدة ما تصفقش": {
+      "file": "b8acdce887fa.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "يعني": {
+      "file": "befa0913acf4.mp3",
+      "text": "يعني",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يعني إزاي؟": {
+      "file": "805d477cbb92.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "يفتح الله": {
+      "file": "90367c50a33d.mp3",
+      "text": "enregistrement 2026-10-29",
+      "voice": "humain"
+    },
+    "يلا": {
+      "file": "33dbf71a60e5.mp3",
+      "text": "يلا",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يناير": {
+      "file": "1f3dc8939baa.mp3",
+      "text": "يناير",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يوليو": {
+      "file": "cf519ecce6c0.mp3",
+      "text": "يوليو",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يوم": {
+      "file": "efc446efeb10.mp3",
+      "text": "يوم",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يومين": {
+      "file": "f0e8928637a9.mp3",
+      "text": "يومين",
+      "voice": "ar-EG-ShakirNeural"
+    },
+    "يونيو": {
+      "file": "3131fb252b85.mp3",
+      "text": "يونيو",
+      "voice": "ar-EG-ShakirNeural"
+    }
+  }
+}

@@ -1,0 +1,2098 @@
+{
+  "آيوه": {
+    "verdict": "ok",
+    "text": "أيْوَه"
+  },
+  "أبريل": {
+    "verdict": "ok",
+    "text": "أبريل"
+  },
+  "أبيض": {
+    "verdict": "ok",
+    "text": "أبيض"
+  },
+  "أجمل": {
+    "verdict": "ok",
+    "text": "أجمل"
+  },
+  "أحسن": {
+    "verdict": "ok",
+    "text": "أحسن"
+  },
+  "أحمر": {
+    "verdict": "ok",
+    "text": "أحمر"
+  },
+  "أخضر": {
+    "verdict": "ok",
+    "text": "أخضر"
+  },
+  "أربعة": {
+    "verdict": "ok",
+    "text": "أربعة"
+  },
+  "أربعين": {
+    "verdict": "ok",
+    "text": "أربعين"
+  },
+  "أرخص": {
+    "verdict": "ok",
+    "text": "أرخص"
+  },
+  "أرنب": {
+    "verdict": "ok",
+    "text": "أرنب"
+  },
+  "أريد": {
+    "verdict": "ok",
+    "text": "أريد"
+  },
+  "أزرق": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ˈʔazraʔ\">أزرق</phoneme>"
+  },
+  "أسبوع": {
+    "verdict": "ok",
+    "text": "أسبوع"
+  },
+  "أسبوعين": {
+    "verdict": "ok",
+    "text": "أسبوعين"
+  },
+  "أسرع": {
+    "verdict": "ok",
+    "text": "أسرع"
+  },
+  "أصغر": {
+    "verdict": "ok",
+    "text": "أصغر"
+  },
+  "أصفر": {
+    "verdict": "ok",
+    "text": "أصفر"
+  },
+  "أعتقد إن": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔaʕˈtaʔed\">أعتقد</phoneme> إن"
+  },
+  "أغسطس": {
+    "verdict": "ok",
+    "text": "أغسطس"
+  },
+  "أغلى": {
+    "verdict": "ko",
+    "text": "أغلى"
+  },
+  "أكبر": {
+    "verdict": "ok",
+    "text": "أكبر"
+  },
+  "أكتوبر": {
+    "verdict": "ok",
+    "text": "أكتوبر"
+  },
+  "أنا": {
+    "verdict": "ok",
+    "text": "أنا"
+  },
+  "أنا حاسس إن": {
+    "verdict": "ok",
+    "text": "أنا حاسس إن"
+  },
+  "أنا شايف إن": {
+    "verdict": "ok",
+    "text": "أنا شايف إن"
+  },
+  "أنا لازم أعمل بكرة": {
+    "verdict": "ko",
+    "text": "أنا لازم أعمل بكرة"
+  },
+  "أنا مش موافق خالص": {
+    "verdict": "ko",
+    "text": "أنا مش <phoneme alphabet=\"ipa\" ph=\"muˈwaːfeʔ\">موافق</phoneme> خالص"
+  },
+  "أنا من فرنسا": {
+    "verdict": "ok",
+    "text": "أنا من فرنسا"
+  },
+  "أنا موافق": {
+    "verdict": "ko",
+    "text": "أنا <phoneme alphabet=\"ipa\" ph=\"muˈwaːfeʔ\">موافق</phoneme>"
+  },
+  "أهلاً وسهلاً": {
+    "verdict": "ok",
+    "text": "أهلاً وسهلاً"
+  },
+  "أو": {
+    "verdict": "ok",
+    "text": "أو"
+  },
+  "أوحش": {
+    "verdict": "ok",
+    "text": "أوحش"
+  },
+  "أول": {
+    "verdict": "ok",
+    "text": "أول"
+  },
+  "أول إمبارح": {
+    "verdict": "ko",
+    "text": "أول إمبارح"
+  },
+  "أول مرة": {
+    "verdict": "ok",
+    "text": "أول مرة"
+  },
+  "أولاد": {
+    "verdict": "ok",
+    "text": "أولاد"
+  },
+  "أيام": {
+    "verdict": "ok",
+    "text": "أيام"
+  },
+  "أين": {
+    "verdict": "ok",
+    "text": "أين"
+  },
+  "إحنا": {
+    "verdict": "ok",
+    "text": "إحنا"
+  },
+  "إزاي؟": {
+    "verdict": "ko",
+    "text": "إزاي؟"
+  },
+  "إزيَّك؟": {
+    "verdict": "ko",
+    "text": "إزيَّك؟"
+  },
+  "إزيِّك؟": {
+    "verdict": "ko",
+    "text": "إزيِّك؟"
+  },
+  "إسود": {
+    "verdict": "ko",
+    "text": "إسود"
+  },
+  "إلا ربع": {
+    "verdict": "ok",
+    "text": "إلا ربع"
+  },
+  "إمبارح": {
+    "verdict": "ok",
+    "text": "إمبارح"
+  },
+  "إمتى؟": {
+    "verdict": "ko",
+    "text": "إمتى؟"
+  },
+  "إن شاء الله": {
+    "verdict": "ok",
+    "text": "إن شاء الله"
+  },
+  "إنترنت": {
+    "verdict": "ko",
+    "text": "إنترنت"
+  },
+  "إنتو": {
+    "verdict": "ok",
+    "text": "إنتو"
+  },
+  "إنتَ": {
+    "verdict": "ko",
+    "text": "إنتَ"
+  },
+  "إنتِ": {
+    "verdict": "ko",
+    "text": "إنتِ"
+  },
+  "إنجليزي": {
+    "verdict": "ok",
+    "text": "إنجليزي"
+  },
+  "إيد": {
+    "verdict": "ko",
+    "text": "إيد"
+  },
+  "إيدين": {
+    "verdict": "ok",
+    "text": "إيدين"
+  },
+  "إيه ده؟": {
+    "verdict": "ok",
+    "text": "إيه ده؟"
+  },
+  "إيه؟": {
+    "verdict": "ok",
+    "text": "إيه؟"
+  },
+  "اتباع": {
+    "verdict": "ok",
+    "text": "اِتْباع"
+  },
+  "اتضرب": {
+    "verdict": "ok",
+    "text": "اتضرب"
+  },
+  "اتعلّم": {
+    "verdict": "ok",
+    "text": "اتعلّم"
+  },
+  "اتغيّر": {
+    "verdict": "ok",
+    "text": "اتغيّر"
+  },
+  "اتفتح": {
+    "verdict": "ko",
+    "text": "اتفتح"
+  },
+  "اتفرّج": {
+    "verdict": "ko",
+    "text": "اتفرّج"
+  },
+  "اتفهّم": {
+    "verdict": "ko",
+    "text": "اتفهّم"
+  },
+  "اتكتب": {
+    "verdict": "ko",
+    "text": "اتكتب"
+  },
+  "اتكسر": {
+    "verdict": "ko",
+    "text": "اتكسر"
+  },
+  "اتكلّم": {
+    "verdict": "ko",
+    "text": "اتكلّم"
+  },
+  "اتنين": {
+    "verdict": "ok",
+    "text": "اتنين"
+  },
+  "اجتمع": {
+    "verdict": "ok",
+    "text": "اجتمع"
+  },
+  "استخدم": {
+    "verdict": "ok",
+    "text": "استخدم"
+  },
+  "استعمل": {
+    "verdict": "ko",
+    "text": "استعمل"
+  },
+  "استغرب": {
+    "verdict": "ok",
+    "text": "استغرب"
+  },
+  "استقبل": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔestaʔbel\">استقبل</phoneme>"
+  },
+  "استنى": {
+    "verdict": "ok",
+    "text": "استنى"
+  },
+  "اسمي...": {
+    "verdict": "ok",
+    "text": "اسمي"
+  },
+  "اسمَك إيه؟": {
+    "verdict": "ok",
+    "text": "اسمَك إيه؟"
+  },
+  "اسمِك إيه؟": {
+    "verdict": "ok",
+    "text": "اسمِك إيه؟"
+  },
+  "اشترى": {
+    "verdict": "ko",
+    "text": "اشترى"
+  },
+  "اشتغل": {
+    "verdict": "ok",
+    "text": "اشتغل"
+  },
+  "اشرب": {
+    "verdict": "ok",
+    "text": "اشرب"
+  },
+  "اقعد": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔoʔʕod\">اقعد</phoneme>"
+  },
+  "اقف": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔeʔaf\">اقف</phoneme>"
+  },
+  "الأحسن": {
+    "verdict": "ok",
+    "text": "الأحسن"
+  },
+  "الأخ": {
+    "verdict": "ok",
+    "text": "الأخ"
+  },
+  "الأخت": {
+    "verdict": "ok",
+    "text": "الأخت"
+  },
+  "الأربع": {
+    "verdict": "ok",
+    "text": "الأربع"
+  },
+  "الأوتوبيس": {
+    "verdict": "ok",
+    "text": "الأوتوبيس"
+  },
+  "الأول": {
+    "verdict": "ok",
+    "text": "الأول"
+  },
+  "الإفطار": {
+    "verdict": "ok",
+    "text": "الإفطار"
+  },
+  "الإيد": {
+    "verdict": "ok",
+    "text": "الإيد"
+  },
+  "الابن": {
+    "verdict": "ok",
+    "text": "الابن"
+  },
+  "الاتنين": {
+    "verdict": "ko",
+    "text": "الاتنين"
+  },
+  "الاجتماع": {
+    "verdict": "ok",
+    "text": "الاجتماع"
+  },
+  "الامتحان": {
+    "verdict": "ok",
+    "text": "الامتحان"
+  },
+  "البطن": {
+    "verdict": "ok",
+    "text": "البطن"
+  },
+  "البنت": {
+    "verdict": "ok",
+    "text": "البنت"
+  },
+  "البنك": {
+    "verdict": "ok",
+    "text": "البنك"
+  },
+  "البوستة": {
+    "verdict": "ko",
+    "text": "البوستة"
+  },
+  "التاكسي": {
+    "verdict": "ok",
+    "text": "التاكسي"
+  },
+  "التلات": {
+    "verdict": "ko",
+    "text": "التلات"
+  },
+  "التوكتوك": {
+    "verdict": "ko",
+    "text": "التوكتوك"
+  },
+  "الجامع": {
+    "verdict": "ok",
+    "text": "الجامع"
+  },
+  "الجامعة": {
+    "verdict": "ok",
+    "text": "الجامعة"
+  },
+  "الجاي": {
+    "verdict": "ok",
+    "text": "الجاي"
+  },
+  "الجمعة": {
+    "verdict": "ok",
+    "text": "الجمعة"
+  },
+  "الجو برد": {
+    "verdict": "ok",
+    "text": "الجو برد"
+  },
+  "الجو حر": {
+    "verdict": "ko",
+    "text": "الجو حر"
+  },
+  "الجواز": {
+    "verdict": "ko",
+    "text": "الجواز"
+  },
+  "الحجز": {
+    "verdict": "ok",
+    "text": "الحجز"
+  },
+  "الحد": {
+    "verdict": "ok",
+    "text": "الحد"
+  },
+  "الحديقة": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"elħaˈdiːʔa\">الحديقة</phoneme>"
+  },
+  "الحل ممكن يكون": {
+    "verdict": "ok",
+    "text": "الحل ممكن يكون"
+  },
+  "الحلق": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"elˈħalʔ\">الحلق</phoneme>"
+  },
+  "الحمام": {
+    "verdict": "ok",
+    "text": "الحمام"
+  },
+  "الحمد لله": {
+    "verdict": "ok",
+    "text": "الحمد لله"
+  },
+  "الخال": {
+    "verdict": "ok",
+    "text": "الخال"
+  },
+  "الخالة": {
+    "verdict": "ok",
+    "text": "الخالة"
+  },
+  "الخريف": {
+    "verdict": "ok",
+    "text": "الخريف"
+  },
+  "الخميس": {
+    "verdict": "ok",
+    "text": "الخميس"
+  },
+  "الدرس": {
+    "verdict": "ok",
+    "text": "الدرس"
+  },
+  "الدور": {
+    "verdict": "ok",
+    "text": "الدور"
+  },
+  "الراس": {
+    "verdict": "ok",
+    "text": "الراس"
+  },
+  "الربيع": {
+    "verdict": "ok",
+    "text": "الربيع"
+  },
+  "الرجل": {
+    "verdict": "ok",
+    "text": "الرِّجْل"
+  },
+  "الزميل": {
+    "verdict": "ok",
+    "text": "الزميل"
+  },
+  "الزوج": {
+    "verdict": "ok",
+    "text": "الزوج"
+  },
+  "الزوجة": {
+    "verdict": "ok",
+    "text": "الزوجة"
+  },
+  "الساعة كام؟": {
+    "verdict": "ok",
+    "text": "الساعة كام؟"
+  },
+  "السبت": {
+    "verdict": "ok",
+    "text": "السبت"
+  },
+  "السوبر ماركت": {
+    "verdict": "ko",
+    "text": "السوبر ماركت"
+  },
+  "الشتا": {
+    "verdict": "ok",
+    "text": "الشتا"
+  },
+  "الشغل": {
+    "verdict": "ok",
+    "text": "الشغل"
+  },
+  "الشنطة": {
+    "verdict": "ok",
+    "text": "الشنطة"
+  },
+  "الصالة": {
+    "verdict": "ok",
+    "text": "الصالة"
+  },
+  "الصبح": {
+    "verdict": "ok",
+    "text": "الصبح"
+  },
+  "الصفحة": {
+    "verdict": "ok",
+    "text": "الصفحة"
+  },
+  "الصلاة": {
+    "verdict": "ok",
+    "text": "الصلاة"
+  },
+  "الصيام": {
+    "verdict": "ok",
+    "text": "الصيام"
+  },
+  "الصيدلية": {
+    "verdict": "ok",
+    "text": "الصيدلية"
+  },
+  "الصيف": {
+    "verdict": "ok",
+    "text": "الصيف"
+  },
+  "الضهر": {
+    "verdict": "ok",
+    "text": "الضهر"
+  },
+  "الطالب": {
+    "verdict": "ok",
+    "text": "الطالب"
+  },
+  "الطيارة": {
+    "verdict": "ok",
+    "text": "الطيارة"
+  },
+  "العجلة": {
+    "verdict": "ok",
+    "text": "العجلة"
+  },
+  "العربية": {
+    "verdict": "ok",
+    "text": "العربية"
+  },
+  "العم": {
+    "verdict": "ok",
+    "text": "العم"
+  },
+  "العمة": {
+    "verdict": "ok",
+    "text": "العمة"
+  },
+  "العيد": {
+    "verdict": "ok",
+    "text": "العيد"
+  },
+  "الفصل": {
+    "verdict": "ok",
+    "text": "الفصل"
+  },
+  "الفندق": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"elˈfondoʔ\">الفندق</phoneme>"
+  },
+  "القرد في عين أمه غزال": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"elˈʔerd\">القرد</phoneme> في عين أمه غزال"
+  },
+  "القطر": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"elˈʔatˤr\">القطر</phoneme>"
+  },
+  "القلم": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"elˈʔalam\">القلم</phoneme>"
+  },
+  "الكراسة": {
+    "verdict": "ok",
+    "text": "الكراسة"
+  },
+  "الكنيسة": {
+    "verdict": "ok",
+    "text": "الكنيسة"
+  },
+  "الله يخليك": {
+    "verdict": "ko",
+    "text": "الله يخليك"
+  },
+  "اللي": {
+    "verdict": "ok",
+    "text": "اللي"
+  },
+  "اللي فات": {
+    "verdict": "ok",
+    "text": "اللي فات"
+  },
+  "اللي فات مات": {
+    "verdict": "ko",
+    "text": "اللي فات مات"
+  },
+  "اللي يتلسع من الشوربة ينفخ في الزبادي": {
+    "verdict": "ok",
+    "text": "اللي يتلسع من الشوربة ينفخ في الزبادي"
+  },
+  "المترو": {
+    "verdict": "ok",
+    "text": "المترو"
+  },
+  "المحطة": {
+    "verdict": "ok",
+    "text": "المحطة"
+  },
+  "المدرسة": {
+    "verdict": "ok",
+    "text": "المدرسة"
+  },
+  "المدير": {
+    "verdict": "ok",
+    "text": "المدير"
+  },
+  "المرتب": {
+    "verdict": "ok",
+    "text": "المرتب"
+  },
+  "المستشفى": {
+    "verdict": "ko",
+    "text": "المستشفى"
+  },
+  "المشكلة إن": {
+    "verdict": "ok",
+    "text": "المشكلة إن"
+  },
+  "المطار": {
+    "verdict": "ok",
+    "text": "المطار"
+  },
+  "المطبخ": {
+    "verdict": "ok",
+    "text": "المطبخ"
+  },
+  "المكتب": {
+    "verdict": "ok",
+    "text": "المكتب"
+  },
+  "الموتوسيكل": {
+    "verdict": "ko",
+    "text": "الموتوسيكل"
+  },
+  "النهاردة": {
+    "verdict": "ko",
+    "text": "النهاردة"
+  },
+  "الواجب": {
+    "verdict": "ok",
+    "text": "الواجب"
+  },
+  "انتظر": {
+    "verdict": "ok",
+    "text": "انتظر"
+  },
+  "اهتم": {
+    "verdict": "ok",
+    "text": "اهتم"
+  },
+  "باب": {
+    "verdict": "ok",
+    "text": "باب"
+  },
+  "بابا": {
+    "verdict": "ko",
+    "text": "بابا"
+  },
+  "باسورد": {
+    "verdict": "ko",
+    "text": "باسورد"
+  },
+  "بالليل": {
+    "verdict": "ok",
+    "text": "بالليل"
+  },
+  "بتعملي إيه؟": {
+    "verdict": "ko",
+    "text": "بتعملي إيه؟"
+  },
+  "بتمطر": {
+    "verdict": "ko",
+    "text": "بتمطر"
+  },
+  "برتقال": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"bortoˈʔaːl\">برتقال</phoneme>"
+  },
+  "برتقالي": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"bortoˈʔaːli\">برتقالي</phoneme>"
+  },
+  "برج": {
+    "verdict": "ok",
+    "text": "برج"
+  },
+  "بردان / بردانة": {
+    "verdict": "ko",
+    "text": "بردان، بردانة"
+  },
+  "برضه": {
+    "verdict": "ko",
+    "text": "برضه"
+  },
+  "برنامج": {
+    "verdict": "ok",
+    "text": "برنامج"
+  },
+  "بس": {
+    "verdict": "ok",
+    "text": "بس"
+  },
+  "بص": {
+    "verdict": "ok",
+    "text": "بُصّ"
+  },
+  "بصرف النظر عن": {
+    "verdict": "ok",
+    "text": "بصرف النظر عن"
+  },
+  "بصل": {
+    "verdict": "ok",
+    "text": "بصل"
+  },
+  "بطاطس": {
+    "verdict": "ok",
+    "text": "بطاطس"
+  },
+  "بطيخ": {
+    "verdict": "ko",
+    "text": "بطيخ"
+  },
+  "بعد بكرة": {
+    "verdict": "ko",
+    "text": "بعد بكرة"
+  },
+  "بعدين": {
+    "verdict": "ko",
+    "text": "بعدين"
+  },
+  "بقرة": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ˈbaʔara\">بقرة</phoneme>"
+  },
+  "بكام ده؟": {
+    "verdict": "ok",
+    "text": "بكام ده؟"
+  },
+  "بكرة": {
+    "verdict": "ko",
+    "text": "بكرة"
+  },
+  "بمبي": {
+    "verdict": "ok",
+    "text": "بمبي"
+  },
+  "بنات": {
+    "verdict": "ok",
+    "text": "بنات"
+  },
+  "بنت": {
+    "verdict": "ko",
+    "text": "بنت"
+  },
+  "بنطلون": {
+    "verdict": "ok",
+    "text": "بنطلون"
+  },
+  "بنفسجي": {
+    "verdict": "ok",
+    "text": "بنفسجي"
+  },
+  "بني": {
+    "verdict": "ok",
+    "text": "بُنّي"
+  },
+  "بين": {
+    "verdict": "ok",
+    "text": "بين"
+  },
+  "بيوت": {
+    "verdict": "ok",
+    "text": "بيوت"
+  },
+  "بَاخُد": {
+    "verdict": "ko",
+    "text": "بَاخُد"
+  },
+  "بَاكُل": {
+    "verdict": "ko",
+    "text": "بَاكُل"
+  },
+  "بَتْكَلِّم": {
+    "verdict": "ok",
+    "text": "بَتْكَلِّم"
+  },
+  "بَشْرَب": {
+    "verdict": "ok",
+    "text": "بَشْرَب"
+  },
+  "بَعْمِل": {
+    "verdict": "ok",
+    "text": "بَعْمِل"
+  },
+  "تابلت": {
+    "verdict": "ko",
+    "text": "تابلت"
+  },
+  "تاجر": {
+    "verdict": "ok",
+    "text": "تاجر"
+  },
+  "تاسع": {
+    "verdict": "ok",
+    "text": "تاسع"
+  },
+  "تالت": {
+    "verdict": "ko",
+    "text": "تالت"
+  },
+  "تامن": {
+    "verdict": "ko",
+    "text": "تامن"
+  },
+  "تاني": {
+    "verdict": "ok",
+    "text": "تاني"
+  },
+  "تحت": {
+    "verdict": "ok",
+    "text": "تحت"
+  },
+  "تذكرة": {
+    "verdict": "ko",
+    "text": "تذكرة"
+  },
+  "ترابيزة": {
+    "verdict": "ko",
+    "text": "ترابيزة"
+  },
+  "تسعة": {
+    "verdict": "ok",
+    "text": "تسعة"
+  },
+  "تسعين": {
+    "verdict": "ok",
+    "text": "تسعين"
+  },
+  "تشرفنا": {
+    "verdict": "ok",
+    "text": "تشرفنا"
+  },
+  "تطبيق": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"tatˤˈbiːʔ\">تطبيق</phoneme>"
+  },
+  "تعالى": {
+    "verdict": "ko",
+    "text": "تعالى"
+  },
+  "تعبان / تعبانة": {
+    "verdict": "ok",
+    "text": "تعبان، تعبانة"
+  },
+  "تفاح": {
+    "verdict": "ok",
+    "text": "تفاح"
+  },
+  "تلاتة": {
+    "verdict": "ok",
+    "text": "تلاتة"
+  },
+  "تلاتين": {
+    "verdict": "ok",
+    "text": "تلاتين"
+  },
+  "تلاجة": {
+    "verdict": "ko",
+    "text": "تلاجة"
+  },
+  "تمام": {
+    "verdict": "ok",
+    "text": "تمام"
+  },
+  "تمانية": {
+    "verdict": "ok",
+    "text": "تمانية"
+  },
+  "تمانين": {
+    "verdict": "ok",
+    "text": "تمانين"
+  },
+  "تنزيل": {
+    "verdict": "ok",
+    "text": "تنزيل"
+  },
+  "تيتا": {
+    "verdict": "ok",
+    "text": "تيتا"
+  },
+  "جاكيت": {
+    "verdict": "ko",
+    "text": "جاكيت"
+  },
+  "جاموسة": {
+    "verdict": "ko",
+    "text": "جاموسة"
+  },
+  "جاهز / جاهزة": {
+    "verdict": "ok",
+    "text": "جاهز، جاهزة"
+  },
+  "جاي": {
+    "verdict": "ok",
+    "text": "جاي"
+  },
+  "جاية": {
+    "verdict": "ko",
+    "text": "جاية"
+  },
+  "جايين": {
+    "verdict": "ko",
+    "text": "جايين"
+  },
+  "جدو": {
+    "verdict": "ok",
+    "text": "جدو"
+  },
+  "جزر": {
+    "verdict": "ko",
+    "text": "جزر"
+  },
+  "جزمة": {
+    "verdict": "ko",
+    "text": "جزمة"
+  },
+  "جعان / جعانة": {
+    "verdict": "ok",
+    "text": "جعان، جعانة"
+  },
+  "جلابية": {
+    "verdict": "ko",
+    "text": "جلابية"
+  },
+  "جمل": {
+    "verdict": "ok",
+    "text": "جمل"
+  },
+  "جميل": {
+    "verdict": "ok",
+    "text": "جميل"
+  },
+  "جميلة": {
+    "verdict": "ok",
+    "text": "جميلة"
+  },
+  "جنب": {
+    "verdict": "ok",
+    "text": "جنب"
+  },
+  "جنية": {
+    "verdict": "ko",
+    "text": "جِنيه"
+  },
+  "جيد": {
+    "verdict": "ok",
+    "text": "جيد"
+  },
+  "حاروح الشغل بكرة": {
+    "verdict": "ko",
+    "text": "حاروح الشغل بكرة"
+  },
+  "حاول": {
+    "verdict": "ok",
+    "text": "حاول"
+  },
+  "حب": {
+    "verdict": "ko",
+    "text": "حُبّ"
+  },
+  "حتى": {
+    "verdict": "ko",
+    "text": "حتى"
+  },
+  "حران / حرانة": {
+    "verdict": "ko",
+    "text": "حران، حرانة"
+  },
+  "حصان": {
+    "verdict": "ok",
+    "text": "حصان"
+  },
+  "حمار": {
+    "verdict": "ok",
+    "text": "حمار"
+  },
+  "خامس": {
+    "verdict": "ok",
+    "text": "خامس"
+  },
+  "خد": {
+    "verdict": "ok",
+    "text": "خُد"
+  },
+  "خد أول شارع على اليمين": {
+    "verdict": "ok",
+    "text": "خُد أوِّل شارِع على اليمين"
+  },
+  "خروف": {
+    "verdict": "ok",
+    "text": "خروف"
+  },
+  "خلاص": {
+    "verdict": "ok",
+    "text": "خلاص"
+  },
+  "خمسة": {
+    "verdict": "ok",
+    "text": "خمسة"
+  },
+  "خمسين": {
+    "verdict": "ok",
+    "text": "خمسين"
+  },
+  "خوخ": {
+    "verdict": "ok",
+    "text": "خوخ"
+  },
+  "خيار": {
+    "verdict": "ok",
+    "text": "خيار"
+  },
+  "درّس": {
+    "verdict": "ko",
+    "text": "درّس"
+  },
+  "دكتور": {
+    "verdict": "ok",
+    "text": "دكتور"
+  },
+  "دلوقتي": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"delˈwaʔti\">دلوقتي</phoneme>"
+  },
+  "ده": {
+    "verdict": "ok",
+    "text": "ده"
+  },
+  "دهبي": {
+    "verdict": "ok",
+    "text": "دهبي"
+  },
+  "دول": {
+    "verdict": "ko",
+    "text": "دُول"
+  },
+  "دولاب": {
+    "verdict": "ok",
+    "text": "دولاب"
+  },
+  "دي": {
+    "verdict": "ok",
+    "text": "دي"
+  },
+  "دي حاجة تجنن": {
+    "verdict": "ko",
+    "text": "دي حاجة تجنن"
+  },
+  "ديسمبر": {
+    "verdict": "ok",
+    "text": "ديسمبر"
+  },
+  "رابع": {
+    "verdict": "ok",
+    "text": "رابع"
+  },
+  "راس": {
+    "verdict": "ok",
+    "text": "راس"
+  },
+  "رايح": {
+    "verdict": "ok",
+    "text": "رايح"
+  },
+  "رايحة": {
+    "verdict": "ko",
+    "text": "رايحة"
+  },
+  "رايحين": {
+    "verdict": "ko",
+    "text": "رايحين"
+  },
+  "ربنا يسهل": {
+    "verdict": "ok",
+    "text": "ربنا يسهل"
+  },
+  "رجالة": {
+    "verdict": "ko",
+    "text": "رجالة"
+  },
+  "رخيص": {
+    "verdict": "ok",
+    "text": "رخيص"
+  },
+  "رسالة": {
+    "verdict": "ok",
+    "text": "رسالة"
+  },
+  "ركبة": {
+    "verdict": "ko",
+    "text": "ركبة"
+  },
+  "رمادي": {
+    "verdict": "ok",
+    "text": "رمادي"
+  },
+  "رمضان": {
+    "verdict": "ok",
+    "text": "رمضان"
+  },
+  "رمضان كريم": {
+    "verdict": "ok",
+    "text": "رمضان كريم"
+  },
+  "روح": {
+    "verdict": "ok",
+    "text": "روح"
+  },
+  "زعلان / زعلانة": {
+    "verdict": "ko",
+    "text": "زعلان، زعلانة"
+  },
+  "زي": {
+    "verdict": "ko",
+    "text": "زي"
+  },
+  "سابع": {
+    "verdict": "ok",
+    "text": "سابع"
+  },
+  "سادس": {
+    "verdict": "ok",
+    "text": "سادس"
+  },
+  "ساعة": {
+    "verdict": "ok",
+    "text": "ساعة"
+  },
+  "ساعتين": {
+    "verdict": "ok",
+    "text": "ساعتين"
+  },
+  "ساعد": {
+    "verdict": "ok",
+    "text": "ساعد"
+  },
+  "سافر": {
+    "verdict": "ok",
+    "text": "سافر"
+  },
+  "سبتمبر": {
+    "verdict": "ok",
+    "text": "سبتمبر"
+  },
+  "سبعة": {
+    "verdict": "ok",
+    "text": "سبعة"
+  },
+  "سبعين": {
+    "verdict": "ok",
+    "text": "سبعين"
+  },
+  "ستة": {
+    "verdict": "ok",
+    "text": "ستة"
+  },
+  "ستين": {
+    "verdict": "ok",
+    "text": "ستين"
+  },
+  "سرير": {
+    "verdict": "ok",
+    "text": "سرير"
+  },
+  "سماعة": {
+    "verdict": "ok",
+    "text": "سماعة"
+  },
+  "سمكة": {
+    "verdict": "ko",
+    "text": "سمكة"
+  },
+  "سنان": {
+    "verdict": "ok",
+    "text": "سنان"
+  },
+  "سنة": {
+    "verdict": "ko",
+    "text": "سنة"
+  },
+  "سنتين": {
+    "verdict": "ok",
+    "text": "سنتين"
+  },
+  "سنين": {
+    "verdict": "ok",
+    "text": "سنين"
+  },
+  "سيارات": {
+    "verdict": "ok",
+    "text": "سيارات"
+  },
+  "شاحن": {
+    "verdict": "ok",
+    "text": "شاحن"
+  },
+  "شاشة": {
+    "verdict": "ok",
+    "text": "شاشة"
+  },
+  "شاي": {
+    "verdict": "ok",
+    "text": "شاي"
+  },
+  "شعر": {
+    "verdict": "ok",
+    "text": "شَعْر"
+  },
+  "شكراً": {
+    "verdict": "ok",
+    "text": "شكراً"
+  },
+  "شمس": {
+    "verdict": "ok",
+    "text": "شمس"
+  },
+  "شنط": {
+    "verdict": "ok",
+    "text": "شُنَط"
+  },
+  "شنطة": {
+    "verdict": "ko",
+    "text": "شنطة"
+  },
+  "شنطتِك": {
+    "verdict": "ok",
+    "text": "شنطتِك"
+  },
+  "شهر": {
+    "verdict": "ok",
+    "text": "شهر"
+  },
+  "شهرين": {
+    "verdict": "ok",
+    "text": "شهرين"
+  },
+  "شهور": {
+    "verdict": "ok",
+    "text": "شهور"
+  },
+  "شوارع": {
+    "verdict": "ok",
+    "text": "شوارع"
+  },
+  "شوية": {
+    "verdict": "ko",
+    "text": "شوية"
+  },
+  "صاحب": {
+    "verdict": "ok",
+    "text": "صاحب"
+  },
+  "صباع": {
+    "verdict": "ko",
+    "text": "صباع"
+  },
+  "صفر": {
+    "verdict": "ok",
+    "text": "صفر"
+  },
+  "ضابط": {
+    "verdict": "ok",
+    "text": "ضابط"
+  },
+  "طاقية": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"tˤaːˈʔejja\">طاقية</phoneme>"
+  },
+  "طب": {
+    "verdict": "ko",
+    "text": "طَب"
+  },
+  "طباخ": {
+    "verdict": "ok",
+    "text": "طباخ"
+  },
+  "طعمية": {
+    "verdict": "ko",
+    "text": "طعمية"
+  },
+  "طماطم": {
+    "verdict": "ok",
+    "text": "طماطم"
+  },
+  "طيار": {
+    "verdict": "ok",
+    "text": "طيار"
+  },
+  "عارف": {
+    "verdict": "ok",
+    "text": "عارف"
+  },
+  "عارفة": {
+    "verdict": "ko",
+    "text": "عارفة"
+  },
+  "عارفين": {
+    "verdict": "ok",
+    "text": "عارفين"
+  },
+  "عاشر": {
+    "verdict": "ok",
+    "text": "عاشر"
+  },
+  "عامل": {
+    "verdict": "ok",
+    "text": "عامل"
+  },
+  "عايز": {
+    "verdict": "ok",
+    "text": "عايز"
+  },
+  "عايز لون تاني": {
+    "verdict": "ok",
+    "text": "عايز لون تاني"
+  },
+  "عايزة": {
+    "verdict": "ko",
+    "text": "عايزة"
+  },
+  "عايزين": {
+    "verdict": "ok",
+    "text": "عايزين"
+  },
+  "عربي": {
+    "verdict": "ok",
+    "text": "عربي"
+  },
+  "عربيتنا": {
+    "verdict": "ok",
+    "text": "عربيتنا"
+  },
+  "عربيته": {
+    "verdict": "ok",
+    "text": "عربيته"
+  },
+  "عربيتي": {
+    "verdict": "ok",
+    "text": "عربيتي"
+  },
+  "عشان": {
+    "verdict": "ko",
+    "text": "عشان"
+  },
+  "عشان كده": {
+    "verdict": "ko",
+    "text": "عشان كده"
+  },
+  "عشرة": {
+    "verdict": "ok",
+    "text": "عشرة"
+  },
+  "عشرين": {
+    "verdict": "ok",
+    "text": "عشرين"
+  },
+  "عصفور": {
+    "verdict": "ok",
+    "text": "عصفور"
+  },
+  "عطشان / عطشانة": {
+    "verdict": "ok",
+    "text": "عطشان، عطشانة"
+  },
+  "على": {
+    "verdict": "ko",
+    "text": "على"
+  },
+  "على عيني وراسي": {
+    "verdict": "ok",
+    "text": "على عيني وراسي"
+  },
+  "على فكرة": {
+    "verdict": "ok",
+    "text": "على فكرة"
+  },
+  "علّم": {
+    "verdict": "ko",
+    "text": "علّم"
+  },
+  "عنب": {
+    "verdict": "ok",
+    "text": "عنب"
+  },
+  "عنده": {
+    "verdict": "ok",
+    "text": "عنده"
+  },
+  "عندها": {
+    "verdict": "ok",
+    "text": "عندها"
+  },
+  "عندي": {
+    "verdict": "ok",
+    "text": "عندي"
+  },
+  "عندي حرارة": {
+    "verdict": "ok",
+    "text": "عندي حرارة"
+  },
+  "عندي زكام": {
+    "verdict": "ok",
+    "text": "عندي زكام"
+  },
+  "عندي صداع": {
+    "verdict": "ok",
+    "text": "عندي صداع"
+  },
+  "عندَك": {
+    "verdict": "ok",
+    "text": "عندَك"
+  },
+  "عندِك": {
+    "verdict": "ok",
+    "text": "عندِك"
+  },
+  "عيش": {
+    "verdict": "ok",
+    "text": "عيش"
+  },
+  "عين": {
+    "verdict": "ok",
+    "text": "عين"
+  },
+  "غالي": {
+    "verdict": "ok",
+    "text": "غالي"
+  },
+  "غامق": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ˈɣaːmeʔ\">غامق</phoneme>"
+  },
+  "غرفة النوم": {
+    "verdict": "ok",
+    "text": "غرفة النوم"
+  },
+  "غيّر": {
+    "verdict": "ok",
+    "text": "غيّر"
+  },
+  "فاتح": {
+    "verdict": "ok",
+    "text": "فاتح"
+  },
+  "فاهم": {
+    "verdict": "ok",
+    "text": "فاهم"
+  },
+  "فاهمة": {
+    "verdict": "ok",
+    "text": "فاهمة"
+  },
+  "فاهمين": {
+    "verdict": "ko",
+    "text": "فاهمين"
+  },
+  "فبراير": {
+    "verdict": "ok",
+    "text": "فبراير"
+  },
+  "فجأة": {
+    "verdict": "ok",
+    "text": "فجأة"
+  },
+  "فرخة": {
+    "verdict": "ko",
+    "text": "فرخة"
+  },
+  "فرنساوي": {
+    "verdict": "ok",
+    "text": "فرنساوي"
+  },
+  "فرنسي": {
+    "verdict": "ok",
+    "text": "فرنسي"
+  },
+  "فرنسية": {
+    "verdict": "ok",
+    "text": "فرنسية"
+  },
+  "فستان": {
+    "verdict": "ko",
+    "text": "فستان"
+  },
+  "فضي": {
+    "verdict": "ok",
+    "text": "فضي"
+  },
+  "فكّر": {
+    "verdict": "ko",
+    "text": "فكّر"
+  },
+  "فلوس": {
+    "verdict": "ok",
+    "text": "فلوس"
+  },
+  "فهّم": {
+    "verdict": "ko",
+    "text": "فهّم"
+  },
+  "فوق": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"foːʔ\">فوق</phoneme>"
+  },
+  "فول": {
+    "verdict": "ok",
+    "text": "فول"
+  },
+  "في": {
+    "verdict": "ok",
+    "text": "في"
+  },
+  "في الآخر": {
+    "verdict": "ok",
+    "text": "في الآخر"
+  },
+  "في الحقيقة": {
+    "verdict": "ko",
+    "text": "في <phoneme alphabet=\"ipa\" ph=\"elħaˈʔiːʔa\">الحقيقة</phoneme>"
+  },
+  "في رأيي": {
+    "verdict": "ok",
+    "text": "في رأيي"
+  },
+  "في رأيي إنت غلطان": {
+    "verdict": "ok",
+    "text": "في رأيي إنت غلطان"
+  },
+  "في نفس الوقت": {
+    "verdict": "ok",
+    "text": "في نفس <phoneme alphabet=\"ipa\" ph=\"elwaʔt\">الوقت</phoneme>"
+  },
+  "فين؟": {
+    "verdict": "ko",
+    "text": "فين؟"
+  },
+  "قابل": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔaːbel\">قابل</phoneme>"
+  },
+  "قدام": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔodˈdaːm\">قدام</phoneme>"
+  },
+  "قطة": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ˈʔotˤtˤa\">قطة</phoneme>"
+  },
+  "قلب": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔalb\">قلب</phoneme>"
+  },
+  "قميص": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔaˈmiːsˤ\">قميص</phoneme>"
+  },
+  "قهوة": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"ʔahwa\">قهوة</phoneme>"
+  },
+  "كام؟": {
+    "verdict": "ok",
+    "text": "كام؟"
+  },
+  "كاميرا": {
+    "verdict": "ko",
+    "text": "كاميرا"
+  },
+  "كتابنا": {
+    "verdict": "ok",
+    "text": "كتابنا"
+  },
+  "كتابه": {
+    "verdict": "ok",
+    "text": "كتابه"
+  },
+  "كتابها": {
+    "verdict": "ok",
+    "text": "كتابها"
+  },
+  "كتابي": {
+    "verdict": "ko",
+    "text": "كتابي"
+  },
+  "كتابَك": {
+    "verdict": "ok",
+    "text": "كتابَك"
+  },
+  "كتابِك": {
+    "verdict": "ok",
+    "text": "كتابِك"
+  },
+  "كتب": {
+    "verdict": "ok",
+    "text": "كُتُب"
+  },
+  "كتف": {
+    "verdict": "ok",
+    "text": "كتف"
+  },
+  "كرسي": {
+    "verdict": "ok",
+    "text": "كرسي"
+  },
+  "كسّر": {
+    "verdict": "ko",
+    "text": "كسّر"
+  },
+  "كشري": {
+    "verdict": "ko",
+    "text": "كشري"
+  },
+  "كفتة": {
+    "verdict": "ko",
+    "text": "كفتة"
+  },
+  "كل": {
+    "verdict": "ok",
+    "text": "كُل"
+  },
+  "كل سنة وانت طيب": {
+    "verdict": "ko",
+    "text": "كل سنة وانت طيب"
+  },
+  "كلب": {
+    "verdict": "ok",
+    "text": "كلب"
+  },
+  "كله تمام": {
+    "verdict": "ok",
+    "text": "كله تمام"
+  },
+  "كمان": {
+    "verdict": "ok",
+    "text": "كمان"
+  },
+  "كنبة": {
+    "verdict": "ko",
+    "text": "كنبة"
+  },
+  "كومبيوتر": {
+    "verdict": "ko",
+    "text": "كومبيوتر"
+  },
+  "كويس / كويسة": {
+    "verdict": "ko",
+    "text": "كويس، كويسة"
+  },
+  "كيف حالك؟": {
+    "verdict": "ok",
+    "text": "كيف حالك؟"
+  },
+  "كَلَّم": {
+    "verdict": "ok",
+    "text": "كَلَّم"
+  },
+  "لأن": {
+    "verdict": "ok",
+    "text": "لأن"
+  },
+  "لا": {
+    "verdict": "ok",
+    "text": "لا"
+  },
+  "لا أعرف": {
+    "verdict": "ko",
+    "text": "لا أعرف"
+  },
+  "لازم": {
+    "verdict": "ok",
+    "text": "لازم"
+  },
+  "لاكن": {
+    "verdict": "ko",
+    "text": "لاكن"
+  },
+  "لبني": {
+    "verdict": "ko",
+    "text": "لبني"
+  },
+  "لو": {
+    "verdict": "ok",
+    "text": "لو"
+  },
+  "لو سمحت": {
+    "verdict": "ko",
+    "text": "لو سمحت"
+  },
+  "لو سمحت / لو سمحتي": {
+    "verdict": "ok",
+    "text": "لو سمحت، لو سمحتي"
+  },
+  "لو طيب": {
+    "verdict": "ok",
+    "text": "لو طيب"
+  },
+  "لو ممكن": {
+    "verdict": "ok",
+    "text": "لو ممكن"
+  },
+  "لون": {
+    "verdict": "ok",
+    "text": "لون"
+  },
+  "لونه إيه؟": {
+    "verdict": "ok",
+    "text": "لونه إيه؟"
+  },
+  "ليه؟": {
+    "verdict": "ko",
+    "text": "ليه؟"
+  },
+  "ماتاكلش": {
+    "verdict": "ko",
+    "text": "ماتاكلش"
+  },
+  "ماتخافش": {
+    "verdict": "ko",
+    "text": "ماتخافش"
+  },
+  "ماتروحش": {
+    "verdict": "ko",
+    "text": "ماتروحش"
+  },
+  "ماتكتبش": {
+    "verdict": "ko",
+    "text": "ماتكتبش"
+  },
+  "مارس": {
+    "verdict": "ok",
+    "text": "مارس"
+  },
+  "ماشوفتوش إمبارح": {
+    "verdict": "ko",
+    "text": "ماشوفتوش إمبارح"
+  },
+  "ماشي": {
+    "verdict": "ok",
+    "text": "ماشي"
+  },
+  "ماما": {
+    "verdict": "ko",
+    "text": "ماما"
+  },
+  "مانجا": {
+    "verdict": "ok",
+    "text": "مانجا"
+  },
+  "مايو": {
+    "verdict": "ok",
+    "text": "مايو"
+  },
+  "مبسوط / مبسوطة": {
+    "verdict": "ok",
+    "text": "مبسوط، مبسوطة"
+  },
+  "متفق معاك تماما": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"motˈtafeʔ\">متفق</phoneme> معاك تماما"
+  },
+  "مثلا": {
+    "verdict": "ok",
+    "text": "مثلا"
+  },
+  "محامي": {
+    "verdict": "ok",
+    "text": "محامي"
+  },
+  "محشي": {
+    "verdict": "ko",
+    "text": "محشي"
+  },
+  "مدرس": {
+    "verdict": "ok",
+    "text": "مدرس"
+  },
+  "مدن": {
+    "verdict": "ok",
+    "text": "مُدُن"
+  },
+  "مرة تانية": {
+    "verdict": "ok",
+    "text": "مرة تانية"
+  },
+  "مرتين": {
+    "verdict": "ok",
+    "text": "مرتين"
+  },
+  "مش لازم": {
+    "verdict": "ok",
+    "text": "مش لازم"
+  },
+  "مش مشكلة": {
+    "verdict": "ok",
+    "text": "مش مشكلة"
+  },
+  "مش ممكن": {
+    "verdict": "ok",
+    "text": "مش ممكن"
+  },
+  "مش ناقصة!": {
+    "verdict": "ko",
+    "text": "مش <phoneme alphabet=\"ipa\" ph=\"ˈnaʔsˤa\">ناقصة</phoneme>!"
+  },
+  "مصر": {
+    "verdict": "ok",
+    "text": "مصر"
+  },
+  "مطاعم": {
+    "verdict": "ok",
+    "text": "مطاعم"
+  },
+  "مع": {
+    "verdict": "ok",
+    "text": "مع"
+  },
+  "مع إن": {
+    "verdict": "ok",
+    "text": "مع إن"
+  },
+  "معايا": {
+    "verdict": "ko",
+    "text": "معايا"
+  },
+  "معروف": {
+    "verdict": "ok",
+    "text": "معروف"
+  },
+  "معمول": {
+    "verdict": "ok",
+    "text": "معمول"
+  },
+  "مفتوح": {
+    "verdict": "ok",
+    "text": "مفتوح"
+  },
+  "مقفول": {
+    "verdict": "ok",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"maʔˈfuːl\">مقفول</phoneme>"
+  },
+  "مكتوب": {
+    "verdict": "ok",
+    "text": "مكتوب"
+  },
+  "ملوخية": {
+    "verdict": "ko",
+    "text": "ملوخية"
+  },
+  "ممرضة": {
+    "verdict": "ok",
+    "text": "ممرضة"
+  },
+  "ممكن": {
+    "verdict": "ok",
+    "text": "ممكن"
+  },
+  "ممكن ناخد ده؟": {
+    "verdict": "ko",
+    "text": "ممكن ناخد ده؟"
+  },
+  "من": {
+    "verdict": "ok",
+    "text": "مِن"
+  },
+  "من غير": {
+    "verdict": "ok",
+    "text": "من غير"
+  },
+  "من فضلَك": {
+    "verdict": "ko",
+    "text": "من فضلَك"
+  },
+  "من فضلِك": {
+    "verdict": "ok",
+    "text": "من فضلِك"
+  },
+  "من ناحية... من ناحية تانية": {
+    "verdict": "ok",
+    "text": "من ناحية، من ناحية تانية"
+  },
+  "من وجهة نظري": {
+    "verdict": "ok",
+    "text": "من وجهة نظري"
+  },
+  "مهندس": {
+    "verdict": "ok",
+    "text": "مهندس"
+  },
+  "مهندسين": {
+    "verdict": "ok",
+    "text": "مهندسين"
+  },
+  "موبايل": {
+    "verdict": "ok",
+    "text": "موبايل"
+  },
+  "موز": {
+    "verdict": "ok",
+    "text": "موز"
+  },
+  "مين؟": {
+    "verdict": "ko",
+    "text": "مين؟"
+  },
+  "مَيّة": {
+    "verdict": "ko",
+    "text": "مَيّة"
+  },
+  "مِيّة": {
+    "verdict": "ko",
+    "text": "مِيّة"
+  },
+  "نظارة": {
+    "verdict": "ok",
+    "text": "نظارة"
+  },
+  "نهارك سعيد": {
+    "verdict": "ok",
+    "text": "نهارك سعيد"
+  },
+  "نوفمبر": {
+    "verdict": "ok",
+    "text": "نوفمبر"
+  },
+  "هما": {
+    "verdict": "ok",
+    "text": "هما"
+  },
+  "هنا": {
+    "verdict": "ko",
+    "text": "هنا"
+  },
+  "هناك": {
+    "verdict": "ok",
+    "text": "هناك"
+  },
+  "هو": {
+    "verdict": "ok",
+    "text": "هو"
+  },
+  "هي": {
+    "verdict": "ko",
+    "text": "هي"
+  },
+  "و": {
+    "verdict": "ok",
+    "text": "وِ"
+  },
+  "و ربع": {
+    "verdict": "ok",
+    "text": "و ربع"
+  },
+  "و نص": {
+    "verdict": "ok",
+    "text": "و نص"
+  },
+  "وإنتَ؟ / وإنتي؟": {
+    "verdict": "ko",
+    "text": "وإنتَ؟ وإنتي؟"
+  },
+  "واحد": {
+    "verdict": "ok",
+    "text": "واحد"
+  },
+  "واي فاي": {
+    "verdict": "ok",
+    "text": "واي فاي"
+  },
+  "وبعد كده": {
+    "verdict": "ok",
+    "text": "وبعد كده"
+  },
+  "ودن": {
+    "verdict": "ko",
+    "text": "ودن"
+  },
+  "ورا": {
+    "verdict": "ok",
+    "text": "ورا"
+  },
+  "وش": {
+    "verdict": "ko",
+    "text": "وش"
+  },
+  "وصّل": {
+    "verdict": "ko",
+    "text": "وصّل"
+  },
+  "وقت": {
+    "verdict": "ko",
+    "text": "<phoneme alphabet=\"ipa\" ph=\"waʔt\">وقت</phoneme>"
+  },
+  "ولا": {
+    "verdict": "ok",
+    "text": "وَلّا"
+  },
+  "يد واحدة ما تصفقش": {
+    "verdict": "ko",
+    "text": "يد واحدة ما <phoneme alphabet=\"ipa\" ph=\"tesˤafˈfaʔʃ\">تصفقش</phoneme>"
+  },
+  "يعني": {
+    "verdict": "ok",
+    "text": "يعني"
+  },
+  "يعني إزاي؟": {
+    "verdict": "ko",
+    "text": "يعني إزاي؟"
+  },
+  "يفتح الله": {
+    "verdict": "ko",
+    "text": "يفتح الله"
+  },
+  "يلا": {
+    "verdict": "ok",
+    "text": "يلا"
+  },
+  "يناير": {
+    "verdict": "ok",
+    "text": "يناير"
+  },
+  "يوليو": {
+    "verdict": "ok",
+    "text": "يوليو"
+  },
+  "يوم": {
+    "verdict": "ok",
+    "text": "يوم"
+  },
+  "يومين": {
+    "verdict": "ok",
+    "text": "يومين"
+  },
+  "يونيو": {
+    "verdict": "ok",
+    "text": "يونيو"
+  }
+}

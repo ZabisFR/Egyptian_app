@@ -1033,6 +1033,14 @@ body {
   padding-block: 0.375rem;
 }
 
+/* Bouton d'écoute (40 px) : la marge négative le laisse déborder sur le remplissage de la
+   ligne au lieu de l'agrandir. Sans elle, chaque mot sonore faisait 65 px de haut au lieu
+   de 51 (mesuré). Une classe plutôt que `-my-2.5` : la remise à zéro des marges des
+   boutons, hors couche, l'emporte sur les utilitaires Tailwind. */
+.glossaire-audio {
+  margin-block: -0.625rem;
+}
+
 @media (min-width: 640px) {
   .glossaire-entree {
     grid-template-columns: 6.5rem 9rem 1fr auto;

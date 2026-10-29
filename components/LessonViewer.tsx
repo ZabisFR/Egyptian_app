@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import LetterAudioButton from './LetterAudioButton';
 import { ALPHABET_AUDIO } from '@/lib/alphabet-audio';
+import { vocabAudioSrc } from '@/lib/vocab-audio';
 import type { Lesson, VocabItem } from '@/lib/types';
 
 function extractText(node: ReactNode): string {
@@ -104,19 +105,30 @@ export default function LessonViewer({
             français conclut — c'est l'ordre dans lequel on apprend un mot.
           */}
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {vocab.map((v) => (
+            {vocab.map((v) => {
+              const audioSrc = vocabAudioSrc(v.arabic);
+              return (
               // `id` : cible des liens de la recherche globale (`#mot-<id>`), qui met la
               // fiche en évidence à l'arrivée via `:target` (voir globals.css).
               <li key={v.id} id={`mot-${v.id}`} className="vocab-card card-sand p-4">
-                <p className="arabic text-right leading-tight text-[var(--ink)]" dir="rtl">
-                  {v.arabic}
-                </p>
+                {/* Le bouton à gauche, l'arabe à droite : l'œil lit le mot d'abord. */}
+                <div className="flex items-center justify-between gap-2">
+                  {audioSrc ? (
+                    <LetterAudioButton src={audioSrc} label={v.transliteration} />
+                  ) : (
+                    <span />
+                  )}
+                  <p className="arabic text-right leading-tight text-[var(--ink)]" dir="rtl">
+                    {v.arabic}
+                  </p>
+                </div>
                 <p className="mt-1 text-sm font-semibold text-[var(--gold-text)]">
                   {v.transliteration}
                 </p>
                 <p className="mt-0.5 text-sm text-[var(--muted)]">{v.french}</p>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       )}

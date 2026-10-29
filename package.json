@@ -10,7 +10,9 @@
     "normalize": "tsx scripts/normalize-arabizi.ts",
     "import": "tsx scripts/import-data.ts",
     "generate:quiz": "tsx scripts/generate-quiz.ts",
-    "generate:drills": "tsx scripts/generate-drills.ts"
+    "generate:drills": "tsx scripts/generate-drills.ts",
+    "generate:audio": "tsx scripts/generate-audio.ts",
+    "review:audio": "node scripts/audio-review/server.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.90",

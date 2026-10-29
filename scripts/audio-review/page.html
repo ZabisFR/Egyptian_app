@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tri des sons</title>
+<!-- Encodeur mp3 dans le navigateur : l'enregistrement arrive en mp3 sur le disque, sans ffmpeg. -->
+<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
+<style>
+  :root { --ink:#1e1b3a; --muted:#6b6880; --gold:#c9a227; --ok:#1f8a5b; --ko:#c0392b; --bg:#fbf7ee; --card:#fff; --line:#e6e0d0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 2px solid var(--line); padding: 12px 16px; }
+  h1 { margin: 0 0 6px; font-size: 20px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; color: var(--muted); }
+  .stats b { color: var(--ink); }
+  .bar { height: 6px; background: var(--line); border-radius: 3px; margin: 8px 0; overflow: hidden; }
+  .bar span { display: block; height: 100%; background: var(--ok); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tabs button { border: 2px solid var(--line); background: #fff; border-radius: 16px; padding: 4px 12px; cursor: pointer; font-size: 14px; }
+  .tabs button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
+  .help { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  kbd { border: 1px solid #bbb; border-radius: 3px; padding: 0 4px; background: #fff; font-size: 11px; }
+  main { max-width: 860px; margin: 0 auto; padding: 8px 16px 80px; }
+  .row { display: grid; grid-template-columns: 48px 1fr auto; gap: 4px 12px; align-items: center; background: var(--card); border: 2px solid transparent; border-radius: 12px; padding: 10px 12px; margin: 8px 0; }
+  .row.current { border-color: var(--gold); box-shadow: 0 0 0 3px #c9a22733; }
+  .play { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); background: #fff; font-size: 16px; cursor: pointer; }
+  .word { min-width: 0; }
+  .ar { font-size: 26px; line-height: 1.3; }
+  .tr { font-weight: 700; }
+  .fr, .mod { color: var(--muted); font-size: 13px; }
+  .actions { display: flex; gap: 6px; }
+  .ok, .ko { width: 48px; height: 44px; border-radius: 10px; border: 2px solid var(--line); background: #fff; font-size: 20px; cursor: pointer; }
+  .ok[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); color: #fff; }
+  .ko[aria-pressed="true"] { background: var(--ko); border-color: var(--ko); color: #fff; }
+  .badge { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #e8f5ee; color: var(--ok); }
+  .rec { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 6px; border-top: 1px dashed var(--line); }
+  .rec button, .rec label { border: 2px solid var(--ink); background: #fff; border-radius: 18px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
+  .rec button.recording { background: var(--ko); border-color: var(--ko); color: #fff; animation: pulse 1s infinite; }
+  .rec .keep { background: var(--ok); border-color: var(--ok); color: #fff; }
+  .rec input { display: none; }
+  .msg { font-size: 13px; color: var(--muted); }
+  .msg.err { color: var(--ko); }
+  @keyframes pulse { 50% { opacity: .6; } }
+  .empty { text-align: center; color: var(--muted); padding: 40px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tri des sons du vocabulaire</h1>
+  <div class="stats" id="stats"></div>
+  <div class="bar"><span id="bar"></span></div>
+  <div class="tabs" role="group" aria-label="Filtre">
+    <button data-filter="todo">À écouter</button>
+    <button data-filter="ko">Refusés à enregistrer</button>
+    <button data-filter="done">Validés et enregistrés</button>
+    <button data-filter="all">Tout</button>
+  </div>
+  <p class="help">
+    <kbd>Espace</kbd> écouter · <kbd>O</kbd> ✓ bon · <kbd>X</kbd> ✗ faux · <kbd>↑</kbd><kbd>↓</kbd> mot précédent / suivant ·
+    <kbd>R</kbd> enregistrer / arrêter. Après ✓ ou ✗, le mot suivant se joue tout seul.
+  </p>
+</header>
+<main id="list"></main>
+
+<script>
+let words = [];
+let filter = 'todo';
+let currentKey = null;
+const pending = new Map(); // clé → mp3 (Uint8Array) en attente de « Garder »
+let recorder = null, recordingKey = null;
+
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
+
+async function load() {
+  words = await (await fetch('/api/words')).json();
+  render();
+}
+
+const state = (w) => (w.human ? 'human' : w.verdict ?? 'todo');
+function visible() {
+  return words.filter((w) => {
+    const s = state(w);
+    if (filter === 'todo') return s === 'todo';
+    if (filter === 'ko') return s === 'ko';
+    if (filter === 'done') return s === 'ok' || s === 'human';
+    return true;
+  });
+}
+
+function render() {
+  const n = { todo: 0, ok: 0, ko: 0, human: 0 };
+  for (const w of words) n[state(w)]++;
+  const total = words.length;
+  $('#stats').innerHTML =
+    `<span><b>${n.ok}</b> validés ✓</span><span><b>${n.ko}</b> refusés ✗ à enregistrer</span>` +
+    `<span><b>${n.human}</b> enregistrés 🎙</span><span><b>${n.todo}</b> à écouter</span><span>sur ${total}</span>`;
+  $('#bar').style.width = `${(100 * (total - n.todo)) / total}%`;
+  for (const b of document.querySelectorAll('.tabs button')) b.setAttribute('aria-pressed', b.dataset.filter === filter);
+
+  const list = visible();
+  if (!list.some((w) => w.key === currentKey)) currentKey = list[0]?.key ?? null;
+  $('#list').innerHTML = list.length
+    ? list.map(rowHtml).join('')
+    : `<p class="empty">Rien dans cette liste.</p>`;
+}
+
+function rowHtml(w) {
+  const s = state(w);
+  const showRec = s === 'ko' || s === 'human' || pending.has(w.key);
+  return `<div class="row${w.key === currentKey ? ' current' : ''}" data-key="${esc(w.key)}">
+    <button class="play" title="Écouter">▶</button>
+    <div class="word">
+      <div class="ar" dir="rtl">${esc(w.key)}</div>
+      <div><span class="tr">${esc(w.tr)}</span> <span class="fr">— ${esc(w.fr)}</span> <span class="mod">· ${esc(w.module)}</span></div>
+    </div>
+    <div class="actions">
+      ${s === 'human'
+        ? '<span class="badge">🎙 voix humaine</span>'
+        : `<button class="ok" aria-pressed="${s === 'ok'}" title="Bonne prononciation (O)">✓</button>
+           <button class="ko" aria-pressed="${s === 'ko'}" title="Mauvaise prononciation (X)">✗</button>`}
+    </div>
+    ${showRec ? `<div class="rec">
+      <button class="record">${recordingKey === w.key ? '■ Arrêter' : s === 'human' ? '🎙 Réenregistrer' : '🎙 Enregistrer'}</button>
+      <label>📁 Importer un fichier<input type="file" accept="audio/*"></label>
+      ${pending.has(w.key) ? '<button class="listen">▶ Écouter l’enregistrement</button><button class="keep">💾 Garder</button>' : ''}
+      <span class="msg"></span>
+    </div>` : ''}
+  </div>`;
+}
+
+const rowOf = (key) => [...document.querySelectorAll('.row')].find((r) => r.dataset.key === key);
+const wordOf = (key) => words.find((w) => w.key === key);
+function setMsg(key, text, err = false) {
+  const m = rowOf(key)?.querySelector('.msg');
+  if (m) { m.textContent = text; m.classList.toggle('err', err); }
+}
+
+let audio = null;
+function play(src) {
+  audio?.pause();
+  audio = new Audio(src);
+  audio.play().catch(() => {});
+}
+const playWord = (w) => play(`/audio/${w.file}?v=${w.human ? 'h' : 'a'}${Date.now()}`);
+
+function select(key, scroll = true) {
+  currentKey = key;
+  document.querySelectorAll('.row').forEach((r) => r.classList.toggle('current', r.dataset.key === key));
+  if (scroll) rowOf(key)?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+
+function setVerdict(key, verdict) {
+  const w = wordOf(key);
+  const previous = w.verdict;
+  const next = verdict === previous ? null : verdict; // recliquer annule
+  const list = visible();
+  const i = list.findIndex((x) => x.key === key);
+  // Affiché tout de suite, enregistré en arrière-plan : au clavier, on enchaîne plus vite
+  // que l'aller-retour serveur, et attendre la réponse faisait atterrir la touche suivante
+  // sur le mauvais mot (mesuré).
+  w.verdict = next;
+  fetch('/api/verdict', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key, verdict: next }) })
+    .then((r) => { if (!r.ok) throw new Error(r.status); })
+    .catch(() => {
+      w.verdict = previous;
+      render();
+      alert(`Le verdict de « ${w.tr} » n'a pas été enregistré (serveur arrêté ?). Réessayez.`);
+    });
+  // Dans « À écouter », le mot sort de la liste : on enchaîne sur le suivant.
+  const after = visible();
+  const target = after.find((x) => x.key === key) ? key : (after[i] ?? after[i - 1])?.key;
+  render();
+  if (target) {
+    select(target);
+    if (target !== key && filter === 'todo') playWord(wordOf(target));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Enregistrement : micro ou fichier → mono, silences coupés, volume égalisé, 24 kHz, mp3.
+// ---------------------------------------------------------------------------
+
+async function toMp3(arrayBuffer) {
+  const ctx = new AudioContext();
+  const buf = await ctx.decodeAudioData(arrayBuffer);
+  ctx.close();
+  const sr = buf.sampleRate, len = buf.length;
+  const mono = new Float32Array(len);
+  for (let c = 0; c < buf.numberOfChannels; c++) {
+    const d = buf.getChannelData(c);
+    for (let i = 0; i < len; i++) mono[i] += d[i] / buf.numberOfChannels;
+  }
+
+  // Silences de début et de fin : fenêtres de 10 ms, seuil relatif au passage le plus fort.
+  const win = Math.round(sr * 0.01), rms = [];
+  for (let i = 0; i + win <= len; i += win) {
+    let s = 0;
+    for (let j = i; j < i + win; j++) s += mono[j] * mono[j];
+    rms.push(Math.sqrt(s / win));
+  }
+  const peakRms = Math.max(...rms);
+  if (peakRms < 0.003) throw new Error('Aucun son détecté : le micro est-il le bon ?');
+  const thr = peakRms * 0.08;
+  const first = rms.findIndex((r) => r > thr);
+  const last = rms.length - 1 - [...rms].reverse().findIndex((r) => r > thr);
+  const start = Math.max(0, first * win - Math.round(sr * 0.12));
+  const end = Math.min(len, (last + 1) * win + Math.round(sr * 0.25));
+  let clip = mono.slice(start, end);
+
+  // Volume égalisé (crête à 90 %), avec un fondu de 10 ms pour éviter les clics.
+  let peak = 0;
+  for (const v of clip) peak = Math.max(peak, Math.abs(v));
+  const gain = Math.min(0.9 / peak, 20);
+  const fade = Math.round(sr * 0.01);
+  clip = clip.map((v, i) => v * gain * Math.min(1, i / fade, (clip.length - 1 - i) / fade));
+
+  // Rééchantillonnage à 24 kHz, comme les sons d'Azure.
+  const OUT = 24000;
+  const off = new OfflineAudioContext(1, Math.ceil((clip.length * OUT) / sr), OUT);
+  const src = off.createBufferSource();
+  const b = off.createBuffer(1, clip.length, sr);
+  b.copyToChannel(clip, 0);
+  src.buffer = b;
+  src.connect(off.destination);
+  src.start();
+  const res = (await off.startRendering()).getChannelData(0);
+
+  const pcm = new Int16Array(res.length);
+  for (let i = 0; i < res.length; i++) pcm[i] = Math.max(-1, Math.min(1, res[i])) * 0x7fff;
+  const enc = new lamejs.Mp3Encoder(1, OUT, 64);
+  const parts = [];
+  for (let i = 0; i < pcm.length; i += 1152) {
+    const out = enc.encodeBuffer(pcm.subarray(i, i + 1152));
+    if (out.length) parts.push(new Uint8Array(out));
+  }
+  const tail = enc.flush();
+  if (tail.length) parts.push(new Uint8Array(tail));
+  const mp3 = new Uint8Array(parts.reduce((n, p) => n + p.length, 0));
+  let o = 0;
+  for (const p of parts) { mp3.set(p, o); o += p.length; }
+  return { mp3, seconds: res.length / OUT };
+}
+
+async function handleAudio(key, arrayBuffer) {
+  try {
+    setMsg(key, 'Traitement…');
+    const { mp3, seconds } = await toMp3(arrayBuffer);
+    pending.set(key, mp3);
+    render();
+    select(key, false);
+    play(URL.createObjectURL(new Blob([mp3], { type: 'audio/mpeg' })));
+    setMsg(key, `${seconds.toFixed(1)} s${seconds > 4 ? ' — un peu long : un seul mot suffit' : ''}. Garder ou recommencer ?`);
+  } catch (e) {
+    setMsg(key, e.message, true);
+  }
+}
+
+async function toggleRecord(key) {
+  if (recorder) {
+    recorder.stop();
+    return;
+  }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
+    const chunks = [];
+    recorder = new MediaRecorder(stream);
+    recordingKey = key;
+    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.onstop = async () => {
+      stream.getTracks().forEach((t) => t.stop());
+      const blob = new Blob(chunks, { type: recorder.mimeType });
+      recorder = null;
+      recordingKey = null;
+      render();
+      await handleAudio(key, await blob.arrayBuffer());
+    };
+    recorder.start();
+    render();
+    select(key, false);
+    setMsg(key, 'Enregistrement… dites le mot, puis « Arrêter » (ou R).');
+  } catch (e) {
+    setMsg(key, 'Micro inaccessible : ' + e.message, true);
+  }
+}
+
+async function keep(key) {
+  const mp3 = pending.get(key);
+  let bin = '';
+  for (let i = 0; i < mp3.length; i += 0x8000) bin += String.fromCharCode(...mp3.subarray(i, i + 0x8000));
+  const res = await fetch('/api/record', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ key, mp3: btoa(bin) }),
+  });
+  if (!res.ok) return setMsg(key, 'Échec : ' + (await res.text()), true);
+  pending.delete(key);
+  wordOf(key).human = true;
+  render();
+  select(key, false);
+  setMsg(key, 'Enregistré ✓');
+}
+
+// ---------------------------------------------------------------------------
+
+document.addEventListener('click', (e) => {
+  const tab = e.target.closest('.tabs button');
+  if (tab) { filter = tab.dataset.filter; render(); return; }
+  const row = e.target.closest('.row');
+  if (!row) return;
+  const key = row.dataset.key;
+  if (e.target.closest('input')) return;
+  select(key, false);
+  if (e.target.closest('.play')) playWord(wordOf(key));
+  else if (e.target.closest('.ok')) setVerdict(key, 'ok');
+  else if (e.target.closest('.ko')) setVerdict(key, 'ko');
+  else if (e.target.closest('.record')) toggleRecord(key);
+  else if (e.target.closest('.listen')) play(URL.createObjectURL(new Blob([pending.get(key)], { type: 'audio/mpeg' })));
+  else if (e.target.closest('.keep')) keep(key);
+});
+
+document.addEventListener('change', async (e) => {
+  const input = e.target.closest('.rec input[type=file]');
+  if (!input?.files[0]) return;
+  const key = input.closest('.row').dataset.key;
+  await handleAudio(key, await input.files[0].arrayBuffer());
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest('input, textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
+  const list = visible();
+  const i = list.findIndex((w) => w.key === currentKey);
+  const k = e.key.toLowerCase();
+  if (k === ' ' || k === 'enter') { e.preventDefault(); if (currentKey) playWord(wordOf(currentKey)); }
+  else if (k === 'arrowdown' || k === 'arrowup') {
+    e.preventDefault();
+    const t = list[Math.max(0, Math.min(list.length - 1, i + (k === 'arrowdown' ? 1 : -1)))];
+    if (t) { select(t.key); playWord(t); }
+  }
+  else if (k === 'o' && currentKey && !wordOf(currentKey).human) setVerdict(currentKey, 'ok');
+  else if (k === 'x' && currentKey && !wordOf(currentKey).human) setVerdict(currentKey, 'ko');
+  else if (k === 'r' && currentKey && (state(wordOf(currentKey)) !== 'todo' || recorder)) toggleRecord(currentKey);
+});
+
+load();
+</script>
+</body>
+</html>
